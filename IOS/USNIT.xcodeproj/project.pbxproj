@@ -20,9 +20,9 @@
 		33C8F9C31CA76B5A00E1C6DA /* USNITUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8F9C21CA76B5A00E1C6DA /* USNITUITests.swift */; };
 		33D642701CC3D28D000969F2 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33D642661CC3D28D000969F2 /* jsoncpp.cpp */; };
 		33D642711CC3D28D000969F2 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33D642671CC3D28D000969F2 /* Log.cpp */; };
-		33D642721CC3D28D000969F2 /* OCInteract.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33D642691CC3D28D000969F2 /* OCInteract.mm */; };
 		33D642731CC3D28D000969F2 /* UsnitLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33D6426E1CC3D28D000969F2 /* UsnitLogic.cpp */; };
 		33D642761CC3D2BA000969F2 /* conf.json in Resources */ = {isa = PBXBuildFile; fileRef = 33D642751CC3D2BA000969F2 /* conf.json */; };
+		33D642781CC3D759000969F2 /* OCInteract.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33D642771CC3D759000969F2 /* OCInteract.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,11 +67,11 @@
 		33D642661CC3D28D000969F2 /* jsoncpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsoncpp.cpp; sourceTree = "<group>"; };
 		33D642671CC3D28D000969F2 /* Log.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Log.cpp; sourceTree = "<group>"; };
 		33D642681CC3D28D000969F2 /* Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Log.h; sourceTree = "<group>"; };
-		33D642691CC3D28D000969F2 /* OCInteract.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCInteract.mm; sourceTree = "<group>"; };
 		33D6426D1CC3D28D000969F2 /* USNIT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USNIT.h; sourceTree = "<group>"; };
 		33D6426E1CC3D28D000969F2 /* UsnitLogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UsnitLogic.cpp; sourceTree = "<group>"; };
 		33D6426F1CC3D28D000969F2 /* UsnitLogic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UsnitLogic.hpp; sourceTree = "<group>"; };
 		33D642751CC3D2BA000969F2 /* conf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = conf.json; sourceTree = "<group>"; };
+		33D642771CC3D759000969F2 /* OCInteract.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OCInteract.mm; path = ../../Common/CPPFile/OCInteract.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +125,7 @@
 				33D642741CC3D2BA000969F2 /* Data */,
 				33D642611CC3D28D000969F2 /* CPPFile */,
 				33A457C21CB8C53B00CBB2E4 /* USNIT-Bridging-Header.h */,
+				33D642771CC3D759000969F2 /* OCInteract.mm */,
 				33C8F9A01CA76B5A00E1C6DA /* AppDelegate.swift */,
 				33C8F9A21CA76B5A00E1C6DA /* FirstViewController.swift */,
 				33C8F9A41CA76B5A00E1C6DA /* SecondViewController.swift */,
@@ -166,7 +167,6 @@
 				33D642661CC3D28D000969F2 /* jsoncpp.cpp */,
 				33D642671CC3D28D000969F2 /* Log.cpp */,
 				33D642681CC3D28D000969F2 /* Log.h */,
-				33D642691CC3D28D000969F2 /* OCInteract.mm */,
 				33D6426D1CC3D28D000969F2 /* USNIT.h */,
 				33D6426E1CC3D28D000969F2 /* UsnitLogic.cpp */,
 				33D6426F1CC3D28D000969F2 /* UsnitLogic.hpp */,
@@ -353,7 +353,7 @@
 				33D642731CC3D28D000969F2 /* UsnitLogic.cpp in Sources */,
 				33D642711CC3D28D000969F2 /* Log.cpp in Sources */,
 				33A457C71CBA046300CBB2E4 /* SFUsnitLogic.swift in Sources */,
-				33D642721CC3D28D000969F2 /* OCInteract.mm in Sources */,
+				33D642781CC3D759000969F2 /* OCInteract.mm in Sources */,
 				33C8F9A11CA76B5A00E1C6DA /* AppDelegate.swift in Sources */,
 				33A457C91CBA109700CBB2E4 /* NumInputDelegate.swift in Sources */,
 				33C8F9A31CA76B5A00E1C6DA /* FirstViewController.swift in Sources */,
