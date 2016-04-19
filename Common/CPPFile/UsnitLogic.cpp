@@ -9,6 +9,7 @@
 #include "USNIT.h"
 #include "UsnitLogic.hpp"
 #include "json/json.h"
+#include "Log.h"
 
 
 int     UsnitInit(const char* conf_str, int lang) {
@@ -52,7 +53,7 @@ CUsnitLogic::~CUsnitLogic(){
 }
 
 bool CUsnitLogic::init(const char* conf_str, int lang){
-    printf("CUsnitLogic::init");
+    G_LOG_FC(LOG_INFO,"CUsnitLogic::init");
     if (m_conf.isInt())
         return false;
 
@@ -94,8 +95,9 @@ bool CUsnitLogic::init(const char* conf_str, int lang){
                 str = lang["lang"].asString();
             
             if ( str == "eng" ) map_istr = m_langData.eng;
-            else if (str == "") {
+            else if (str != "ch") {
                 // err language
+                G_LOG_FC(LOG_ERROR, "read json:%s err lang:%s", str.c_str());
                 break;
             }
 
@@ -111,7 +113,7 @@ bool CUsnitLogic::init(const char* conf_str, int lang){
     } // end if
     else {
         std::string err = reader.getFormatedErrorMessages();
-        err = err;
+        G_LOG_FC(LOG_ERROR, "read json:%s err:%s", conf_str, err.c_str());
     }
     
     return true;

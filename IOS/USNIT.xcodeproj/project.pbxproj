@@ -23,6 +23,7 @@
 		33D642731CC3D28D000969F2 /* UsnitLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33D6426E1CC3D28D000969F2 /* UsnitLogic.cpp */; };
 		33D642761CC3D2BA000969F2 /* conf.json in Resources */ = {isa = PBXBuildFile; fileRef = 33D642751CC3D2BA000969F2 /* conf.json */; };
 		33D642781CC3D759000969F2 /* OCInteract.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33D642771CC3D759000969F2 /* OCInteract.mm */; };
+		33D6427C1CC4B579000969F2 /* zf_log.c in Sources */ = {isa = PBXBuildFile; fileRef = 33D6427A1CC4B579000969F2 /* zf_log.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		33D6426F1CC3D28D000969F2 /* UsnitLogic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UsnitLogic.hpp; sourceTree = "<group>"; };
 		33D642751CC3D2BA000969F2 /* conf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = conf.json; sourceTree = "<group>"; };
 		33D642771CC3D759000969F2 /* OCInteract.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OCInteract.mm; path = ../../Common/CPPFile/OCInteract.mm; sourceTree = "<group>"; };
+		33D6427A1CC4B579000969F2 /* zf_log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zf_log.c; path = zf_log/zf_log.c; sourceTree = "<group>"; };
+		33D6427B1CC4B579000969F2 /* zf_log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zf_log.h; path = zf_log/zf_log.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +164,7 @@
 		33D642611CC3D28D000969F2 /* CPPFile */ = {
 			isa = PBXGroup;
 			children = (
-				33D6426A1CC3D28D000969F2 /* spdlog */,
+				33D642791CC4B54A000969F2 /* zf_log */,
 				33D642631CC3D28D000969F2 /* json */,
 				33D642621CC3D28D000969F2 /* Interact.h */,
 				33D642661CC3D28D000969F2 /* jsoncpp.cpp */,
@@ -184,29 +187,6 @@
 			path = json;
 			sourceTree = "<group>";
 		};
-		33D6426A1CC3D28D000969F2 /* spdlog */ = {
-			isa = PBXGroup;
-			children = (
-				33D6426B1CC3D28D000969F2 /* details */,
-				33D6426C1CC3D28D000969F2 /* sinks */,
-			);
-			path = spdlog;
-			sourceTree = "<group>";
-		};
-		33D6426B1CC3D28D000969F2 /* details */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = details;
-			sourceTree = "<group>";
-		};
-		33D6426C1CC3D28D000969F2 /* sinks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = sinks;
-			sourceTree = "<group>";
-		};
 		33D642741CC3D2BA000969F2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +194,15 @@
 			);
 			name = Data;
 			path = ../../Common/Data;
+			sourceTree = "<group>";
+		};
+		33D642791CC4B54A000969F2 /* zf_log */ = {
+			isa = PBXGroup;
+			children = (
+				33D6427A1CC4B579000969F2 /* zf_log.c */,
+				33D6427B1CC4B579000969F2 /* zf_log.h */,
+			);
+			name = zf_log;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,6 +340,7 @@
 				337A8A381CB42F9A006B45D7 /* StringUtils.swift in Sources */,
 				33C8F9A51CA76B5A00E1C6DA /* SecondViewController.swift in Sources */,
 				33D642731CC3D28D000969F2 /* UsnitLogic.cpp in Sources */,
+				33D6427C1CC4B579000969F2 /* zf_log.c in Sources */,
 				33D642711CC3D28D000969F2 /* Log.cpp in Sources */,
 				33A457C71CBA046300CBB2E4 /* SFUsnitLogic.swift in Sources */,
 				33D642781CC3D759000969F2 /* OCInteract.mm in Sources */,

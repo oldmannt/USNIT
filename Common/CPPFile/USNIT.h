@@ -55,6 +55,8 @@ extern "C" {
     int     UsnitSetInput(float value);
     const char*   UsnitGetResult(int type);
     
+    void    C_LOG(int output, int lev, const char* fmt, ...);
+    
 #ifdef __cplusplus
 }   // end of extern "C"
 #endif

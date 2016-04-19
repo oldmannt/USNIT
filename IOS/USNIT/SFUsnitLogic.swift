@@ -12,8 +12,7 @@ public class SFUsnitLogic {
     static let sharedInstance = SFUsnitLogic()
     
     init() {
-      
-        print("SFUsnitLogic::init");
+
         let path = NSBundle.mainBundle().pathForResource("conf", ofType: "json")
         var json_str = ""
         
