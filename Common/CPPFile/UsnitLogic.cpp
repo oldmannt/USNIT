@@ -53,20 +53,10 @@ CUsnitLogic::~CUsnitLogic(){
 }
 
 bool CUsnitLogic::init(const char* conf_str, int lang){
-    G_LOG_FC(LOG_INFO,"CUsnitLogic::init");
-    if (m_conf.isInt())
-        return false;
+    G_LOG_FC(LOG_INFO,"CUsnitLogic::init lang:%d", lang);
 
-    switch (lang) {
-        case LANG_CH:
-            m_langData.cur = m_langData.ch;
-            break;
-        case LANG_ENG:
-            m_langData.cur = m_langData.eng;
-            break;
-        default:
-            break;
-    }
+    m_langData.setLang(lang);
+    m_usnitData.mapOutputs = *m_langData.pmap;
 
     Json::Reader reader;
     if (reader.parse(conf_str, m_conf)) {
@@ -89,32 +79,52 @@ bool CUsnitLogic::init(const char* conf_str, int lang){
 
         for (int i = 0; i< lang_count; ++i){
             Json::Value lang = m_conf["lang"][i];
-            MAP_ISTR& map_istr = m_langData.ch;
+            MAP_ISTR* map_istr = &m_langData.ch;
             std::string str = "";
-            if (lang.type() == Json::ValueType::stringValue)
+            if (lang["lang"].type() == Json::ValueType::stringValue)
                 str = lang["lang"].asString();
             
-            if ( str == "eng" ) map_istr = m_langData.eng;
-            else if (str != "ch") {
+            if ( str == "eng" ) map_istr = &m_langData.eng;
+            else if (str == "ch") map_istr = &m_langData.ch;
+            else{
                 // err language
-                G_LOG_FC(LOG_ERROR, "read json:%s err lang:%s", str.c_str());
+                G_LOG_FC(LOG_ERROR, "read json err lang:%s", str.c_str());
                 break;
             }
 
-            int words_size = lang.size();
-            for (int j=0; j<words_size; ++j){
-                if (lang[j].type() != Json::ValueType::stringValue) {
-                    // language "str" j not string
+            Json::Value::Members mem = lang.getMemberNames();
+            Json::Value::Members::iterator it(mem.begin());
+            for (; it!=mem.end(); ++it){
+                std::string strKey = *it;
+                
+                if (strKey=="lang") {
                     continue;
                 }
-                map_istr.insert(std::make_pair(j,lang[j].asString()));
+                
+                int key = atoi(strKey.c_str());
+                std::string strValue = lang[strKey].asString();
+                map_istr->insert(std::make_pair(key,strValue));
             }
+            
         }
     } // end if
     else {
         std::string err = reader.getFormatedErrorMessages();
         G_LOG_FC(LOG_ERROR, "read json:%s err:%s", conf_str, err.c_str());
     }
+    
+    // print all lang words
+    /*
+    MAP_ISTR::iterator it = m_langData.ch.begin();
+    for (; it!=m_langData.ch.end(); ++it) {
+        G_LOG_C(LOG_INFO, "lang ch %d:%s", it->first, it->second.c_str());
+    }
+    
+    it = m_langData.eng.begin();
+    for (; it!=m_langData.eng.end(); ++it) {
+        G_LOG_C(LOG_INFO, "lang eng %d:%s", it->first, it->second.c_str());
+    }
+    */
     
     return true;
 }
@@ -158,76 +168,72 @@ bool CUsnitLogic::setVolumeType(int type){
 bool CUsnitLogic::setInput(float value){
     
     char buf[64]={0};
-    sprintf(buf, "%.04f%s", this->getMeter(value), m_langData.cur[TYPE_METER].c_str());
-    m_usnitData.strMeter = buf;
-    
-    sprintf(buf, "%.04f%s", this->getCMeter(value), m_langData.cur[TYPE_CMETER].c_str());
-    m_usnitData.strCMeter = buf;
-    
-    sprintf(buf, "%.04f%s", this->getKMeter(value), m_langData.cur[TYPE_KMETER].c_str());
-    m_usnitData.strKMeter = buf;
-    
-    sprintf(buf, "%.04f%s", this->getFeet(value), m_langData.cur[TYPE_FEET].c_str());
-    m_usnitData.strFeet = buf;
-    
-    sprintf(buf, "%.04f%s", this->getInch(value), m_langData.cur[TYPE_INCH].c_str());
-    m_usnitData.strInch = buf;
-    
-    sprintf(buf, "%.04f%s", this->getMile(value), m_langData.cur[TYPE_MILE].c_str());
-    m_usnitData.strMile = buf;
-    
-    sprintf(buf, "%.04f%s", this->getYard(value), m_langData.cur[TYPE_YARD].c_str());
-    m_usnitData.strYard = buf;
-    
-    sprintf(buf, "%.04f%s", this->getLitre(value), m_langData.cur[TYPE_LITRE].c_str());
-    m_usnitData.strLitre = buf;
-    
-    sprintf(buf, "%.04f%s", this->getMLitre(value), m_langData.cur[TYPE_MLITRE].c_str());
-    m_usnitData.strMLitre = buf;
-    
-    sprintf(buf, "%.04f%s", this->getGal(value), m_langData.cur[TYPE_GAL].c_str());
-    m_usnitData.strGal = buf;
-    
-    sprintf(buf, "%.04f%s", this->getGram(value), m_langData.cur[TYPE_GRAM].c_str());
-    m_usnitData.strGram = buf;
-    
-    sprintf(buf, "%.04f%s", this->getKGram(value), m_langData.cur[TYPE_KGRAM].c_str());
-    m_usnitData.strKGram = buf;
-    
-    sprintf(buf, "%.04f%s", this->getPound(value), m_langData.cur[TYPE_POUND].c_str());
-    m_usnitData.strPound = buf;
-    
-    sprintf(buf, "%.04f%s", this->getOz(value), m_langData.cur[TYPE_OZ].c_str());
-    m_usnitData.strOz = buf;
-    
-    sprintf(buf, "%.04f%s", this->getSQmeter(value), m_langData.cur[TYPE_SQM].c_str());
-    m_usnitData.strSQmeter = buf;
-    
-    sprintf(buf, "%.04f%s", this->getSQcmeter(value), m_langData.cur[TYPE_SQCM].c_str());
-    m_usnitData.strSQcmeter = buf;
-    
-    sprintf(buf, "%.04f%s", this->getSQfeet(value), m_langData.cur[TYPE_SQF].c_str());
-    m_usnitData.strSQfeet = buf;
-    
-    sprintf(buf, "%.04f%s", this->getCentigrand(value), m_langData.cur[TYPE_CENTI].c_str());
-    m_usnitData.strCentigrand = buf;
-    
-    sprintf(buf, "%.04f%s", this->getFahrenhat(value), m_langData.cur[TYPE_FAHRE].c_str());
-    m_usnitData.strFahrenhat = buf;
-    
+
+    for (int i=TYPE_METER; i<TYPE_MAX; ++i) {
+        sprintf(buf, "%.04f%s", this->transforValue(i, value), m_langData.getWords(i));
+        m_usnitData.mapOutputs[i] = buf;
+        G_LOG_FC(LOG_INFO, "setInput type:%d output:%s", buf);
+    }
+
     return true;
 }
 
 const char* CUsnitLogic::GetResult(int type) {
-    if (type >= m_langData.cur.size()){
-        return "";
+    return m_usnitData.mapOutputs[type].c_str();
+}
+
+float CUsnitLogic::transforValue( int type, float value) const{
+    switch (type) {
+        case TYPE_METER:
+            return this->getMeter(value);
+        case TYPE_CMETER:
+            return this->getCMeter(value);
+        case TYPE_KMETER:
+            return this->getKMeter(value);
+        case TYPE_FEET:
+            return this->getFeet(value);
+        case TYPE_INCH:
+            return this->getInch(value);
+        case TYPE_MILE:
+            return this->getMile(value);
+        case TYPE_YARD:
+            return this->getYard(value);
+        case TYPE_LITRE:
+            return this->getLitre(value);
+        case TYPE_MLITRE:
+            return this->getMLitre(value);
+        case TYPE_GAL:
+            return this->getGal(value);
+        case TYPE_GRAM:
+            return this->getGram(value);
+        case TYPE_KGRAM:
+            return this->getKGram(value);
+        case TYPE_POUND:
+            return this->getPound(value);
+        case TYPE_OZ:
+            return this->getOz(value);
+        case TYPE_SQM:
+            return this->getSQmeter(value);
+        case TYPE_SQCM:
+            return this->getSQcmeter(value);
+        case TYPE_SQF:
+            return this->getSQfeet(value);
+        case TYPE_CELSI:
+            return this->getCentigrand(value);
+        case TYPE_FAHRE:
+            return this->getFahrenhat(value);
+        case TYPE_MAX:
+        default:
+            break;
     }
-    return m_langData.cur[TYPE_GAL].c_str();
+    
+    G_LOG_FC(LOG_ERROR, "err unit type");
+    return 0.0f;
 }
 
 float CUsnitLogic::getMeter(float value) const {
     float metric = value;
-    switch (m_usnitData.nLongUSType) {
+    switch (m_usnitData.nLongType) {
         case TYPE_CMETER:
             metric *= 0.01f;
             break;

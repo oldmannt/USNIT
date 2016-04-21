@@ -33,7 +33,7 @@ extern "C" {
 #define TYPE_SQM        14
 #define TYPE_SQCM       15
 #define TYPE_SQF        16
-#define TYPE_CENTI      17
+#define TYPE_CELSI      17
 #define TYPE_FAHRE      18
 #define TYPE_MAX        19
     

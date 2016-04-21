@@ -33,12 +33,12 @@ public class SFUsnitLogic {
 
     }
     
-    public func SetUsnitInput(value : Float, long_type:Int32 = TYPE_METER, mass_type:Int32 = TYPE_GRAM, square_type:Int32 = TYPE_SQM){
-        
+    public func SetUsnitInput(value : Float){
+        UsnitSetInput(value)
     }
     
     public func GetUsnitResult(type : Int32)-> String{
-        let strMeterResult = String.fromCString(UsnitGetResult(0))
+        let strMeterResult = String.fromCString(UsnitGetResult(type))
         return strMeterResult!
     }
 }

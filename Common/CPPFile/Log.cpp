@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include <list>
+#include <string.h>
 #include "Interact.h"
 #include "Log.h"
 
@@ -173,17 +174,22 @@ ILogMgr* gLogMgr(){
 }
 
 struct G_LOG_INFO {
+    int init;
     int outputs;
     FILE* file;
     char file_path[512];
     zf_log_output_cb console_cb;
     zf_log_output_cb file_cb;
+    
+    G_LOG_INFO(){
+        memset(this, 0, sizeof(G_LOG_INFO));
+    }
 };
 
 G_LOG_INFO g_log_info;
 static void zf_file_log(const zf_log_message* msg, void* arg){
     if (!g_log_info.file){
-        g_logout(LOG_CONSOLE, LOG_ERROR, "no file handle for log");
+        g_logouts(LOG_CONSOLE, LOG_ERROR, "no file handle for log");
         return;
     }
     *msg->p = '\n';
@@ -196,7 +202,12 @@ static void fz_log_callback(const zf_log_message *msg, void* arg){
     
     if (!msg || !arg)
         return;
-    
+    G_LOG_INFO* loginfo = (G_LOG_INFO*)arg;
+    if (loginfo->outputs&LOG_CONSOLE && g_log_info.console_cb)
+        (*g_log_info.console_cb)(msg,arg);
+    if (loginfo->outputs&LOG_FILE && g_log_info.file_cb) {
+        (*g_log_info.file_cb)(msg,arg);
+    }
     
 }
 
@@ -208,7 +219,7 @@ void g_addlog(int outputs, const char* param){
         
         g_log_info.file = fopen(param, "a");
         if (!g_log_info.file){
-            g_logout(LOG_CONSOLE, LOG_ERROR, "fopne file log failed:%s", param);
+            G_LOG_C(LOG_ERROR, "fopne file log failed:%s", param);
         }
         g_log_info.file_cb = zf_file_log;
         strncpy(g_log_info.file_path, param, sizeof(g_log_info.file_path));
@@ -220,8 +231,10 @@ void g_addlog(int outputs, const char* param){
 
 void g_loginit(int outputs, const char* param){
     memset(&g_log_info, sizeof(g_log_info),0);
-    zf_log_set_output_v(ZF_LOG_PUT_STD, &g_log_info, fz_log_callback);
-    
+    g_log_info.console_cb = _zf_log_global_output.callback;
+    g_addlog(outputs, param);
+    zf_log_set_output_v(ZF_LOG_PUT_STD&(~ZF_LOG_PUT_SRC), &g_log_info, fz_log_callback);
+    g_log_info.init = 1;
 }
 
 void g_logouts(int output, int lev, const char* msg) {
@@ -251,12 +264,31 @@ void g_logouts(int output, int lev, const char* msg) {
 
 }
 
-void g_logout(int output, int lev, const char* fmt, ...) {
+void g_logout(int output, int lev, const char *const func, const char *const file, const unsigned line, const char* fmt, ...) {
+    if (g_log_info.init == 0){
+        g_loginit(LOG_CONSOLE, "");
+    }
     
+    const char* file_s = strrchr(file, '/');
+    if (!file_s){
+        file_s = strrchr(file, '\\');
+        if (!file_s){
+            file_s = file;
+        }
+        else{
+            file_s+= 1;
+        }
+    }
+
     char buf[512] = {0};
+    int n = snprintf(buf, sizeof(buf), "%s@%s:%d ",func,file_s+1,line);
+    if (n < 0) {
+        n = snprintf(buf, sizeof(buf), "unkownsrc ");
+    }
+
     va_list va;
     va_start(va, fmt);
-    vsnprintf(buf,sizeof(buf),fmt,va);
+    vsnprintf(buf+n,sizeof(buf)-n,fmt,va);
     va_end(va);
     g_logouts(output, lev, buf);
 }

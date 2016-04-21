@@ -18,6 +18,7 @@
 
 class CUsnitLogic {
 private:
+    typedef std::map<int, std::string> MAP_ISTR;
     struct UsnitData {
         UsnitData()
         :fInput(0.0f)
@@ -53,6 +54,7 @@ private:
         int nStartCounter;
 
         // outputs
+        MAP_ISTR mapOutputs;
         std::string strMeter;
         std::string strCMeter;
         std::string strKMeter;
@@ -82,12 +84,31 @@ private:
         std::string strFahrenhat;
     };
     
-    typedef std::map<int, std::string> MAP_ISTR;
     struct LangData {
-        LangData():cur(ch){}
+        LangData():cur(0), pmap(0){}
         MAP_ISTR ch;
         MAP_ISTR eng;
-        MAP_ISTR& cur;
+        int cur;
+        MAP_ISTR* pmap;
+        void setLang(int lang){
+            switch(lang){
+                case LANG_CH:
+                    pmap = &ch;
+                    break;
+                case LANG_ENG:
+                    pmap = &eng;
+                    break;
+                default:
+                    return;
+            }
+            cur = lang;
+        }
+        const char* getWords(int type){
+            if (pmap && pmap->find(type)!=pmap->end()){
+                return pmap->at(type).c_str();
+            }
+            return "";
+        }
     };
     
     UsnitData m_usnitData;
@@ -114,6 +135,8 @@ private:
     float getCentigrand(float value) const;
     float getFahrenhat(float value) const;
     
+    float transforValue(int type, float value) const;
+    
 public:
     CUsnitLogic();
     ~CUsnitLogic();
@@ -122,6 +145,7 @@ public:
         return instance;
     }
     bool init(const char* conf_str, int lang);
+    void setLanguage(int lang);
     bool setLongType(int type);
     bool setMassType(int type);
     bool setSquareType(int type);
