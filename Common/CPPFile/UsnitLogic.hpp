@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string>
 #include <map>
+#include <set>
 #include "json/json.h"
 
 #include "USNIT.h"
@@ -19,6 +20,7 @@
 class CUsnitLogic {
 private:
     typedef std::map<int, std::string> MAP_ISTR;
+    typedef std::set<int> SETI;
     struct UsnitData {
         UsnitData()
         :fInput(0.0f)
@@ -55,33 +57,11 @@ private:
 
         // outputs
         MAP_ISTR mapOutputs;
-        std::string strMeter;
-        std::string strCMeter;
-        std::string strKMeter;
-        
-        std::string strFeet;
-        std::string strInch;
-        std::string strMile;
-        std::string strYard;
-        
-        std::string strLitre;
-        std::string strMLitre;
-        
-        std::string strGal;
-        
-        std::string strGram;
-        std::string strKGram;
-        
-        std::string strPound;
-        std::string strOz;
-        
-        std::string strSQmeter;
-        std::string strSQcmeter;
-        
-        std::string strSQfeet;
-        
-        std::string strCentigrand;
-        std::string strFahrenhat;
+
+        SETI setLong;
+        SETI setVolume;
+        SETI setMass;
+        SETI setSquare;
     };
     
     struct LangData {
@@ -134,8 +114,11 @@ private:
     float getSQfeet(float value) const;
     float getCentigrand(float value) const;
     float getFahrenhat(float value) const;
+    float getSQinch(float value) const;
     
     float transforValue(int type, float value) const;
+    void updateResult();
+    void read_type_set(Json::Value* array, SETI* set) const;
     
 public:
     CUsnitLogic();
@@ -150,6 +133,7 @@ public:
     bool setMassType(int type);
     bool setSquareType(int type);
     bool setVolumeType(int type);
+    void setType(int type);
     bool setInput(float value);
     const char* GetResult(int type);
 };

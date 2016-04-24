@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		333649611CCC466F00034AE6 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333649601CCC466F00034AE6 /* DrawView.swift */; };
 		337A8A381CB42F9A006B45D7 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A8A371CB42F9A006B45D7 /* StringUtils.swift */; };
 		33A457C71CBA046300CBB2E4 /* SFUsnitLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A457C61CBA046300CBB2E4 /* SFUsnitLogic.swift */; };
 		33A457C91CBA109700CBB2E4 /* NumInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A457C81CBA109700CBB2E4 /* NumInputDelegate.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		333649601CCC466F00034AE6 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		337A8A371CB42F9A006B45D7 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		33A457C21CB8C53B00CBB2E4 /* USNIT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USNIT-Bridging-Header.h"; sourceTree = "<group>"; };
 		33A457C61CBA046300CBB2E4 /* SFUsnitLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFUsnitLogic.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				337A8A371CB42F9A006B45D7 /* StringUtils.swift */,
 				33A457C61CBA046300CBB2E4 /* SFUsnitLogic.swift */,
 				33A457C81CBA109700CBB2E4 /* NumInputDelegate.swift */,
+				333649601CCC466F00034AE6 /* DrawView.swift */,
 			);
 			path = USNIT;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			files = (
 				337A8A381CB42F9A006B45D7 /* StringUtils.swift in Sources */,
 				33C8F9A51CA76B5A00E1C6DA /* SecondViewController.swift in Sources */,
+				333649611CCC466F00034AE6 /* DrawView.swift in Sources */,
 				33D642731CC3D28D000969F2 /* UsnitLogic.cpp in Sources */,
 				33D6427C1CC4B579000969F2 /* zf_log.c in Sources */,
 				33D642711CC3D28D000969F2 /* Log.cpp in Sources */,

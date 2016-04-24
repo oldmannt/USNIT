@@ -31,13 +31,47 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var lblOz: UILabel!
     @IBOutlet weak var lblCelsius: UILabel!
     @IBOutlet weak var lblFahrenheit: UILabel!
+    @IBOutlet weak var lblSqinch: UILabel!
     
     @IBOutlet weak var edtInput: UITextField!
+    
+    var m_dicLabel=[UILabel:Int32]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        initializeTextFields();
+        
+        let filteredSubviews = self.view.subviews.filter({
+            $0.isKindOfClass(UILabel) })
+
+        for view in filteredSubviews  {
+            let recognizer = UITapGestureRecognizer(target: self, action:#selector(FirstViewController.tapLabel(_:)))
+            //recognizer.delegate = self
+            view.addGestureRecognizer(recognizer)
+        }
+        
+        m_dicLabel[lblMeter]     = TYPE_METER
+        m_dicLabel[lblCMeter]    = TYPE_CMETER
+        m_dicLabel[lblKMeter]    = TYPE_KMETER
+        m_dicLabel[lblFeet]      = TYPE_FEET
+        m_dicLabel[lblInch]      = TYPE_INCH
+        m_dicLabel[lblMile]      = TYPE_MILE
+        m_dicLabel[lblYard]      = TYPE_YARD
+        m_dicLabel[lblLiter]     = TYPE_LITRE
+        m_dicLabel[lblMliter]    = TYPE_MLITRE
+        m_dicLabel[lblGal]       = TYPE_GAL
+        m_dicLabel[lblGram]    = TYPE_GRAM
+        m_dicLabel[lblKGram]   = TYPE_KGRAM
+        m_dicLabel[lblPound]   = TYPE_POUND
+        m_dicLabel[lblOz]      = TYPE_OZ
+        m_dicLabel[lblSqm]       = TYPE_SQM
+        m_dicLabel[lblSqcm]      = TYPE_SQCM
+        m_dicLabel[lblSqfeet]    = TYPE_SQF   
+        m_dicLabel[lblCelsius]   = TYPE_CELSI 
+        m_dicLabel[lblFahrenheit] = TYPE_FAHRE
+        m_dicLabel[lblSqinch]    = TYPE_SQINCH
+        
+        initializeTextFields()
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,20 +88,22 @@ class FirstViewController: UIViewController {
         edtInput.keyboardType = UIKeyboardType.NumberPad
     }
     
-    // Tap outside a text field to dismiss the keyboard
-    // ------------------------------------------------
-    // By changing the underlying class of the view from UIView to UIControl,
-    // the view can respond to events, including Touch Down, which is
-    // wired to this method.
-    @IBAction func userTappedBackground(sender: AnyObject) {
-        view.endEditing(true)
-    }
-    
     // Dismiss the keyboard when the user taps the "Return" key or its equivalent
     // while editing a text field.
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true;
+    }
+
+    @IBAction func tapLabel(sender: UITapGestureRecognizer) {
+        let lbl = sender.view as! UILabel;
+        let type = m_dicLabel[lbl]!
+        
+        //g_logouts(LOG_CONSOLE, 3, "tap label:" + String(lbl.accessibilityIdentifier!) + "type: " + String(type))
+        
+        UsnitSetType(type);
+
+        updatResult()
     }
 
     @IBAction func onInputChange(sender: UITextField) {
@@ -77,31 +113,31 @@ class FirstViewController: UIViewController {
         //let meter = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_METER)
         //lblMeter.text = meter
 
-        var dicTypeResult=[Int32:String]()
+        updatResult()
+    }
+    
+    func updatResult()   {
         
-        for i in TYPE_METER..<TYPE_MAX {
-            dicTypeResult[i] = SFUsnitLogic.sharedInstance.GetUsnitResult(i)
-        }
-        
-        lblMeter.text = dicTypeResult[TYPE_METER]
-        lblCMeter.text = dicTypeResult[TYPE_CMETER]
-        lblKMeter.text = dicTypeResult[TYPE_KGRAM]
-        lblFeet.text = dicTypeResult[TYPE_FEET]
-        lblInch.text = dicTypeResult[TYPE_INCH]
-        lblMile.text = dicTypeResult[TYPE_MILE]
-        lblYard.text = dicTypeResult[TYPE_YARD]
-        lblSqm.text = dicTypeResult[TYPE_SQM]
-        lblSqcm.text = dicTypeResult[TYPE_SQCM]
-        lblSqfeet.text = dicTypeResult[TYPE_SQF]
-        lblLiter.text = dicTypeResult[TYPE_LITRE]
-        lblMliter.text = dicTypeResult[TYPE_MLITRE]
-        lblGal.text = dicTypeResult[TYPE_GAL]
-        lblGram.text = dicTypeResult[TYPE_GRAM]
-        lblKGram.text = dicTypeResult[TYPE_KGRAM]
-        lblPound.text = dicTypeResult[TYPE_POUND]
-        lblOz.text = dicTypeResult[TYPE_OZ]
-        lblCelsius.text = dicTypeResult[TYPE_CELSI]
-        lblFahrenheit.text = dicTypeResult[TYPE_FAHRE]
+        lblMeter.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_METER)
+        lblCMeter.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_CMETER)
+        lblKMeter.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_KMETER)
+        lblFeet.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_FEET)
+        lblInch.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_INCH)
+        lblMile.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_MILE)
+        lblYard.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_YARD)
+        lblSqm.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_SQM)
+        lblSqcm.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_SQCM)
+        lblSqfeet.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_SQF)
+        lblLiter.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_LITRE)
+        lblMliter.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_MLITRE)
+        lblGal.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_GAL)
+        lblGram.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_GRAM)
+        lblKGram.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_KGRAM)
+        lblPound.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_POUND)
+        lblOz.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_OZ)
+        lblCelsius.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_CELSI)
+        lblFahrenheit.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_FAHRE)
+        lblSqinch.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_SQINCH)
     }
     
  }

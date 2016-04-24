@@ -35,6 +35,10 @@ int     UsnitSetVolumeType(int type){
     return CUsnitLogic::Instance().setVolumeType(type)?0:-1;
 }
 
+void     UsnitSetType(int type) {
+    CUsnitLogic::Instance().setType(type);
+}
+
 int     UsnitSetInput(float value) {
     if (CUsnitLogic::Instance().setInput(value))
         return 0;
@@ -52,6 +56,16 @@ CUsnitLogic::CUsnitLogic(){
 CUsnitLogic::~CUsnitLogic(){
 }
 
+void CUsnitLogic::read_type_set(Json::Value* array, SETI* set)  const{
+    if (!array || !set)
+        return;
+    
+    if (array->type() == Json::ValueType::arrayValue){
+        for (int i=0; i<array->size(); ++i) {
+            set->insert((*array)[i].asInt());
+        }
+    }
+}
 bool CUsnitLogic::init(const char* conf_str, int lang){
     G_LOG_FC(LOG_INFO,"CUsnitLogic::init lang:%d", lang);
 
@@ -74,6 +88,11 @@ bool CUsnitLogic::init(const char* conf_str, int lang){
         m_usnitData.nMassType = m_conf["mass_type"].asInt();
         m_usnitData.nSquareType = m_conf["square_type"].asInt();
         m_usnitData.nVolumeType = m_conf["volume_type"].asInt();
+        
+        read_type_set(&m_conf["long_type_set"], &m_usnitData.setLong);
+        read_type_set(&m_conf["mass_type_set"], &m_usnitData.setMass);
+        read_type_set(&m_conf["square_type_set"], &m_usnitData.setSquare);
+        read_type_set(&m_conf["volume_type_set"], &m_usnitData.setVolume);
         
         int lang_count = m_conf["lang"].size();
 
@@ -110,7 +129,7 @@ bool CUsnitLogic::init(const char* conf_str, int lang){
     } // end if
     else {
         std::string err = reader.getFormatedErrorMessages();
-        G_LOG_FC(LOG_ERROR, "read json:%s err:%s", conf_str, err.c_str());
+        G_LOG_FC(LOG_ERROR, "read err:%s json:%s", err.c_str(), conf_str);
     }
     
     // print all lang words
@@ -130,52 +149,78 @@ bool CUsnitLogic::init(const char* conf_str, int lang){
 }
 
 bool CUsnitLogic::setLongType(int type){
-    if (type!=m_usnitData.nLongType && type>=TYPE_METER && type<=TYPE_YARD){
+    if (type!=m_usnitData.nLongType &&
+        m_usnitData.setLong.find(type)!=m_usnitData.setLong.end()){
         m_usnitData.nLongType = type;
         m_conf["long_type"]=type;
+        this->updateResult();
+        return true;
     }
 
-    return true;
+    return false;
 }
 
 bool CUsnitLogic::setMassType(int type){
-    if (type!=m_usnitData.nMassType && type>=TYPE_GRAM && type<=TYPE_OZ){
+    if (type!=m_usnitData.nMassType &&
+        m_usnitData.setMass.find(type)!=m_usnitData.setMass.end()){
         m_usnitData.nMassType = type;
         m_conf["mass_type"]=type;
+        this->updateResult();
+        return true;
     }
     
-    return true;
+    return false;
 }
 
 bool CUsnitLogic::setSquareType(int type){
-    if (type!=m_usnitData.nSquareType && type>=TYPE_SQM && type<=TYPE_SQF){
+    if (type!=m_usnitData.nSquareType &&
+        m_usnitData.setSquare.find(type)!=m_usnitData.setSquare.end()){
         m_usnitData.nSquareType = type;
         m_conf["square_type"]=type;
+        this->updateResult();
+        return true;
     }
     
-    return true;
+    return false;
 }
 
 bool CUsnitLogic::setVolumeType(int type){
-    if (type!=m_usnitData.nVolumeType && type>=TYPE_LITRE && type<=TYPE_MLITRE){
+    if (type!=m_usnitData.nVolumeType &&
+        m_usnitData.setVolume.find(type)!=m_usnitData.setVolume.end()){
         m_usnitData.nVolumeType = type;
         m_conf["volume_type"]=type;
+        this->updateResult();
+        return true;
     }
     
-    return true;
+    return false;
+}
+
+void CUsnitLogic::setType(int type){
+    if (this->setLongType(type))
+        return;
+    if (this->setMassType(type))
+        return;
+    if (this->setSquareType(type))
+        return;
+    if (this->setVolumeType(type))
+        return;
 }
 
 bool CUsnitLogic::setInput(float value){
     
-    char buf[64]={0};
-
-    for (int i=TYPE_METER; i<TYPE_MAX; ++i) {
-        sprintf(buf, "%.04f%s", this->transforValue(i, value), m_langData.getWords(i));
-        m_usnitData.mapOutputs[i] = buf;
-        G_LOG_FC(LOG_INFO, "setInput type:%d output:%s", buf);
-    }
-
+    m_usnitData.fInput = value;
+    this->updateResult();
     return true;
+}
+
+void CUsnitLogic::updateResult(){
+    char buf[64]={0};
+    for (int i=TYPE_METER; i<TYPE_MAX; ++i) {
+        sprintf(buf, "%.04f%s", this->transforValue(i, m_usnitData.fInput), m_langData.getWords(i));
+        m_usnitData.mapOutputs[i] = buf;
+        //G_LOG_FC(LOG_INFO, "setInput output:%s", buf);
+    }
 }
 
 const char* CUsnitLogic::GetResult(int type) {
@@ -222,6 +267,8 @@ float CUsnitLogic::transforValue( int type, float value) const{
             return this->getCentigrand(value);
         case TYPE_FAHRE:
             return this->getFahrenhat(value);
+        case TYPE_SQINCH:
+            return this->getSQinch(value);
         case TYPE_MAX:
         default:
             break;
@@ -254,7 +301,6 @@ float CUsnitLogic::getMeter(float value) const {
             break;
         case TYPE_METER:
         default:
-            metric = value*0.3048f;
             break;
     }
     return metric;
@@ -273,7 +319,7 @@ float CUsnitLogic::getFeet(float value) const {
 }
 
 float CUsnitLogic::getInch(float value) const {
-    return this->getFeet(value)*0.0833333f;
+    return this->getFeet(value)*12;
 }
 
 float CUsnitLogic::getMile(float value) const {
@@ -301,22 +347,24 @@ float CUsnitLogic::getLitre(float value) const {
 }
 
 float CUsnitLogic::getMLitre(float value) const {
-    return this->getMeter(value)*1000.0f;
+    return this->getLitre(value)*1000.0f;
 }
 
 float CUsnitLogic::getGal(float value) const {
-    return this->getMeter(value)*0.2641721f;
+    return this->getLitre(value)*0.2641721f;
 }
 
 float CUsnitLogic::getGram(float value) const {
     float gram = value;
-    switch (m_usnitData.nVolumeType) {
+    switch (m_usnitData.nMassType) {
         case TYPE_KGRAM:
-            gram *= 0.001f;
+            gram *= 1000.0f;
             break;
         case TYPE_POUND:
             gram *= 453.59237f;
             break;
+        case TYPE_OZ:
+            gram *= 28.3495231f;
         case TYPE_GRAM:
         default:
             break;
@@ -345,6 +393,8 @@ float CUsnitLogic::getSQmeter(float value) const {
         case TYPE_SQF:
             sqmeter = value*0.092903f;
             break;
+        case TYPE_SQINCH:
+            sqmeter = value/1550.0031f;
         case TYPE_SQM:
         default:
             break;
@@ -367,4 +417,8 @@ float CUsnitLogic::getCentigrand(float value) const {
 
 float CUsnitLogic::getFahrenhat(float value) const {
     return 9.0f/5.0f*value + 32.0f;
+}
+
+float CUsnitLogic::getSQinch(float value) const {
+    return this->getSQmeter(value)*1550.0031f;
 }

@@ -35,7 +35,8 @@ extern "C" {
 #define TYPE_SQF        16
 #define TYPE_CELSI      17
 #define TYPE_FAHRE      18
-#define TYPE_MAX        19
+#define TYPE_SQINCH     19
+#define TYPE_MAX        20
     
 #define LANG_CH     1
 #define LANG_ENG    2
@@ -47,10 +48,12 @@ extern "C" {
     int     UsnitSetSquareType(int metric_type, int us_type);
     int     UsnitSetVolumeType(int metric_type, int us_type);
 */
-    int     UsnitSetLongType(int type);
-    int     UsnitSetMassType(int type);
-    int     UsnitSetSquareType(int type);
-    int     UsnitSetVolumeType(int type);
+//  int     UsnitSetLongType(int type);
+//  int     UsnitSetMassType(int type);
+//  int     UsnitSetSquareType(int type);
+//  int     UsnitSetVolumeType(int type);
+    
+    void     UsnitSetType(int type);
 
     int     UsnitSetInput(float value);
     const char*   UsnitGetResult(int type);

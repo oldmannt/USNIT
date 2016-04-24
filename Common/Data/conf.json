@@ -1,8 +1,13 @@
 {
+    "start_counter":0,
     "long_type":1,
     "mass_type":10,
     "square_type":14,
     "volume_type":7,
+    "long_type_set":[0,1,2,3,4,5,6],
+    "mass_type_set":[10,11,12,13],
+    "square_type_set":[14,15,16,19],
+    "volume_type_set":[7,8,9],
     "long_metric_type":1,
     "long_us_type":3,
     "mass_metric_type":10,
@@ -11,7 +16,6 @@
     "square_us_type":16,
     "volume_metric_type":7,
     "volume_us_type":9,
-    "start_counter":0,
     "lang":
     [
      {
@@ -35,7 +39,7 @@
      "16":"平方英尺",
      "17":"攝氏度",
      "18":"華氏度",
-     "19":""
+     "19":"平方英寸"
      },
      {
      "lang":"eng",
@@ -58,7 +62,7 @@
      "16":"ft²",
      "17":"°C",
      "18":"°F",
-     "19":""
+     "19":"inch²"
      }
      ]
 }
