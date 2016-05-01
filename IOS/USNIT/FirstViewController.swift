@@ -10,8 +10,9 @@ import Foundation
 import UIKit
 
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController,UsnitLogicObserver {
 
+    @IBOutlet weak var scView: UIScrollView!
     @IBOutlet weak var lblMeter: UILabel!
     @IBOutlet weak var lblCMeter: UILabel!
     @IBOutlet weak var lblKMeter: UILabel!
@@ -32,6 +33,32 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var lblCelsius: UILabel!
     @IBOutlet weak var lblFahrenheit: UILabel!
     @IBOutlet weak var lblSqinch: UILabel!
+    @IBOutlet weak var lblDollar: UILabel!
+    @IBOutlet weak var lblRmb: UILabel!
+    
+    @IBOutlet weak var lblUcm: UILabel!
+    @IBOutlet weak var lblUm: UILabel!
+    @IBOutlet weak var lblUkm: UILabel!
+    @IBOutlet weak var lblUft: UILabel!
+    @IBOutlet weak var lblUinch: UILabel!
+    @IBOutlet weak var lblUmile: UILabel!
+    @IBOutlet weak var lblUyard: UILabel!
+    @IBOutlet weak var lblUsqm: UILabel!
+    @IBOutlet weak var lblUsqcm: UILabel!
+    @IBOutlet weak var lblUsqfeet: UILabel!
+    @IBOutlet weak var lblUsqinch: UILabel!
+    @IBOutlet weak var lblUliter: UILabel!
+    @IBOutlet weak var lblUmliter: UILabel!
+    @IBOutlet weak var lblUgal: UILabel!
+    @IBOutlet weak var lblUgram: UILabel!
+    @IBOutlet weak var lblUkgram: UILabel!
+    @IBOutlet weak var lblUlb: UILabel!
+    @IBOutlet weak var lblUoz: UILabel!
+    @IBOutlet weak var lblUcelsius: UILabel!
+    @IBOutlet weak var lblUfahrenheit: UILabel!
+    @IBOutlet weak var lblUdollar: UILabel!
+    @IBOutlet weak var lblUrmb: UILabel!
+    @IBOutlet weak var lblExchange: UILabel!
     
     @IBOutlet weak var edtInput: UITextField!
     
@@ -41,7 +68,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let filteredSubviews = self.view.subviews.filter({
+        let filteredSubviews = scView.subviews.filter({
             $0.isKindOfClass(UILabel) })
 
         for view in filteredSubviews  {
@@ -69,9 +96,13 @@ class FirstViewController: UIViewController {
         m_dicLabel[lblSqfeet]    = TYPE_SQF   
         m_dicLabel[lblCelsius]   = TYPE_CELSI 
         m_dicLabel[lblFahrenheit] = TYPE_FAHRE
+        m_dicLabel[lblDollar]    = TYPE_DOLLAR
+        m_dicLabel[lblRmb]       = TYPE_RMB
         m_dicLabel[lblSqinch]    = TYPE_SQINCH
         
         initializeTextFields()
+        
+        SFUsnitLogic.sharedInstance.AddObserver(self);
     }
 
     override func didReceiveMemoryWarning() {
@@ -138,6 +169,29 @@ class FirstViewController: UIViewController {
         lblCelsius.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_CELSI)
         lblFahrenheit.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_FAHRE)
         lblSqinch.text = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_SQINCH)
+        
+        if let dollor = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_DOLLAR){
+            lblDollar.text = dollor
+        }
+        if  let rmb = SFUsnitLogic.sharedInstance.GetUsnitResult(TYPE_RMB){
+            lblRmb.text = rmb
+        }
+    }
+    
+    func HandleResult(type: Int32, _ result:String) -> Bool{
+        switch type {
+        case CB_DOLLAR_RT:
+            lblDollar.text = result
+            break
+        case CB_RMB_RT:
+            lblRmb.text = result
+            break
+        case CB_RATEINFO:
+            lblExchange.text = result
+        default:
+            break
+        }
+        return true;
     }
     
  }

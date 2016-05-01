@@ -9,7 +9,7 @@
 import UIKit
 
 class DrawView: UIView {
-    func drawLine(xb:CGFloat, xe:CGFloat, yb:CGFloat, ye:CGFloat, inContext ctx: CGContext) {
+    /*func drawLine(xb:CGFloat, xe:CGFloat, yb:CGFloat, ye:CGFloat, inContext ctx: CGContext) {
         CGContextBeginPath(ctx)
         CGContextMoveToPoint(ctx, xb, yb)
         CGContextAddLineToPoint(ctx, xe, ye)
@@ -63,5 +63,5 @@ class DrawView: UIView {
     @IBOutlet weak var lblOz: UILabel!
     @IBOutlet weak var lblCelsius: UILabel!
     @IBOutlet weak var lblYard: UILabel!
-    @IBOutlet weak var edtInput: UITextField!
+    @IBOutlet weak var edtInput: UITextField!*/
 }

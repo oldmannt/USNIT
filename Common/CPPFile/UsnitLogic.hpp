@@ -13,6 +13,7 @@
 #include <string>
 #include <map>
 #include <set>
+#include <list>
 #include "json/json.h"
 
 #include "USNIT.h"
@@ -21,6 +22,7 @@ class CUsnitLogic {
 private:
     typedef std::map<int, std::string> MAP_ISTR;
     typedef std::set<int> SETI;
+    typedef std::list<int> LSTI;
     struct UsnitData {
         UsnitData()
         :fInput(0.0f)
@@ -36,7 +38,8 @@ private:
         ,nMassType(-1)
         ,nSquareType(-1)
         ,nVolumeType(-1)
-        ,nStartCounter(0){}
+        ,nStartCounter(0)
+        ,fAsk(0.0f), fBid(0.0f), fRate(0.0f), bRateReady(false){}
         // inputs
         float fInput;
         int nLongMetricType;
@@ -52,6 +55,13 @@ private:
         int nMassType;
         int nSquareType;
         int nVolumeType;
+        
+        float fAsk; // 卖出价
+        float fBid; // 买入价
+        float fRate;    // USDCNY
+        bool bRateReady;
+        
+        LSTI lstDelayResut;
         
         int nStartCounter;
 
@@ -94,6 +104,7 @@ private:
     UsnitData m_usnitData;
     LangData m_langData;
     Json::Value m_conf;
+    my_cb_t m_observerResult;
     
     float getMeter(float value) const;
     float getCMeter(float value) const;
@@ -115,10 +126,13 @@ private:
     float getCentigrand(float value) const;
     float getFahrenhat(float value) const;
     float getSQinch(float value) const;
+    float getDollar(float value) const;
+    float getRmb(float value) const;
     
     float transforValue(int type, float value) const;
     void updateResult();
     void read_type_set(Json::Value* array, SETI* set) const;
+    void parseRateJson(const char* str_json, UsnitData& data) const;
     
 public:
     CUsnitLogic();
@@ -127,15 +141,20 @@ public:
         static CUsnitLogic instance;
         return instance;
     }
-    bool init(const char* conf_str, int lang);
+    bool init(const char* conf_str, int lang, my_cb_t cb_func);
     void setLanguage(int lang);
+    
     bool setLongType(int type);
     bool setMassType(int type);
     bool setSquareType(int type);
     bool setVolumeType(int type);
+    
     void setType(int type);
     bool setInput(float value);
     const char* GetResult(int type);
+    const char* GetUnitName(int type);
+    
+    void HttpRequestCallback(int id, bool success, const std::string& data);
 };
 
 #endif /* UsnitLogic_hpp */

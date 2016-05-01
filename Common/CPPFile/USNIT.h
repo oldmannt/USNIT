@@ -36,12 +36,21 @@ extern "C" {
 #define TYPE_CELSI      17
 #define TYPE_FAHRE      18
 #define TYPE_SQINCH     19
-#define TYPE_MAX        20
+#define TYPE_DOLLAR     20
+#define TYPE_RMB        21
+#define TYPE_RATE       22
+#define TYPE_MAX        23
+    
+#define CB_DOLLAR_RT    1
+#define CB_RMB_RT       2
+#define CB_RATEINFO     3
     
 #define LANG_CH     1
 #define LANG_ENG    2
+    
+    typedef int (*my_cb_t)(int type, const void* data);
 
-    int     UsnitInit(const char* conf_str, int lang);
+    int     UsnitInit(const char* conf_str, int lang, my_cb_t cb_func);
 /*
     int     UsnitSetLongType(int metric_type, int us_type);
     int     UsnitSetMassType(int metric_type, int us_type);
@@ -56,7 +65,8 @@ extern "C" {
     void     UsnitSetType(int type);
 
     int     UsnitSetInput(float value);
-    const char*   UsnitGetResult(int type);
+    const char* UsnitGetResult(int type);
+    const char* UsnitGetUnitName(int type);
     
     void    C_LOG(int output, int lev, const char* fmt, ...);
     

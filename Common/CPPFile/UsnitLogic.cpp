@@ -10,10 +10,11 @@
 #include "UsnitLogic.hpp"
 #include "json/json.h"
 #include "Log.h"
+#include "HttpRequest.hpp"
 
 
-int     UsnitInit(const char* conf_str, int lang) {
-    if (CUsnitLogic::Instance().init(conf_str, lang))
+int     UsnitInit(const char* conf_str, int lang, my_cb_t cb_func) {
+    if (CUsnitLogic::Instance().init(conf_str, lang, cb_func))
         return 0;
     else
         return -1;
@@ -50,7 +51,11 @@ const char*   UsnitGetResult(int type) {
     return CUsnitLogic::Instance().GetResult(type);
 }
 
-CUsnitLogic::CUsnitLogic(){
+const char* UsnitGetUnitName(int type){
+    return "";
+}
+
+CUsnitLogic::CUsnitLogic():m_observerResult(0){
 }
 
 CUsnitLogic::~CUsnitLogic(){
@@ -66,9 +71,10 @@ void CUsnitLogic::read_type_set(Json::Value* array, SETI* set)  const{
         }
     }
 }
-bool CUsnitLogic::init(const char* conf_str, int lang){
-    G_LOG_FC(LOG_INFO,"CUsnitLogic::init lang:%d", lang);
 
+bool CUsnitLogic::init(const char* conf_str, int lang, my_cb_t cb_func){
+    G_LOG_FC(LOG_INFO,"CUsnitLogic::init lang:%d", lang);
+    
     m_langData.setLang(lang);
     m_usnitData.mapOutputs = *m_langData.pmap;
 
@@ -145,7 +151,113 @@ bool CUsnitLogic::init(const char* conf_str, int lang){
     }
     */
     
+    m_observerResult = cb_func;
+    HttpRequest request;
+    request.SetRequestUrl("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22USDCNY%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=");
+    request.SetResultCallback(std::bind(&CUsnitLogic::HttpRequestCallback, this,
+                                        std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+    HANDLE hRequest = request.PerformRequest(HttpRequest::REQUEST_ASYNC);
+    if (!hRequest){
+        std::string err;
+        request.GetErrorString(hRequest, &err);
+        G_LOG_FC(LOG_ERROR, "CUsnitLogic::init http query rate err:%s", err.c_str());
+    }
+
     return true;
+}
+
+void CUsnitLogic::parseRateJson(const char* str_json, CUsnitLogic::UsnitData& data) const{
+    if (!str_json){
+        G_LOG_FC(LOG_ERROR, "CUsnitLogic::parseRateJson str_json null");
+        return;
+    }
+    
+    Json::Reader reader;
+    Json::Value root;
+    if (!reader.parse(str_json, root)){
+        std::string err = reader.getFormatedErrorMessages();
+        G_LOG_FC(LOG_ERROR, "read rate err:%s json:%s", err.c_str(), str_json);
+    }
+    
+    try {
+        Json::Value rate_json = root["query"]["results"]["rate"];
+        data.fAsk = atof(rate_json["Ask"].asString().c_str());
+        data.fBid = atof(rate_json["Bid"].asString().c_str());
+        data.fRate = atof(rate_json["Rate"].asString().c_str());
+        data.bRateReady = true;
+
+    } catch (...) {
+        G_LOG_FC(LOG_ERROR, "read rate catchs ask:%f bid:%f rate:%f",
+                 data.fAsk, data.fBid, data.fRate);
+    }
+}
+
+void CUsnitLogic::HttpRequestCallback(int id, bool success, const std::string& data){
+    G_LOG_FC(LOG_INFO, "HttpRequestCallback id:%d, %s, data:%s", id, success?"sucess":"fail", data.c_str());
+    /*{
+        "query":{
+            "count":1,
+            "created":"2016-04-30T01:35:24Z",
+            "lang":"zh-TW",
+            "results":{
+                "rate":{
+                    "id":"USDCNY",
+                    "Name":"USD/CNY",
+                    "Rate":"6.4737",
+                    "Date":"4/30/2016",
+                    "Time":"2:35am",
+                    "Ask":"6.4748",
+                    "Bid":"6.4737"
+                }
+            }
+        }
+     }  */
+    if (success) {
+        this->parseRateJson(data.c_str(), m_usnitData);
+    }
+    
+    MAP_ISTR::iterator it(m_langData.ch.find(TYPE_RATE));
+    if (it!=m_langData.ch.end()) {
+        char buf[64] = {0};
+        sprintf(buf, it->second.c_str(), m_usnitData.fAsk, m_usnitData.fBid);
+        //G_LOG_FC(LOG_INFO, "HttpRequestCallback before set ch.TYPE_RATE:%s", it->second.c_str());
+        //it->second = buf;
+        
+        /*it = m_langData.eng.find(TYPE_RATE);
+        if (it!=m_langData.eng.end()){
+            sprintf(buf, it->second.c_str(), m_usnitData.fAsk, m_usnitData.fBid);
+            G_LOG_FC(LOG_INFO, "HttpRequestCallback before set eng.TYPE_RATE:%s", buf);
+            //it->second = buf;
+        }*/
+    }
+    
+    LSTI::iterator iit(m_usnitData.lstDelayResut.begin());
+    if (iit!=m_usnitData.lstDelayResut.end()){
+        this->updateResult();
+    }
+    for (; iit!=m_usnitData.lstDelayResut.end(); ++iit) {
+        std::string result;
+        int cb_type = 0;
+        switch (*iit) {
+            case TYPE_RATE:
+                result = m_langData.getWords(TYPE_RATE);
+                cb_type = CB_RATEINFO;
+                break;
+            case TYPE_DOLLAR:
+                cb_type = CB_DOLLAR_RT;
+                result = this->GetResult(*iit);
+                break;
+            case TYPE_RMB:
+                cb_type = CB_RMB_RT;
+                result = this->GetResult(*iit);
+                break;
+            default:
+                break;
+        }
+        if (m_observerResult){
+            m_observerResult(cb_type, result.c_str());
+        }
+    }
 }
 
 bool CUsnitLogic::setLongType(int type){
@@ -217,14 +329,21 @@ bool CUsnitLogic::setInput(float value){
 void CUsnitLogic::updateResult(){
     char buf[64]={0};
     for (int i=TYPE_METER; i<TYPE_MAX; ++i) {
-        sprintf(buf, "%.04f%s", this->transforValue(i, m_usnitData.fInput), m_langData.getWords(i));
+        sprintf(buf, "%.04f", this->transforValue(i, m_usnitData.fInput)/*, m_langData.getWords(i)*/);
         m_usnitData.mapOutputs[i] = buf;
         //G_LOG_FC(LOG_INFO, "setInput output:%s", buf);
     }
 }
 
 const char* CUsnitLogic::GetResult(int type) {
+    if(!m_usnitData.bRateReady && (type == TYPE_RMB || type == TYPE_DOLLAR)){
+        m_usnitData.lstDelayResut.push_back(type);
+    }
     return m_usnitData.mapOutputs[type].c_str();
+}
+
+const char* CUsnitLogic::GetUnitName(int type){
+    return m_langData.getWords(type);
 }
 
 float CUsnitLogic::transforValue( int type, float value) const{
@@ -269,6 +388,10 @@ float CUsnitLogic::transforValue( int type, float value) const{
             return this->getFahrenhat(value);
         case TYPE_SQINCH:
             return this->getSQinch(value);
+        case TYPE_DOLLAR:
+            return this->getDollar(value);
+        case TYPE_RMB:
+            return this->getRmb(value);
         case TYPE_MAX:
         default:
             break;
@@ -421,4 +544,18 @@ float CUsnitLogic::getFahrenhat(float value) const {
 
 float CUsnitLogic::getSQinch(float value) const {
     return this->getSQmeter(value)*1550.0031f;
+}
+
+float CUsnitLogic::getDollar(float value) const{
+    if (m_usnitData.bRateReady){
+        return value/m_usnitData.fBid;
+    }
+    return 0.0f;
+}
+
+float CUsnitLogic::getRmb(float value) const{
+    if (m_usnitData.bRateReady){
+        return value*m_usnitData.fAsk;
+    }
+    return 0.0f;
 }

@@ -82,6 +82,7 @@
 #define HAVE_IOCTL              1
 #define HAVE_IOCTL_FIONBIO      1
 #define HAVE_SYS_IOCTL_H        1
+#define HAVE_SYS_POLL_H         1
 
 #define RETSIGTYPE void
 
