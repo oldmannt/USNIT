@@ -18,6 +18,7 @@
 
 #include "USNIT.h"
 
+class HttpRequest;
 class CUsnitLogic {
 private:
     typedef std::map<int, std::string> MAP_ISTR;
@@ -59,6 +60,7 @@ private:
         float fAsk; // 卖出价
         float fBid; // 买入价
         float fRate;    // USDCNY
+        std::string strRateUrl;
         bool bRateReady;
         
         LSTI lstDelayResut;
@@ -104,6 +106,7 @@ private:
     UsnitData m_usnitData;
     LangData m_langData;
     Json::Value m_conf;
+    std::string m_conf_file;
     my_cb_t m_observerResult;
     
     float getMeter(float value) const;
@@ -132,7 +135,8 @@ private:
     float transforValue(int type, float value) const;
     void updateResult();
     void read_type_set(Json::Value* array, SETI* set) const;
-    void parseRateJson(const char* str_json, UsnitData& data) const;
+    bool parseRateJson(const char* str_json, UsnitData& data) const;
+    void saveConf();
     
 public:
     CUsnitLogic();
@@ -141,7 +145,7 @@ public:
         static CUsnitLogic instance;
         return instance;
     }
-    bool init(const char* conf_str, int lang, my_cb_t cb_func);
+    bool init(const char* conf_path, int lang, my_cb_t cb_func);
     void setLanguage(int lang);
     
     bool setLongType(int type);
@@ -151,10 +155,10 @@ public:
     
     void setType(int type);
     bool setInput(float value);
-    const char* GetResult(int type);
-    const char* GetUnitName(int type);
+    const char* getResult(int type);
+    const char* getUnitName(int type);
     
-    void HttpRequestCallback(int id, bool success, const std::string& data);
+    void HttpRequestCallback(HttpRequest* request);
 };
 
 #endif /* UsnitLogic_hpp */

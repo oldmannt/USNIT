@@ -68,6 +68,8 @@ extern "C" {
     const char* UsnitGetResult(int type);
     const char* UsnitGetUnitName(int type);
     
+    void    async_loop();
+    
     void    C_LOG(int output, int lev, const char* fmt, ...);
     
 #ifdef __cplusplus
