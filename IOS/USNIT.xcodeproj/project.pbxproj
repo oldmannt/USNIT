@@ -158,7 +158,6 @@
 		33A457C71CBA046300CBB2E4 /* SFUsnitLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A457C61CBA046300CBB2E4 /* SFUsnitLogic.swift */; };
 		33A457C91CBA109700CBB2E4 /* NumInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A457C81CBA109700CBB2E4 /* NumInputDelegate.swift */; };
 		33BEACDB1CD9CC8300D37F22 /* MainLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEACDA1CD9CC8300D37F22 /* MainLoop.swift */; };
-		33BEACF21CDAAA0F00D37F22 /* AsyncMgr.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33BEACF01CDAAA0F00D37F22 /* AsyncMgr.cpp */; };
 		33BEACF41CDAB13300D37F22 /* USNIT.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33BEACF31CDAB13300D37F22 /* USNIT.cpp */; };
 		33C8F9A11CA76B5A00E1C6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8F9A01CA76B5A00E1C6DA /* AppDelegate.swift */; };
 		33C8F9A31CA76B5A00E1C6DA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8F9A21CA76B5A00E1C6DA /* FirstViewController.swift */; };
@@ -497,8 +496,6 @@
 		33A457C61CBA046300CBB2E4 /* SFUsnitLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFUsnitLogic.swift; sourceTree = "<group>"; };
 		33A457C81CBA109700CBB2E4 /* NumInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumInputDelegate.swift; sourceTree = "<group>"; };
 		33BEACDA1CD9CC8300D37F22 /* MainLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoop.swift; sourceTree = "<group>"; };
-		33BEACF01CDAAA0F00D37F22 /* AsyncMgr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AsyncMgr.cpp; sourceTree = "<group>"; };
-		33BEACF11CDAAA0F00D37F22 /* AsyncMgr.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AsyncMgr.hpp; sourceTree = "<group>"; };
 		33BEACF31CDAB13300D37F22 /* USNIT.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = USNIT.cpp; sourceTree = "<group>"; };
 		33C8F99D1CA76B5A00E1C6DA /* USNIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = USNIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C8F9A01CA76B5A00E1C6DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -981,8 +978,6 @@
 				33D6426F1CC3D28D000969F2 /* UsnitLogic.hpp */,
 				33808C3E1CCDD47B001EA11C /* HttpRequest.cpp */,
 				33808C3F1CCDD47B001EA11C /* HttpRequest.hpp */,
-				33BEACF01CDAAA0F00D37F22 /* AsyncMgr.cpp */,
-				33BEACF11CDAAA0F00D37F22 /* AsyncMgr.hpp */,
 				33BEACF31CDAB13300D37F22 /* USNIT.cpp */,
 			);
 			name = CPPFile;
@@ -1195,7 +1190,6 @@
 				33808D681CCDF067001EA11C /* hostip6.c in Sources */,
 				33D642731CC3D28D000969F2 /* UsnitLogic.cpp in Sources */,
 				33808D491CCDF067001EA11C /* curl_multibyte.c in Sources */,
-				33BEACF21CDAAA0F00D37F22 /* AsyncMgr.cpp in Sources */,
 				33808D3D1CCDF067001EA11C /* base64.c in Sources */,
 				33D6427C1CC4B579000969F2 /* zf_log.c in Sources */,
 				33808D521CCDF067001EA11C /* curl_threads.c in Sources */,
@@ -1451,29 +1445,33 @@
 		33C8F9C81CA76B5A00E1C6DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				HEADER_SEARCH_PATHS = /Users/dyno/Documents/develop/USNIT/Common/CPPFile/curl;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = USNIT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dyno.fun.USNIT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "USNIT/USNIT-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Common/CPPFile/curl";
 			};
 			name = Debug;
 		};
 		33C8F9C91CA76B5A00E1C6DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				HEADER_SEARCH_PATHS = /Users/dyno/Documents/develop/USNIT/Common/CPPFile/curl;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = USNIT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dyno.fun.USNIT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "USNIT/USNIT-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../Common/CPPFile/curl";
 			};
 			name = Release;
 		};
