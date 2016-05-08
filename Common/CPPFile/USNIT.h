@@ -40,6 +40,8 @@ extern "C" {
 #define TYPE_RMB        21
 #define TYPE_RATE       22
 #define TYPE_MAX        23
+
+#define TYPE_MAX_UNIT   TYPE_RMB
     
 #define CB_DOLLAR_RT    1
 #define CB_RMB_RT       2

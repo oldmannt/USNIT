@@ -40,7 +40,7 @@ public class SFUsnitLogic {
         
         var nlangId = LANG_CH
         if strlangId.rangeOfString("zh")==nil {
-            nlangId = LANG_ENG
+            //nlangId = LANG_ENG
         }
         
         UsnitInit(path!, nlangId, UsnitCallback);

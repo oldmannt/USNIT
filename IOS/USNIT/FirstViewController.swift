@@ -64,6 +64,7 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
     
     var m_dicResultLabel=[UILabel:Int32]()
     var m_dicNameLabel=[UILabel:Int32]()
+    var m_bShowKeyboard=false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +75,50 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
         initializeTextFields()
         
         SFUsnitLogic.sharedInstance.addObserver(self);
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FirstViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        self.registerForKeyboardNotifications();        
+    }
+    
+    override func viewWillDisappear(animated: Bool){
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: UIKeyboardDidShowNotification,
+                                                            object: nil)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: UIKeyboardWillHideNotification,
+                                                            object: nil)
+    }
+    
+    func registerForKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(FirstViewController.keyboardWasShown(_:)),
+            name: UIKeyboardDidShowNotification,
+            object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(FirstViewController.keyboardWillBeHidden(_:)),
+            name: UIKeyboardWillHideNotification,
+            object: nil)
+    }
+    
+    func keyboardWasShown(notification: NSNotification) {
+        m_bShowKeyboard = true
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification) {
+        m_bShowKeyboard = false
+    }
+    
+    //Calls this function when the tap is recognized.
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        if m_bShowKeyboard{
+            view.endEditing(true)
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -327,7 +327,7 @@ bool CUsnitLogic::setInput(float value){
 
 void CUsnitLogic::updateResult(){
     char buf[64]={0};
-    for (int i=TYPE_METER; i<TYPE_MAX; ++i) {
+    for (int i=TYPE_METER; i<=TYPE_MAX_UNIT; ++i) {
         sprintf(buf, "%.06f", this->transforValue(i, m_usnitData.fInput)/*, m_langData.getWords(i)*/);
         m_usnitData.mapOutputs[i] = buf;
         //G_LOG_FC(LOG_INFO, "setInput output:%s", buf);

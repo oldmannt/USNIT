@@ -173,6 +173,8 @@
 		33D642761CC3D2BA000969F2 /* conf.json in Resources */ = {isa = PBXBuildFile; fileRef = 33D642751CC3D2BA000969F2 /* conf.json */; };
 		33D642781CC3D759000969F2 /* OCInteract.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33D642771CC3D759000969F2 /* OCInteract.mm */; };
 		33D6427C1CC4B579000969F2 /* zf_log.c in Sources */ = {isa = PBXBuildFile; fileRef = 33D6427A1CC4B579000969F2 /* zf_log.c */; };
+		33DC9C2C1CDEDC0700DCA010 /* cn.html in Resources */ = {isa = PBXBuildFile; fileRef = 33DC9C281CDEDC0700DCA010 /* cn.html */; };
+		33DC9C2E1CDEDC0700DCA010 /* en.html in Resources */ = {isa = PBXBuildFile; fileRef = 33DC9C2A1CDEDC0700DCA010 /* en.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -524,6 +526,8 @@
 		33D642771CC3D759000969F2 /* OCInteract.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = OCInteract.mm; path = ../../Common/CPPFile/OCInteract.mm; sourceTree = "<group>"; };
 		33D6427A1CC4B579000969F2 /* zf_log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zf_log.c; path = zf_log/zf_log.c; sourceTree = "<group>"; };
 		33D6427B1CC4B579000969F2 /* zf_log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zf_log.h; path = zf_log/zf_log.h; sourceTree = "<group>"; };
+		33DC9C281CDEDC0700DCA010 /* cn.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = cn.html; sourceTree = "<group>"; };
+		33DC9C2A1CDEDC0700DCA010 /* en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = en.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -996,6 +1000,7 @@
 		33D642741CC3D2BA000969F2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				33DC9C271CDEDC0700DCA010 /* help */,
 				33D642751CC3D2BA000969F2 /* conf.json */,
 			);
 			name = Data;
@@ -1009,6 +1014,15 @@
 				33D6427B1CC4B579000969F2 /* zf_log.h */,
 			);
 			name = zf_log;
+			sourceTree = "<group>";
+		};
+		33DC9C271CDEDC0700DCA010 /* help */ = {
+			isa = PBXGroup;
+			children = (
+				33DC9C281CDEDC0700DCA010 /* cn.html */,
+				33DC9C2A1CDEDC0700DCA010 /* en.html */,
+			);
+			path = help;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1118,7 +1132,9 @@
 				33808E2B1CD668D2001EA11C /* .dirstamp in Resources */,
 				33C8F9AD1CA76B5A00E1C6DA /* LaunchScreen.storyboard in Resources */,
 				33C8F9AA1CA76B5A00E1C6DA /* Assets.xcassets in Resources */,
+				33DC9C2C1CDEDC0700DCA010 /* cn.html in Resources */,
 				33C8F9A81CA76B5A00E1C6DA /* Main.storyboard in Resources */,
+				33DC9C2E1CDEDC0700DCA010 /* en.html in Resources */,
 				33D642761CC3D2BA000969F2 /* conf.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1445,9 +1461,10 @@
 		33C8F9C81CA76B5A00E1C6DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = USNIT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1462,9 +1479,10 @@
 		33C8F9C91CA76B5A00E1C6DA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				GCC_C_LANGUAGE_STANDARD = c99;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = USNIT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
