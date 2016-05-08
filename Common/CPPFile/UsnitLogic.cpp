@@ -64,6 +64,7 @@ bool CUsnitLogic::init(const char* conf_path, int lang, my_cb_t cb_func){
         m_usnitData.fBid = m_conf["exchange_bid"].asFloat();
         m_usnitData.fRate = m_conf["exchange_rate"].asFloat();
         m_usnitData.strRateUrl = m_conf["exchange_url"].asString();
+        m_usnitData.strDate = m_conf["exchange_date"].asString();
         
         read_type_set(&m_conf["long_type_set"], &m_usnitData.setLong);
         read_type_set(&m_conf["mass_type_set"], &m_usnitData.setMass);
@@ -153,6 +154,8 @@ bool CUsnitLogic::parseRateJson(const char* str_json, CUsnitLogic::UsnitData& da
         data.fBid = atof(rate_json["Bid"].asString().c_str());
         data.fRate = atof(rate_json["Rate"].asString().c_str());
         data.bRateReady = true;
+        
+        data.strDate = rate_json["Date"].asString();
 
     } catch (...) {
         G_LOG_FC(LOG_ERROR, "read rate catchs ask:%f bid:%f rate:%f",
@@ -210,13 +213,13 @@ void CUsnitLogic::HttpRequestCallback(HttpRequest* request){
             MAP_ISTR::iterator it(m_langData.ch.find(TYPE_RATE));
             if (it!=m_langData.ch.end() && it->second.find("%")!=std::string::npos) {
                 char buf[64] = {0};
-                sprintf(buf, it->second.c_str(), m_usnitData.fAsk, m_usnitData.fBid);
+                sprintf(buf, it->second.c_str(), m_usnitData.strDate.c_str(), m_usnitData.fAsk, m_usnitData.fBid);
                 it->second = buf;
                 G_LOG_FC(LOG_INFO, "set ch.TYPE_RATE:%s", it->second.c_str());
                 
                 it = m_langData.eng.find(TYPE_RATE);
                 if (it!=m_langData.eng.end() && it->second.find("%")!=std::string::npos){
-                    sprintf(buf, it->second.c_str(), m_usnitData.fAsk, m_usnitData.fBid);
+                    sprintf(buf, it->second.c_str(), m_usnitData.strDate.c_str(),m_usnitData.fAsk, m_usnitData.fBid);
                     it->second = buf;
                     G_LOG_FC(LOG_INFO, "set eng.TYPE_RATE:%s", buf);
                 }

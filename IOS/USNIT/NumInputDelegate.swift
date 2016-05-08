@@ -17,7 +17,14 @@ class NumInputDelegate: NSObject, UITextFieldDelegate {
         edtInput = edt;
     }
     
-    @objc internal func textField(textField: UITextField,
+    // Dismiss the keyboard when the user taps the "Return" key or its equivalent
+    // while editing a text field.
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
+    func textField(textField: UITextField,
                    shouldChangeCharactersInRange range: NSRange,
                                                  replacementString string: String)
         -> Bool

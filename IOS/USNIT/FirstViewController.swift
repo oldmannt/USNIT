@@ -65,6 +65,7 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
     var m_dicResultLabel=[UILabel:Int32]()
     var m_dicNameLabel=[UILabel:Int32]()
     var m_bShowKeyboard=false
+    var edt_delegate:NumInputDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +90,11 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
         NSNotificationCenter.defaultCenter().removeObserver(self,
                                                             name: UIKeyboardWillHideNotification,
                                                             object: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func registerForKeyboardNotifications() {
@@ -117,29 +123,18 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         if m_bShowKeyboard{
-            view.endEditing(true)
+            //UIApplication.sharedApplication().keyWindow?.endEditing(true)
+            edtInput.resignFirstResponder()
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // Designate this class as the text fields' delegate
     // and set their keyboards while we're at it.
     func initializeTextFields() {
         
-        let edt_delegate = NumInputDelegate(edt: edtInput)
+        edt_delegate = NumInputDelegate(edt:edtInput)
         edtInput.delegate = edt_delegate
         edtInput.keyboardType = UIKeyboardType.NumberPad
-    }
-    
-    // Dismiss the keyboard when the user taps the "Return" key or its equivalent
-    // while editing a text field.
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true;
     }
     
     func initUnitName(){

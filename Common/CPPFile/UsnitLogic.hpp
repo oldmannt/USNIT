@@ -60,6 +60,7 @@ private:
         float fAsk; // 卖出价
         float fBid; // 买入价
         float fRate;    // USDCNY
+        std::string strDate; //日期
         std::string strRateUrl;
         bool bRateReady;
         
