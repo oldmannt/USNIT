@@ -23,19 +23,8 @@ public class SFUsnitLogic {
 
     init() {
 
-        var path = NSBundle.mainBundle().pathForResource("conf", ofType: "json")
-        /*var json_str = ""
-        do {
-            json_str = try NSString(contentsOfFile: path!, usedEncoding: nil) as String
-        } catch {
-            // contents could not be loaded
-        }*/
-        
-        if path == nil {
-            print("SFUsnitLogic.init load failded \(path)")
-            path = ""
-        }
-        
+        observers_result = Array<UsnitLogicObserver>()
+        let conf = load_conf()
         let strlangId = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode) as! String
         
         var nlangId = LANG_CH
@@ -43,8 +32,50 @@ public class SFUsnitLogic {
             nlangId = LANG_ENG
         }
         
-        UsnitInit(path!, nlangId, UsnitCallback);
-        observers_result = Array<UsnitLogicObserver>()
+        UsnitInit(conf.file_path, nlangId, UsnitCallback);
+    }
+    
+    private func load_conf()->(file_path:String, file_content:String){
+        var json_str:String = ""
+        let res_path = NSBundle.mainBundle().pathForResource("conf", ofType: "json")
+        
+        var doc_path:String = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        doc_path.appendContentsOf("/conf.json")
+
+        let fileManager = NSFileManager.defaultManager()
+        if fileManager.fileExistsAtPath(doc_path) {
+            g_logouts(LOG_FILE|LOG_CONSOLE, 3, "DOCUMENT CONF FILE AVAILABLE")
+            do {
+                json_str = try NSString(contentsOfFile: doc_path, usedEncoding: nil) as String
+            }catch let error as NSError{
+                // contents could not be loaded
+                g_logouts(LOG_FILE|LOG_CONSOLE, LOG_ERROR, "SFUsnitLogic.init write failed \(error.userInfo) ")
+                return (doc_path, json_str)
+            }
+        } else {
+            g_logouts(LOG_FILE|LOG_CONSOLE, 3, "DOCUMENT CONF FILE NOT AVAILABLE")
+            let apppath = NSBundle.mainBundle().pathForResource("conf", ofType: "json")
+            do {
+                json_str = try NSString(contentsOfFile: apppath!, usedEncoding: nil) as String
+                
+                do {
+                    //try json_str.writeToURL(doc_conf_url, atomically: false, encoding: NSUTF8StringEncoding)
+                    try json_str.writeToFile(doc_path, atomically: true, encoding: NSUTF8StringEncoding)
+                    
+                } catch let error as NSError{
+                    // contents could not be loaded
+                    g_logouts(LOG_FILE|LOG_CONSOLE, LOG_ERROR, "SFUsnitLogic.init write failed \(error.userInfo) ")
+                    return (res_path!, json_str)
+                }
+            } catch let error as NSError{
+                // contents could not be loaded
+                g_logouts(LOG_FILE|LOG_CONSOLE, LOG_ERROR, "SFUsnitLogic.init \(error.userInfo) load app/conf.json failed")
+            }
+            
+            
+        }
+
+        return (doc_path, json_str)
     }
     
     public func setUsnitInput(value : Float){

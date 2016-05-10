@@ -72,7 +72,7 @@ extern "C" {
     
     void    async_loop();
     
-    void    C_LOG(int output, int lev, const char* fmt, ...);
+    void    C_LOG(int output, int lev, const char* fmt);
     
 #ifdef __cplusplus
 }   // end of extern "C"
