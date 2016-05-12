@@ -10,10 +10,15 @@ import Foundation
 import UIKit
 
 class UsnitTabBarCtl: UITabBarController{
+    
     override func viewWillLayoutSubviews() {
-        var tabFrame: CGRect = self.tabBar.frame
+        /*
+         var tabFrame: CGRect = self.tabBar.frame
         tabFrame.size.height = 40
         tabFrame.origin.y = self.view.frame.size.height - 40
         self.tabBar.frame = tabFrame
+        */
     }
+    
+    
 }

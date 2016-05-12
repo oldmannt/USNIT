@@ -27,14 +27,7 @@ private:
     struct UsnitData {
         UsnitData()
         :fInput(0.0f)
-        ,nLongMetricType(-1)
-        ,nLongUSType(-1)
-        ,nMassMetricType(-1)
-        ,nMassUSType(-1)
-        ,nSquareMetricType(-1)
-        ,nSquareUSType(-1)
-        ,nVolumeMetricType(-1)
-        ,nVolumeUSType(-1)
+        ,nType(-1)
         ,nLongType(-1)
         ,nMassType(-1)
         ,nSquareType(-1)
@@ -43,15 +36,8 @@ private:
         ,fAsk(0.0f), fBid(0.0f), fRate(0.0f), bRateReady(false){}
         // inputs
         float fInput;
-        int nLongMetricType;
-        int nLongUSType;
-        int nMassMetricType;
-        int nMassUSType;
-        int nSquareMetricType;
-        int nSquareUSType;
-        int nVolumeMetricType;
-        int nVolumeUSType;
         
+        int nType;
         int nLongType;
         int nMassType;
         int nSquareType;
@@ -137,7 +123,7 @@ private:
     void updateResult();
     void read_type_set(Json::Value* array, SETI* set) const;
     bool parseRateJson(const char* str_json, UsnitData& data) const;
-    void saveConf();
+    bool saveConf();
     
 public:
     CUsnitLogic();
@@ -147,12 +133,18 @@ public:
         return instance;
     }
     bool init(const char* conf_path, int lang, my_cb_t cb_func);
+    bool save(){return this->saveConf();}
     void setLanguage(int lang);
     
     bool setLongType(int type);
     bool setMassType(int type);
     bool setSquareType(int type);
     bool setVolumeType(int type);
+    
+    int getLongType() const{return m_usnitData.nLongType;}
+    int getMassType() const{return m_usnitData.nMassType;}
+    int getSquareType() const{return m_usnitData.nSquareType;}
+    int getVolumeType() const{return m_usnitData.nVolumeType;}
     
     void setType(int type);
     bool setInput(float value);

@@ -47,12 +47,6 @@ bool CUsnitLogic::init(const char* conf_path, int lang, my_cb_t cb_func){
         m_conf_file = conf_path;
         std::string code;
         
-        m_usnitData.nLongMetricType = m_conf["long_type"].asInt();
-        m_usnitData.nLongUSType = m_conf["long_us_type"].asInt();
-        m_usnitData.nMassMetricType = m_conf["mass_tmetric_ype"].asInt();
-        m_usnitData.nMassUSType = m_conf["mass_us_type"].asInt();
-        m_usnitData.nSquareMetricType = m_conf["square_type"].asInt();
-        m_usnitData.nSquareUSType = m_conf["square_us_type"].asInt();
         m_usnitData.nStartCounter = m_conf["start_counter"].asInt();
         
         m_usnitData.nLongType = m_conf["long_type"].asInt();
@@ -165,7 +159,7 @@ bool CUsnitLogic::parseRateJson(const char* str_json, CUsnitLogic::UsnitData& da
     return true;
 }
 
-void CUsnitLogic::saveConf(){
+bool CUsnitLogic::saveConf(){
     m_conf["exchange_ask"] = m_usnitData.fAsk;
     m_conf["exchange_bid"] = m_usnitData.fBid;
     m_conf["exchange_rate"] = m_usnitData.fRate;
@@ -176,10 +170,11 @@ void CUsnitLogic::saveConf(){
     ofs.open(m_conf_file);
     if (!ofs.is_open()){
         G_LOG_FC(LOG_ERROR, "open conf file failed: %s", m_conf_file.c_str());
-        return;
+        return false;
     }
     ofs << str;
     ofs.close();
+    return true;
 }
 
 void CUsnitLogic::HttpRequestCallback(HttpRequest* request){
@@ -311,6 +306,7 @@ bool CUsnitLogic::setVolumeType(int type){
 }
 
 void CUsnitLogic::setType(int type){
+    m_usnitData.nType = type;
     if (this->setLongType(type))
         return;
     if (this->setMassType(type))
@@ -436,26 +432,38 @@ float CUsnitLogic::getMeter(float value) const {
 }
 
 float CUsnitLogic::getCMeter(float value) const {
+    if (m_usnitData.nLongType == TYPE_CMETER)
+        return value;
     return this->getMeter(value)*100.0f;
 }
 
 float CUsnitLogic::getKMeter(float value) const {
+    if (m_usnitData.nLongType == TYPE_KMETER)
+        return value;
     return this->getMeter(value)/1000.0f;
 }
 
 float CUsnitLogic::getFeet(float value) const {
+    if (m_usnitData.nLongType == TYPE_FEET)
+        return value;
     return this->getMeter(value)*3.2808399f;
 }
 
 float CUsnitLogic::getInch(float value) const {
+    if (m_usnitData.nLongType == TYPE_INCH)
+        return value;
     return this->getFeet(value)*12;
 }
 
 float CUsnitLogic::getMile(float value) const {
+    if (m_usnitData.nLongType == TYPE_MILE)
+        return value;
     return this->getFeet(value)*0.0001894f;
 }
 
 float CUsnitLogic::getYard(float value) const {
+    if (m_usnitData.nLongType == TYPE_YARD)
+        return value;
     return this->getFeet(value)*0.3333333f;
 }
 
@@ -476,10 +484,14 @@ float CUsnitLogic::getLitre(float value) const {
 }
 
 float CUsnitLogic::getMLitre(float value) const {
+    if (m_usnitData.nVolumeType == TYPE_MLITRE)
+        return value;
     return this->getLitre(value)*1000.0f;
 }
 
 float CUsnitLogic::getGal(float value) const {
+    if (m_usnitData.nVolumeType == TYPE_GAL)
+        return value;
     return this->getLitre(value)*0.2641721f;
 }
 
@@ -502,14 +514,20 @@ float CUsnitLogic::getGram(float value) const {
 }
 
 float CUsnitLogic::getKGram(float value) const {
+    if (m_usnitData.nMassType == TYPE_KGRAM)
+        return value;
     return this->getGram(value)*0.001f;
 }
 
 float CUsnitLogic::getPound(float value) const {
+    if (m_usnitData.nMassType == TYPE_POUND)
+        return value;
     return this->getGram(value)*0.0022046f;
 }
 
 float CUsnitLogic::getOz(float value) const {
+    if (m_usnitData.nMassType == TYPE_OZ)
+        return value;
     return this->getGram(value)*0.035274f;
 }
 
@@ -533,11 +551,21 @@ float CUsnitLogic::getSQmeter(float value) const {
 }
 
 float CUsnitLogic::getSQcmeter(float value) const {
+    if (m_usnitData.nSquareType == TYPE_SQCM)
+        return value;
     return this->getSQmeter(value)*10000.0f;
 }
 
 float CUsnitLogic::getSQfeet(float value) const {
+    if (m_usnitData.nSquareType == TYPE_SQF)
+        return value;
     return this->getSQmeter(value)*10.7639104f;
+}
+
+float CUsnitLogic::getSQinch(float value) const {
+    if (m_usnitData.nMassType == TYPE_SQINCH)
+        return value;
+    return this->getSQmeter(value)*1550.0031f;
 }
 
 float CUsnitLogic::getCentigrand(float value) const {
@@ -546,10 +574,6 @@ float CUsnitLogic::getCentigrand(float value) const {
 
 float CUsnitLogic::getFahrenhat(float value) const {
     return 9.0f/5.0f*value + 32.0f;
-}
-
-float CUsnitLogic::getSQinch(float value) const {
-    return this->getSQmeter(value)*1550.0031f;
 }
 
 float CUsnitLogic::getDollar(float value) const{

@@ -53,22 +53,15 @@ extern "C" {
     typedef int (*my_cb_t)(int type, const void* data);
 
     int     UsnitInit(const char* conf_str, int lang, my_cb_t cb_func);
-/*
-    int     UsnitSetLongType(int metric_type, int us_type);
-    int     UsnitSetMassType(int metric_type, int us_type);
-    int     UsnitSetSquareType(int metric_type, int us_type);
-    int     UsnitSetVolumeType(int metric_type, int us_type);
-*/
-//  int     UsnitSetLongType(int type);
-//  int     UsnitSetMassType(int type);
-//  int     UsnitSetSquareType(int type);
-//  int     UsnitSetVolumeType(int type);
-    
-    void     UsnitSetType(int type);
-
+    int     UsnitSave();
+    void    UsnitSetType(int type);
     int     UsnitSetInput(float value);
     const char* UsnitGetResult(int type);
     const char* UsnitGetUnitName(int type);
+    int     UsnitGetLongType();
+    int     UsnitGetMassType();
+    int     UsnitGetSquareType();
+    int     UsnitGetVolumeType();
     
     void    async_loop();
     

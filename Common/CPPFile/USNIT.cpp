@@ -22,6 +22,10 @@ int     UsnitInit(const char* conf_str, int lang, my_cb_t cb_func) {
         return -1;
 }
 
+int    UsnitSave(){
+    return CUsnitLogic::Instance().save()?1:0;
+}
+
 int     UsnitSetLongType(int type){
     return CUsnitLogic::Instance().setLongType(type)?0:-1;
 }
@@ -55,4 +59,20 @@ const char*   UsnitGetResult(int type) {
 
 const char* UsnitGetUnitName(int type){
     return CUsnitLogic::Instance().getUnitName(type);
+}
+
+int     UsnitGetLongType(){
+    return CUsnitLogic::Instance().getLongType();
+}
+
+int     UsnitGetMassType(){
+    return CUsnitLogic::Instance().getMassType();
+}
+
+int     UsnitGetSquareType(){
+    return CUsnitLogic::Instance().getSquareType();
+}
+
+int     UsnitGetVolumeType(){
+    return CUsnitLogic::Instance().getVolumeType();
 }

@@ -67,6 +67,7 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
     var m_bShowKeyboard=false
     var edt_delegate:NumInputDelegate?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -79,7 +80,7 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FirstViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        self.registerForKeyboardNotifications();        
+        self.registerForKeyboardNotifications();
     }
     
     override func viewWillDisappear(animated: Bool){
@@ -216,7 +217,7 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
         let lbl = sender.view as! UILabel;
         
         //g_logouts(LOG_CONSOLE, 3, "tap label:" + String(lbl.accessibilityIdentifier!) + "type: " + String(type))
-        
+        UIApplication.sharedApplication().keyWindow?.endEditing(true)
         if let type = m_dicResultLabel[lbl] {
             UsnitSetType(type);
         }
@@ -246,6 +247,16 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
                 continue
             }
             
+            if UsnitGetLongType() == type ||
+                UsnitGetMassType() == type ||
+                UsnitGetSquareType() == type ||
+                UsnitGetVolumeType() == type{
+                label.textColor = UIColor.blueColor()
+            }
+            else {
+                label.textColor = UIColor.blackColor()
+            }
+            
             if cut {
                 let str:NSString = "9"
                 let fontAttributes = [NSFontAttributeName: lblMeter.font]
@@ -258,35 +269,7 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
                 label.text = label.text!.substringToIndex(label.text!.startIndex.advancedBy(chars))
             }
         }
-        /*
-        lblMeter.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_METER)
-        lblCMeter.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_CMETER)
-        lblKMeter.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_KMETER)
-        lblFeet.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_FEET)
-        lblInch.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_INCH)
-        lblMile.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_MILE)
-        lblYard.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_YARD)
-        lblSqm.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_SQM)
-        lblSqcm.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_SQCM)
-        lblSqfeet.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_SQF)
-        lblLiter.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_LITRE)
-        lblMliter.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_MLITRE)
-        lblGal.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_GAL)
-        lblGram.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_GRAM)
-        lblKGram.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_KGRAM)
-        lblPound.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_POUND)
-        lblOz.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_OZ)
-        lblCelsius.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_CELSI)
-        lblFahrenheit.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_FAHRE)
-        lblSqinch.text = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_SQINCH)
-        
-        if let dollor = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_DOLLAR){
-            lblDollar.text = dollor
-        }
-        if  let rmb = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_RMB){
-            lblRmb.text = rmb
-        }
- */
+
     }
     
     func HandleResult(type: Int32, _ result:String) -> Bool{
