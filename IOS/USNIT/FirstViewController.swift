@@ -135,7 +135,7 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
         
         edt_delegate = NumInputDelegate(edt:edtInput)
         edtInput.delegate = edt_delegate
-        edtInput.keyboardType = UIKeyboardType.NumberPad
+        edtInput.keyboardType = UIKeyboardType.DecimalPad
     }
     
     func initUnitName(){
