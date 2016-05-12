@@ -11,6 +11,8 @@ import UIKit
 class SecondViewController: UIViewController {
 
     @IBOutlet var m_webHelp: UIWebView!
+    var m_ad:AdmobBanner!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +25,9 @@ class SecondViewController: UIViewController {
         catch{
             
         }
+        
+        m_ad = AdmobBanner(root: self)
+        m_ad.didLoad("ca-app-pub-4953725946697554/8856468622")
         
     }
     
