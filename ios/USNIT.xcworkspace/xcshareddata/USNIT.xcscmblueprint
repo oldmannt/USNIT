@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8BDCDB84EB125EE2FACFAB2E57E6F24704D9C302",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "703C8D6A122D254C79740E410734EC0A4643394D" : 0,
+    "8BDCDB84EB125EE2FACFAB2E57E6F24704D9C302" : 0,
+    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0B957D76-2584-435F-85D5-442945A0B005",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "703C8D6A122D254C79740E410734EC0A4643394D" : "USNIT\/gearsbox\/",
+    "8BDCDB84EB125EE2FACFAB2E57E6F24704D9C302" : "USNIT\/",
+    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : "USNIT\/gearsbox\/deps\/djinni\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "USNIT",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios\/USNIT.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dropbox\/djinni.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/oldmannt\/gearsbox_client.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "703C8D6A122D254C79740E410734EC0A4643394D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/oldmannt\/USNIT.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8BDCDB84EB125EE2FACFAB2E57E6F24704D9C302"
+    }
+  ]
+}

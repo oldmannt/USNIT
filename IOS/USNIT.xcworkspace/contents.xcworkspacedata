@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:USNIT.xcodeproj">
+      location = "group:/Users/dyno/Documents/develop/USNIT/ios/usnit_app.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

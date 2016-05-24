@@ -2,5 +2,10 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#include "USNIT.h"
-#include "Log.h"
+#import "USNLangType.h"
+#import "USNUsnitEventGen.h"
+#import "USNUsnitEventType.h"
+#import "USNUsnitGen.h"
+#import "USNUsnitType.h"
+#import "GBAsyncLoopGen.h"
+#import "GBLogGen.h"

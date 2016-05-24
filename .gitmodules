@@ -1,0 +1,3 @@
+[submodule "gearsbox"]
+	path = gearsbox
+	url = https://github.com/oldmannt/gearsbox_client.git
