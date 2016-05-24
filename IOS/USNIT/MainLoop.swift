@@ -12,12 +12,12 @@ import UIKit
 
 class MainLoop : NSObject {
     
-    var doSomething: () -> ()!
+    var doSomething: (Int64) -> ()!
     var displayLink : CADisplayLink!
     var frameInterval : Int!
     var last : Double!
     
-    init(frameInterval: Int, doSomething: () -> ()) {
+    init(frameInterval: Int, doSomething: (Int64) -> ()) {
         self.doSomething = doSomething
         self.frameInterval = frameInterval
         last = NSDate().timeIntervalSinceNow
@@ -27,10 +27,11 @@ class MainLoop : NSObject {
     
     // you could overwrite this too
     func handleTimer() {
-        //let now:Double = NSDate().timeIntervalSinceNow
+        let now:Double = NSDate().timeIntervalSinceNow
         //print("handleTimer \((now - last)*1000)")
-        //last = now
-        doSomething()
+        
+        doSomething(Int64((now - last)*1000))
+        last = now
     }
     
     func start() {

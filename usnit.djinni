@@ -1,0 +1,63 @@
+@extern "gearsbox/generated-src/yaml/yaml/yaml-gearsbox.yaml"
+# @import "gearsbox/gearsbox.djinni"
+
+usnit_type = enum {
+    TYPE_NONE;
+    TYPE_METER ;
+    TYPE_CMETER;
+    TYPE_KMETER;
+    TYPE_FEET  ;
+    TYPE_INCH  ;
+    TYPE_MILE  ;
+    TYPE_YARD  ;
+    TYPE_LITRE ;
+    TYPE_MLITRE;
+    TYPE_GAL   ;
+    TYPE_GRAM  ;
+    TYPE_KGRAM ;
+    TYPE_POUND ;
+    TYPE_OZ    ;
+    TYPE_SQM   ;
+    TYPE_SQCM  ;
+    TYPE_SQF   ;
+    TYPE_CELSI ;
+    TYPE_FAHRE ;
+    TYPE_SQINCH;
+    TYPE_DOLLAR;
+    TYPE_RMB   ;
+    TYPE_RATE  ;
+    TYPE_MAX   ;
+}
+
+lang_type = enum{
+    LANG_NONE;
+    LANG_CH;
+    LANG_ENG;
+}
+
+usnit_event_type = enum{
+    CB_NONE;
+    CB_DOLLAR_RT;
+    CB_RMB_RT   ;
+    CB_RATEINFO ;
+}
+
+usnit_event_gen = interface +j +o{
+    callback(id:usnit_event_type, data:string): bool;
+}
+
+usnit_gen = interface +c {
+
+    static instance(): usnit_gen;
+    initialize(conf:string, lang:lang_type, callback:usnit_event_gen):bool;
+    save():bool;
+    setType(type:usnit_type);
+    setInput(value:f32);
+    getResult(type:usnit_type):string;
+    getUnitName(type:usnit_type):string;
+    getLongType():usnit_type;
+    getMassType():usnit_type;
+    getSquareType():usnit_type;
+    getVolumeType():usnit_type;
+}
+

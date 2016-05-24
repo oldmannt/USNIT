@@ -62,8 +62,8 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
     
     @IBOutlet weak var edtInput: UITextField!
     
-    var m_dicResultLabel=[UILabel:Int32]()
-    var m_dicNameLabel=[UILabel:Int32]()
+    var m_dicResultLabel=[UILabel:USNUsnitType]()
+    var m_dicNameLabel=[UILabel:USNUsnitType]()
     var m_bShowKeyboard=false
     var edt_delegate:NumInputDelegate?
     
@@ -72,11 +72,10 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        SFUsnitLogic.sharedInstance.addObserver(self);
         initUnitName()
         registeTapLable()
         initializeTextFields()
-        
-        SFUsnitLogic.sharedInstance.addObserver(self);
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(FirstViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -135,37 +134,37 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
         
         edt_delegate = NumInputDelegate(edt:edtInput)
         edtInput.delegate = edt_delegate
-        edtInput.keyboardType = UIKeyboardType.NumberPad
+        edtInput.keyboardType = UIKeyboardType.DecimalPad
     }
     
     func initUnitName(){
-        m_dicNameLabel[lblUcm] = 		TYPE_CMETER
-        m_dicNameLabel[lblUm] =         TYPE_METER
-        m_dicNameLabel[lblUkm] =        TYPE_KMETER
-        m_dicNameLabel[lblUft] =        TYPE_FEET
-        m_dicNameLabel[lblUinch] =      TYPE_INCH
-        m_dicNameLabel[lblUmile] =      TYPE_MILE
-        m_dicNameLabel[lblUyard] =      TYPE_YARD
-        m_dicNameLabel[lblUliter] = 	TYPE_LITRE
-        m_dicNameLabel[lblUmliter] =    TYPE_MLITRE
-        m_dicNameLabel[lblUgal] =   TYPE_GAL
-        m_dicNameLabel[lblUgram] =  TYPE_GRAM
-        m_dicNameLabel[lblUkgram] = TYPE_KGRAM
-        m_dicNameLabel[lblUlb] =    TYPE_POUND
-        m_dicNameLabel[lblUoz] =    TYPE_OZ
-        m_dicNameLabel[lblUsqm] =   TYPE_SQM
-        m_dicNameLabel[lblUsqcm] =  TYPE_SQCM
-        m_dicNameLabel[lblUsqfeet] =     TYPE_SQF
-        m_dicNameLabel[lblUcelsius] =    TYPE_CELSI
-        m_dicNameLabel[lblUfahrenheit] = TYPE_FAHRE
-        m_dicNameLabel[lblUdollar] = TYPE_DOLLAR
-        m_dicNameLabel[lblUrmb] =    TYPE_RMB
-        m_dicNameLabel[lblUsqinch] = TYPE_SQINCH
-        m_dicNameLabel[lblExchange] = TYPE_RATE
+        m_dicNameLabel[lblUcm] = 		USNUsnitType.TYPECMETER
+        m_dicNameLabel[lblUm] =         USNUsnitType.TYPEMETER
+        m_dicNameLabel[lblUkm] =        USNUsnitType.TYPEKMETER
+        m_dicNameLabel[lblUft] =        USNUsnitType.TYPEFEET
+        m_dicNameLabel[lblUinch] =      USNUsnitType.TYPEINCH
+        m_dicNameLabel[lblUmile] =      USNUsnitType.TYPEMILE
+        m_dicNameLabel[lblUyard] =      USNUsnitType.TYPEYARD
+        m_dicNameLabel[lblUliter] = 	USNUsnitType.TYPELITRE
+        m_dicNameLabel[lblUmliter] =    USNUsnitType.TYPEMLITRE
+        m_dicNameLabel[lblUgal] =   USNUsnitType.TYPEGAL
+        m_dicNameLabel[lblUgram] =  USNUsnitType.TYPEGRAM
+        m_dicNameLabel[lblUkgram] = USNUsnitType.TYPEKGRAM
+        m_dicNameLabel[lblUlb] =    USNUsnitType.TYPEPOUND
+        m_dicNameLabel[lblUoz] =    USNUsnitType.TYPEOZ
+        m_dicNameLabel[lblUsqm] =   USNUsnitType.TYPESQM
+        m_dicNameLabel[lblUsqcm] =  USNUsnitType.TYPESQCM
+        m_dicNameLabel[lblUsqfeet] =     USNUsnitType.TYPESQF
+        m_dicNameLabel[lblUcelsius] =    USNUsnitType.TYPECELSI
+        m_dicNameLabel[lblUfahrenheit] = USNUsnitType.TYPEFAHRE
+        m_dicNameLabel[lblUdollar] = USNUsnitType.TYPEDOLLAR
+        m_dicNameLabel[lblUrmb] =    USNUsnitType.TYPERMB
+        m_dicNameLabel[lblUsqinch] = USNUsnitType.TYPESQINCH
+        m_dicNameLabel[lblExchange] = USNUsnitType.TYPERATE
         
         for (label, type) in m_dicNameLabel{
             label.backgroundColor = UIColor.clearColor()
-            label.text = SFUsnitLogic.sharedInstance.getUsnitName(type)
+            label.text = USNUsnitGen.instance()?.getUnitName(type)
         }
     }
     
@@ -179,28 +178,28 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
             view.addGestureRecognizer(recognizer)
         }*/
         
-        m_dicResultLabel[lblMeter]     = TYPE_METER
-        m_dicResultLabel[lblCMeter]    = TYPE_CMETER
-        m_dicResultLabel[lblKMeter]    = TYPE_KMETER
-        m_dicResultLabel[lblFeet]      = TYPE_FEET
-        m_dicResultLabel[lblInch]      = TYPE_INCH
-        m_dicResultLabel[lblMile]      = TYPE_MILE
-        m_dicResultLabel[lblYard]      = TYPE_YARD
-        m_dicResultLabel[lblLiter]     = TYPE_LITRE
-        m_dicResultLabel[lblMliter]    = TYPE_MLITRE
-        m_dicResultLabel[lblGal]       = TYPE_GAL
-        m_dicResultLabel[lblGram]      = TYPE_GRAM
-        m_dicResultLabel[lblKGram]     = TYPE_KGRAM
-        m_dicResultLabel[lblPound]     = TYPE_POUND
-        m_dicResultLabel[lblOz]      = TYPE_OZ
-        m_dicResultLabel[lblSqm]       = TYPE_SQM
-        m_dicResultLabel[lblSqcm]      = TYPE_SQCM
-        m_dicResultLabel[lblSqfeet]    = TYPE_SQF
-        m_dicResultLabel[lblCelsius]   = TYPE_CELSI
-        m_dicResultLabel[lblFahrenheit] = TYPE_FAHRE
-        m_dicResultLabel[lblDollar]    = TYPE_DOLLAR
-        m_dicResultLabel[lblRmb]       = TYPE_RMB
-        m_dicResultLabel[lblSqinch]    = TYPE_SQINCH
+        m_dicResultLabel[lblMeter]     = USNUsnitType.TYPEMETER
+        m_dicResultLabel[lblCMeter]    = USNUsnitType.TYPECMETER
+        m_dicResultLabel[lblKMeter]    = USNUsnitType.TYPEKMETER
+        m_dicResultLabel[lblFeet]      = USNUsnitType.TYPEFEET
+        m_dicResultLabel[lblInch]      = USNUsnitType.TYPEINCH
+        m_dicResultLabel[lblMile]      = USNUsnitType.TYPEMILE
+        m_dicResultLabel[lblYard]      = USNUsnitType.TYPEYARD
+        m_dicResultLabel[lblLiter]     = USNUsnitType.TYPELITRE
+        m_dicResultLabel[lblMliter]    = USNUsnitType.TYPEMLITRE
+        m_dicResultLabel[lblGal]       = USNUsnitType.TYPEGAL
+        m_dicResultLabel[lblGram]      = USNUsnitType.TYPEGRAM
+        m_dicResultLabel[lblKGram]     = USNUsnitType.TYPEKGRAM
+        m_dicResultLabel[lblPound]     = USNUsnitType.TYPEPOUND
+        m_dicResultLabel[lblOz]      = USNUsnitType.TYPEOZ
+        m_dicResultLabel[lblSqm]       = USNUsnitType.TYPESQM
+        m_dicResultLabel[lblSqcm]      = USNUsnitType.TYPESQCM
+        m_dicResultLabel[lblSqfeet]    = USNUsnitType.TYPESQF
+        m_dicResultLabel[lblCelsius]   = USNUsnitType.TYPECELSI
+        m_dicResultLabel[lblFahrenheit] = USNUsnitType.TYPEFAHRE
+        m_dicResultLabel[lblDollar]    = USNUsnitType.TYPEDOLLAR
+        m_dicResultLabel[lblRmb]       = USNUsnitType.TYPERMB
+        m_dicResultLabel[lblSqinch]    = USNUsnitType.TYPESQINCH
         
         for (label, _) in m_dicResultLabel {
             label.backgroundColor = UIColor.clearColor()
@@ -219,7 +218,7 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
         //g_logouts(LOG_CONSOLE, 3, "tap label:" + String(lbl.accessibilityIdentifier!) + "type: " + String(type))
         UIApplication.sharedApplication().keyWindow?.endEditing(true)
         if let type = m_dicResultLabel[lbl] {
-            UsnitSetType(type);
+            USNUsnitGen.instance()?.setType(type)
         }
 
         updatResult()
@@ -228,8 +227,8 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
     @IBAction func onInputChange(sender: UITextField) {
         let input = (sender.text! as NSString).floatValue
         
-        SFUsnitLogic.sharedInstance.setUsnitInput(input)
-        //let meter = SFUsnitLogic.sharedInstance.getUsnitResult(TYPE_METER)
+        USNUsnitGen.instance()?.setInput(input)
+        //let meter = USNUsnitGen.instance()?.getResult(USNUsnitType.TYPEMETER)
         //lblMeter.text = meter
 
         updatResult()
@@ -239,24 +238,25 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
         
         // caculate the max length of label
         
-        let cut:Bool = false
         for (label, type) in m_dicResultLabel{
-            label.text = SFUsnitLogic.sharedInstance.getUsnitResult(type)
+            label.text = USNUsnitGen.instance()?.getResult(type)
             if label.text == nil {
                 print("FirstViewController.updateResult label.text nil type:\(type)")
                 continue
             }
             
-            if UsnitGetLongType() == type ||
-                UsnitGetMassType() == type ||
-                UsnitGetSquareType() == type ||
-                UsnitGetVolumeType() == type{
+            if USNUsnitGen.instance()?.getLongType() == type ||
+                USNUsnitGen.instance()?.getMassType() == type ||
+                USNUsnitGen.instance()?.getSquareType() == type ||
+                USNUsnitGen.instance()?.getVolumeType() == type{
                 label.textColor = UIColor.blueColor()
             }
             else {
                 label.textColor = UIColor.blackColor()
             }
             
+            //let cut:Bool = false
+            /*
             if cut {
                 let str:NSString = "9"
                 let fontAttributes = [NSFontAttributeName: lblMeter.font]
@@ -268,19 +268,20 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
                 }
                 label.text = label.text!.substringToIndex(label.text!.startIndex.advancedBy(chars))
             }
+             */
         }
 
     }
     
-    func HandleResult(type: Int32, _ result:String) -> Bool{
+    func HandleResult(type: USNUsnitEventType, _ result:String) -> Bool{
         switch type {
-        case CB_DOLLAR_RT:
+        case USNUsnitEventType.CBDOLLARRT:
             lblDollar.text = result
             break
-        case CB_RMB_RT:
+        case USNUsnitEventType.CBRMBRT:
             lblRmb.text = result
             break
-        case CB_RATEINFO:
+        case USNUsnitEventType.CBRATEINFO:
             lblExchange.text = result
         default:
             break

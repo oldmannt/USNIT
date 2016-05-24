@@ -9,30 +9,32 @@
 import Foundation
 
 public protocol UsnitLogicObserver:AnyObject {
-    func HandleResult(type: Int32, _ result:String) -> Bool
+    func HandleResult(type: USNUsnitEventType, _ result:String) -> Bool
 }
 
-func UsnitCallback(type: Int32, _ data: UnsafePointer<Void>)->Int32 {
-    SFUsnitLogic.sharedInstance.handleCallback(type, data)
-    return 1
+public class UsnitEventHander: USNUsnitEventGen{
+    @objc public func callback(id: USNUsnitEventType, data: String) -> Bool{
+        return SFUsnitLogic.sharedInstance.handleCallback(id, data)
+    }
 }
 
 public class SFUsnitLogic {
     static let sharedInstance = SFUsnitLogic()
     var observers_result:Array<UsnitLogicObserver>
-
+    var event_hander:UsnitEventHander
     init() {
 
         observers_result = Array<UsnitLogicObserver>()
+        event_hander = UsnitEventHander()
         let conf = load_conf()
         let strlangId = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode) as! String
         
-        var nlangId = LANG_CH
+        var lang_type = USNLangType.LANGCH
         if strlangId.rangeOfString("zh")==nil {
-            nlangId = LANG_ENG
+            lang_type = USNLangType.LANGENG
         }
         
-        UsnitInit(conf.file_path, nlangId, UsnitCallback);
+        USNUsnitGen.instance()!.initialize(conf.file_path, lang: lang_type, callback: event_hander)
     }
     
     private func load_conf()->(file_path:String, file_content:String){
@@ -44,32 +46,35 @@ public class SFUsnitLogic {
 
         let fileManager = NSFileManager.defaultManager()
         if fileManager.fileExistsAtPath(doc_path) {
-            g_logouts(LOG_FILE|LOG_CONSOLE, 3, "DOCUMENT CONF FILE AVAILABLE")
+            GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO, msg: "DOCUMENT CONF FILE AVAILABLE")
             do {
                 json_str = try NSString(contentsOfFile: doc_path, usedEncoding: nil) as String
             }catch let error as NSError{
                 // contents could not be loaded
-                g_logouts(LOG_FILE|LOG_CONSOLE, LOG_ERROR, "SFUsnitLogic.init write failed \(error.userInfo) ")
+                GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO,
+                                         msg: "SFUsnitLogic.init write failed \(error.userInfo) ")
                 return (doc_path, json_str)
             }
         } else {
-            g_logouts(LOG_FILE|LOG_CONSOLE, 3, "DOCUMENT CONF FILE NOT AVAILABLE")
-            let apppath = NSBundle.mainBundle().pathForResource("conf", ofType: "json")
+            GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO, msg: "document conf don't exist")
             do {
-                json_str = try NSString(contentsOfFile: apppath!, usedEncoding: nil) as String
+                json_str = try NSString(contentsOfFile: res_path!, usedEncoding: nil) as String
                 
                 do {
                     //try json_str.writeToURL(doc_conf_url, atomically: false, encoding: NSUTF8StringEncoding)
                     try json_str.writeToFile(doc_path, atomically: true, encoding: NSUTF8StringEncoding)
+                    GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO, msg: "document conf been writed")
                     
                 } catch let error as NSError{
                     // contents could not be loaded
-                    g_logouts(LOG_FILE|LOG_CONSOLE, LOG_ERROR, "SFUsnitLogic.init write failed \(error.userInfo) ")
+                    GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGERROR,
+                                             msg: "SFUsnitLogic.init write failed \(error.userInfo) ")
                     return (res_path!, json_str)
                 }
             } catch let error as NSError{
                 // contents could not be loaded
-                g_logouts(LOG_FILE|LOG_CONSOLE, LOG_ERROR, "SFUsnitLogic.init \(error.userInfo) load app/conf.json failed")
+                GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGERROR,
+                                         msg: "SFUsnitLogic.init \(error.userInfo) load app/conf.json failed")
             }
             
             
@@ -79,17 +84,15 @@ public class SFUsnitLogic {
     }
     
     public func setUsnitInput(value : Float){
-        UsnitSetInput(value)
+        USNUsnitGen.instance()?.setInput(value)
     }
     
-    public func getUsnitName(type : Int32)-> String?{
-        let name = String.fromCString(UsnitGetUnitName(type))
-        return name!
+    public func getUsnitName(type : USNUsnitType)-> String?{
+        return USNUsnitGen.instance()?.getUnitName(type)
     }
     
-    public func getUsnitResult(type : Int32)-> String?{
-        let strMeterResult = String.fromCString(UsnitGetResult(type))
-        return strMeterResult!
+    public func getUsnitResult(type : USNUsnitType)-> String?{
+        return USNUsnitGen.instance()?.getResult(type)
     }
     
     public func addObserver(observer:UsnitLogicObserver)->Bool{
@@ -110,16 +113,15 @@ public class SFUsnitLogic {
         return true
     }
     
-    private func dispachResult(type: Int32, _ result:String){
+    private func dispachResult(type: USNUsnitEventType, _ result:String){
         for observer in observers_result {
             observer.HandleResult(type, result)
         }
     }
     
-    public func handleCallback(type: Int32, _ data: UnsafePointer<Void>)->Void{
-
+    public func handleCallback(type: USNUsnitEventType, _ data: UnsafePointer<Void>)->Bool{
         switch type {
-        case CB_DOLLAR_RT, CB_RMB_RT, CB_RATEINFO:
+        case USNUsnitEventType.CBDOLLARRT, USNUsnitEventType.CBRMBRT, USNUsnitEventType.CBRATEINFO:
             let result = (UnsafePointer<Int8>(data))
             self.dispachResult(type, String.fromCString(result)!)
             break;
@@ -127,6 +129,8 @@ public class SFUsnitLogic {
             default:
                 break;
         }
+        
+        return true;
 
     }
 }
