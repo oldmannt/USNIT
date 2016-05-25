@@ -149,10 +149,10 @@
 		33C8F9A91CA76B5A00E1C6DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33C8F9AC1CA76B5A00E1C6DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33C8F9AE1CA76B5A00E1C6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33C8F9B31CA76B5A00E1C6DA /* USNITTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = USNITTests.xctest; path = usnit_app.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C8F9B31CA76B5A00E1C6DA /* usnit_app.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = usnit_app.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C8F9B71CA76B5A00E1C6DA /* USNITTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USNITTests.swift; sourceTree = "<group>"; };
 		33C8F9B91CA76B5A00E1C6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33C8F9BE1CA76B5A00E1C6DA /* USNITUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = USNITUITests.xctest; path = usnit_app.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C8F9BE1CA76B5A00E1C6DA /* usnit_app.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = usnit_app.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C8F9C21CA76B5A00E1C6DA /* USNITUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USNITUITests.swift; sourceTree = "<group>"; };
 		33C8F9C41CA76B5A00E1C6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6357C9C4168FCFE317112F82 /* Pods-USNIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-USNIT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-USNIT/Pods-USNIT.debug.xcconfig"; sourceTree = "<group>"; };
@@ -313,8 +313,8 @@
 			isa = PBXGroup;
 			children = (
 				33C8F99D1CA76B5A00E1C6DA /* usnit_app.app */,
-				33C8F9B31CA76B5A00E1C6DA /* USNITTests.xctest */,
-				33C8F9BE1CA76B5A00E1C6DA /* USNITUITests.xctest */,
+				33C8F9B31CA76B5A00E1C6DA /* usnit_app.xctest */,
+				33C8F9BE1CA76B5A00E1C6DA /* usnit_app.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -398,7 +398,7 @@
 			);
 			name = usnit_appTests;
 			productName = USNITTests;
-			productReference = 33C8F9B31CA76B5A00E1C6DA /* USNITTests.xctest */;
+			productReference = 33C8F9B31CA76B5A00E1C6DA /* usnit_app.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		33C8F9BD1CA76B5A00E1C6DA /* usnit_appUITests */ = {
@@ -416,7 +416,7 @@
 			);
 			name = usnit_appUITests;
 			productName = USNITUITests;
-			productReference = 33C8F9BE1CA76B5A00E1C6DA /* USNITUITests.xctest */;
+			productReference = 33C8F9BE1CA76B5A00E1C6DA /* usnit_app.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */

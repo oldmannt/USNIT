@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMQ-9E-3gs">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMQ-9E-3gs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6on-Cr-U5u" userLabel="lblFeet">
                                         <rect key="frame" x="302" y="90" width="236" height="21"/>
@@ -541,7 +541,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MMQ-9E-3gs" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="7Cp-bD-mwD"/>
                             <constraint firstItem="MMQ-9E-3gs" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="FWV-Lf-Bcc"/>
                             <constraint firstItem="MMQ-9E-3gs" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="R1S-Ea-NFJ"/>
                             <constraint firstItem="MMQ-9E-3gs" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="fzX-EC-rhb"/>
@@ -597,7 +596,7 @@
                         <outlet property="lblUsqm" destination="0hy-GJ-a9n" id="3UA-GX-jeF"/>
                         <outlet property="lblUyard" destination="kL9-AW-aHU" id="dzB-gW-57a"/>
                         <outlet property="lblYard" destination="lDe-I1-l4Z" id="Vii-O6-To0"/>
-                        <outlet property="scView" destination="MMQ-9E-3gs" id="KDh-lT-6SN"/>
+                        <outlet property="scView" destination="MMQ-9E-3gs" id="OsO-15-VgP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
