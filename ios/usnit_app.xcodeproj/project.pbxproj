@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14161DF562A108A5F3BDAAFC /* libPods-USNIT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 229DB492FD4D56F2C38D6C10 /* libPods-USNIT.a */; };
+		16E0B5D6B1CA566B3F86EE47 /* libPods-usnit_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E622CA61015B46907052B1 /* libPods-usnit_app.a */; };
 		33076C2F1CE3CC6A00FCB267 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33076C2E1CE3CC6A00FCB267 /* CoreBluetooth.framework */; };
 		33076C311CE3CC7400FCB267 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33076C301CE3CC7400FCB267 /* SafariServices.framework */; };
 		33076C331CE3DF2200FCB267 /* AdmobBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33076C321CE3DF2200FCB267 /* AdmobBanner.swift */; };
@@ -155,7 +155,10 @@
 		33C8F9BE1CA76B5A00E1C6DA /* usnit_app.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = usnit_app.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C8F9C21CA76B5A00E1C6DA /* USNITUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USNITUITests.swift; sourceTree = "<group>"; };
 		33C8F9C41CA76B5A00E1C6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A6D9D885583D53645052FD0 /* Pods-usnit_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-usnit_app.release.xcconfig"; path = "Pods/Target Support Files/Pods-usnit_app/Pods-usnit_app.release.xcconfig"; sourceTree = "<group>"; };
 		6357C9C4168FCFE317112F82 /* Pods-USNIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-USNIT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-USNIT/Pods-USNIT.debug.xcconfig"; sourceTree = "<group>"; };
+		98E622CA61015B46907052B1 /* libPods-usnit_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-usnit_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E60FEA6E9951D2DB11539B11 /* Pods-usnit_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-usnit_app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-usnit_app/Pods-usnit_app.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +174,7 @@
 				3362AD941CF2CEF5004D31FD /* libsqlite3.a in Frameworks */,
 				33076C311CE3CC7400FCB267 /* SafariServices.framework in Frameworks */,
 				33076C2F1CE3CC6A00FCB267 /* CoreBluetooth.framework in Frameworks */,
-				14161DF562A108A5F3BDAAFC /* libPods-USNIT.a in Frameworks */,
+				16E0B5D6B1CA566B3F86EE47 /* libPods-usnit_app.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +200,8 @@
 			children = (
 				6357C9C4168FCFE317112F82 /* Pods-USNIT.debug.xcconfig */,
 				2B791A168974B6C645B1E956 /* Pods-USNIT.release.xcconfig */,
+				E60FEA6E9951D2DB11539B11 /* Pods-usnit_app.debug.xcconfig */,
+				4A6D9D885583D53645052FD0 /* Pods-usnit_app.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 				33076C301CE3CC7400FCB267 /* SafariServices.framework */,
 				33076C2E1CE3CC6A00FCB267 /* CoreBluetooth.framework */,
 				229DB492FD4D56F2C38D6C10 /* libPods-USNIT.a */,
+				98E622CA61015B46907052B1 /* libPods-usnit_app.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -367,12 +373,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 33C8F9C71CA76B5A00E1C6DA /* Build configuration list for PBXNativeTarget "usnit_app" */;
 			buildPhases = (
+				7E5E00AEF5E1A148B825362A /* 📦 Check Pods Manifest.lock */,
 				4AB1011096037368B9288E61 /* � Check Pods Manifest.lock */,
 				33C8F9991CA76B5A00E1C6DA /* Sources */,
 				33C8F99A1CA76B5A00E1C6DA /* Frameworks */,
 				33C8F99B1CA76B5A00E1C6DA /* Resources */,
 				F21A82815986BAA8C26CFAA6 /* � Embed Pods Frameworks */,
 				28D5BF61DE86659D327C1AEE /* � Copy Pods Resources */,
+				D61C4C3DFA35E7420C5A7674 /* 📦 Embed Pods Frameworks */,
+				3FA1C6EF6064FBE998A4E8DE /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -603,7 +612,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-USNIT/Pods-USNIT-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-usnit_app/Pods-usnit_app-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FA1C6EF6064FBE998A4E8DE /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-usnit_app/Pods-usnit_app-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4AB1011096037368B9288E61 /* � Check Pods Manifest.lock */ = {
@@ -621,6 +645,36 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		7E5E00AEF5E1A148B825362A /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D61C4C3DFA35E7420C5A7674 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-usnit_app/Pods-usnit_app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F21A82815986BAA8C26CFAA6 /* � Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -633,7 +687,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-USNIT/Pods-USNIT-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-usnit_app/Pods-usnit_app-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -797,13 +851,13 @@
 		};
 		33C8F9C81CA76B5A00E1C6DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6357C9C4168FCFE317112F82 /* Pods-USNIT.debug.xcconfig */;
+			baseConfigurationReference = E60FEA6E9951D2DB11539B11 /* Pods-usnit_app.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: li lin (32DR82A3MW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: li lin (32DR82A3MW)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				HEADER_SEARCH_PATHS = "";
@@ -812,7 +866,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dyno.fun.USNIT;
 				PRODUCT_NAME = usnit_app;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "ac73709d-b014-41fb-b0d1-573d774a479c";
 				SWIFT_OBJC_BRIDGING_HEADER = "USNIT/USNIT-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../generated-src/objc\" \"$(SRCROOT)/../gearsbox/generated-src/objc\"";
@@ -821,13 +875,13 @@
 		};
 		33C8F9C91CA76B5A00E1C6DA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2B791A168974B6C645B1E956 /* Pods-USNIT.release.xcconfig */;
+			baseConfigurationReference = 4A6D9D885583D53645052FD0 /* Pods-usnit_app.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: li lin (32DR82A3MW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: li lin (32DR82A3MW)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = USNIT/Info.plist;
@@ -835,7 +889,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dyno.fun.USNIT;
 				PRODUCT_NAME = usnit_app;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "ac73709d-b014-41fb-b0d1-573d774a479c";
 				SWIFT_OBJC_BRIDGING_HEADER = "USNIT/USNIT-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../generated-src/objc\" \"$(SRCROOT)/../gearsbox/generated-src/objc\"";
 			};
