@@ -26,6 +26,8 @@ public abstract class UsnitGen {
 
     public abstract UsnitType getVolumeType();
 
+    public abstract void buildui(String viewName);
+
     public static native UsnitGen instance();
 
     private static final class CppProxy extends UsnitGen
@@ -130,5 +132,13 @@ public abstract class UsnitGen {
             return native_getVolumeType(this.nativeRef);
         }
         private native UsnitType native_getVolumeType(long _nativeRef);
+
+        @Override
+        public void buildui(String viewName)
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            native_buildui(this.nativeRef, viewName);
+        }
+        private native void native_buildui(long _nativeRef, String viewName);
     }
 }

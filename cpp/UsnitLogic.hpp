@@ -37,6 +37,7 @@ public:
     virtual UsnitType getMassType(){return m_usnitData.nMassType;}
     virtual UsnitType getSquareType(){return m_usnitData.nSquareType;}
     virtual UsnitType getVolumeType(){return m_usnitData.nVolumeType;}
+    virtual void buildui(const std::string & view_name);
 
 public:
     CUsnitLogic();

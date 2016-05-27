@@ -59,5 +59,7 @@ usnit_gen = interface +c {
     getMassType():usnit_type;
     getSquareType():usnit_type;
     getVolumeType():usnit_type;
+
+    buildui(view_name:string);
 }
 

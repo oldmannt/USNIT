@@ -1,0 +1,23 @@
+{
+	"typesets":[
+		{"name":"length", "typeset":[
+			{"name":"meter", "type_id":1, "func":""},
+			{"name":"cmeter", "type_id":2, "func":""},
+			{"name":"kmeter", "type_id":3, "func":""},
+			{"name":"feet", "type_id":4, "func":""}
+		]},
+		{"name":"mass", "typeset":[
+			{"name":"", "type_id":1, "func":""}
+		]},
+		{"name":"square", "typeset":[
+			{"name":"", "type_id":1, "func":""}
+		]},
+		{"name":"volume", "typeset":[
+			{"name":"", "type_id":1, "func":""}
+		]}
+	]
+
+
+}
+
+

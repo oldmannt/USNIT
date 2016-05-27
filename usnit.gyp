@@ -4,7 +4,7 @@
       "target_name": "usnit_objc",
       "type": "static_library",
       "dependencies": [
-        "./gearsbox/gearsbox.gyp:gearsbox_objc"
+        "gearsbox/gearsbox.gyp:gearsbox_objc"
       ],
       "sources": [
         "<!@(python ./gearsbox/deps/djinni/example/glob.py ./generated-src/objc  '*.cpp' '*.h' '*.mm' '*.m')",

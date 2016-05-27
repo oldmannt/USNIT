@@ -593,3 +593,7 @@ float CUsnitLogic::getDollar(float value) const{
 float CUsnitLogic::getRmb(float value) const{
     return value*m_usnitData.fAsk;
 }
+
+void CUsnitLogic::buildui(const std::string & view_name){
+    
+}
