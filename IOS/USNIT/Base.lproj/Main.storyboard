@@ -419,7 +419,6 @@
                                     <constraint firstItem="gYa-w3-2ld" firstAttribute="width" secondItem="hlF-Jh-JVX" secondAttribute="width" id="Ak6-WE-mZd"/>
                                     <constraint firstItem="hBp-l5-1oh" firstAttribute="top" secondItem="klt-s6-Mhc" secondAttribute="bottom" constant="8" id="Am7-vs-Co7"/>
                                     <constraint firstItem="RUt-ih-PSR" firstAttribute="top" secondItem="gPc-xP-tr5" secondAttribute="top" id="Asx-zn-bx8"/>
-                                    <constraint firstAttribute="trailing" secondItem="GP6-xe-c16" secondAttribute="trailing" constant="21" id="BLv-Lo-0dz"/>
                                     <constraint firstItem="qNz-3p-Jtt" firstAttribute="top" secondItem="3Ky-ue-izZ" secondAttribute="bottom" constant="8" id="Bhs-h9-CeE"/>
                                     <constraint firstItem="lDe-I1-l4Z" firstAttribute="top" secondItem="NdE-X6-2BT" secondAttribute="bottom" constant="8" id="CGc-Vx-7mA"/>
                                     <constraint firstItem="GP6-xe-c16" firstAttribute="top" secondItem="MMQ-9E-3gs" secondAttribute="top" constant="40" id="CIb-4v-c2X"/>
@@ -601,7 +600,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789" y="-47"/>
+            <point key="canvasLocation" x="49" y="-318"/>
         </scene>
         <!--Help-->
         <scene sceneID="aot-gm-0H8">
@@ -625,7 +624,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8u-w6-LSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="668" y="771"/>
+            <point key="canvasLocation" x="27" y="663"/>
         </scene>
         <!--Usnit Tab Bar Ctl-->
         <scene sceneID="yl2-sM-qoP">

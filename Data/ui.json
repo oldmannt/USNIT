@@ -1,22 +1,85 @@
 {
-	"typesets":[
-		{"name":"length", "typeset":[
-			{"name":"meter", "type_id":1, "func":""},
-			{"name":"cmeter", "type_id":2, "func":""},
-			{"name":"kmeter", "type_id":3, "func":""},
-			{"name":"feet", "type_id":4, "func":""}
+	"constraints":{
+		"line1":[
+			{"from":"line1","to":"","type_from":"height","type_to":"","multiplier":1,"offset":1},
+			{"from":"line1","to":"parent","type_from":"width","type_to":"width","multiplier":1,"offset":0.95},
+			{"from":"line1","to":"parent","type_from":"centterx","type_to":"centterx","multiplier":1,"offset":0.95},
+			{"from":"line1","to":"last_view","type_from":"top","type_to":"bottom","multiplier":1,"offset":20}
+		],
+		"lines":[
+			{"from":"line1","to":"line1","type_from":"height","type_to":"height","multiplier":1,"offset":0},
+			{"from":"lines","to":"line1","type_from":"width","type_to":"width","multiplier":1,"offset":0},
+			{"from":"lines","to":"parent","type_from":"centterx","type_to":"centterx","multiplier":1,"offset":0},
+			{"from":"lines","to":"last_view","type_from":"top","type_to":"bottom","multiplier":1,"offset":20}
+		],
+		"first_unit":[
+			{"from":"first_unit","to":"parent","type_from":"top","type_to":"top","multiplier":1,"offset":20},
+			{"from":"first_unit","to":"line1","type_from":"leading","type_to":"leading","multiplier":1,"offset":0},
+			{"from":"first_unit","to":"parent","type_from":"width","type_to":"width","multiplier":0.5,"offset":-43}
+		],
+		"first_unit_name":[
+			{"from":"first_unite_name","to":"first_unit","type_from":"top","type_to":"top","multiplier":1,"offset":0},
+			{"from":"first_unite_name","to":"first_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0},
+			{"from":"first_unite_name","to":"first_unit","type_from":"leading","type_to":"trailing","multiplier":1,"offset":0}
+		],
+		"first_us_unit":[
+			{"from":"first_us_unit","to":"first_unit","type_from":"width","type_to":"width","multiplier":1,"offset":0},
+			{"from":"first_us_unit","to":"first_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0},
+			{"from":"first_us_unit","to":"first_unit","type_from":"top","type_to":"top","multiplier":1,"offset":0},
+			{"from":"first_us_unit","to":"line1","type_from":"trailing","type_to":"trailing","multiplier":1,"offset":-41}
+		],
+		"first_us_unit_name":[
+			{"from":"first_us_unit_name","to":"first_us_unit","type_from":"top","type_to":"top","multiplier":1,"offset":0},
+			{"from":"first_us_unit_name","to":"first_us_unit","type_from":"leading","type_to":"trailing","multiplier":1,"offset":0},
+			{"from":"first_us_unit_name","to":"first_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0},
+			{"from":"first_us_unit_name","to":"line1","type_from":"trailing","type_to":"trailing","multiplier":1,"offset":0}
+		],
+		"line_unit":[
+			{"from":"line2_unit","to":"last_unit","type_from":"top","type_to":"bottom","multiplier":1,"offset":20},
+			{"from":"line2_unit","to":"first_unit","type_from":"leading","type_to":"trailing","multiplier":1,"offset":0},
+			{"from":"line2_unit","to":"first_unit","type_from":"width","type_to":"width","multiplier":1,"offset":0},
+			{"from":"line2_unit","to":"first_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0},
+		],
+		"line_unit_name":[
+			{"from":"line_unit_name","to":"line_unit","type_from":"top","type_to":"top","multiplier":1,"offset":0},
+			{"from":"line_unit_name","to":"first_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0},
+			{"from":"line_unit_name","to":"line_unit","type_from":"leading","type_to":"trailing","multiplier":1,"offset":0}
+		],
+		"line_us_unit":[
+			{"from":"line_us_unit","to":"last_us_unit","type_from":"top","type_to":"bottom","multiplier":1,"offset":20},
+			{"from":"line_us_unit","to":"first_unit","type_from":"width","type_to":"width","multiplier":1,"offset":0},
+			{"from":"line_us_unit","to":"first_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0},
+			{"from":"line_us_unit","to":"line1","type_from":"trailing","type_to":"trailing","multiplier":1,"offset":-41}
+		],
+		"line_us_unit_name":[
+			{"from":"line_us_unit_name","to":"first_us_unit","type_from":"top","type_to":"top","multiplier":1,"offset":0},
+			{"from":"line_us_unit_name","to":"first_us_unit","type_from":"leading","type_to":"trailing","multiplier":1,"offset":0},
+			{"from":"line_us_unit_name","to":"first_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0},
+			{"from":"line_us_unit_name","to":"line1","type_from":"trailing","type_to":"trailing","multiplier":1,"offset":0}
+		],
+		"exchange_info":[
+			{"from":"exchange_info","to":"first_us_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0},
+			{"from":"exchange_info","to":"first_us_unit","type_from":"leading","type_to":"leading","multiplier":1,"offset":0},
+			{"from":"exchange_info","to":"line1","type_from":"width","type_to":"width","multiplier":1,"offset":0}
+		],
+	},
+	"views":[
+		{"name":"input_view","type":"view",
+		"views":[
+			{"name":"input_text","type":3}
+		],
+		"constraints":[
+			{"from":"input_text","to":"input_view","type_from":"top","type_to":"top","multiplier":1,"offset":40},
+			{"from":"input_text","to":"input_view","type_from":"centterx","type_to":"centterx","multiplier":1,"offset":0},
+			{"from":"input_text","to":"input_view","type_from":"width","type_to":"width","multiplier":1,"offset":0.95}
 		]},
-		{"name":"mass", "typeset":[
-			{"name":"", "type_id":1, "func":""}
-		]},
-		{"name":"square", "typeset":[
-			{"name":"", "type_id":1, "func":""}
-		]},
-		{"name":"volume", "typeset":[
-			{"name":"", "type_id":1, "func":""}
+
+		{"name":"unit_view","type":"view",
+		"views":[
+		],
+		"constraint":[
 		]}
 	]
-
 
 }
 

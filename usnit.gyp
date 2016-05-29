@@ -13,10 +13,10 @@
         "<!@(python ./gearsbox/deps/djinni/example/glob.py ./interface '*.hpp' '*.h')",
       ],
       "include_dirs": [
-        "./generated-src/objc",
-        "./generated-src/cpp",
-        "./cpp",
-        "./gearsbox/deps/djinni/support-lib/objc",
+        "generated-src/objc",
+        "generated-src/cpp",
+        "cpp",
+        "gearsbox/deps/djinni/support-lib/objc",
       ],
     },
     {

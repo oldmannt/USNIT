@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33961B551CFA505600EC150A /* UILogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33961B531CFA505600EC150A /* UILogic.cpp */; };
 		5C3EB210938ED45B15E9AC2F /* UsnitLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */; };
 		9D701432352DA19CA5B7F47B /* USNUsnitEventGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8493963346F50FA7E7C2A43 /* USNUsnitEventGen+Private.mm */; };
 		A2C7E4B00050320E1455365B /* USNUsnitGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49A8BC59A6DF6EBBA0BD217F /* USNUsnitGen+Private.mm */; };
@@ -16,6 +17,8 @@
 		06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UsnitLogic.cpp; sourceTree = "<group>"; };
 		294C18D138F451F9A6B0755C /* usnit.gyp */ = {isa = PBXFileReference; explicitFileType = sourcecode; path = usnit.gyp; sourceTree = "<group>"; };
 		30DF8A96D4ED0EC6B1B04691 /* USNUsnitGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USNUsnitGen+Private.h"; sourceTree = "<group>"; };
+		33961B531CFA505600EC150A /* UILogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UILogic.cpp; sourceTree = "<group>"; };
+		33961B541CFA505600EC150A /* UILogic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UILogic.hpp; sourceTree = "<group>"; };
 		4610FEA4A901D379EDC60051 /* libusnit_objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libusnit_objc.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A8BC59A6DF6EBBA0BD217F /* USNUsnitGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "USNUsnitGen+Private.mm"; sourceTree = "<group>"; };
 		4D67B6D000828CD49F129558 /* usnit_type.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = usnit_type.hpp; sourceTree = "<group>"; };
@@ -122,6 +125,8 @@
 			children = (
 				06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */,
 				7171C1DF80ECF3A921050E81 /* UsnitLogic.hpp */,
+				33961B531CFA505600EC150A /* UILogic.cpp */,
+				33961B541CFA505600EC150A /* UILogic.hpp */,
 			);
 			path = cpp;
 			sourceTree = "<group>";
@@ -155,7 +160,11 @@
 			};
 			buildConfigurationList = BFD05A1554232B6A6B5A60E1 /* Build configuration list for PBXProject "usnit" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 2E8933E7F0FD20EEF503F5C4;
 			projectDirPath = ../..;
 			projectRoot = "";
@@ -170,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33961B551CFA505600EC150A /* UILogic.cpp in Sources */,
 				9D701432352DA19CA5B7F47B /* USNUsnitEventGen+Private.mm in Sources */,
 				A2C7E4B00050320E1455365B /* USNUsnitGen+Private.mm in Sources */,
 				5C3EB210938ED45B15E9AC2F /* UsnitLogic.cpp in Sources */,
@@ -205,11 +215,12 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = (
-					"./generated-src/objc",
-					"./generated-src/cpp",
-					./cpp,
-					"./gearsbox/deps/djinni/support-lib/objc",
+					"generated-src/objc",
+					"generated-src/cpp",
+					cpp,
+					"gearsbox/deps/djinni/support-lib/objc",
 					"gearsbox/generated-src/objc",
+					"gearsbox/generated-src/cpp",
 					gearsbox/interface,
 					gearsbox/deps/sqlite3,
 					gearsbox/deps/curl,
@@ -235,11 +246,12 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
 				HEADER_SEARCH_PATHS = (
-					"./generated-src/objc",
-					"./generated-src/cpp",
-					./cpp,
-					"./gearsbox/deps/djinni/support-lib/objc",
+					"generated-src/objc",
+					"generated-src/cpp",
+					cpp,
+					"gearsbox/deps/djinni/support-lib/objc",
 					"gearsbox/generated-src/objc",
+					"gearsbox/generated-src/cpp",
 					gearsbox/interface,
 					gearsbox/deps/sqlite3,
 					gearsbox/deps/curl,

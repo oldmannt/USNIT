@@ -11,13 +11,26 @@
 #include "UsnitLogic.hpp"
 #include "ILog.h"
 
+#include "ui_injecter_gen.hpp"
+#include "view_gen.hpp"
+#include "view_type.hpp"
+#include "view_frame.hpp"
+#include "view_constraint.hpp"
+
 using namespace usnit;
 
 std::shared_ptr<UsnitGen> UsnitGen::instance(){
-    static std::shared_ptr<UsnitGen> s_usnit = std::make_shared<CUsnitLogic>();
-    return s_usnit;
+    return CUsnitLogic::instance();
 }
 
+std::shared_ptr<CUsnitLogic> CUsnitLogic::instance(){
+    if (nullptr == s_instance){
+        s_instance = std::make_shared<CUsnitLogic>();
+    }
+    return s_instance;
+}
+
+std::shared_ptr<CUsnitLogic> CUsnitLogic::s_instance = nullptr;
 CUsnitLogic::CUsnitLogic():m_observerResult(nullptr), m_http_request(nullptr){
 }
 
@@ -594,6 +607,4 @@ float CUsnitLogic::getRmb(float value) const{
     return value*m_usnitData.fAsk;
 }
 
-void CUsnitLogic::buildui(const std::string & view_name){
-    
-}
+

@@ -16,4 +16,7 @@
 #import "GBViewConstraint.h"
 #import "GBViewFrame.h"
 #import "GBViewGen.h"
-#import "GBViewGroupGen.h"
+#import "GBViewFactoryGen.h"
+#import "GBViewEventHandler.h"
+#import "GBViewEvent.h"
+#import "GBViewEventParam.h"
