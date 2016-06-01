@@ -186,15 +186,17 @@ bool CUsnitLogic::saveConf(){
 void CUsnitLogic::formatRate(){
     char buf[64] = {0};
     MAP_UNIT_NAME::iterator it(m_langData.ch.find(UsnitType::TYPE_RATE));
-    if (it!=m_langData.ch.end() && it->second.find("%")!=std::string::npos) {
-        sprintf(buf, it->second.c_str(), m_usnitData.strDate.c_str(), m_usnitData.fAsk, m_usnitData.fBid);
+    if (it!=m_langData.ch.end() /*&& it->second.find("%")!=std::string::npos*/) {
+        const char* format = "%s的离岸汇率,汇卖价:%.04f,汇买价:%.04f";
+        sprintf(buf, format, m_usnitData.strDate.c_str(), m_usnitData.fAsk, m_usnitData.fBid);
         it->second = buf;
         G_LOG_FC(LOG_INFO, "set ch.TYPE_RATE:%s", it->second.c_str());
     }
     
     it = m_langData.eng.find(UsnitType::TYPE_RATE);
-    if (it!=m_langData.eng.end() && it->second.find("%")!=std::string::npos){
-        sprintf(buf, it->second.c_str(), m_usnitData.strDate.c_str(),m_usnitData.fAsk, m_usnitData.fBid);
+    if (it!=m_langData.eng.end() /*&& it->second.find("%")!=std::string::npos*/){
+        const char* format = "From Yahoo:%s Buying Rate:%.04f Selling Rate:%.04f";
+        sprintf(buf, format, m_usnitData.strDate.c_str(),m_usnitData.fAsk, m_usnitData.fBid);
         it->second = buf;
         G_LOG_FC(LOG_INFO, "set eng.TYPE_RATE:%s", buf);
     }

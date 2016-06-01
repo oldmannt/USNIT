@@ -42,7 +42,7 @@ public class SFUsnitLogic {
         let res_path = NSBundle.mainBundle().pathForResource("conf", ofType: "json")
         
         var doc_path:String = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        doc_path.appendContentsOf("/conf.json")
+        doc_path.appendContentsOf("/conf1.4.json")
 
         let fileManager = NSFileManager.defaultManager()
         if fileManager.fileExistsAtPath(doc_path) {
