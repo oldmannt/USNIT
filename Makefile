@@ -1,8 +1,10 @@
-ios_proj: usnit.gyp ./gearsbox/deps/djinni/support-lib/support_lib.gyp usnit.djinni
+djinni:gearsbox/gearsbox.djinni gearsbox/ui.djinni usnit.djinni
 	-rm -rf generated-src
-	cd gearsbox && make ios_proj
+	cd gearsbox/ && make djinni
 	sh ./run_djinni.sh
-	./gearsbox/deps/gyp/gyp --depth=. -f xcode -DOS=ios --generator-output ./ios/build_ios -Igearsbox/deps/djinni/common.gypi ./usnit.gyp
+
+ios_proj: djinni usnit.gyp ./gearsbox/deps/djinni/support-lib/support_lib.gyp 
+	./gearsbox/deps/gyp/gyp --depth=. -f xcode -DOS=ios --generator-output ./ios/build_ios -Igearsbox/deps/djinni/common.gypi ./usnit.gyp --root-target=usnit_objc
 
 ios: ios_proj
 	xcodebuild -workspace ios/usnit.xcworkspace \

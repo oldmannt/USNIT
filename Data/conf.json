@@ -1,4 +1,41 @@
 {
+    "typesets":[
+        {"name":"length", "types":[
+            {"name":"meter", "us":false, "func":""},
+            {"name":"cmeter", "us":false},
+            {"name":"kmeter", "us":false},
+            {"name":"feet", "us":true},
+            {"name":"inch", "us":true},
+            {"name":"mile", "us":true},
+            {"name":"yard", "us":true}
+        ]},
+        {"name":"mass", "types":[
+            {"name":"gram", "us":false},
+            {"name":"kgram", "us":false},
+            {"name":"lb", "us":true},
+            {"name":"oz", "us":true}
+        ]},
+        {"name":"volume", "types":[
+            {"name":"liter", "us":false, "func":""},
+            {"name":"mliter", "us":false, "func":""},
+            {"name":"gal", "us":true,"func":""},
+            {"name":"oz", "us":true,"func":""}
+        ]},
+        {"name":"square", "types":[
+            {"name":"sqmeter", "us":false, "func":""},
+            {"name":"sqcmeter", "us":false, "func":""},
+            {"name":"sqinch", "us":true, "func":""},
+            {"name":"sqfeet", "us":true, "func":""}
+        ]},
+        {"name":"termperature", "types":[
+            {"name":"celcius", "us":false,"func":""},
+            {"name":"fahrenheit", "us":true, "func":""}
+        ]},
+        {"name":"exchange", "types":[
+            {"name":"rmb", "us":false,"func":""},
+            {"name":"dollor", "us":true,"func":""}
+        ]},
+    ],
     "start_counter":0,
     "long_type":1,
     "mass_type":10,

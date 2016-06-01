@@ -23,8 +23,36 @@
 #include "usnit_event_type.hpp"
 #include "usnit_type.hpp"
 
-namespace usnit {
+#include "ui_injecter_gen.hpp"
+#include "view_gen.hpp"
+#include "view_type.hpp"
+#include "view_frame.hpp"
+#include "view_constraint.hpp"
 
+namespace usnit {
+    
+    enum class UsnitSuperType : int {
+        TYPE_NONE,
+        TYPE_LENGTH,
+        TYPE_MASS,
+        TYPE_VOLUME,
+        TYPE_SQUARE,
+        TYPE_TERMPERATURE,
+        TYPE_EXCHANGE,
+        TYPE_MAX,
+    };
+    
+    struct Unit{
+        std::string name;
+        UsnitType type;
+        bool isUs;
+        std::string func;
+        Unit():type(UsnitType::TYPE_NONE){}
+    };
+    typedef std::list<std::shared_ptr<Unit>> LstUnit;
+    typedef std::map<UsnitSuperType, LstUnit> MapSuperType;
+
+class UILogic;
 class CUsnitLogic:public usnit::UsnitGen {
 public:
     virtual bool initialize(const std::string & conf, LangType lang, const std::shared_ptr<usnit::UsnitEventGen> & callback);
@@ -37,14 +65,11 @@ public:
     virtual UsnitType getMassType(){return m_usnitData.nMassType;}
     virtual UsnitType getSquareType(){return m_usnitData.nSquareType;}
     virtual UsnitType getVolumeType(){return m_usnitData.nVolumeType;}
-
+    virtual void buildView(const std::string & view_name);
 public:
     CUsnitLogic();
     virtual ~CUsnitLogic();
-    static CUsnitLogic& Instance(){
-        static CUsnitLogic instance;
-        return instance;
-    }
+    static std::shared_ptr<CUsnitLogic> instance();
 
     void setLanguage(UsnitType lang);
     bool setLongType(UsnitType type);
@@ -53,8 +78,11 @@ public:
     bool setVolumeType(UsnitType type);
     
     void HttpRequestCallback(std::shared_ptr<gearsbox::IHttpRequest> http_request);
+    
+    MapSuperType& getAllUnits(){ return m_usnitData.mapAllUnits;};
 
 private:
+    static std::shared_ptr<CUsnitLogic> s_instance;
     typedef std::map<UsnitType, std::string> MAP_UNIT_NAME;
     typedef std::set<UsnitType> SET_UNIT_TYPE;
     typedef std::list<UsnitType> LST_UNIT_TYPE;
@@ -89,6 +117,8 @@ private:
 
         // outputs
         MAP_UNIT_NAME mapOutputs;
+        
+        MapSuperType mapAllUnits;
 
         SET_UNIT_TYPE setLong;
         SET_UNIT_TYPE setVolume;
@@ -129,6 +159,7 @@ private:
     std::string m_conf_file;
     std::shared_ptr<UsnitEventGen> m_observerResult;
     std::shared_ptr<gearsbox::IHttpRequest> m_http_request;
+    std::shared_ptr<UILogic> m_uilogic;
     
     float getMeter(float value) const;
     float getCMeter(float value) const;

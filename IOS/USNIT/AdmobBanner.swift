@@ -29,9 +29,9 @@ class AdmobBanner: NSObject, GADBannerViewDelegate{
         
         rootController.view.addSubview(bannerView)
         
-        let offsety:CGFloat = (rootController.tabBarController?.tabBar.frame.height)!
+        //let offsety:CGFloat = (rootController.tabBarController?.tabBar.frame.height)!
         rootController.view.addConstraint(NSLayoutConstraint(item: bannerView, attribute: .Bottom,
-            relatedBy: .Equal, toItem: rootController.view , attribute: .Bottom, multiplier: 1, constant: -offsety))
+            relatedBy: .Equal, toItem: rootController.bottomLayoutGuide , attribute: .Top, multiplier: 1, constant: 0))
         rootController.view.addConstraint(NSLayoutConstraint(item: bannerView, attribute: .CenterX,
             relatedBy: .Equal, toItem: rootController.view, attribute: .CenterX, multiplier: 1, constant: 0))
         

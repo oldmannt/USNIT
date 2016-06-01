@@ -132,4 +132,13 @@ CJNIEXPORT jobject JNICALL Java_dyno_fun_usnit_UsnitGen_00024CppProxy_native_1ge
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
+CJNIEXPORT void JNICALL Java_dyno_fun_usnit_UsnitGen_00024CppProxy_native_1buildView(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jstring j_viewName)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::usnit::UsnitGen>(nativeRef);
+        ref->buildView(::djinni::String::toCpp(jniEnv, j_viewName));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
+}
+
 }  // namespace djinni_generated
