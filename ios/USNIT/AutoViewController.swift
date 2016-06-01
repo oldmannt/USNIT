@@ -11,19 +11,62 @@ import UIKit
 
 class AutoViewController: UIViewController {
     
+    @IBOutlet weak var viewInput: UIView!
+    @IBOutlet weak var viewUnit: UIView!
+    var genViewInput:GBViewImp?
+    var genViewUnit:GBViewImp?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        //UITextBorderStyle
+        /*
+        let myTextField = UITextField(/*frame: CGRect(x: 20, y: 20, width: 100.0, height: 40.00)*/)
+        //myTextField.frame = CGRect(x: 20, y: 0, width: 100.0, height: 40.00)
+        //myTextField.backgroundColor = UIColor.grayColor()
+        myTextField.placeholder="Enter"
+        //myTextField.text = "    Enter here"
+        myTextField.borderStyle = UITextBorderStyle.RoundedRect
+        //myTextField.secureTextEntry=true
+        viewInput.addSubview(myTextField)
+        myTextField.text = "input"
+        myTextField.translatesAutoresizingMaskIntoConstraints = false;
+        let cs = myTextField.constraints
+        
+        let conCenter = NSLayoutConstraint(item: myTextField, attribute: .CenterX, relatedBy: .Equal, toItem:viewInput , attribute: .CenterX, multiplier: 1, constant: 0)
+        conCenter.identifier = "centerText"
+        //conCenter.priority = 250
+        let conWidth = NSLayoutConstraint(item: myTextField, attribute: .Width, relatedBy: .Equal, toItem:viewInput , attribute: .Width, multiplier: 1, constant: 0)
+        conWidth.identifier = "centerWidth"
+        //conWidth.priority = 250
+        let conTop = NSLayoutConstraint(item: myTextField, attribute: .Top, relatedBy: .Equal, toItem:viewInput , attribute: .Top, multiplier: 1, constant: 40)
+        conTop.identifier = "centerTop"
+        //conTop.priority = 250
+        let conHeight = NSLayoutConstraint(item: myTextField, attribute: .Height, relatedBy: .Equal, toItem:nil , attribute: .Height, multiplier: 1, constant: 30)
+        conHeight.identifier = "centerHeight"
+        //conHeight.priority = 250
+        
+        viewInput.addConstraint(conCenter)
+        viewInput.addConstraint(conWidth)
+        viewInput.addConstraint(conTop)
+        viewInput.addConstraint(conHeight)
+        
+        //viewInput.addConstraint(NSLayoutConstraint(item: myTextField, attribute: .CenterX, relatedBy: .Equal, toItem: viewInput, attribute: .CenterX, multiplier: 1, constant: 0))
+        */
+        genViewInput = GBViewImp(id:"input_view", view: viewInput, controller: self)
+        genViewUnit = GBViewImp(id:"unit_view", view: viewUnit, controller: self)
 
+        GBUiInjecterGen.instance()?.inject("input_view", view: genViewInput)
+        GBUiInjecterGen.instance()?.inject("unit_view", view: genViewUnit)
+        
+        USNUsnitGen.instance()?.buildView("input_view")
+        USNUsnitGen.instance()?.buildView("unit_view")
+        //*/
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    override func viewWillDisappear(animated: Bool){
-
     }
 
 }

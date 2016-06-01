@@ -60,6 +60,6 @@ usnit_gen = interface +c {
     getSquareType():usnit_type;
     getVolumeType():usnit_type;
 
-    buildui(view_name:string);
+    buildView(view_name:string);
 }
 

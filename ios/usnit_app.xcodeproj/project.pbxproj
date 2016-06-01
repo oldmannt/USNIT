@@ -322,6 +322,7 @@
 				33C8F9A01CA76B5A00E1C6DA /* AppDelegate.swift */,
 				33C8F9A21CA76B5A00E1C6DA /* FirstViewController.swift */,
 				33C8F9A41CA76B5A00E1C6DA /* SecondViewController.swift */,
+				33E0023F1CFA955D0058D15A /* AutoViewController.swift */,
 				33C8F9A61CA76B5A00E1C6DA /* Main.storyboard */,
 				33C8F9A91CA76B5A00E1C6DA /* Assets.xcassets */,
 				33C8F9AB1CA76B5A00E1C6DA /* LaunchScreen.storyboard */,
@@ -333,7 +334,6 @@
 				33BEACDA1CD9CC8300D37F22 /* MainLoop.swift */,
 				33343B1F1CDD78D7005AAAC6 /* UsnitTabBarCtl.swift */,
 				33076C321CE3DF2200FCB267 /* AdmobBanner.swift */,
-				33E0023F1CFA955D0058D15A /* AutoViewController.swift */,
 			);
 			path = USNIT;
 			sourceTree = "<group>";

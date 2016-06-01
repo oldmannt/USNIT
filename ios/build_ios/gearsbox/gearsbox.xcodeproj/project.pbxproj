@@ -16,6 +16,7 @@
 		217DFEDBFAF20ABA70CCABD9 /* ui_injecter_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DC7102EBB83935CAC660D54 /* ui_injecter_imp.cpp */; };
 		2C4BFC4750D4070AD8772DF4 /* GBViewFrame+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9156F47FE7752FF613E222EE /* GBViewFrame+Private.mm */; };
 		2C597CDECAF42CD88F5BFFE6 /* HttpRequestImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C1CD6486CE5D0435C5E85FC /* HttpRequestImp.cpp */; };
+		33E002421CFBC16F0058D15A /* view_constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33E002411CFBC16F0058D15A /* view_constraint.cpp */; };
 		3D21F46D15CD7C056FCD9331 /* GBAsyncLoopGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = C18B1ED30D25BCD311D69599 /* GBAsyncLoopGen+Private.mm */; };
 		7528497D74D14512A396DBA7 /* GBHttpRequestGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D02A5B31DAD5BB9A9EA09894 /* GBHttpRequestGen+Private.mm */; };
 		756C0100AC76EC218594337D /* GBViewEventParam+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B48A7D6F0A06186054DA04A3 /* GBViewEventParam+Private.mm */; };
@@ -48,6 +49,7 @@
 		143BA7450868C032C13F2D52 /* async_loop_imp.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = async_loop_imp.hpp; sourceTree = "<group>"; };
 		1A4B0C409D6E7F87FF8E7C2C /* GBViewConstraint.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GBViewConstraint.mm; sourceTree = "<group>"; };
 		2EB5CB272966F9D5CD2A28FA /* log_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = log_gen.hpp; sourceTree = "<group>"; };
+		33E002411CFBC16F0058D15A /* view_constraint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = view_constraint.cpp; sourceTree = "<group>"; };
 		355EEED862602394BEA3599E /* GBViewConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBViewConstraint.h; sourceTree = "<group>"; };
 		3AC6B2991D0A2415566128DF /* GBAsyncLoopGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBAsyncLoopGen+Private.h"; sourceTree = "<group>"; };
 		4115D4E136687D12F2D8CBB1 /* GBViewGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBViewGen+Private.mm"; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				2EB5CB272966F9D5CD2A28FA /* log_gen.hpp */,
 				F2D1AB5B445BDB9D2AEAB300 /* ui_injecter_gen.hpp */,
 				03ADC513E552FA815E62869B /* view_constraint.hpp */,
+				33E002411CFBC16F0058D15A /* view_constraint.cpp */,
 				F3E1FA0846A1E6902E9FCF4B /* view_event.hpp */,
 				E5200AF2266B95D5A6FDFB7C /* view_event_handler.hpp */,
 				D098509FE6675299F4B79ABB /* view_event_param.hpp */,
@@ -355,6 +358,7 @@
 				C686126D47409B52927E3353 /* GBLogGen.mm in Sources */,
 				C12AA24E01DC95F033BF67C2 /* GBUiInjecterGen+Private.mm in Sources */,
 				BB3E9656546AAA4F8948BEC1 /* GBViewConstraint+Private.mm in Sources */,
+				33E002421CFBC16F0058D15A /* view_constraint.cpp in Sources */,
 				18E71CED755C1A2D7A62396B /* GBViewConstraint.mm in Sources */,
 				1575E2BD66B8CEE9324C86B7 /* GBViewEventHandler+Private.mm in Sources */,
 				756C0100AC76EC218594337D /* GBViewEventParam+Private.mm in Sources */,

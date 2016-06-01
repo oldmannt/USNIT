@@ -34,6 +34,6 @@
 
 - (USNUsnitType)getVolumeType;
 
-- (void)buildui:(nonnull NSString *)viewName;
+- (void)buildView:(nonnull NSString *)viewName;
 
 @end

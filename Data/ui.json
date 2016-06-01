@@ -66,15 +66,16 @@
 	"views":[
 		{"name":"input_view","type":"view",
 		"views":[
-			{"name":"input_text","type":3}
+			{"name":"input_text","type":"input","height":30,"boarder":"rounded_rect","placeholder":"Enter here"}
 		],
 		"constraints":[
-			{"from":"input_text","to":"input_view","type_from":"top","type_to":"top","multiplier":1,"offset":40},
-			{"from":"input_text","to":"input_view","type_from":"centterx","type_to":"centterx","multiplier":1,"offset":0},
-			{"from":"input_text","to":"input_view","type_from":"width","type_to":"width","multiplier":1,"offset":0.95}
+			{"from":"input_text","to":"parent","type_from":"top","type_to":"top","multiplier":1,"offset":40},
+			{"from":"input_text","to":"parent","type_from":"centterx","type_to":"centterx","multiplier":1,"offset":0},
+			{"from":"input_text","to":"parent","type_from":"width","type_to":"width","multiplier":1,"offset":0.95}
+			{"from":"input_text","to":"parent","type_from":"bottom","type_to":"bottom","multiplier":1,"offset":1},
 		]},
 
-		{"name":"unit_view","type":"view",
+		{"name":"view_unit","type":"view",
 		"views":[
 		],
 		"constraint":[

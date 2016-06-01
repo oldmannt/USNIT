@@ -38,7 +38,7 @@ public:
 
     virtual UsnitType getVolumeType() = 0;
 
-    virtual void buildui(const std::string & view_name) = 0;
+    virtual void buildView(const std::string & view_name) = 0;
 };
 
 }  // namespace usnit

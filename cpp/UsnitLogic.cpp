@@ -17,6 +17,8 @@
 #include "view_frame.hpp"
 #include "view_constraint.hpp"
 
+#include "UILogic.hpp"
+
 using namespace usnit;
 
 std::shared_ptr<UsnitGen> UsnitGen::instance(){
@@ -31,10 +33,12 @@ std::shared_ptr<CUsnitLogic> CUsnitLogic::instance(){
 }
 
 std::shared_ptr<CUsnitLogic> CUsnitLogic::s_instance = nullptr;
-CUsnitLogic::CUsnitLogic():m_observerResult(nullptr), m_http_request(nullptr){
+CUsnitLogic::CUsnitLogic():m_observerResult(nullptr), m_http_request(nullptr),
+m_uilogic(std::make_shared<UILogic>()){
 }
 
 CUsnitLogic::~CUsnitLogic(){
+    m_uilogic = nullptr;
     m_http_request = nullptr;
 }
 
@@ -607,4 +611,11 @@ float CUsnitLogic::getRmb(float value) const{
     return value*m_usnitData.fAsk;
 }
 
+void CUsnitLogic::buildView(const std::string & view_id){
+    if (nullptr==m_uilogic){
+        G_LOG_FC(LOG_ERROR, "m_uilogic null sth very bad happened");
+        return;
+    }
+    m_uilogic->buildUI(view_id);
+}
 

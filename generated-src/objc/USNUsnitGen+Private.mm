@@ -110,9 +110,9 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)buildui:(nonnull NSString *)viewName {
+- (void)buildView:(nonnull NSString *)viewName {
     try {
-        _cppRefHandle.get()->buildui(::djinni::String::toCpp(viewName));
+        _cppRefHandle.get()->buildView(::djinni::String::toCpp(viewName));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

@@ -52,7 +52,7 @@ namespace usnit {
     typedef std::list<std::shared_ptr<Unit>> LstUnit;
     typedef std::map<UsnitSuperType, LstUnit> MapSuperType;
 
-
+class UILogic;
 class CUsnitLogic:public usnit::UsnitGen {
 public:
     virtual bool initialize(const std::string & conf, LangType lang, const std::shared_ptr<usnit::UsnitEventGen> & callback);
@@ -65,7 +65,7 @@ public:
     virtual UsnitType getMassType(){return m_usnitData.nMassType;}
     virtual UsnitType getSquareType(){return m_usnitData.nSquareType;}
     virtual UsnitType getVolumeType(){return m_usnitData.nVolumeType;}
-    virtual void buildui(const std::string & view_name){}
+    virtual void buildView(const std::string & view_name);
 public:
     CUsnitLogic();
     virtual ~CUsnitLogic();
@@ -159,6 +159,7 @@ private:
     std::string m_conf_file;
     std::shared_ptr<UsnitEventGen> m_observerResult;
     std::shared_ptr<gearsbox::IHttpRequest> m_http_request;
+    std::shared_ptr<UILogic> m_uilogic;
     
     float getMeter(float value) const;
     float getCMeter(float value) const;

@@ -26,7 +26,7 @@ public abstract class UsnitGen {
 
     public abstract UsnitType getVolumeType();
 
-    public abstract void buildui(String viewName);
+    public abstract void buildView(String viewName);
 
     public static native UsnitGen instance();
 
@@ -134,11 +134,11 @@ public abstract class UsnitGen {
         private native UsnitType native_getVolumeType(long _nativeRef);
 
         @Override
-        public void buildui(String viewName)
+        public void buildView(String viewName)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            native_buildui(this.nativeRef, viewName);
+            native_buildView(this.nativeRef, viewName);
         }
-        private native void native_buildui(long _nativeRef, String viewName);
+        private native void native_buildView(long _nativeRef, String viewName);
     }
 }
