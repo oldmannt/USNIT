@@ -17,6 +17,7 @@
         "generated-src/cpp",
         "cpp",
         "gearsbox/deps/djinni/support-lib/objc",
+        'gearsbox/src/cpp/ui',
       ],
     },
     {

@@ -7,61 +7,84 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05A33868DA9BBEF9B775B63F /* log_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8358D2D8C6DFD50714CC8945 /* log_gen.cpp */; };
-		147C20E16A2F9C067BB00EB1 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC87E6DE8A68EEF9D106E883 /* Log.cpp */; };
-		14E9B51659EDAFB33B5E2D13 /* UiConfigReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE0D48B53AC46E0DA81370 /* UiConfigReader.cpp */; };
-		1575E2BD66B8CEE9324C86B7 /* GBViewEventHandler+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 597F7735E2663310D775A5A9 /* GBViewEventHandler+Private.mm */; };
-		18E71CED755C1A2D7A62396B /* GBViewConstraint.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1A4B0C409D6E7F87FF8E7C2C /* GBViewConstraint.mm */; };
-		1CB40DD9403C9209D48413F6 /* GBViewEventParam.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C14785970BF91C5916B41 /* GBViewEventParam.mm */; };
-		217DFEDBFAF20ABA70CCABD9 /* ui_injecter_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DC7102EBB83935CAC660D54 /* ui_injecter_imp.cpp */; };
-		2C4BFC4750D4070AD8772DF4 /* GBViewFrame+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9156F47FE7752FF613E222EE /* GBViewFrame+Private.mm */; };
-		2C597CDECAF42CD88F5BFFE6 /* HttpRequestImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C1CD6486CE5D0435C5E85FC /* HttpRequestImp.cpp */; };
-		33E002421CFBC16F0058D15A /* view_constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33E002411CFBC16F0058D15A /* view_constraint.cpp */; };
-		3D21F46D15CD7C056FCD9331 /* GBAsyncLoopGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = C18B1ED30D25BCD311D69599 /* GBAsyncLoopGen+Private.mm */; };
-		7528497D74D14512A396DBA7 /* GBHttpRequestGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D02A5B31DAD5BB9A9EA09894 /* GBHttpRequestGen+Private.mm */; };
-		756C0100AC76EC218594337D /* GBViewEventParam+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B48A7D6F0A06186054DA04A3 /* GBViewEventParam+Private.mm */; };
-		924E827B7489656CD62B8C82 /* GBLogGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03CAD4F9B30791B8C17AE977 /* GBLogGen+Private.mm */; };
-		A1588AF550AE2750023C30D4 /* HttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F3D7A1805AD7A68A0361063 /* HttpRequest.cpp */; };
-		A18D63F042586636141FBF04 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85F8EEBE51D9452286DDD5A5 /* jsoncpp.cpp */; };
-		A56EFEFA1BD93E226DA80855 /* GBViewFrame.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D479B1116BFDD6928D1714D /* GBViewFrame.mm */; };
-		AD4ABEAF5139212A9BD11E99 /* zf_log.c in Sources */ = {isa = PBXBuildFile; fileRef = 5641B685BEBC5EF22E19E649 /* zf_log.c */; };
-		AF94AE93C40253B24EDF92E5 /* GBCallbackHttpGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = CDD3237C016B1A44598F0571 /* GBCallbackHttpGen+Private.mm */; };
-		BB3E9656546AAA4F8948BEC1 /* GBViewConstraint+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9F4FC3CF254F9CE963E96 /* GBViewConstraint+Private.mm */; };
-		BDE74F48C1D3A9788127D589 /* log_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 074EACFB888AD2007A79F932 /* log_imp.cpp */; };
-		C12AA24E01DC95F033BF67C2 /* GBUiInjecterGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0A01A8922734AF2848114130 /* GBUiInjecterGen+Private.mm */; };
-		C686126D47409B52927E3353 /* GBLogGen.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAD88EFF5A985DD702320798 /* GBLogGen.mm */; };
-		E2A932F077B432B1A4D82CFE /* async_loop_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF40171895B3115C5362B8C9 /* async_loop_imp.cpp */; };
-		F7853777D957B4B6A0F42E6E /* GBViewFactoryGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3A0538BD3A137245B24AA20 /* GBViewFactoryGen+Private.mm */; };
-		FECAFC70F0DACCD8257AE2CF /* GBViewGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4115D4E136687D12F2D8CBB1 /* GBViewGen+Private.mm */; };
+		1FA624C706CF9494575BD2DF /* UiConfigReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 535C93BA72FE0E34181A7412 /* UiConfigReader.cpp */; };
+		261CE13551C28E0CB4F5073C /* GBViewFrame+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9156F47FE7752FF613E222EE /* GBViewFrame+Private.mm */; };
+		30F4DCE02124576A762E3436 /* GBViewConstraint.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1A4B0C409D6E7F87FF8E7C2C /* GBViewConstraint.mm */; };
+		330BF10D335F2F1D42B01799 /* GBLogGen.mm in Sources */ = {isa = PBXBuildFile; fileRef = FAD88EFF5A985DD702320798 /* GBLogGen.mm */; };
+		34790E2364ABEA446E4D9928 /* GBViewConf+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 773B5AECF29FD477F0929E3C /* GBViewConf+Private.mm */; };
+		361332EF75F1C14A0EB41BD1 /* view_constraint_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43457051484C93CAC890B876 /* view_constraint_base.cpp */; };
+		3A51AA466E1C2F832D32130F /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 85F8EEBE51D9452286DDD5A5 /* jsoncpp.cpp */; };
+		3C3515F52420DA8AFB105FE5 /* Log.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC87E6DE8A68EEF9D106E883 /* Log.cpp */; };
+		42CA1499AB448F711FFEDFB2 /* log_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8358D2D8C6DFD50714CC8945 /* log_gen.cpp */; };
+		479CB5B65F9E20973359D0D5 /* GBUiValueCheckerGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D1428548D4326A359EC5CED6 /* GBUiValueCheckerGen+Private.mm */; };
+		53362BA84CFA6BD8EF145A85 /* GBViewConstraint+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9F4FC3CF254F9CE963E96 /* GBViewConstraint+Private.mm */; };
+		53A3293491B75113E7467915 /* GBViewEventParam+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = B48A7D6F0A06186054DA04A3 /* GBViewEventParam+Private.mm */; };
+		5E322B5FAE05CCA1EB7D8E36 /* ui_value_checker_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E92BEF829CD96AC8A4543332 /* ui_value_checker_imp.cpp */; };
+		6D20FB0D2F5887CFB67091FF /* GBViewEventHandler+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 597F7735E2663310D775A5A9 /* GBViewEventHandler+Private.mm */; };
+		759BC4EB0A239926C76D96DF /* GBViewGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4115D4E136687D12F2D8CBB1 /* GBViewGen+Private.mm */; };
+		7AA6152A61DB6BC16F90774D /* GBViewFrame.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4D479B1116BFDD6928D1714D /* GBViewFrame.mm */; };
+		7E3BC1AD0843293418C7B399 /* GBHttpRequestGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D02A5B31DAD5BB9A9EA09894 /* GBHttpRequestGen+Private.mm */; };
+		87DDA250849199E853F1DD43 /* GBAsyncLoopGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = C18B1ED30D25BCD311D69599 /* GBAsyncLoopGen+Private.mm */; };
+		8B333F98DBDC33F4CD1FA2A2 /* argb_color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B70A2DA034DAA2A4BEBDCFCF /* argb_color.cpp */; };
+		8DBD68ED0AC04310CCC7CC4F /* GBViewConf.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C0E7EFC8CEEF89721FABE9D /* GBViewConf.mm */; };
+		8ED80BC5B952721AF1C8FA43 /* GBLogGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 03CAD4F9B30791B8C17AE977 /* GBLogGen+Private.mm */; };
+		94BA2254C13E7EB5C5B32B75 /* zf_log.c in Sources */ = {isa = PBXBuildFile; fileRef = 5641B685BEBC5EF22E19E649 /* zf_log.c */; };
+		A5A2419ACFFDAAF16E94BE2B /* GBTyperConvertor+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = A595B70D5CBF6FA7B77FDA4D /* GBTyperConvertor+Private.mm */; };
+		A8377A87B0358EAAA4FC55FE /* view_conf_base.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50919747B735CE9E68D70ECC /* view_conf_base.cpp */; };
+		B47867EB4FEA15F402415E69 /* GBCallbackHttpGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = CDD3237C016B1A44598F0571 /* GBCallbackHttpGen+Private.mm */; };
+		B9F21641CAB3DCB9E838DE41 /* HttpRequest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F3D7A1805AD7A68A0361063 /* HttpRequest.cpp */; };
+		C52D0D8ABE93A215EBB0AD15 /* log_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 074EACFB888AD2007A79F932 /* log_imp.cpp */; };
+		D0D785D980E0E60458673C0F /* ui_conf_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9B0EC85FA68B5B83215567E9 /* ui_conf_imp.cpp */; };
+		D1457E961FCB7051136A8BCE /* GBUiManagerGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8130C1AE76C010DFB20AC9C1 /* GBUiManagerGen+Private.mm */; };
+		D3F08017E9066EEA1E01B132 /* ui_manager_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A7B09A3772AD7B43DAE2212 /* ui_manager_imp.cpp */; };
+		D7743B7E0920F6D838B70BE0 /* GBArgbColor.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9D0FA675898DDFEA97AE1A5 /* GBArgbColor.mm */; };
+		E49E985079EC52AE6E065A01 /* GBViewEventParam.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C14785970BF91C5916B41 /* GBViewEventParam.mm */; };
+		EE56759A9D930D81E814C302 /* async_loop_imp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF40171895B3115C5362B8C9 /* async_loop_imp.cpp */; };
+		EF7196DE9681947EE86485BF /* GBViewFactoryGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3A0538BD3A137245B24AA20 /* GBViewFactoryGen+Private.mm */; };
+		F146B33673E4D6F1AC5562EA /* HttpRequestImp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C1CD6486CE5D0435C5E85FC /* HttpRequestImp.cpp */; };
+		F2926622815E465037C77A8E /* GBArgbColor+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 42233730DD366CC4A6FDEC81 /* GBArgbColor+Private.mm */; };
+		FF73BA0264725AE57592D103 /* GBUiConfGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = DB1715847C12EB1AD175E845 /* GBUiConfGen+Private.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00B7EAF9C2307BEC2B61776D /* GBViewEventParam.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBViewEventParam.h; sourceTree = "<group>"; };
-		03ADC513E552FA815E62869B /* view_constraint.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_constraint.hpp; sourceTree = "<group>"; };
 		03CAD4F9B30791B8C17AE977 /* GBLogGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBLogGen+Private.mm"; sourceTree = "<group>"; };
 		042005233C75261808C8BDC4 /* GBLogGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBLogGen+Private.h"; sourceTree = "<group>"; };
+		0625196A910AE0416988B490 /* GBViewConf+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBViewConf+Private.h"; sourceTree = "<group>"; };
 		074EACFB888AD2007A79F932 /* log_imp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = log_imp.cpp; sourceTree = "<group>"; };
-		0A01A8922734AF2848114130 /* GBUiInjecterGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBUiInjecterGen+Private.mm"; sourceTree = "<group>"; };
 		0AA46F55C169B865DF1CA1C8 /* ILog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILog.h; sourceTree = "<group>"; };
 		0AAF88A86FE9B5F6B5970F42 /* view_frame.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_frame.hpp; sourceTree = "<group>"; };
 		0BD7B96DD5F63C6EBE961432 /* GBCallbackHttpGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBCallbackHttpGen+Private.h"; sourceTree = "<group>"; };
+		11B28AC253090A0983B52948 /* ui_manager_imp.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = ui_manager_imp.hpp; sourceTree = "<group>"; };
 		134A721B7E989B5F590C56DA /* GBCallbackHttpGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBCallbackHttpGen.h; sourceTree = "<group>"; };
 		143BA7450868C032C13F2D52 /* async_loop_imp.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = async_loop_imp.hpp; sourceTree = "<group>"; };
 		1A4B0C409D6E7F87FF8E7C2C /* GBViewConstraint.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GBViewConstraint.mm; sourceTree = "<group>"; };
+		25D4BC3DAB1B5EC258BCBA73 /* GBTyperConvertor+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBTyperConvertor+Private.h"; sourceTree = "<group>"; };
+		2C0E7EFC8CEEF89721FABE9D /* GBViewConf.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GBViewConf.mm; sourceTree = "<group>"; };
+		2D8FFAFC177341A6B12DC8BC /* GBUiManagerGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBUiManagerGen.h; sourceTree = "<group>"; };
 		2EB5CB272966F9D5CD2A28FA /* log_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = log_gen.hpp; sourceTree = "<group>"; };
-		33E002411CFBC16F0058D15A /* view_constraint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = view_constraint.cpp; sourceTree = "<group>"; };
+		3054411EAA397C561D659C55 /* argb_color.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = argb_color.hpp; sourceTree = "<group>"; };
+		31DB65B21EFB740AA1EE80D2 /* GBTextBoarder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBTextBoarder.h; sourceTree = "<group>"; };
 		355EEED862602394BEA3599E /* GBViewConstraint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBViewConstraint.h; sourceTree = "<group>"; };
 		3AC6B2991D0A2415566128DF /* GBAsyncLoopGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBAsyncLoopGen+Private.h"; sourceTree = "<group>"; };
+		3DF6A1F061358C9EA0779BE0 /* GBUiValueCheckerGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBUiValueCheckerGen+Private.h"; sourceTree = "<group>"; };
+		3E5766CCA4E9F4269BD61025 /* ui_value_checker_imp.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = ui_value_checker_imp.hpp; sourceTree = "<group>"; };
 		4115D4E136687D12F2D8CBB1 /* GBViewGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBViewGen+Private.mm"; sourceTree = "<group>"; };
-		4189A65EB53E3352BE594F28 /* ui_injecter_imp.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = ui_injecter_imp.hpp; sourceTree = "<group>"; };
+		41EF9C987AD7DC3993B4CD58 /* GBUiConfGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBUiConfGen.h; sourceTree = "<group>"; };
+		42233730DD366CC4A6FDEC81 /* GBArgbColor+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBArgbColor+Private.mm"; sourceTree = "<group>"; };
+		43457051484C93CAC890B876 /* view_constraint_base.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = view_constraint_base.cpp; sourceTree = "<group>"; };
 		45C670697C1A8E9AABE20A4B /* GBViewFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBViewFrame.h; sourceTree = "<group>"; };
 		45DD4DE04106DB9D6B96E9D6 /* libgearsbox_objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgearsbox_objc.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		462EB1FF19F7B39BD4300FF2 /* GBViewEventHandler+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBViewEventHandler+Private.h"; sourceTree = "<group>"; };
-		4ACE0D48B53AC46E0DA81370 /* UiConfigReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UiConfigReader.cpp; sourceTree = "<group>"; };
 		4C40E2DC55B86FB82EDFF873 /* GBViewEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBViewEvent.h; sourceTree = "<group>"; };
+		4D2B808A37A57F5711FA3D68 /* GBTyperConvertor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBTyperConvertor.h; sourceTree = "<group>"; };
 		4D479B1116BFDD6928D1714D /* GBViewFrame.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GBViewFrame.mm; sourceTree = "<group>"; };
 		4D7FE6C68D25AC277FD7E61F /* GBViewType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBViewType.h; sourceTree = "<group>"; };
+		50919747B735CE9E68D70ECC /* view_conf_base.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = view_conf_base.cpp; sourceTree = "<group>"; };
+		5195580072506F480F53FDC2 /* GBUiValueCheckerGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBUiValueCheckerGen.h; sourceTree = "<group>"; };
+		535C93BA72FE0E34181A7412 /* UiConfigReader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UiConfigReader.cpp; sourceTree = "<group>"; };
 		5641B685BEBC5EF22E19E649 /* zf_log.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = zf_log.c; sourceTree = "<group>"; };
+		5884C9477844692E1B9AA306 /* GBArgbColor+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBArgbColor+Private.h"; sourceTree = "<group>"; };
 		597F7735E2663310D775A5A9 /* GBViewEventHandler+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBViewEventHandler+Private.mm"; sourceTree = "<group>"; };
 		5D9ED18F374D99CB84A49B2A /* GBHttpRequestGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBHttpRequestGen.h; sourceTree = "<group>"; };
 		60191BADD823D0946885E277 /* GBViewGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBViewGen.h; sourceTree = "<group>"; };
@@ -69,52 +92,74 @@
 		6651F3791C6046399E040D68 /* log_imp.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = log_imp.hpp; sourceTree = "<group>"; };
 		6686AC06795EA90724E98A52 /* HttpRequest.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = HttpRequest.hpp; sourceTree = "<group>"; };
 		6D9351837EA4F0EE9396874A /* HttpRequestImp.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = HttpRequestImp.hpp; sourceTree = "<group>"; };
-		7152784A1D5C9A2270CBE385 /* UiConfigReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = UiConfigReader.hpp; sourceTree = "<group>"; };
+		6FBFEEF2DB3DC98164FB56D7 /* typer_convertor.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = typer_convertor.hpp; sourceTree = "<group>"; };
+		773B5AECF29FD477F0929E3C /* GBViewConf+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBViewConf+Private.mm"; sourceTree = "<group>"; };
 		7A8C14785970BF91C5916B41 /* GBViewEventParam.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GBViewEventParam.mm; sourceTree = "<group>"; };
 		7B5A0FEDE691E299B65A0CFA /* gearsbox.gyp */ = {isa = PBXFileReference; explicitFileType = sourcecode; path = gearsbox.gyp; sourceTree = "<group>"; };
 		7C1CD6486CE5D0435C5E85FC /* HttpRequestImp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HttpRequestImp.cpp; sourceTree = "<group>"; };
 		7CF5DC1E15696D694676BE24 /* http_request_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = http_request_gen.hpp; sourceTree = "<group>"; };
 		7DE9F4FC3CF254F9CE963E96 /* GBViewConstraint+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBViewConstraint+Private.mm"; sourceTree = "<group>"; };
+		7FA730413ECDA27C5CE20F9D /* text_boarder.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = text_boarder.hpp; sourceTree = "<group>"; };
+		8130C1AE76C010DFB20AC9C1 /* GBUiManagerGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBUiManagerGen+Private.mm"; sourceTree = "<group>"; };
 		8179365809FCC1600F02AF3E /* async_loop_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = async_loop_gen.hpp; sourceTree = "<group>"; };
 		8358D2D8C6DFD50714CC8945 /* log_gen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = log_gen.cpp; sourceTree = "<group>"; };
-		85811779B1E0A9534E5074DC /* GBUiInjecterGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBUiInjecterGen+Private.h"; sourceTree = "<group>"; };
 		85F8EEBE51D9452286DDD5A5 /* jsoncpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = jsoncpp.cpp; sourceTree = "<group>"; };
 		8672F996090781AD0C7FAC15 /* IHttpRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IHttpRequest.h; sourceTree = "<group>"; };
 		8777057AEE9B74531F98BB0A /* GBViewGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBViewGen+Private.h"; sourceTree = "<group>"; };
-		8DC7102EBB83935CAC660D54 /* ui_injecter_imp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ui_injecter_imp.cpp; sourceTree = "<group>"; };
+		8A7B09A3772AD7B43DAE2212 /* ui_manager_imp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ui_manager_imp.cpp; sourceTree = "<group>"; };
 		9156F47FE7752FF613E222EE /* GBViewFrame+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBViewFrame+Private.mm"; sourceTree = "<group>"; };
+		9390D27B37A0F536880FC25C /* view_conf_base.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_conf_base.hpp; sourceTree = "<group>"; };
 		973041F28815E461B704FE29 /* common.gypi */ = {isa = PBXFileReference; explicitFileType = sourcecode; name = common.gypi; path = deps/djinni/common.gypi; sourceTree = "<group>"; };
+		9B0EC85FA68B5B83215567E9 /* ui_conf_imp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ui_conf_imp.cpp; sourceTree = "<group>"; };
 		9B27289B185C960989935265 /* IUIConfReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IUIConfReader.h; sourceTree = "<group>"; };
 		9B38FA36772D0F3DCF01DBC2 /* json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
 		9F3D7A1805AD7A68A0361063 /* HttpRequest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HttpRequest.cpp; sourceTree = "<group>"; };
 		9F90917EEF774D1C56D31AD9 /* GBConstraintType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBConstraintType.h; sourceTree = "<group>"; };
 		A33E1888CF7CC53CFC30AFDA /* GBHttpRequestGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBHttpRequestGen+Private.h"; sourceTree = "<group>"; };
+		A595B70D5CBF6FA7B77FDA4D /* GBTyperConvertor+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBTyperConvertor+Private.mm"; sourceTree = "<group>"; };
 		A59C05C39AD0706832A880F2 /* json-forwards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "json-forwards.h"; sourceTree = "<group>"; };
+		A8E6C76E45C23A2CE43D2E85 /* ui_manager_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = ui_manager_gen.hpp; sourceTree = "<group>"; };
+		A9BDEE139F9E6F6B0EB0C3AA /* view_constraint_base.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_constraint_base.hpp; sourceTree = "<group>"; };
+		A9C6B3892E91A8476BAD339A /* view_conf.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_conf.hpp; sourceTree = "<group>"; };
 		AC87E6DE8A68EEF9D106E883 /* Log.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Log.cpp; sourceTree = "<group>"; };
 		B0B0A5BD3593820B1BF63CE5 /* GBViewFrame+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBViewFrame+Private.h"; sourceTree = "<group>"; };
 		B30653FC70F8D941E22956C2 /* GBViewEventParam+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBViewEventParam+Private.h"; sourceTree = "<group>"; };
 		B30AE1E1A0B91DAA8E34805C /* constraint_type.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = constraint_type.hpp; sourceTree = "<group>"; };
 		B48A7D6F0A06186054DA04A3 /* GBViewEventParam+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBViewEventParam+Private.mm"; sourceTree = "<group>"; };
+		B65091B51EF8A30D62217E3C /* GBUiManagerGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBUiManagerGen+Private.h"; sourceTree = "<group>"; };
 		B671896A9361095ACD69C846 /* zf_log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zf_log.h; sourceTree = "<group>"; };
+		B70A2DA034DAA2A4BEBDCFCF /* argb_color.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = argb_color.cpp; sourceTree = "<group>"; };
+		B9D0FA675898DDFEA97AE1A5 /* GBArgbColor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GBArgbColor.mm; sourceTree = "<group>"; };
+		B9FE5F99B91ECD02B4839749 /* ui_value_checker_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = ui_value_checker_gen.hpp; sourceTree = "<group>"; };
+		C0968EDDD7C06FA53EC0401A /* view_constraint.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_constraint.hpp; sourceTree = "<group>"; };
+		C0A796EF7D7E5D0C685B5711 /* GBArgbColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBArgbColor.h; sourceTree = "<group>"; };
 		C15003A285F8BAFD0E80727C /* view_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_gen.hpp; sourceTree = "<group>"; };
 		C18B1ED30D25BCD311D69599 /* GBAsyncLoopGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBAsyncLoopGen+Private.mm"; sourceTree = "<group>"; };
 		C3A0538BD3A137245B24AA20 /* GBViewFactoryGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBViewFactoryGen+Private.mm"; sourceTree = "<group>"; };
+		CA10F8D2BCD020364EB5E244 /* text_align.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = text_align.hpp; sourceTree = "<group>"; };
 		CDD3237C016B1A44598F0571 /* GBCallbackHttpGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBCallbackHttpGen+Private.mm"; sourceTree = "<group>"; };
 		CE819A19E725A4161DA649D3 /* GBViewEventHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBViewEventHandler.h; sourceTree = "<group>"; };
 		D02A5B31DAD5BB9A9EA09894 /* GBHttpRequestGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBHttpRequestGen+Private.mm"; sourceTree = "<group>"; };
 		D098509FE6675299F4B79ABB /* view_event_param.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_event_param.hpp; sourceTree = "<group>"; };
+		D1428548D4326A359EC5CED6 /* GBUiValueCheckerGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBUiValueCheckerGen+Private.mm"; sourceTree = "<group>"; };
 		D8184AE778CFFB2E176C579A /* callback_http_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = callback_http_gen.hpp; sourceTree = "<group>"; };
+		DB1715847C12EB1AD175E845 /* GBUiConfGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "GBUiConfGen+Private.mm"; sourceTree = "<group>"; };
 		E1758CED93091AAA11C799DC /* view_factory_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_factory_gen.hpp; sourceTree = "<group>"; };
 		E3596CCF72C65F7AA5709F9B /* GBLogGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBLogGen.h; sourceTree = "<group>"; };
 		E5200AF2266B95D5A6FDFB7C /* view_event_handler.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_event_handler.hpp; sourceTree = "<group>"; };
 		E5D131F856107A52EE594455 /* GBViewFactoryGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBViewFactoryGen.h; sourceTree = "<group>"; };
 		E8FB3543268D0CFF133C2F0D /* view_type.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_type.hpp; sourceTree = "<group>"; };
-		EAB1EE00C5929AC10050C6A8 /* GBUiInjecterGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBUiInjecterGen.h; sourceTree = "<group>"; };
+		E92BEF829CD96AC8A4543332 /* ui_value_checker_imp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ui_value_checker_imp.cpp; sourceTree = "<group>"; };
 		EAC23AE6D3061F5ED25F9784 /* GBViewConstraint+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBViewConstraint+Private.h"; sourceTree = "<group>"; };
-		F2D1AB5B445BDB9D2AEAB300 /* ui_injecter_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = ui_injecter_gen.hpp; sourceTree = "<group>"; };
+		F0D0B91ACD4CE9421F00172D /* GBUiConfGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBUiConfGen+Private.h"; sourceTree = "<group>"; };
+		F0FC54784861EB6E44EABE01 /* ui_conf_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = ui_conf_gen.hpp; sourceTree = "<group>"; };
+		F1175DF612C33DCBACBB2643 /* GBTextAlign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBTextAlign.h; sourceTree = "<group>"; };
+		F2F76D40C6C4D4A09E550D78 /* GBViewConf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBViewConf.h; sourceTree = "<group>"; };
 		F3E1FA0846A1E6902E9FCF4B /* view_event.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = view_event.hpp; sourceTree = "<group>"; };
+		F51565A1458E14FF0E108452 /* UiConfigReader.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = UiConfigReader.hpp; sourceTree = "<group>"; };
 		F620EFE2BAEEAB4690898376 /* GBViewFactoryGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GBViewFactoryGen+Private.h"; sourceTree = "<group>"; };
 		FAD88EFF5A985DD702320798 /* GBLogGen.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GBLogGen.mm; sourceTree = "<group>"; };
+		FE6E23B29F5C7F3C4E87AC36 /* ui_conf_imp.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = ui_conf_imp.hpp; sourceTree = "<group>"; };
 		FF40171895B3115C5362B8C9 /* async_loop_imp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = async_loop_imp.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,51 +174,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06EF01169B1C077A95A2D371 /* objc */ = {
+		24C6183B1F0D3329AD1B5CBD /* cpp */ = {
 			isa = PBXGroup;
 			children = (
-				3AC6B2991D0A2415566128DF /* GBAsyncLoopGen+Private.h */,
-				C18B1ED30D25BCD311D69599 /* GBAsyncLoopGen+Private.mm */,
-				62F89CC18BC190F5454D6F8A /* GBAsyncLoopGen.h */,
-				0BD7B96DD5F63C6EBE961432 /* GBCallbackHttpGen+Private.h */,
-				CDD3237C016B1A44598F0571 /* GBCallbackHttpGen+Private.mm */,
-				134A721B7E989B5F590C56DA /* GBCallbackHttpGen.h */,
-				9F90917EEF774D1C56D31AD9 /* GBConstraintType.h */,
-				A33E1888CF7CC53CFC30AFDA /* GBHttpRequestGen+Private.h */,
-				D02A5B31DAD5BB9A9EA09894 /* GBHttpRequestGen+Private.mm */,
-				5D9ED18F374D99CB84A49B2A /* GBHttpRequestGen.h */,
-				042005233C75261808C8BDC4 /* GBLogGen+Private.h */,
-				03CAD4F9B30791B8C17AE977 /* GBLogGen+Private.mm */,
-				E3596CCF72C65F7AA5709F9B /* GBLogGen.h */,
-				FAD88EFF5A985DD702320798 /* GBLogGen.mm */,
-				85811779B1E0A9534E5074DC /* GBUiInjecterGen+Private.h */,
-				0A01A8922734AF2848114130 /* GBUiInjecterGen+Private.mm */,
-				EAB1EE00C5929AC10050C6A8 /* GBUiInjecterGen.h */,
-				EAC23AE6D3061F5ED25F9784 /* GBViewConstraint+Private.h */,
-				7DE9F4FC3CF254F9CE963E96 /* GBViewConstraint+Private.mm */,
-				355EEED862602394BEA3599E /* GBViewConstraint.h */,
-				1A4B0C409D6E7F87FF8E7C2C /* GBViewConstraint.mm */,
-				4C40E2DC55B86FB82EDFF873 /* GBViewEvent.h */,
-				462EB1FF19F7B39BD4300FF2 /* GBViewEventHandler+Private.h */,
-				597F7735E2663310D775A5A9 /* GBViewEventHandler+Private.mm */,
-				CE819A19E725A4161DA649D3 /* GBViewEventHandler.h */,
-				B30653FC70F8D941E22956C2 /* GBViewEventParam+Private.h */,
-				B48A7D6F0A06186054DA04A3 /* GBViewEventParam+Private.mm */,
-				00B7EAF9C2307BEC2B61776D /* GBViewEventParam.h */,
-				7A8C14785970BF91C5916B41 /* GBViewEventParam.mm */,
-				F620EFE2BAEEAB4690898376 /* GBViewFactoryGen+Private.h */,
-				C3A0538BD3A137245B24AA20 /* GBViewFactoryGen+Private.mm */,
-				E5D131F856107A52EE594455 /* GBViewFactoryGen.h */,
-				B0B0A5BD3593820B1BF63CE5 /* GBViewFrame+Private.h */,
-				9156F47FE7752FF613E222EE /* GBViewFrame+Private.mm */,
-				45C670697C1A8E9AABE20A4B /* GBViewFrame.h */,
-				4D479B1116BFDD6928D1714D /* GBViewFrame.mm */,
-				8777057AEE9B74531F98BB0A /* GBViewGen+Private.h */,
-				4115D4E136687D12F2D8CBB1 /* GBViewGen+Private.mm */,
-				60191BADD823D0946885E277 /* GBViewGen.h */,
-				4D7FE6C68D25AC277FD7E61F /* GBViewType.h */,
+				B70A2DA034DAA2A4BEBDCFCF /* argb_color.cpp */,
+				3054411EAA397C561D659C55 /* argb_color.hpp */,
+				8179365809FCC1600F02AF3E /* async_loop_gen.hpp */,
+				D8184AE778CFFB2E176C579A /* callback_http_gen.hpp */,
+				B30AE1E1A0B91DAA8E34805C /* constraint_type.hpp */,
+				7CF5DC1E15696D694676BE24 /* http_request_gen.hpp */,
+				8358D2D8C6DFD50714CC8945 /* log_gen.cpp */,
+				2EB5CB272966F9D5CD2A28FA /* log_gen.hpp */,
+				CA10F8D2BCD020364EB5E244 /* text_align.hpp */,
+				7FA730413ECDA27C5CE20F9D /* text_boarder.hpp */,
+				6FBFEEF2DB3DC98164FB56D7 /* typer_convertor.hpp */,
+				F0FC54784861EB6E44EABE01 /* ui_conf_gen.hpp */,
+				A8E6C76E45C23A2CE43D2E85 /* ui_manager_gen.hpp */,
+				B9FE5F99B91ECD02B4839749 /* ui_value_checker_gen.hpp */,
+				50919747B735CE9E68D70ECC /* view_conf_base.cpp */,
+				9390D27B37A0F536880FC25C /* view_conf_base.hpp */,
+				43457051484C93CAC890B876 /* view_constraint_base.cpp */,
+				A9BDEE139F9E6F6B0EB0C3AA /* view_constraint_base.hpp */,
+				F3E1FA0846A1E6902E9FCF4B /* view_event.hpp */,
+				E5200AF2266B95D5A6FDFB7C /* view_event_handler.hpp */,
+				D098509FE6675299F4B79ABB /* view_event_param.hpp */,
+				E1758CED93091AAA11C799DC /* view_factory_gen.hpp */,
+				0AAF88A86FE9B5F6B5970F42 /* view_frame.hpp */,
+				C15003A285F8BAFD0E80727C /* view_gen.hpp */,
+				E8FB3543268D0CFF133C2F0D /* view_type.hpp */,
 			);
-			path = objc;
+			path = cpp;
+			sourceTree = "<group>";
+		};
+		2C96D4F8D6298E2D32B64C69 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				859346499FFF3C7AAF36C9DF /* json */,
+				DD3691563ECD4F8D4FDAC0D7 /* ui */,
+				60783D52DBF0A4B47CA4527F /* zf_log */,
+				9F3D7A1805AD7A68A0361063 /* HttpRequest.cpp */,
+				6686AC06795EA90724E98A52 /* HttpRequest.hpp */,
+				7C1CD6486CE5D0435C5E85FC /* HttpRequestImp.cpp */,
+				6D9351837EA4F0EE9396874A /* HttpRequestImp.hpp */,
+				AC87E6DE8A68EEF9D106E883 /* Log.cpp */,
+				FF40171895B3115C5362B8C9 /* async_loop_imp.cpp */,
+				143BA7450868C032C13F2D52 /* async_loop_imp.hpp */,
+				074EACFB888AD2007A79F932 /* log_imp.cpp */,
+				6651F3791C6046399E040D68 /* log_imp.hpp */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		60783D52DBF0A4B47CA4527F /* zf_log */ = {
@@ -201,28 +250,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9DD333944513B29AE8480EA8 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				859346499FFF3C7AAF36C9DF /* json */,
-				60783D52DBF0A4B47CA4527F /* zf_log */,
-				9F3D7A1805AD7A68A0361063 /* HttpRequest.cpp */,
-				6686AC06795EA90724E98A52 /* HttpRequest.hpp */,
-				7C1CD6486CE5D0435C5E85FC /* HttpRequestImp.cpp */,
-				6D9351837EA4F0EE9396874A /* HttpRequestImp.hpp */,
-				AC87E6DE8A68EEF9D106E883 /* Log.cpp */,
-				4ACE0D48B53AC46E0DA81370 /* UiConfigReader.cpp */,
-				7152784A1D5C9A2270CBE385 /* UiConfigReader.hpp */,
-				FF40171895B3115C5362B8C9 /* async_loop_imp.cpp */,
-				143BA7450868C032C13F2D52 /* async_loop_imp.hpp */,
-				074EACFB888AD2007A79F932 /* log_imp.cpp */,
-				6651F3791C6046399E040D68 /* log_imp.hpp */,
-				8DC7102EBB83935CAC660D54 /* ui_injecter_imp.cpp */,
-				4189A65EB53E3352BE594F28 /* ui_injecter_imp.hpp */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		A85D04AFEE06F7D5D5985827 /* Build */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,34 +259,77 @@
 			name = Build;
 			sourceTree = "<group>";
 		};
-		B817E972A03EA043E29379AD /* cpp */ = {
+		AA63F32FFF34549162CFAB2A /* objc */ = {
 			isa = PBXGroup;
 			children = (
-				8179365809FCC1600F02AF3E /* async_loop_gen.hpp */,
-				D8184AE778CFFB2E176C579A /* callback_http_gen.hpp */,
-				B30AE1E1A0B91DAA8E34805C /* constraint_type.hpp */,
-				7CF5DC1E15696D694676BE24 /* http_request_gen.hpp */,
-				8358D2D8C6DFD50714CC8945 /* log_gen.cpp */,
-				2EB5CB272966F9D5CD2A28FA /* log_gen.hpp */,
-				F2D1AB5B445BDB9D2AEAB300 /* ui_injecter_gen.hpp */,
-				03ADC513E552FA815E62869B /* view_constraint.hpp */,
-				33E002411CFBC16F0058D15A /* view_constraint.cpp */,
-				F3E1FA0846A1E6902E9FCF4B /* view_event.hpp */,
-				E5200AF2266B95D5A6FDFB7C /* view_event_handler.hpp */,
-				D098509FE6675299F4B79ABB /* view_event_param.hpp */,
-				E1758CED93091AAA11C799DC /* view_factory_gen.hpp */,
-				0AAF88A86FE9B5F6B5970F42 /* view_frame.hpp */,
-				C15003A285F8BAFD0E80727C /* view_gen.hpp */,
-				E8FB3543268D0CFF133C2F0D /* view_type.hpp */,
+				5884C9477844692E1B9AA306 /* GBArgbColor+Private.h */,
+				42233730DD366CC4A6FDEC81 /* GBArgbColor+Private.mm */,
+				C0A796EF7D7E5D0C685B5711 /* GBArgbColor.h */,
+				B9D0FA675898DDFEA97AE1A5 /* GBArgbColor.mm */,
+				3AC6B2991D0A2415566128DF /* GBAsyncLoopGen+Private.h */,
+				C18B1ED30D25BCD311D69599 /* GBAsyncLoopGen+Private.mm */,
+				62F89CC18BC190F5454D6F8A /* GBAsyncLoopGen.h */,
+				0BD7B96DD5F63C6EBE961432 /* GBCallbackHttpGen+Private.h */,
+				CDD3237C016B1A44598F0571 /* GBCallbackHttpGen+Private.mm */,
+				134A721B7E989B5F590C56DA /* GBCallbackHttpGen.h */,
+				9F90917EEF774D1C56D31AD9 /* GBConstraintType.h */,
+				A33E1888CF7CC53CFC30AFDA /* GBHttpRequestGen+Private.h */,
+				D02A5B31DAD5BB9A9EA09894 /* GBHttpRequestGen+Private.mm */,
+				5D9ED18F374D99CB84A49B2A /* GBHttpRequestGen.h */,
+				042005233C75261808C8BDC4 /* GBLogGen+Private.h */,
+				03CAD4F9B30791B8C17AE977 /* GBLogGen+Private.mm */,
+				E3596CCF72C65F7AA5709F9B /* GBLogGen.h */,
+				FAD88EFF5A985DD702320798 /* GBLogGen.mm */,
+				F1175DF612C33DCBACBB2643 /* GBTextAlign.h */,
+				31DB65B21EFB740AA1EE80D2 /* GBTextBoarder.h */,
+				25D4BC3DAB1B5EC258BCBA73 /* GBTyperConvertor+Private.h */,
+				A595B70D5CBF6FA7B77FDA4D /* GBTyperConvertor+Private.mm */,
+				4D2B808A37A57F5711FA3D68 /* GBTyperConvertor.h */,
+				F0D0B91ACD4CE9421F00172D /* GBUiConfGen+Private.h */,
+				DB1715847C12EB1AD175E845 /* GBUiConfGen+Private.mm */,
+				41EF9C987AD7DC3993B4CD58 /* GBUiConfGen.h */,
+				B65091B51EF8A30D62217E3C /* GBUiManagerGen+Private.h */,
+				8130C1AE76C010DFB20AC9C1 /* GBUiManagerGen+Private.mm */,
+				2D8FFAFC177341A6B12DC8BC /* GBUiManagerGen.h */,
+				3DF6A1F061358C9EA0779BE0 /* GBUiValueCheckerGen+Private.h */,
+				D1428548D4326A359EC5CED6 /* GBUiValueCheckerGen+Private.mm */,
+				5195580072506F480F53FDC2 /* GBUiValueCheckerGen.h */,
+				0625196A910AE0416988B490 /* GBViewConf+Private.h */,
+				773B5AECF29FD477F0929E3C /* GBViewConf+Private.mm */,
+				F2F76D40C6C4D4A09E550D78 /* GBViewConf.h */,
+				2C0E7EFC8CEEF89721FABE9D /* GBViewConf.mm */,
+				EAC23AE6D3061F5ED25F9784 /* GBViewConstraint+Private.h */,
+				7DE9F4FC3CF254F9CE963E96 /* GBViewConstraint+Private.mm */,
+				355EEED862602394BEA3599E /* GBViewConstraint.h */,
+				1A4B0C409D6E7F87FF8E7C2C /* GBViewConstraint.mm */,
+				4C40E2DC55B86FB82EDFF873 /* GBViewEvent.h */,
+				462EB1FF19F7B39BD4300FF2 /* GBViewEventHandler+Private.h */,
+				597F7735E2663310D775A5A9 /* GBViewEventHandler+Private.mm */,
+				CE819A19E725A4161DA649D3 /* GBViewEventHandler.h */,
+				B30653FC70F8D941E22956C2 /* GBViewEventParam+Private.h */,
+				B48A7D6F0A06186054DA04A3 /* GBViewEventParam+Private.mm */,
+				00B7EAF9C2307BEC2B61776D /* GBViewEventParam.h */,
+				7A8C14785970BF91C5916B41 /* GBViewEventParam.mm */,
+				F620EFE2BAEEAB4690898376 /* GBViewFactoryGen+Private.h */,
+				C3A0538BD3A137245B24AA20 /* GBViewFactoryGen+Private.mm */,
+				E5D131F856107A52EE594455 /* GBViewFactoryGen.h */,
+				B0B0A5BD3593820B1BF63CE5 /* GBViewFrame+Private.h */,
+				9156F47FE7752FF613E222EE /* GBViewFrame+Private.mm */,
+				45C670697C1A8E9AABE20A4B /* GBViewFrame.h */,
+				4D479B1116BFDD6928D1714D /* GBViewFrame.mm */,
+				8777057AEE9B74531F98BB0A /* GBViewGen+Private.h */,
+				4115D4E136687D12F2D8CBB1 /* GBViewGen+Private.mm */,
+				60191BADD823D0946885E277 /* GBViewGen.h */,
+				4D7FE6C68D25AC277FD7E61F /* GBViewType.h */,
 			);
-			path = cpp;
+			path = objc;
 			sourceTree = "<group>";
 		};
 		BC46C298B7E229F72B9CDD7A /* generated-src */ = {
 			isa = PBXGroup;
 			children = (
-				B817E972A03EA043E29379AD /* cpp */,
-				06EF01169B1C077A95A2D371 /* objc */,
+				24C6183B1F0D3329AD1B5CBD /* cpp */,
+				AA63F32FFF34549162CFAB2A /* objc */,
 			);
 			path = "generated-src";
 			sourceTree = "<group>";
@@ -269,7 +339,7 @@
 			children = (
 				BC46C298B7E229F72B9CDD7A /* generated-src */,
 				D5A449823BA474E8D797ADD8 /* interface */,
-				9DD333944513B29AE8480EA8 /* src */,
+				2C96D4F8D6298E2D32B64C69 /* src */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -292,6 +362,23 @@
 				9B38FA36772D0F3DCF01DBC2 /* json.h */,
 			);
 			path = json;
+			sourceTree = "<group>";
+		};
+		DD3691563ECD4F8D4FDAC0D7 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				535C93BA72FE0E34181A7412 /* UiConfigReader.cpp */,
+				F51565A1458E14FF0E108452 /* UiConfigReader.hpp */,
+				9B0EC85FA68B5B83215567E9 /* ui_conf_imp.cpp */,
+				FE6E23B29F5C7F3C4E87AC36 /* ui_conf_imp.hpp */,
+				8A7B09A3772AD7B43DAE2212 /* ui_manager_imp.cpp */,
+				11B28AC253090A0983B52948 /* ui_manager_imp.hpp */,
+				E92BEF829CD96AC8A4543332 /* ui_value_checker_imp.cpp */,
+				3E5766CCA4E9F4269BD61025 /* ui_value_checker_imp.hpp */,
+				A9C6B3892E91A8476BAD339A /* view_conf.hpp */,
+				C0968EDDD7C06FA53EC0401A /* view_constraint.hpp */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 		E5556F5BF901223E91FB62E7 = {
@@ -351,32 +438,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D21F46D15CD7C056FCD9331 /* GBAsyncLoopGen+Private.mm in Sources */,
-				AF94AE93C40253B24EDF92E5 /* GBCallbackHttpGen+Private.mm in Sources */,
-				7528497D74D14512A396DBA7 /* GBHttpRequestGen+Private.mm in Sources */,
-				924E827B7489656CD62B8C82 /* GBLogGen+Private.mm in Sources */,
-				C686126D47409B52927E3353 /* GBLogGen.mm in Sources */,
-				C12AA24E01DC95F033BF67C2 /* GBUiInjecterGen+Private.mm in Sources */,
-				BB3E9656546AAA4F8948BEC1 /* GBViewConstraint+Private.mm in Sources */,
-				33E002421CFBC16F0058D15A /* view_constraint.cpp in Sources */,
-				18E71CED755C1A2D7A62396B /* GBViewConstraint.mm in Sources */,
-				1575E2BD66B8CEE9324C86B7 /* GBViewEventHandler+Private.mm in Sources */,
-				756C0100AC76EC218594337D /* GBViewEventParam+Private.mm in Sources */,
-				1CB40DD9403C9209D48413F6 /* GBViewEventParam.mm in Sources */,
-				F7853777D957B4B6A0F42E6E /* GBViewFactoryGen+Private.mm in Sources */,
-				2C4BFC4750D4070AD8772DF4 /* GBViewFrame+Private.mm in Sources */,
-				A56EFEFA1BD93E226DA80855 /* GBViewFrame.mm in Sources */,
-				FECAFC70F0DACCD8257AE2CF /* GBViewGen+Private.mm in Sources */,
-				05A33868DA9BBEF9B775B63F /* log_gen.cpp in Sources */,
-				E2A932F077B432B1A4D82CFE /* async_loop_imp.cpp in Sources */,
-				A1588AF550AE2750023C30D4 /* HttpRequest.cpp in Sources */,
-				2C597CDECAF42CD88F5BFFE6 /* HttpRequestImp.cpp in Sources */,
-				147C20E16A2F9C067BB00EB1 /* Log.cpp in Sources */,
-				BDE74F48C1D3A9788127D589 /* log_imp.cpp in Sources */,
-				217DFEDBFAF20ABA70CCABD9 /* ui_injecter_imp.cpp in Sources */,
-				14E9B51659EDAFB33B5E2D13 /* UiConfigReader.cpp in Sources */,
-				A18D63F042586636141FBF04 /* jsoncpp.cpp in Sources */,
-				AD4ABEAF5139212A9BD11E99 /* zf_log.c in Sources */,
+				F2926622815E465037C77A8E /* GBArgbColor+Private.mm in Sources */,
+				D7743B7E0920F6D838B70BE0 /* GBArgbColor.mm in Sources */,
+				87DDA250849199E853F1DD43 /* GBAsyncLoopGen+Private.mm in Sources */,
+				B47867EB4FEA15F402415E69 /* GBCallbackHttpGen+Private.mm in Sources */,
+				7E3BC1AD0843293418C7B399 /* GBHttpRequestGen+Private.mm in Sources */,
+				8ED80BC5B952721AF1C8FA43 /* GBLogGen+Private.mm in Sources */,
+				330BF10D335F2F1D42B01799 /* GBLogGen.mm in Sources */,
+				A5A2419ACFFDAAF16E94BE2B /* GBTyperConvertor+Private.mm in Sources */,
+				FF73BA0264725AE57592D103 /* GBUiConfGen+Private.mm in Sources */,
+				D1457E961FCB7051136A8BCE /* GBUiManagerGen+Private.mm in Sources */,
+				479CB5B65F9E20973359D0D5 /* GBUiValueCheckerGen+Private.mm in Sources */,
+				34790E2364ABEA446E4D9928 /* GBViewConf+Private.mm in Sources */,
+				8DBD68ED0AC04310CCC7CC4F /* GBViewConf.mm in Sources */,
+				53362BA84CFA6BD8EF145A85 /* GBViewConstraint+Private.mm in Sources */,
+				30F4DCE02124576A762E3436 /* GBViewConstraint.mm in Sources */,
+				6D20FB0D2F5887CFB67091FF /* GBViewEventHandler+Private.mm in Sources */,
+				53A3293491B75113E7467915 /* GBViewEventParam+Private.mm in Sources */,
+				E49E985079EC52AE6E065A01 /* GBViewEventParam.mm in Sources */,
+				EF7196DE9681947EE86485BF /* GBViewFactoryGen+Private.mm in Sources */,
+				261CE13551C28E0CB4F5073C /* GBViewFrame+Private.mm in Sources */,
+				7AA6152A61DB6BC16F90774D /* GBViewFrame.mm in Sources */,
+				759BC4EB0A239926C76D96DF /* GBViewGen+Private.mm in Sources */,
+				8B333F98DBDC33F4CD1FA2A2 /* argb_color.cpp in Sources */,
+				42CA1499AB448F711FFEDFB2 /* log_gen.cpp in Sources */,
+				A8377A87B0358EAAA4FC55FE /* view_conf_base.cpp in Sources */,
+				361332EF75F1C14A0EB41BD1 /* view_constraint_base.cpp in Sources */,
+				EE56759A9D930D81E814C302 /* async_loop_imp.cpp in Sources */,
+				B9F21641CAB3DCB9E838DE41 /* HttpRequest.cpp in Sources */,
+				F146B33673E4D6F1AC5562EA /* HttpRequestImp.cpp in Sources */,
+				3C3515F52420DA8AFB105FE5 /* Log.cpp in Sources */,
+				C52D0D8ABE93A215EBB0AD15 /* log_imp.cpp in Sources */,
+				3A51AA466E1C2F832D32130F /* jsoncpp.cpp in Sources */,
+				D0D785D980E0E60458673C0F /* ui_conf_imp.cpp in Sources */,
+				D3F08017E9066EEA1E01B132 /* ui_manager_imp.cpp in Sources */,
+				5E322B5FAE05CCA1EB7D8E36 /* ui_value_checker_imp.cpp in Sources */,
+				1FA624C706CF9494575BD2DF /* UiConfigReader.cpp in Sources */,
+				94BA2254C13E7EB5C5B32B75 /* zf_log.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +501,7 @@
 					"./generated-src/cpp",
 					./src,
 					./interface,
+					./src/ui,
 					deps/sqlite3,
 					deps/curl,
 					deps/curl/curl,
@@ -454,6 +553,7 @@
 					"./generated-src/cpp",
 					./src,
 					./interface,
+					./src/ui,
 					deps/sqlite3,
 					deps/curl,
 					deps/curl/curl,

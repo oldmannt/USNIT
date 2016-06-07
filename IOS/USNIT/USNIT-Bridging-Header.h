@@ -10,9 +10,13 @@
 #import "GBAsyncLoopGen.h"
 #import "GBLogGen.h"
 
-#import "GBViewGen.h"
-#import "GBViewFrame.h"
-#import "GBUiInjecterGen.h"
+#import "GBUiManagerGen.h"
+#import "GBUiConfGen.h"
+#import "GBUiValueCheckerGen.h"
+
+#import "GBArgbColor.h"
+#import "GBTextBoarder.h"
+#import "GBViewConf.h"
 #import "GBViewConstraint.h"
 #import "GBViewFrame.h"
 #import "GBViewGen.h"

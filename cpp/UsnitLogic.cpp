@@ -11,11 +11,10 @@
 #include "UsnitLogic.hpp"
 #include "ILog.h"
 
-#include "ui_injecter_gen.hpp"
+#include "ui_manager_gen.hpp"
 #include "view_gen.hpp"
 #include "view_type.hpp"
 #include "view_frame.hpp"
-#include "view_constraint.hpp"
 
 #include "UILogic.hpp"
 

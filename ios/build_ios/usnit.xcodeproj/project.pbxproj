@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33961B551CFA505600EC150A /* UILogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33961B531CFA505600EC150A /* UILogic.cpp */; };
-		5C3EB210938ED45B15E9AC2F /* UsnitLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */; };
+		5044A81C7334864B2EF2AE00 /* UsnitLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */; };
+		5EC0E4ABA510FEE5C04AC890 /* UILogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95E3839EE9FA556D28AB5AB5 /* UILogic.cpp */; };
 		9D701432352DA19CA5B7F47B /* USNUsnitEventGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8493963346F50FA7E7C2A43 /* USNUsnitEventGen+Private.mm */; };
 		A2C7E4B00050320E1455365B /* USNUsnitGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49A8BC59A6DF6EBBA0BD217F /* USNUsnitGen+Private.mm */; };
 /* End PBXBuildFile section */
@@ -17,8 +17,6 @@
 		06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UsnitLogic.cpp; sourceTree = "<group>"; };
 		294C18D138F451F9A6B0755C /* usnit.gyp */ = {isa = PBXFileReference; explicitFileType = sourcecode; path = usnit.gyp; sourceTree = "<group>"; };
 		30DF8A96D4ED0EC6B1B04691 /* USNUsnitGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USNUsnitGen+Private.h"; sourceTree = "<group>"; };
-		33961B531CFA505600EC150A /* UILogic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UILogic.cpp; sourceTree = "<group>"; };
-		33961B541CFA505600EC150A /* UILogic.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UILogic.hpp; sourceTree = "<group>"; };
 		4610FEA4A901D379EDC60051 /* libusnit_objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libusnit_objc.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		49A8BC59A6DF6EBBA0BD217F /* USNUsnitGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "USNUsnitGen+Private.mm"; sourceTree = "<group>"; };
 		4D67B6D000828CD49F129558 /* usnit_type.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = usnit_type.hpp; sourceTree = "<group>"; };
@@ -26,6 +24,7 @@
 		7171C1DF80ECF3A921050E81 /* UsnitLogic.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = UsnitLogic.hpp; sourceTree = "<group>"; };
 		7BED148A3A5C9AD86F31C793 /* USNUsnitGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUsnitGen.h; sourceTree = "<group>"; };
 		869BD0915B099BF813E556DA /* common.gypi */ = {isa = PBXFileReference; explicitFileType = sourcecode; name = common.gypi; path = gearsbox/deps/djinni/common.gypi; sourceTree = "<group>"; };
+		95E3839EE9FA556D28AB5AB5 /* UILogic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UILogic.cpp; sourceTree = "<group>"; };
 		99B5BA40E37537A178C9FF1A /* USNLangType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNLangType.h; sourceTree = "<group>"; };
 		9B101F7C790C8C8AF278A633 /* usnit_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = usnit_gen.hpp; sourceTree = "<group>"; };
 		9FCD2C739AF9AA54C0F44919 /* USNUsnitEventGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUsnitEventGen.h; sourceTree = "<group>"; };
@@ -35,6 +34,7 @@
 		D8493963346F50FA7E7C2A43 /* USNUsnitEventGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "USNUsnitEventGen+Private.mm"; sourceTree = "<group>"; };
 		DAE651C54730AD1525EE3A2C /* USNUsnitEventGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USNUsnitEventGen+Private.h"; sourceTree = "<group>"; };
 		DF4F56E1CCD124EDA36FA232 /* USNUsnitType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUsnitType.h; sourceTree = "<group>"; };
+		DF56E25FC6D1E2FE1856873F /* UILogic.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = UILogic.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +78,7 @@
 		421E45E717080F13487BBC40 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E96AB33DD592677D24C88D22 /* cpp */,
+				C91F99776AA3ED6579BD4512 /* cpp */,
 				3A12DF14C51D1F2E826E9126 /* generated-src */,
 			);
 			name = Source;
@@ -120,13 +120,13 @@
 			path = cpp;
 			sourceTree = "<group>";
 		};
-		E96AB33DD592677D24C88D22 /* cpp */ = {
+		C91F99776AA3ED6579BD4512 /* cpp */ = {
 			isa = PBXGroup;
 			children = (
+				95E3839EE9FA556D28AB5AB5 /* UILogic.cpp */,
+				DF56E25FC6D1E2FE1856873F /* UILogic.hpp */,
 				06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */,
 				7171C1DF80ECF3A921050E81 /* UsnitLogic.hpp */,
-				33961B531CFA505600EC150A /* UILogic.cpp */,
-				33961B541CFA505600EC150A /* UILogic.hpp */,
 			);
 			path = cpp;
 			sourceTree = "<group>";
@@ -160,11 +160,7 @@
 			};
 			buildConfigurationList = BFD05A1554232B6A6B5A60E1 /* Build configuration list for PBXProject "usnit" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
-			knownRegions = (
-				en,
-			);
 			mainGroup = 2E8933E7F0FD20EEF503F5C4;
 			projectDirPath = ../..;
 			projectRoot = "";
@@ -179,10 +175,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33961B551CFA505600EC150A /* UILogic.cpp in Sources */,
 				9D701432352DA19CA5B7F47B /* USNUsnitEventGen+Private.mm in Sources */,
 				A2C7E4B00050320E1455365B /* USNUsnitGen+Private.mm in Sources */,
-				5C3EB210938ED45B15E9AC2F /* UsnitLogic.cpp in Sources */,
+				5EC0E4ABA510FEE5C04AC890 /* UILogic.cpp in Sources */,
+				5044A81C7334864B2EF2AE00 /* UsnitLogic.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +215,11 @@
 					"generated-src/cpp",
 					cpp,
 					"gearsbox/deps/djinni/support-lib/objc",
+					gearsbox/src/cpp/ui,
 					"gearsbox/generated-src/objc",
 					"gearsbox/generated-src/cpp",
 					gearsbox/interface,
+					gearsbox/src/ui,
 					gearsbox/deps/sqlite3,
 					gearsbox/deps/curl,
 					gearsbox/deps/curl/curl,
@@ -250,9 +248,11 @@
 					"generated-src/cpp",
 					cpp,
 					"gearsbox/deps/djinni/support-lib/objc",
+					gearsbox/src/cpp/ui,
 					"gearsbox/generated-src/objc",
 					"gearsbox/generated-src/cpp",
 					gearsbox/interface,
+					gearsbox/src/ui,
 					gearsbox/deps/sqlite3,
 					gearsbox/deps/curl,
 					gearsbox/deps/curl/curl,

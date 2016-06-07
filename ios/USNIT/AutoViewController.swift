@@ -53,15 +53,22 @@ class AutoViewController: UIViewController {
         
         //viewInput.addConstraint(NSLayoutConstraint(item: myTextField, attribute: .CenterX, relatedBy: .Equal, toItem: viewInput, attribute: .CenterX, multiplier: 1, constant: 0))
         */
-        genViewInput = GBViewImp(id:"input_view", view: viewInput, controller: self)
-        genViewUnit = GBViewImp(id:"unit_view", view: viewUnit, controller: self)
-
-        GBUiInjecterGen.instance()?.inject("input_view", view: genViewInput)
-        GBUiInjecterGen.instance()?.inject("unit_view", view: genViewUnit)
         
-        USNUsnitGen.instance()?.buildView("input_view")
-        USNUsnitGen.instance()?.buildView("unit_view")
-        //*/
+        let res_path = NSBundle.mainBundle().pathForResource("ui", ofType: "json")
+        if (res_path == nil){
+            GBLogGen.instance()?.logerrf("ui.json not found \(#file) \(#function) \(#line)");
+            return;
+        }
+        //GBUiManagerGen.instance()?.initialize(res_path!, factory: nil)
+        genViewInput = GBViewImp(id:"input_view", view: viewInput, constroller: self)
+        genViewUnit = GBViewImp(id:"unit_view", view: viewUnit, constroller: self)
+
+        GBUiManagerGen.instance()?.inject("input_view", view: genViewInput)
+        GBUiManagerGen.instance()?.inject("unit_view", view: genViewUnit)
+        
+        genViewInput!.addSubView("input_text");
+        genViewInput!.addSubView("time_label");
+        //USNUsnitGen.instance()?.buildView("unit_view")
     }
     
     override func didReceiveMemoryWarning() {

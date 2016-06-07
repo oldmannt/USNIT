@@ -23,11 +23,10 @@
 #include "usnit_event_type.hpp"
 #include "usnit_type.hpp"
 
-#include "ui_injecter_gen.hpp"
+#include "ui_manager_gen.hpp"
 #include "view_gen.hpp"
 #include "view_type.hpp"
 #include "view_frame.hpp"
-#include "view_constraint.hpp"
 
 namespace usnit {
     

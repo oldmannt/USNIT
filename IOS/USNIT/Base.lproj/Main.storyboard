@@ -617,9 +617,29 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khK-HE-Mhb" userLabel="view_input">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uX4-GZ-QNm">
+                                        <rect key="frame" x="239" y="42" width="97" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="97" id="sh2-8u-FW9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12月12日 12:12:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6W-8D-iMT">
+                                        <rect key="frame" x="258" y="18" width="84" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="4ts-Vt-8Uo"/>
+                                    <constraint firstItem="uX4-GZ-QNm" firstAttribute="top" secondItem="e6W-8D-iMT" secondAttribute="bottom" constant="12" id="DP1-aO-n0f"/>
+                                    <constraint firstItem="e6W-8D-iMT" firstAttribute="centerX" secondItem="khK-HE-Mhb" secondAttribute="centerX" id="Xde-T4-Bwl"/>
+                                    <constraint firstItem="e6W-8D-iMT" firstAttribute="top" secondItem="khK-HE-Mhb" secondAttribute="top" constant="18" id="aAe-iH-hVU"/>
+                                    <constraint firstItem="uX4-GZ-QNm" firstAttribute="leading" secondItem="khK-HE-Mhb" secondAttribute="leading" constant="239" id="gUU-NX-Jc4"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpC-Nb-gUV" userLabel="sc_view">

@@ -13,12 +13,15 @@
 		33076C331CE3DF2200FCB267 /* AdmobBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33076C321CE3DF2200FCB267 /* AdmobBanner.swift */; };
 		33343B201CDD78D7005AAAC6 /* UsnitTabBarCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33343B1F1CDD78D7005AAAC6 /* UsnitTabBarCtl.swift */; };
 		333649611CCC466F00034AE6 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333649601CCC466F00034AE6 /* DrawView.swift */; };
+		333E4BFA1D06B45F0031783C /* ui.json in Resources */ = {isa = PBXBuildFile; fileRef = 333E4BF91D06B45F0031783C /* ui.json */; };
 		3362AD981CF2CF5C004D31FD /* libusnit_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3362AD6B1CF2CE7F004D31FD /* libusnit_objc.a */; };
 		3362ADA21CF3C8DA004D31FD /* cn.html in Resources */ = {isa = PBXBuildFile; fileRef = 3362AD9C1CF3C8DA004D31FD /* cn.html */; };
 		3362ADA51CF3C8DA004D31FD /* en.html in Resources */ = {isa = PBXBuildFile; fileRef = 3362AD9F1CF3C8DA004D31FD /* en.html */; };
 		3362ADA91CF3C8E8004D31FD /* conf.json in Resources */ = {isa = PBXBuildFile; fileRef = 3362ADA81CF3C8E8004D31FD /* conf.json */; };
 		3362ADAB1CF40A65004D31FD /* justfor_cpplink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3362ADAA1CF40A65004D31FD /* justfor_cpplink.cpp */; };
 		337A8A381CB42F9A006B45D7 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A8A371CB42F9A006B45D7 /* StringUtils.swift */; };
+		3380C08F1D06004D00EB4B0C /* GBViewFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380C08E1D06004D00EB4B0C /* GBViewFactoryImp.swift */; };
+		3380C0A51D0636A600EB4B0C /* TypeConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380C0A41D0636A600EB4B0C /* TypeConvertor.swift */; };
 		33992EE21CF7D5D4005EDD78 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33992ECF1CF7D59C005EDD78 /* libcurl.a */; };
 		33992EE31CF7D5D4005EDD78 /* libdjinni_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33992ED51CF7D5A1005EDD78 /* libdjinni_objc.a */; };
 		33992EE41CF7D5D4005EDD78 /* libgearsbox_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33992EC91CF7D597005EDD78 /* libgearsbox_objc.a */; };
@@ -46,6 +49,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 4610FEA4A901D379EDC60051;
 			remoteInfo = usnit_objc;
+		};
+		3380C08D1D05E8B600EB4B0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33C8F9951CA76B5A00E1C6DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 33C8F99C1CA76B5A00E1C6DA;
+			remoteInfo = usnit_app;
 		};
 		33992EC81CF7D597005EDD78 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -89,13 +99,6 @@
 			remoteGlobalIDString = 33C8F99C1CA76B5A00E1C6DA;
 			remoteInfo = USNIT;
 		};
-		33E002991CFEBD630058D15A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 33E002951CFEBD630058D15A /* sqlite3.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E48F2BBAC1B0A6856E26F26;
-			remoteInfo = sqlite3;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +109,7 @@
 		33076C321CE3DF2200FCB267 /* AdmobBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdmobBanner.swift; sourceTree = "<group>"; };
 		33343B1F1CDD78D7005AAAC6 /* UsnitTabBarCtl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsnitTabBarCtl.swift; sourceTree = "<group>"; };
 		333649601CCC466F00034AE6 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
+		333E4BF91D06B45F0031783C /* ui.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ui.json; path = ../data/ui.json; sourceTree = "<group>"; };
 		3362ACD91CF17670004D31FD /* libusnit_objc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libusnit_objc.dylib; path = "../build/Debug-iphoneos/libusnit_objc.dylib"; sourceTree = "<group>"; };
 		3362AD641CF2CE7F004D31FD /* usnit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = usnit.xcodeproj; path = build_ios/usnit.xcodeproj; sourceTree = "<group>"; };
 		3362AD9C1CF3C8DA004D31FD /* cn.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = cn.html; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 		3362ADA81CF3C8E8004D31FD /* conf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = conf.json; path = ../Data/conf.json; sourceTree = "<group>"; };
 		3362ADAA1CF40A65004D31FD /* justfor_cpplink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = justfor_cpplink.cpp; sourceTree = "<group>"; };
 		337A8A371CB42F9A006B45D7 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		3380C08E1D06004D00EB4B0C /* GBViewFactoryImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GBViewFactoryImp.swift; path = ../../gearsbox/swift/GBViewFactoryImp.swift; sourceTree = "<group>"; };
+		3380C0A41D0636A600EB4B0C /* TypeConvertor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeConvertor.swift; path = ../../gearsbox/swift/TypeConvertor.swift; sourceTree = "<group>"; };
 		33992EC41CF7D597005EDD78 /* gearsbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gearsbox.xcodeproj; path = build_ios/gearsbox/gearsbox.xcodeproj; sourceTree = "<group>"; };
 		33992ECA1CF7D59C005EDD78 /* libcurl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libcurl.xcodeproj; path = build_ios/gearsbox/deps/curl/libcurl.xcodeproj; sourceTree = "<group>"; };
 		33992ED01CF7D5A1005EDD78 /* support_lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = support_lib.xcodeproj; path = "build_ios/gearsbox/deps/djinni/support-lib/support_lib.xcodeproj"; sourceTree = "<group>"; };
@@ -222,13 +228,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3362AD9A1CF3C8C7004D31FD /* Data */ = {
+		3362AD9A1CF3C8C7004D31FD /* data */ = {
 			isa = PBXGroup;
 			children = (
 				3362AD9B1CF3C8DA004D31FD /* help */,
 				3362ADA81CF3C8E8004D31FD /* conf.json */,
+				333E4BF91D06B45F0031783C /* ui.json */,
 			);
-			name = Data;
+			name = data;
 			sourceTree = "<group>";
 		};
 		3362AD9B1CF3C8DA004D31FD /* help */ = {
@@ -284,7 +291,9 @@
 		33992EE71CF7D9AF005EDD78 /* gearsbox */ = {
 			isa = PBXGroup;
 			children = (
+				3380C08E1D06004D00EB4B0C /* GBViewFactoryImp.swift */,
 				33992EEF1CF7FCC9005EDD78 /* GBViewImp.swift */,
+				3380C0A41D0636A600EB4B0C /* TypeConvertor.swift */,
 			);
 			name = gearsbox;
 			sourceTree = "<group>";
@@ -292,7 +301,7 @@
 		33C8F9941CA76B5A00E1C6DA = {
 			isa = PBXGroup;
 			children = (
-				3362AD9A1CF3C8C7004D31FD /* Data */,
+				3362AD9A1CF3C8C7004D31FD /* data */,
 				33C8F99F1CA76B5A00E1C6DA /* USNIT */,
 				3362AD3A1CF2C81C004D31FD /* Projects */,
 				33C8F99E1CA76B5A00E1C6DA /* Products */,
@@ -354,48 +363,6 @@
 				33C8F9C41CA76B5A00E1C6DA /* Info.plist */,
 			);
 			path = USNITUITests;
-			sourceTree = "<group>";
-		};
-		33E002761CFEBD500058D15A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				33E0027C1CFEBD500058D15A /* libgearsbox_objc.a */,
-				33E0027E1CFEBD500058D15A /* libgearsbox_jni.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		33E002801CFEBD550058D15A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				33E002841CFEBD550058D15A /* libcurl.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		33E002861CFEBD5A0058D15A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				33E0028C1CFEBD5A0058D15A /* libdjinni_jni.a */,
-				33E0028E1CFEBD5A0058D15A /* libdjinni_objc.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		33E002901CFEBD5E0058D15A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				33E002941CFEBD5E0058D15A /* libuv.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		33E002961CFEBD630058D15A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				33E0029A1CFEBD630058D15A /* libsqlite3.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -587,6 +554,7 @@
 			files = (
 				33C8F9AD1CA76B5A00E1C6DA /* LaunchScreen.storyboard in Resources */,
 				3362ADA91CF3C8E8004D31FD /* conf.json in Resources */,
+				333E4BFA1D06B45F0031783C /* ui.json in Resources */,
 				3362ADA51CF3C8DA004D31FD /* en.html in Resources */,
 				33C8F9AA1CA76B5A00E1C6DA /* Assets.xcassets in Resources */,
 				33C8F9A81CA76B5A00E1C6DA /* Main.storyboard in Resources */,
@@ -709,6 +677,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33E002401CFA955D0058D15A /* AutoViewController.swift in Sources */,
+				3380C08F1D06004D00EB4B0C /* GBViewFactoryImp.swift in Sources */,
 				33992EF01CF7FCC9005EDD78 /* GBViewImp.swift in Sources */,
 				33343B201CDD78D7005AAAC6 /* UsnitTabBarCtl.swift in Sources */,
 				337A8A381CB42F9A006B45D7 /* StringUtils.swift in Sources */,
@@ -716,6 +685,7 @@
 				3362ADAB1CF40A65004D31FD /* justfor_cpplink.cpp in Sources */,
 				333649611CCC466F00034AE6 /* DrawView.swift in Sources */,
 				33076C331CE3DF2200FCB267 /* AdmobBanner.swift in Sources */,
+				3380C0A51D0636A600EB4B0C /* TypeConvertor.swift in Sources */,
 				33A457C71CBA046300CBB2E4 /* SFUsnitLogic.swift in Sources */,
 				33C8F9A11CA76B5A00E1C6DA /* AppDelegate.swift in Sources */,
 				33A457C91CBA109700CBB2E4 /* NumInputDelegate.swift in Sources */,
@@ -751,7 +721,7 @@
 		33C8F9C01CA76B5A00E1C6DA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 33C8F99C1CA76B5A00E1C6DA /* usnit_app */;
-			targetProxy = 33C8F9BF1CA76B5A00E1C6DA /* PBXContainerItemProxy */;
+			targetProxy = 3380C08D1D05E8B600EB4B0C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
