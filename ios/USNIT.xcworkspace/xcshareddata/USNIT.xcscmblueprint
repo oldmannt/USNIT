@@ -4,15 +4,17 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "703C8D6A122D254C79740E410734EC0A4643394D" : 0,
+    "FAA500FCC3696E0A19699AB23087A578EA3879E9" : 0,
     "8BDCDB84EB125EE2FACFAB2E57E6F24704D9C302" : 0,
-    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : 0
+    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : 0,
+    "703C8D6A122D254C79740E410734EC0A4643394D" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0B957D76-2584-435F-85D5-442945A0B005",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "703C8D6A122D254C79740E410734EC0A4643394D" : "USNIT\/gearsbox\/",
+    "FAA500FCC3696E0A19699AB23087A578EA3879E9" : "USNIT\/gearsbox\/deps\/breakpad\/src\/",
     "8BDCDB84EB125EE2FACFAB2E57E6F24704D9C302" : "USNIT\/",
-    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : "USNIT\/gearsbox\/deps\/djinni\/"
+    "4E8EC1E97A744AECB2BFFE9D3D48C062D250382B" : "USNIT\/gearsbox\/deps\/djinni\/",
+    "703C8D6A122D254C79740E410734EC0A4643394D" : "USNIT\/gearsbox\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "USNIT",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -32,6 +34,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/oldmannt\/USNIT.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8BDCDB84EB125EE2FACFAB2E57E6F24704D9C302"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/chromium.googlesource.com\/breakpad\/breakpad.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FAA500FCC3696E0A19699AB23087A578EA3879E9"
     }
   ]
 }

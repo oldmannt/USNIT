@@ -14,6 +14,7 @@
 		33343B201CDD78D7005AAAC6 /* UsnitTabBarCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33343B1F1CDD78D7005AAAC6 /* UsnitTabBarCtl.swift */; };
 		333649611CCC466F00034AE6 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333649601CCC466F00034AE6 /* DrawView.swift */; };
 		333E4BFA1D06B45F0031783C /* ui.json in Resources */ = {isa = PBXBuildFile; fileRef = 333E4BF91D06B45F0031783C /* ui.json */; };
+		333E4C111D07BCF70031783C /* libBreakpad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 333E4C101D07BCD00031783C /* libBreakpad.a */; };
 		3362AD981CF2CF5C004D31FD /* libusnit_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3362AD6B1CF2CE7F004D31FD /* libusnit_objc.a */; };
 		3362ADA21CF3C8DA004D31FD /* cn.html in Resources */ = {isa = PBXBuildFile; fileRef = 3362AD9C1CF3C8DA004D31FD /* cn.html */; };
 		3362ADA51CF3C8DA004D31FD /* en.html in Resources */ = {isa = PBXBuildFile; fileRef = 3362AD9F1CF3C8DA004D31FD /* en.html */; };
@@ -43,6 +44,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		333E4C0F1D07BCD00031783C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 333E4C0B1D07BCCF0031783C /* Breakpad.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = Breakpad;
+		};
 		3362AD6A1CF2CE7F004D31FD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3362AD641CF2CE7F004D31FD /* usnit.xcodeproj */;
@@ -110,6 +118,7 @@
 		33343B1F1CDD78D7005AAAC6 /* UsnitTabBarCtl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsnitTabBarCtl.swift; sourceTree = "<group>"; };
 		333649601CCC466F00034AE6 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		333E4BF91D06B45F0031783C /* ui.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ui.json; path = ../data/ui.json; sourceTree = "<group>"; };
+		333E4C0B1D07BCCF0031783C /* Breakpad.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Breakpad.xcodeproj; path = ../gearsbox/deps/breakpad/src/src/client/ios/Breakpad.xcodeproj; sourceTree = "<group>"; };
 		3362ACD91CF17670004D31FD /* libusnit_objc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libusnit_objc.dylib; path = "../build/Debug-iphoneos/libusnit_objc.dylib"; sourceTree = "<group>"; };
 		3362AD641CF2CE7F004D31FD /* usnit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = usnit.xcodeproj; path = build_ios/usnit.xcodeproj; sourceTree = "<group>"; };
 		3362AD9C1CF3C8DA004D31FD /* cn.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = cn.html; sourceTree = "<group>"; };
@@ -155,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				333E4C111D07BCF70031783C /* libBreakpad.a in Frameworks */,
 				33992EE21CF7D5D4005EDD78 /* libcurl.a in Frameworks */,
 				33992EE31CF7D5D4005EDD78 /* libdjinni_objc.a in Frameworks */,
 				33992EE41CF7D5D4005EDD78 /* libgearsbox_objc.a in Frameworks */,
@@ -207,9 +217,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		333E4C0C1D07BCCF0031783C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				333E4C101D07BCD00031783C /* libBreakpad.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3362AD3A1CF2C81C004D31FD /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				333E4C0B1D07BCCF0031783C /* Breakpad.xcodeproj */,
 				33992EDC1CF7D5AC005EDD78 /* sqlite3.xcodeproj */,
 				33992ED61CF7D5A5005EDD78 /* uv.xcodeproj */,
 				33992ED01CF7D5A1005EDD78 /* support_lib.xcodeproj */,
@@ -469,6 +488,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 333E4C0C1D07BCCF0031783C /* Products */;
+					ProjectRef = 333E4C0B1D07BCCF0031783C /* Breakpad.xcodeproj */;
+				},
+				{
 					ProductGroup = 33992EC51CF7D597005EDD78 /* Products */;
 					ProjectRef = 33992EC41CF7D597005EDD78 /* gearsbox.xcodeproj */;
 				},
@@ -503,6 +526,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		333E4C101D07BCD00031783C /* libBreakpad.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBreakpad.a;
+			remoteRef = 333E4C0F1D07BCD00031783C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		3362AD6B1CF2CE7F004D31FD /* libusnit_objc.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -852,7 +882,7 @@
 				PROVISIONING_PROFILE = "ac73709d-b014-41fb-b0d1-573d774a479c";
 				SWIFT_OBJC_BRIDGING_HEADER = "USNIT/USNIT-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../generated-src/objc\" \"$(SRCROOT)/../gearsbox/generated-src/objc\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../generated-src/objc\" \"$(SRCROOT)/../gearsbox/generated-src/objc\" \"$(SRCROOT)/../gearsbox/deps/breakpad/src/src/\"";
 			};
 			name = Debug;
 		};
@@ -874,7 +904,7 @@
 				PRODUCT_NAME = usnit_app;
 				PROVISIONING_PROFILE = "ac73709d-b014-41fb-b0d1-573d774a479c";
 				SWIFT_OBJC_BRIDGING_HEADER = "USNIT/USNIT-Bridging-Header.h";
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../generated-src/objc\" \"$(SRCROOT)/../gearsbox/generated-src/objc\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../generated-src/objc\" \"$(SRCROOT)/../gearsbox/generated-src/objc\" \"$(SRCROOT)/../gearsbox/deps/breakpad/src/src/\"";
 			};
 			name = Release;
 		};

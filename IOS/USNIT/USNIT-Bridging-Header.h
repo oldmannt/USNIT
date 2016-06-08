@@ -24,3 +24,5 @@
 #import "GBViewEventHandler.h"
 #import "GBViewEvent.h"
 #import "GBViewEventParam.h"
+
+#import "client/ios/BreakpadController.h"
