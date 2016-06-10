@@ -49,7 +49,7 @@ bool UILogic::buildInputView(const std::string& view_id){
     std::shared_ptr<gearsbox::ViewGen> viewInput = gearsbox::UiManagerGen::instance()->getView(view_id);
     viewInput->setEventHandler(shared_from_this());
     
-    std::shared_ptr<gearsbox::ViewGen> textInput = viewInput->addSubView("input_text");
+    std::shared_ptr<gearsbox::ViewGen> textInput = viewInput->addSubViewById("input_text");
     if (!textInput){
         G_LOG_FC(LOG_ERROR, "add text input failed null");
         return false;

@@ -72,11 +72,11 @@
 		"constraints":[
 			{"from":"time_label","to":"self","type_from":"top","type_to":"top","multiplier":1,"offset":18},
 			{"from":"time_label","to":"self","type_from":"centerx","type_to":"centerx","multiplier":1,"offset":0},
-			{"from":"time_label","to":"","type_from":"width","type_to":"width","multiplier":1,"offset":150},
-			{"from":"time_label","to":"","type_from":"width","type_to":"width","multiplier":1,"offset":12},
+			{"from":"time_label","to":"","type_from":"width","type_to":"width","multiplier":0,"offset":150},
+			{"from":"time_label","to":"","type_from":"height","type_to":"height","multiplier":0,"offset":12},
 			{"from":"input_text","to":"self","type_from":"centerx","type_to":"centerx","multiplier":1,"offset":0},
-			{"from":"input_text","to":"self","type_from":"width","type_to":"width","multiplier":1,"offset":0.95},
-			{"from":"input_text","to":"self","type_from":"bottom","type_to":"bottom","multiplier":1,"offset":1}
+			{"from":"input_text","to":"self","type_from":"width","type_to":"width","multiplier":0.95,"offset":0},
+			{"from":"input_text","to":"self","type_from":"bottom","type_to":"bottom","multiplier":1,"offset":-1}
 		]}
 	]
 }

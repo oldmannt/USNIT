@@ -1,50 +1,50 @@
 {
     "typesets":[
-        {"name":"length", "types":[
-            {"name":"meter", "us":false, "func":""},
-            {"name":"cmeter", "us":false},
-            {"name":"kmeter", "us":false},
-            {"name":"feet", "us":true},
-            {"name":"inch", "us":true},
-            {"name":"mile", "us":true},
-            {"name":"yard", "us":true}
-        ]},
-        {"name":"mass", "types":[
-            {"name":"gram", "us":false},
-            {"name":"kgram", "us":false},
-            {"name":"lb", "us":true},
-            {"name":"oz", "us":true}
-        ]},
-        {"name":"volume", "types":[
-            {"name":"liter", "us":false, "func":""},
-            {"name":"mliter", "us":false, "func":""},
-            {"name":"gal", "us":true,"func":""},
-            {"name":"oz", "us":true,"func":""}
-        ]},
-        {"name":"square", "types":[
-            {"name":"sqmeter", "us":false, "func":""},
-            {"name":"sqcmeter", "us":false, "func":""},
-            {"name":"sqinch", "us":true, "func":""},
-            {"name":"sqfeet", "us":true, "func":""}
-        ]},
-        {"name":"termperature", "types":[
-            {"name":"celcius", "us":false,"func":""},
-            {"name":"fahrenheit", "us":true, "func":""}
-        ]},
-        {"name":"exchange", "types":[
-            {"name":"rmb", "us":false,"func":""},
-            {"name":"dollor", "us":true,"func":""}
-        ]},
-    ],
+                {"name":"length", "types":[
+                                           {"name":"meter", "us":false, "func":""},
+                                           {"name":"cmeter", "us":false},
+                                           {"name":"kmeter", "us":false},
+                                           {"name":"feet", "us":true},
+                                           {"name":"inch", "us":true},
+                                           {"name":"mile", "us":true},
+                                           {"name":"yard", "us":true}
+                                           ]},
+                {"name":"mass", "types":[
+                                         {"name":"gram", "us":false},
+                                         {"name":"kgram", "us":false},
+                                         {"name":"lb", "us":true},
+                                         {"name":"oz", "us":true}
+                                         ]},
+                {"name":"volume", "types":[
+                                           {"name":"liter", "us":false, "func":""},
+                                           {"name":"mliter", "us":false, "func":""},
+                                           {"name":"gal", "us":true,"func":""},
+                                           {"name":"oz", "us":true,"func":""}
+                                           ]},
+                {"name":"square", "types":[
+                                           {"name":"sqmeter", "us":false, "func":""},
+                                           {"name":"sqcmeter", "us":false, "func":""},
+                                           {"name":"sqinch", "us":true, "func":""},
+                                           {"name":"sqfeet", "us":true, "func":""}
+                                           ]},
+                {"name":"termperature", "types":[
+                                                 {"name":"celcius", "us":false,"func":""},
+                                                 {"name":"fahrenheit", "us":true, "func":""}
+                                                 ]},
+                {"name":"exchange", "types":[
+                                             {"name":"rmb", "us":false,"func":""},
+                                             {"name":"dollor", "us":true,"func":""}
+                                             ]}
+                ],
     "start_counter":0,
     "long_type":1,
-    "mass_type":10,
-    "square_type":14,
-    "volume_type":7,
-    "long_type_set":[0,1,2,3,4,5,6],
-    "mass_type_set":[10,11,12,13],
-    "square_type_set":[14,15,16,19],
-    "volume_type_set":[7,8,9],
+    "mass_type":11,
+    "square_type":15,
+    "volume_type":8,
+    "long_type_set":[1,2,3,4,5,6,7],
+    "mass_type_set":[11,12,13,14],
+    "square_type_set":[15,16,17,20],
+    "volume_type_set":[8,9,10],
     "exchange_ask":6.500,
     "exchange_bid":6.49,
     "exchange_rate":6.49,

@@ -59,16 +59,14 @@ class AutoViewController: UIViewController {
             GBLogGen.instance()?.logerrf("ui.json not found \(#file) \(#function) \(#line)");
             return;
         }
-        GBLogGen.instance()?.logerrf("\(res_path)");
-        //GBUiManagerGen.instance()?.initialize(res_path!, factory: nil)
+
+        GBUiManagerGen.instance()?.initialize(res_path!, factory: GBViewFactoryImp.instance)
         genViewInput = GBViewImp(id:"input_view", view: viewInput, constroller: self)
         genViewUnit = GBViewImp(id:"unit_view", view: viewUnit, constroller: self)
 
-        GBUiManagerGen.instance()?.inject("input_view", view: genViewInput)
-        GBUiManagerGen.instance()?.inject("unit_view", view: genViewUnit)
+        GBUiManagerGen.instance()?.inject(genViewInput)
+        GBUiManagerGen.instance()?.inject(genViewUnit)
         
-        genViewInput!.addSubView("input_text");
-        genViewInput!.addSubView("time_label");
         //USNUsnitGen.instance()?.buildView("unit_view")
     }
     
