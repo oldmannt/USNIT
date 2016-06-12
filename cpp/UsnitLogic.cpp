@@ -52,6 +52,117 @@ void CUsnitLogic::read_type_set(Json::Value* array, SET_UNIT_TYPE* set)  const{
     }
 }
 
+UsnitSuperType parseSuperType(const std::string& conf){
+    if (conf == "length")
+        return UsnitSuperType::TYPE_LENGTH;
+    else if (conf == "mass")
+        return UsnitSuperType::TYPE_MASS;
+    else if (conf == "volume")
+        return UsnitSuperType::TYPE_VOLUME;
+    else if (conf == "square")
+        return UsnitSuperType::TYPE_SQUARE;
+    else if (conf == "termperature")
+        return UsnitSuperType::TYPE_TERMPERATURE;
+    else if (conf == "exchange")
+        return UsnitSuperType::TYPE_EXCHANGE;
+    else{
+        G_LOG_FC(LOG_ERROR, "get error supertype:%s", conf.c_str());
+        return UsnitSuperType::TYPE_NONE;
+    }
+}
+
+UsnitType parseUnitType(const std::string& conf){
+    if (conf == "meter")
+        return UsnitType::TYPE_METER;
+    else if (conf == "cmeter")
+        return UsnitType::TYPE_CMETER;
+    else if (conf == "kmeter")
+        return UsnitType::TYPE_KMETER;
+    else if (conf == "feet")
+        return UsnitType::TYPE_FEET;
+    else if (conf == "inch")
+        return UsnitType::TYPE_INCH;
+    else if (conf == "mile")
+        return UsnitType::TYPE_MILE;
+    else if (conf == "yard")
+        return UsnitType::TYPE_YARD;
+    else if (conf == "gram")
+        return UsnitType::TYPE_GRAM;
+    else if (conf == "kgram")
+        return UsnitType::TYPE_KGRAM;
+    else if (conf == "lb")
+        return UsnitType::TYPE_POUND;
+    else if (conf == "oz")
+        return UsnitType::TYPE_OZ;
+    else if (conf == "liter")
+        return UsnitType::TYPE_LITRE;
+    else if (conf == "mliter")
+        return UsnitType::TYPE_MLITRE;
+    else if (conf == "gal")
+        return UsnitType::TYPE_GAL;
+    else if (conf == "sqmeter")
+        return UsnitType::TYPE_SQM;
+    else if (conf == "sqcmeter")
+        return UsnitType::TYPE_SQCM;
+    else if (conf == "sqinch")
+        return UsnitType::TYPE_SQINCH;
+    else if (conf == "sqfeet")
+        return UsnitType::TYPE_SQF;
+    else if (conf == "celcius")
+        return UsnitType::TYPE_CELSI;
+    else if (conf == "fahrenheit")
+        return UsnitType::TYPE_FAHRE;
+    else if (conf == "rmb")
+        return UsnitType::TYPE_RMB;
+    else if (conf == "dollor")
+        return UsnitType::TYPE_DOLLAR;
+    else{
+        G_LOG_FC(LOG_ERROR, "get error usnitype:%s", conf.c_str());
+        return UsnitType::TYPE_NONE;
+    }
+}
+
+bool CUsnitLogic::readAllUnits(Json::Value& conf){
+    if (conf.type()!=Json::ValueType::arrayValue){
+        return false;
+    }
+    
+    std::string strMsg;
+    try {
+        G_LOG_C(LOG_INFO, "to read %d supertype", conf.size());
+        for (Json::ArrayIndex i = 0; i< conf.size(); ++i){
+            Json::Value& item = conf[i];
+            UsnitSuperType super_type = parseSuperType(item["name"].asString());
+            LstUnit units;
+            
+            Json::Value& types = item["types"];
+            G_LOG_C(LOG_INFO, "to read %d units in supertype:%d", types.size(), super_type);
+            for (Json::ArrayIndex ii=0; ii<types.size(); ++ii) {
+                Json::Value& type = types[ii];
+                std::shared_ptr<Unit> unit = std::make_shared<Unit>();
+                unit->name = type["name"].asString();
+                unit->type = parseUnitType(unit->name);
+                if (type["us"].type() != Json::ValueType::nullValue)
+                    unit->isUs = type["us"].asBool();
+                if (type["func"].type() != Json::ValueType::nullValue)
+                    unit->func = type["func"].asString();
+                units.push_back(unit);
+                strMsg += unit->name + " unit read ok \n";
+                G_LOG_C(LOG_INFO, "readed unit %s done", unit->name.c_str());
+            }
+            
+            G_LOG_C(LOG_INFO, "readed %d units in supertype:%d", units.size(), super_type);
+            m_usnitData.mapAllUnits[super_type] = units;
+            strMsg += item["name"].asString() + " supertype reak ok \n";
+        }
+
+    } catch (std::exception& ex) {
+        G_LOG_FC(LOG_ERROR,"read units err:%s readed:", ex.what(), strMsg.c_str());
+    }
+    G_LOG_FC(LOG_INFO,"readAllUnits done");
+    return true;
+}
+
 bool CUsnitLogic::initialize(const std::string & conf_path, LangType lang, const std::shared_ptr<usnit::UsnitEventGen> & callback){
     G_LOG_FC(LOG_INFO,"CUsnitLogic::init lang:%d", lang);
     
@@ -124,6 +235,8 @@ bool CUsnitLogic::initialize(const std::string & conf_path, LangType lang, const
         std::string err = reader.getFormatedErrorMessages();
         G_LOG_FC(LOG_ERROR, "read err:%s json:%s", err.c_str(), conf_path.c_str());
     }
+    
+    readAllUnits(m_conf["typesets"]);
 
     // print all lang words
     /*

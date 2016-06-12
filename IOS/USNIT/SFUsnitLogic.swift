@@ -42,27 +42,24 @@ public class SFUsnitLogic {
         let res_path = NSBundle.mainBundle().pathForResource("conf", ofType: "json")
         
         var doc_path:String = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        doc_path.appendContentsOf("/conf1.4.json")
+        doc_path.appendContentsOf("/conf1.5.json")
 
         let fileManager = NSFileManager.defaultManager()
         if fileManager.fileExistsAtPath(doc_path) {
-            GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO, msg: "DOCUMENT CONF FILE AVAILABLE")
             do {
                 json_str = try NSString(contentsOfFile: doc_path, usedEncoding: nil) as String
             }catch let error as NSError{
                 // contents could not be loaded
                 GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO,
                                          msg: "SFUsnitLogic.init write failed \(error.userInfo) ")
-                return (doc_path, json_str)
+                return (res_path!, json_str)
             }
         } else {
-            GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO, msg: "document conf don't exist")
             do {
                 json_str = try NSString(contentsOfFile: res_path!, usedEncoding: nil) as String
                 
                 do {
-                    //try json_str.writeToURL(doc_conf_url, atomically: false, encoding: NSUTF8StringEncoding)
-                    try json_str.writeToFile(doc_path, atomically: true, encoding: NSUTF8StringEncoding)
+                    //try json_str.writeToFile(doc_path, atomically: true, encoding: NSUTF8StringEncoding)
                     GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO, msg: "document conf been writed")
                     
                 } catch let error as NSError{
@@ -80,7 +77,7 @@ public class SFUsnitLogic {
             
         }
 
-        return (doc_path, json_str)
+        return (res_path!, json_str)
     }
     
     public func setUsnitInput(value : Float){

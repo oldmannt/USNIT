@@ -46,7 +46,9 @@ namespace usnit {
         UsnitType type;
         bool isUs;
         std::string func;
-        Unit():type(UsnitType::TYPE_NONE){}
+        std::shared_ptr<gearsbox::ViewGen> label_value;
+        std::shared_ptr<gearsbox::ViewGen> label_name;
+        Unit():type(UsnitType::TYPE_NONE), isUs(false){}
     };
     typedef std::list<std::shared_ptr<Unit>> LstUnit;
     typedef std::map<UsnitSuperType, LstUnit> MapSuperType;
@@ -189,6 +191,7 @@ private:
     bool parseRateJson(const char* str_json, UsnitData& data) const;
     bool saveConf();
     void formatRate();
+    bool readAllUnits(Json::Value& conf);
 };
 }
 #endif /* UsnitLogic_hpp */
