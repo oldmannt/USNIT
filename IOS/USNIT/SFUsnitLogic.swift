@@ -33,10 +33,10 @@ public class SFUsnitLogic {
         
         let strlangId = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode) as! String
         if strlangId.rangeOfString("zh")==nil {
-            GBLanguageStoreGen.instance()?.setLanguage(GBLangType.LANGCHS)
+            GBLanguageStoreGen.instance()?.setLanguage(GBLangType.LANGENG)
         }
         else{
-            GBLanguageStoreGen.instance()?.setLanguage(GBLangType.LANGENG)
+            GBLanguageStoreGen.instance()?.setLanguage(GBLangType.LANGCHS)
         }
         
         let uilogic_path = NSBundle.mainBundle().pathForResource("uilogic", ofType: "json")
