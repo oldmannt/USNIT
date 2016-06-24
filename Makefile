@@ -23,7 +23,7 @@ android: android_proj
 
 
 clean_ios:
-	-rm -rf build_ios
+	-rm -rf build
 	-xcodebuild -workspace ios/usnit.xcworkspace \
 		-scheme gearsbox \
 		-configuration 'Debug' \
@@ -39,3 +39,8 @@ clean: clean_ios clean_android
 deps:
 	git submodule add https://github.com/oldmannt/gearsbox_client.git gearsbox
 
+mac_proj: djinni usnit.gyp ./gearsbox/deps/djinni/support-lib/support_lib.gyp 
+	gearsbox/deps/gyp/gyp --depth=. -f xcode -DOS=mac --generator-output ./build_mac -Igearsbox/deps/djinni/common.gypi ./usnit.gyp --root-target usnit_objc --root-target test
+
+test: mac_proj
+	xcodebuild -project build_mac/usnit.xcodeproj -configuration Debug -target test | cat && ./build/Debug/test

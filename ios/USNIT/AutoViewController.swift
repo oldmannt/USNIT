@@ -20,14 +20,14 @@ class AutoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        SFUsnitLogic.sharedInstance
-        
+               
         let res_path = NSBundle.mainBundle().pathForResource("ui", ofType: "json")
         if (res_path == nil){
             GBLogGen.instance()?.logerrf("ui.json not found \(#file) \(#function) \(#line)");
             return;
         }
+        
+        GBPlatformUtilityGen.instance()?.setPlatofrmExcutor(IOSExecutor())
 
         GBUiManagerGen.instance()?.initialize(res_path!, factory: GBViewFactoryImp.instance)
         genViewInput = GBViewImp(id:"input_view", view: viewInput, constroller: self)
@@ -36,9 +36,9 @@ class AutoViewController: UIViewController {
         GBUiManagerGen.instance()?.inject(genViewInput)
         GBUiManagerGen.instance()?.inject(genViewUnit)
         
-        USNUsnitGen.instance()?.buildView("input_view")
-        USNUsnitGen.instance()?.buildView("unit_view")
+        SFUsnitLogic.sharedInstance
         
+        //*
         m_ad = AdmobBanner(root: self)
         m_ad.didLoad("ca-app-pub-4953725946697554/8856468622")
         
@@ -46,7 +46,7 @@ class AutoViewController: UIViewController {
         let offsety = (self.tabBarController?.tabBar.frame.size.height)! + m_ad.bannerView.frame.size.height
         view.addConstraint(NSLayoutConstraint(item: viewSC, attribute: .Bottom,
             relatedBy: .Equal, toItem: view , attribute: .Bottom, multiplier: 1, constant: -offsety))
-        
+        //*/
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,16 +57,24 @@ class AutoViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        var maxHeight : CGFloat = 0
-        for view in viewUnit.subviews {
-            let newHeight = view.frame.origin.y + view.frame.height
+        var maxHeight : CGFloat = viewSC.contentSize.height
+        if maxHeight < viewUnit.frame.height{
+            maxHeight = viewUnit.frame.height
+        }
+        
+        for subview in viewUnit.subviews {
+            let newHeight = subview.frame.origin.y + subview.frame.height
             if newHeight > maxHeight {
                 maxHeight = newHeight
             }
         }
+        //GBLogGen.instance()?.logerrf("old content height: \(viewSC.contentSize.height) frame height: \(viewUnit.frame.height)");
         // set content size
-        
         viewSC.contentSize = CGSize(width: viewSC.contentSize.width, height: maxHeight)
+        viewUnit.frame = CGRectMake(viewUnit.frame.origin.x,viewUnit.frame.origin.y,
+                                    viewUnit.frame.width, maxHeight)
+        //GBLogGen.instance()?.logerrf("content height: \(maxHeight)");
+        //GBLogGen.instance()?.logerrf("view rame:\(viewUnit.frame.origin.x) \(viewUnit.frame.origin.y) \(viewUnit.frame.width) \(maxHeight)");
     }
 
 }

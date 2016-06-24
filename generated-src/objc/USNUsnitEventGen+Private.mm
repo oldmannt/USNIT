@@ -3,10 +3,41 @@
 
 #import "USNUsnitEventGen+Private.h"
 #import "USNUsnitEventGen.h"
+#import "DJICppWrapperCache+Private.h"
+#import "DJIError.h"
 #import "DJIMarshal+Private.h"
 #import "DJIObjcWrapperCache+Private.h"
+#include <exception>
+#include <utility>
 
 static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for this file");
+
+@interface USNUsnitEventGenCppProxy : NSObject<USNUsnitEventGen>
+
+- (id)initWithCpp:(const std::shared_ptr<::usnit::UsnitEventGen>&)cppRef;
+
+@end
+
+@implementation USNUsnitEventGenCppProxy {
+    ::djinni::CppProxyCache::Handle<std::shared_ptr<::usnit::UsnitEventGen>> _cppRefHandle;
+}
+
+- (id)initWithCpp:(const std::shared_ptr<::usnit::UsnitEventGen>&)cppRef
+{
+    if (self = [super init]) {
+        _cppRefHandle.assign(cppRef);
+    }
+    return self;
+}
+
+- (BOOL)callback:(USNUsnitEventType)id
+            data:(nonnull NSString *)data {
+    try {
+        auto r = _cppRefHandle.get()->callback(::djinni::Enum<::usnit::UsnitEventType, USNUsnitEventType>::toCpp(id),
+                                               ::djinni::String::toCpp(data));
+        return ::djinni::Bool::fromCpp(r);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
 
 namespace djinni_generated {
 
@@ -35,6 +66,9 @@ auto UsnitEventGen::toCpp(ObjcType objc) -> CppType
     if (!objc) {
         return nullptr;
     }
+    if ([(id)objc isKindOfClass:[USNUsnitEventGenCppProxy class]]) {
+        return ((USNUsnitEventGenCppProxy*)objc)->_cppRefHandle.get();
+    }
     return ::djinni::get_objc_proxy<ObjcProxy>(objc);
 }
 
@@ -43,7 +77,12 @@ auto UsnitEventGen::fromCppOpt(const CppOptType& cpp) -> ObjcType
     if (!cpp) {
         return nil;
     }
-    return dynamic_cast<ObjcProxy&>(*cpp).Handle::get();
+    if (auto cppPtr = dynamic_cast<ObjcProxy*>(cpp.get())) {
+        return cppPtr->Handle::get();
+    }
+    return ::djinni::get_cpp_proxy<USNUsnitEventGenCppProxy>(cpp);
 }
 
 }  // namespace djinni_generated
+
+@end

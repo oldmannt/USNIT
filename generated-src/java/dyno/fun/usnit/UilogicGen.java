@@ -5,10 +5,12 @@ package dyno.fun.usnit;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public abstract class UsnitEventGen {
-    public abstract boolean callback(UsnitEventType id, String data);
+public abstract class UilogicGen {
+    public abstract boolean initialize(String config);
 
-    private static final class CppProxy extends UsnitEventGen
+    public static native UilogicGen instance();
+
+    private static final class CppProxy extends UilogicGen
     {
         private final long nativeRef;
         private final AtomicBoolean destroyed = new AtomicBoolean(false);
@@ -32,11 +34,11 @@ public abstract class UsnitEventGen {
         }
 
         @Override
-        public boolean callback(UsnitEventType id, String data)
+        public boolean initialize(String config)
         {
             assert !this.destroyed.get() : "trying to use a destroyed object";
-            return native_callback(this.nativeRef, id, data);
+            return native_initialize(this.nativeRef, config);
         }
-        private native boolean native_callback(long _nativeRef, UsnitEventType id, String data);
+        private native boolean native_initialize(long _nativeRef, String config);
     }
 }

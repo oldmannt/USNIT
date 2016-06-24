@@ -633,7 +633,6 @@
                                 <constraints>
                                     <constraint firstItem="3Ge-5W-mdR" firstAttribute="top" secondItem="lpC-Nb-gUV" secondAttribute="top" id="4DD-px-1Fu"/>
                                     <constraint firstAttribute="trailing" secondItem="3Ge-5W-mdR" secondAttribute="trailing" id="HHj-3s-f2d"/>
-                                    <constraint firstAttribute="bottom" secondItem="3Ge-5W-mdR" secondAttribute="bottom" id="Q7U-SR-VL6"/>
                                     <constraint firstItem="3Ge-5W-mdR" firstAttribute="leading" secondItem="lpC-Nb-gUV" secondAttribute="leading" id="me3-Cb-7ZV"/>
                                 </constraints>
                             </scrollView>
@@ -649,7 +648,9 @@
                             <constraint firstItem="lpC-Nb-gUV" firstAttribute="centerX" secondItem="TIe-r9-M19" secondAttribute="centerX" id="yVg-Ox-Xkq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="FLZ-qW-vuy"/>
+                    <tabBarItem key="tabBarItem" title="↑↓" id="FLZ-qW-vuy">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-10"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="viewInput" destination="khK-HE-Mhb" id="I2C-gp-qvd"/>
                         <outlet property="viewSC" destination="lpC-Nb-gUV" id="mQ3-9g-JR6"/>
@@ -698,7 +699,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="ThI-eE-JlN" kind="relationship" relationship="viewControllers" id="F3s-be-uXO"/>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="2VT-ON-Jwa" kind="relationship" relationship="viewControllers" id="Q6b-JB-VGJ"/>
                     </connections>
                 </tabBarController>

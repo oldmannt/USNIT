@@ -20,7 +20,6 @@
 		3362ADA51CF3C8DA004D31FD /* en.html in Resources */ = {isa = PBXBuildFile; fileRef = 3362AD9F1CF3C8DA004D31FD /* en.html */; };
 		3362ADA91CF3C8E8004D31FD /* conf.json in Resources */ = {isa = PBXBuildFile; fileRef = 3362ADA81CF3C8E8004D31FD /* conf.json */; };
 		3362ADAB1CF40A65004D31FD /* justfor_cpplink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3362ADAA1CF40A65004D31FD /* justfor_cpplink.cpp */; };
-		337A8A381CB42F9A006B45D7 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A8A371CB42F9A006B45D7 /* StringUtils.swift */; };
 		3380C08F1D06004D00EB4B0C /* GBViewFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380C08E1D06004D00EB4B0C /* GBViewFactoryImp.swift */; };
 		3380C0A51D0636A600EB4B0C /* TypeConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380C0A41D0636A600EB4B0C /* TypeConvertor.swift */; };
 		33992EE21CF7D5D4005EDD78 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33992ECF1CF7D59C005EDD78 /* libcurl.a */; };
@@ -30,15 +29,21 @@
 		33992EE61CF7D5D4005EDD78 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33992EDB1CF7D5A5005EDD78 /* libuv.a */; };
 		33992EF01CF7FCC9005EDD78 /* GBViewImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33992EEF1CF7FCC9005EDD78 /* GBViewImp.swift */; };
 		33A457C71CBA046300CBB2E4 /* SFUsnitLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A457C61CBA046300CBB2E4 /* SFUsnitLogic.swift */; };
-		33A457C91CBA109700CBB2E4 /* NumInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A457C81CBA109700CBB2E4 /* NumInputDelegate.swift */; };
+		33B28CAB1D1A6F8D00A39C34 /* language.json in Resources */ = {isa = PBXBuildFile; fileRef = 33B28CA81D1A6F8D00A39C34 /* language.json */; };
+		33B28CAC1D1A6F8D00A39C34 /* uilogic.json in Resources */ = {isa = PBXBuildFile; fileRef = 33B28CA91D1A6F8D00A39C34 /* uilogic.json */; };
+		33B28CAD1D1A6F8D00A39C34 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 33B28CAA1D1A6F8D00A39C34 /* user.json */; };
+		33B28CBE1D1BA16E00A39C34 /* libgearsbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B28CB31D1A6F8D00A39C34 /* libgearsbox.a */; };
+		33B28CBF1D1BA17100A39C34 /* libusnit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B28CBB1D1A6F8D00A39C34 /* libusnit.a */; };
 		33BEACDB1CD9CC8300D37F22 /* MainLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BEACDA1CD9CC8300D37F22 /* MainLoop.swift */; };
 		33C8F9A11CA76B5A00E1C6DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8F9A01CA76B5A00E1C6DA /* AppDelegate.swift */; };
-		33C8F9A31CA76B5A00E1C6DA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8F9A21CA76B5A00E1C6DA /* FirstViewController.swift */; };
 		33C8F9A51CA76B5A00E1C6DA /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8F9A41CA76B5A00E1C6DA /* SecondViewController.swift */; };
 		33C8F9A81CA76B5A00E1C6DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C8F9A61CA76B5A00E1C6DA /* Main.storyboard */; };
 		33C8F9AA1CA76B5A00E1C6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C8F9A91CA76B5A00E1C6DA /* Assets.xcassets */; };
 		33C8F9AD1CA76B5A00E1C6DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C8F9AB1CA76B5A00E1C6DA /* LaunchScreen.storyboard */; };
 		33E002401CFA955D0058D15A /* AutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E0023F1CFA955D0058D15A /* AutoViewController.swift */; };
+		33ED64AB1D0E06A90064AE09 /* NumInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED64AA1D0E06A90064AE09 /* NumInputDelegate.swift */; };
+		33ED64B01D0E2F010064AE09 /* platform_excutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED64AF1D0E2F010064AE09 /* platform_excutor.swift */; };
+		33ED64B21D0E7F610064AE09 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED64B11D0E7F610064AE09 /* StringUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +103,20 @@
 			remoteGlobalIDString = 7E48F2BBAC1B0A6856E26F26;
 			remoteInfo = sqlite3;
 		};
+		33B28CB21D1A6F8D00A39C34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 33992EC41CF7D597005EDD78 /* gearsbox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19B370ED43C38131B635AD67;
+			remoteInfo = gearsbox;
+		};
+		33B28CBA1D1A6F8D00A39C34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3362AD641CF2CE7F004D31FD /* usnit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 273033965CC54B6D1E16AA7F;
+			remoteInfo = usnit;
+		};
 		33C8F9B41CA76B5A00E1C6DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 33C8F9951CA76B5A00E1C6DA /* Project object */;
@@ -123,7 +142,6 @@
 		3362AD9F1CF3C8DA004D31FD /* en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = en.html; sourceTree = "<group>"; };
 		3362ADA81CF3C8E8004D31FD /* conf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = conf.json; path = ../Data/conf.json; sourceTree = "<group>"; };
 		3362ADAA1CF40A65004D31FD /* justfor_cpplink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = justfor_cpplink.cpp; sourceTree = "<group>"; };
-		337A8A371CB42F9A006B45D7 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		3380C08E1D06004D00EB4B0C /* GBViewFactoryImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GBViewFactoryImp.swift; path = ../../gearsbox/swift/GBViewFactoryImp.swift; sourceTree = "<group>"; };
 		3380C0A41D0636A600EB4B0C /* TypeConvertor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeConvertor.swift; path = ../../gearsbox/swift/TypeConvertor.swift; sourceTree = "<group>"; };
 		33992EC41CF7D597005EDD78 /* gearsbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gearsbox.xcodeproj; path = build_ios/gearsbox/gearsbox.xcodeproj; sourceTree = "<group>"; };
@@ -134,11 +152,12 @@
 		33992EEF1CF7FCC9005EDD78 /* GBViewImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GBViewImp.swift; path = ../../gearsbox/swift/GBViewImp.swift; sourceTree = "<group>"; };
 		33A457C21CB8C53B00CBB2E4 /* USNIT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USNIT-Bridging-Header.h"; sourceTree = "<group>"; };
 		33A457C61CBA046300CBB2E4 /* SFUsnitLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFUsnitLogic.swift; sourceTree = "<group>"; };
-		33A457C81CBA109700CBB2E4 /* NumInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumInputDelegate.swift; sourceTree = "<group>"; };
+		33B28CA81D1A6F8D00A39C34 /* language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = language.json; path = ../../usnit/data/language.json; sourceTree = "<group>"; };
+		33B28CA91D1A6F8D00A39C34 /* uilogic.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = uilogic.json; path = ../../usnit/data/uilogic.json; sourceTree = "<group>"; };
+		33B28CAA1D1A6F8D00A39C34 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = user.json; path = ../../usnit/data/user.json; sourceTree = "<group>"; };
 		33BEACDA1CD9CC8300D37F22 /* MainLoop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainLoop.swift; sourceTree = "<group>"; };
 		33C8F99D1CA76B5A00E1C6DA /* usnit_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = usnit_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C8F9A01CA76B5A00E1C6DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33C8F9A21CA76B5A00E1C6DA /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		33C8F9A41CA76B5A00E1C6DA /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		33C8F9A71CA76B5A00E1C6DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33C8F9A91CA76B5A00E1C6DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -147,6 +166,9 @@
 		33C8F9B31CA76B5A00E1C6DA /* usnit_app.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = usnit_app.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C8F9BE1CA76B5A00E1C6DA /* usnit_app.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = usnit_app.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33E0023F1CFA955D0058D15A /* AutoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoViewController.swift; sourceTree = "<group>"; };
+		33ED64AA1D0E06A90064AE09 /* NumInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumInputDelegate.swift; path = ../../../usnit/gearsbox/swift/NumInputDelegate.swift; sourceTree = "<group>"; };
+		33ED64AF1D0E2F010064AE09 /* platform_excutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = platform_excutor.swift; path = ../../../usnit/gearsbox/swift/platform_excutor.swift; sourceTree = "<group>"; };
+		33ED64B11D0E7F610064AE09 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = ../../../usnit/gearsbox/swift/StringUtils.swift; sourceTree = "<group>"; };
 		4A6D9D885583D53645052FD0 /* Pods-usnit_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-usnit_app.release.xcconfig"; path = "Pods/Target Support Files/Pods-usnit_app/Pods-usnit_app.release.xcconfig"; sourceTree = "<group>"; };
 		6357C9C4168FCFE317112F82 /* Pods-USNIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-USNIT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-USNIT/Pods-USNIT.debug.xcconfig"; sourceTree = "<group>"; };
 		98E622CA61015B46907052B1 /* libPods-usnit_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-usnit_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +180,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33B28CBF1D1BA17100A39C34 /* libusnit.a in Frameworks */,
+				33B28CBE1D1BA16E00A39C34 /* libgearsbox.a in Frameworks */,
 				333E4C111D07BCF70031783C /* libBreakpad.a in Frameworks */,
 				33992EE21CF7D5D4005EDD78 /* libcurl.a in Frameworks */,
 				33992EE31CF7D5D4005EDD78 /* libdjinni_objc.a in Frameworks */,
@@ -236,6 +260,7 @@
 		3362AD651CF2CE7F004D31FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				33B28CBB1D1A6F8D00A39C34 /* libusnit.a */,
 				3362AD6B1CF2CE7F004D31FD /* libusnit_objc.a */,
 			);
 			name = Products;
@@ -246,6 +271,9 @@
 			children = (
 				3362AD9B1CF3C8DA004D31FD /* help */,
 				3362ADA81CF3C8E8004D31FD /* conf.json */,
+				33B28CA81D1A6F8D00A39C34 /* language.json */,
+				33B28CA91D1A6F8D00A39C34 /* uilogic.json */,
+				33B28CAA1D1A6F8D00A39C34 /* user.json */,
 				333E4BF91D06B45F0031783C /* ui.json */,
 			);
 			name = data;
@@ -264,6 +292,7 @@
 		33992EC51CF7D597005EDD78 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				33B28CB31D1A6F8D00A39C34 /* libgearsbox.a */,
 				33992EC91CF7D597005EDD78 /* libgearsbox_objc.a */,
 			);
 			name = Products;
@@ -304,9 +333,12 @@
 		33992EE71CF7D9AF005EDD78 /* gearsbox */ = {
 			isa = PBXGroup;
 			children = (
+				33ED64B11D0E7F610064AE09 /* StringUtils.swift */,
+				33ED64AA1D0E06A90064AE09 /* NumInputDelegate.swift */,
 				3380C08E1D06004D00EB4B0C /* GBViewFactoryImp.swift */,
 				33992EEF1CF7FCC9005EDD78 /* GBViewImp.swift */,
 				3380C0A41D0636A600EB4B0C /* TypeConvertor.swift */,
+				33ED64AF1D0E2F010064AE09 /* platform_excutor.swift */,
 			);
 			name = gearsbox;
 			sourceTree = "<group>";
@@ -340,16 +372,13 @@
 				3362ADAA1CF40A65004D31FD /* justfor_cpplink.cpp */,
 				33A457C21CB8C53B00CBB2E4 /* USNIT-Bridging-Header.h */,
 				33C8F9A01CA76B5A00E1C6DA /* AppDelegate.swift */,
-				33C8F9A21CA76B5A00E1C6DA /* FirstViewController.swift */,
 				33C8F9A41CA76B5A00E1C6DA /* SecondViewController.swift */,
 				33E0023F1CFA955D0058D15A /* AutoViewController.swift */,
 				33C8F9A61CA76B5A00E1C6DA /* Main.storyboard */,
 				33C8F9A91CA76B5A00E1C6DA /* Assets.xcassets */,
 				33C8F9AB1CA76B5A00E1C6DA /* LaunchScreen.storyboard */,
 				33C8F9AE1CA76B5A00E1C6DA /* Info.plist */,
-				337A8A371CB42F9A006B45D7 /* StringUtils.swift */,
 				33A457C61CBA046300CBB2E4 /* SFUsnitLogic.swift */,
-				33A457C81CBA109700CBB2E4 /* NumInputDelegate.swift */,
 				333649601CCC466F00034AE6 /* DrawView.swift */,
 				33BEACDA1CD9CC8300D37F22 /* MainLoop.swift */,
 				33343B1F1CDD78D7005AAAC6 /* UsnitTabBarCtl.swift */,
@@ -549,6 +578,20 @@
 			remoteRef = 33992EE01CF7D5AC005EDD78 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		33B28CB31D1A6F8D00A39C34 /* libgearsbox.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgearsbox.a;
+			remoteRef = 33B28CB21D1A6F8D00A39C34 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		33B28CBB1D1A6F8D00A39C34 /* libusnit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libusnit.a;
+			remoteRef = 33B28CBA1D1A6F8D00A39C34 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -557,12 +600,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				33C8F9AD1CA76B5A00E1C6DA /* LaunchScreen.storyboard in Resources */,
+				33B28CAB1D1A6F8D00A39C34 /* language.json in Resources */,
 				3362ADA91CF3C8E8004D31FD /* conf.json in Resources */,
 				333E4BFA1D06B45F0031783C /* ui.json in Resources */,
+				33B28CAD1D1A6F8D00A39C34 /* user.json in Resources */,
 				3362ADA51CF3C8DA004D31FD /* en.html in Resources */,
 				33C8F9AA1CA76B5A00E1C6DA /* Assets.xcassets in Resources */,
 				33C8F9A81CA76B5A00E1C6DA /* Main.storyboard in Resources */,
 				3362ADA21CF3C8DA004D31FD /* cn.html in Resources */,
+				33B28CAC1D1A6F8D00A39C34 /* uilogic.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,7 +730,7 @@
 				3380C08F1D06004D00EB4B0C /* GBViewFactoryImp.swift in Sources */,
 				33992EF01CF7FCC9005EDD78 /* GBViewImp.swift in Sources */,
 				33343B201CDD78D7005AAAC6 /* UsnitTabBarCtl.swift in Sources */,
-				337A8A381CB42F9A006B45D7 /* StringUtils.swift in Sources */,
+				33ED64B21D0E7F610064AE09 /* StringUtils.swift in Sources */,
 				33C8F9A51CA76B5A00E1C6DA /* SecondViewController.swift in Sources */,
 				3362ADAB1CF40A65004D31FD /* justfor_cpplink.cpp in Sources */,
 				333649611CCC466F00034AE6 /* DrawView.swift in Sources */,
@@ -692,9 +738,9 @@
 				3380C0A51D0636A600EB4B0C /* TypeConvertor.swift in Sources */,
 				33A457C71CBA046300CBB2E4 /* SFUsnitLogic.swift in Sources */,
 				33C8F9A11CA76B5A00E1C6DA /* AppDelegate.swift in Sources */,
-				33A457C91CBA109700CBB2E4 /* NumInputDelegate.swift in Sources */,
-				33C8F9A31CA76B5A00E1C6DA /* FirstViewController.swift in Sources */,
+				33ED64AB1D0E06A90064AE09 /* NumInputDelegate.swift in Sources */,
 				33BEACDB1CD9CC8300D37F22 /* MainLoop.swift in Sources */,
+				33ED64B01D0E2F010064AE09 /* platform_excutor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,8 +887,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: li lin (FC2S5D6FQ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: li lin (FC2S5D6FQ2)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				HEADER_SEARCH_PATHS = "";
@@ -851,7 +897,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dyno.fun.USNIT;
 				PRODUCT_NAME = usnit_app;
-				PROVISIONING_PROFILE = "ac73709d-b014-41fb-b0d1-573d774a479c";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "USNIT/USNIT-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -866,8 +912,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: li lin (FC2S5D6FQ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: li lin (FC2S5D6FQ2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = USNIT/Info.plist;
@@ -875,7 +921,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dyno.fun.USNIT;
 				PRODUCT_NAME = usnit_app;
-				PROVISIONING_PROFILE = "ac73709d-b014-41fb-b0d1-573d774a479c";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "USNIT/USNIT-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../generated-src/objc\" \"$(SRCROOT)/../gearsbox/generated-src/objc\" \"$(SRCROOT)/../gearsbox/deps/breakpad/src/src/\"";

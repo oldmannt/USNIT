@@ -1,0 +1,73 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXFileReference section */
+		0CC740F5564D635A8902DA45 /* common.gypi */ = {isa = PBXFileReference; explicitFileType = sourcecode; name = common.gypi; path = djinni/common.gypi; sourceTree = "<group>"; };
+		3354930D9294AF2AD877269B /* gtest.gyp */ = {isa = PBXFileReference; explicitFileType = sourcecode; path = gtest.gyp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		02E5C6FBFB323DC3F173F666 /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				0CC740F5564D635A8902DA45 /* common.gypi */,
+				3354930D9294AF2AD877269B /* gtest.gyp */,
+			);
+			name = Build;
+			sourceTree = "<group>";
+		};
+		926EC5775EADC2AB442A40DA = {
+			isa = PBXGroup;
+			children = (
+				02E5C6FBFB323DC3F173F666 /* Build */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		533C86BA25B98B6D80FCE4DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+			};
+			buildConfigurationList = 7609FECDCE37CCF1BA62889B /* Build configuration list for PBXProject "gtest" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 926EC5775EADC2AB442A40DA;
+			projectDirPath = ../../../../gearsbox/deps;
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		F45C54F8C04D8F0662F0B979 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
+				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7609FECDCE37CCF1BA62889B /* Build configuration list for PBXProject "gtest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F45C54F8C04D8F0662F0B979 /* Default */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 533C86BA25B98B6D80FCE4DA /* Project object */;
+}
