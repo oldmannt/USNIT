@@ -3,6 +3,7 @@ djinni:gearsbox/gearsbox.djinni gearsbox/ui.djinni usnit.djinni
 	cd gearsbox/ && make djinni
 	sh ./run_djinni.sh
 
+
 ios_proj: djinni usnit.gyp ./gearsbox/deps/djinni/support-lib/support_lib.gyp 
 	./gearsbox/deps/gyp/gyp --depth=. -f xcode -DOS=ios --generator-output ./ios/build_ios -Igearsbox/deps/djinni/common.gypi ./usnit.gyp --root-target=usnit_objc
 
@@ -12,7 +13,7 @@ ios: ios_proj
 		-configuration 'Debug' \
 		-sdk iphonesimulator
 
-android_proj: usnit.gyp ./gearsbox/deps/djinni/support-lib/support_lib.gyp usnit.djinni
+android_proj: djinni usnit.gyp ./gearsbox/deps/djinni/support-lib/support_lib.gyp usnit.djinni
 	sh ./run_djinni.sh
 	ANDROID_BUILD_TOP=$(shell dirname `which ndk-build`) ./gearsbox/deps/gyp/gyp --depth=. -f android -DOS=android -Igearsbox/deps/djinni/common.gypi ./usnit.gyp --root-target=usnit_jni
 
@@ -20,6 +21,9 @@ android: android_proj
 	cd android/usnit/ && ./gradlew app:assembleDebug
 	@echo "Apks produced at:"
 	@python ./gearsbox/deps/djinni/example/glob.py ./ '*.apk'
+
+ndk_build: GypAndroid.mk android/jni/Android.mk android/jni/Application.mk
+	sh ./ndk_build.sh
 
 
 clean_ios:

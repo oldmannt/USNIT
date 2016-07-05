@@ -79,8 +79,9 @@ public:
     
     virtual bool initialize(const std::string & conf_path);
     virtual bool handle(const gearsbox::ViewEventParam & param, const std::shared_ptr<gearsbox::ViewGen> & view);
+    virtual std::vector<std::string> getSubviews();
+    virtual bool buildUi();
 
-    bool buildUI(const std::string& view_id);
     bool readAllUnits(Json::Value& conf);
     void HttpRequestCallback(std::shared_ptr<gearsbox::IHttpRequest> http_request);
 private:
@@ -116,6 +117,7 @@ private:
     float m_value;
     std::shared_ptr<gearsbox::IHttpRequest> m_http_request;
     int m_unit_font_size;
+    int m_value_font_size;
     int m_exchange_font_size;
 };
 }

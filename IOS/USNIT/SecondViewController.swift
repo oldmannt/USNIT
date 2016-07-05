@@ -27,8 +27,7 @@ class SecondViewController: UIViewController {
         }
         
         m_ad = AdmobBanner(root: self)
-        m_ad.didLoad("ca-app-pub-4953725946697554/8856468622")
-        
+        m_ad.didLoad("ca-app-pub-4953725946697554/8856468622")        
     }
     
     override func didReceiveMemoryWarning() {

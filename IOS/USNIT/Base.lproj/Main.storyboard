@@ -615,6 +615,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0r-gh-j17" userLabel="ad_banner" customClass="GADBannerView">
+                                <rect key="frame" x="140" y="501" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Qnb-lX-jKR"/>
+                                    <constraint firstAttribute="height" constant="50" id="Sz1-Lx-f4h"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khK-HE-Mhb" userLabel="view_input">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -622,11 +630,11 @@
                                     <constraint firstAttribute="height" constant="71" id="4ts-Vt-8Uo"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpC-Nb-gUV" userLabel="sc_view">
-                                <rect key="frame" x="0.0" y="70" width="600" height="481"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpC-Nb-gUV" userLabel="sc_view">
+                                <rect key="frame" x="0.0" y="70" width="600" height="431"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-5W-mdR" userLabel="view_unit">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-5W-mdR" userLabel="view_unit">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -641,8 +649,11 @@
                         <constraints>
                             <constraint firstItem="lpC-Nb-gUV" firstAttribute="width" secondItem="TIe-r9-M19" secondAttribute="width" identifier="vsc=vroot" id="06J-UV-4gA"/>
                             <constraint firstItem="khK-HE-Mhb" firstAttribute="top" secondItem="TIe-r9-M19" secondAttribute="topMargin" id="3CX-vM-0wS"/>
+                            <constraint firstItem="k0r-gh-j17" firstAttribute="centerX" secondItem="TIe-r9-M19" secondAttribute="centerX" id="7xH-3L-yLE"/>
                             <constraint firstItem="khK-HE-Mhb" firstAttribute="centerX" secondItem="TIe-r9-M19" secondAttribute="centerX" id="I7K-pp-eeK"/>
                             <constraint firstItem="khK-HE-Mhb" firstAttribute="width" secondItem="TIe-r9-M19" secondAttribute="width" identifier="vinput=vsc" id="dDy-2o-CkC"/>
+                            <constraint firstItem="k0r-gh-j17" firstAttribute="top" secondItem="lpC-Nb-gUV" secondAttribute="bottom" id="k4w-B3-zWJ"/>
+                            <constraint firstItem="1da-YU-ttH" firstAttribute="top" secondItem="k0r-gh-j17" secondAttribute="bottom" id="pOH-IK-9hz"/>
                             <constraint firstItem="3Ge-5W-mdR" firstAttribute="width" secondItem="TIe-r9-M19" secondAttribute="width" id="qBV-oJ-IEw"/>
                             <constraint firstItem="lpC-Nb-gUV" firstAttribute="top" secondItem="khK-HE-Mhb" secondAttribute="bottom" constant="-1" id="rES-IS-tl3"/>
                             <constraint firstItem="lpC-Nb-gUV" firstAttribute="centerX" secondItem="TIe-r9-M19" secondAttribute="centerX" id="yVg-Ox-Xkq"/>
@@ -652,6 +663,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-10"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="viewBanner" destination="k0r-gh-j17" id="oEI-Uw-vSM"/>
                         <outlet property="viewInput" destination="khK-HE-Mhb" id="I2C-gp-qvd"/>
                         <outlet property="viewSC" destination="lpC-Nb-gUV" id="mQ3-9g-JR6"/>
                         <outlet property="viewUnit" destination="3Ge-5W-mdR" id="1bt-3h-f8V"/>

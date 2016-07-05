@@ -15,19 +15,24 @@
 		333649611CCC466F00034AE6 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333649601CCC466F00034AE6 /* DrawView.swift */; };
 		333E4BFA1D06B45F0031783C /* ui.json in Resources */ = {isa = PBXBuildFile; fileRef = 333E4BF91D06B45F0031783C /* ui.json */; };
 		333E4C111D07BCF70031783C /* libBreakpad.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 333E4C101D07BCD00031783C /* libBreakpad.a */; };
+		3359AAD81D20FFB100A4C216 /* GBViewFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359AAD21D20FFB100A4C216 /* GBViewFactoryImp.swift */; };
+		3359AAD91D20FFB100A4C216 /* GBViewImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359AAD31D20FFB100A4C216 /* GBViewImp.swift */; };
+		3359AADA1D20FFB100A4C216 /* NumInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359AAD41D20FFB100A4C216 /* NumInputDelegate.swift */; };
+		3359AADB1D20FFB100A4C216 /* platform_excutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359AAD51D20FFB100A4C216 /* platform_excutor.swift */; };
+		3359AADC1D20FFB100A4C216 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359AAD61D20FFB100A4C216 /* StringUtils.swift */; };
+		3359AADD1D20FFB100A4C216 /* TypeConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3359AAD71D20FFB100A4C216 /* TypeConvertor.swift */; };
 		3362AD981CF2CF5C004D31FD /* libusnit_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3362AD6B1CF2CE7F004D31FD /* libusnit_objc.a */; };
 		3362ADA21CF3C8DA004D31FD /* cn.html in Resources */ = {isa = PBXBuildFile; fileRef = 3362AD9C1CF3C8DA004D31FD /* cn.html */; };
 		3362ADA51CF3C8DA004D31FD /* en.html in Resources */ = {isa = PBXBuildFile; fileRef = 3362AD9F1CF3C8DA004D31FD /* en.html */; };
 		3362ADA91CF3C8E8004D31FD /* conf.json in Resources */ = {isa = PBXBuildFile; fileRef = 3362ADA81CF3C8E8004D31FD /* conf.json */; };
 		3362ADAB1CF40A65004D31FD /* justfor_cpplink.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3362ADAA1CF40A65004D31FD /* justfor_cpplink.cpp */; };
-		3380C08F1D06004D00EB4B0C /* GBViewFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380C08E1D06004D00EB4B0C /* GBViewFactoryImp.swift */; };
-		3380C0A51D0636A600EB4B0C /* TypeConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3380C0A41D0636A600EB4B0C /* TypeConvertor.swift */; };
+		33861B0A1D2868DB0077D377 /* EditDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33861B091D2868DB0077D377 /* EditDelegate.swift */; };
+		33861B0C1D287D310077D377 /* EditMaxLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33861B0B1D287D310077D377 /* EditMaxLength.swift */; };
 		33992EE21CF7D5D4005EDD78 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33992ECF1CF7D59C005EDD78 /* libcurl.a */; };
 		33992EE31CF7D5D4005EDD78 /* libdjinni_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33992ED51CF7D5A1005EDD78 /* libdjinni_objc.a */; };
 		33992EE41CF7D5D4005EDD78 /* libgearsbox_objc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33992EC91CF7D597005EDD78 /* libgearsbox_objc.a */; };
 		33992EE51CF7D5D4005EDD78 /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33992EE11CF7D5AC005EDD78 /* libsqlite3.a */; };
 		33992EE61CF7D5D4005EDD78 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33992EDB1CF7D5A5005EDD78 /* libuv.a */; };
-		33992EF01CF7FCC9005EDD78 /* GBViewImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33992EEF1CF7FCC9005EDD78 /* GBViewImp.swift */; };
 		33A457C71CBA046300CBB2E4 /* SFUsnitLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A457C61CBA046300CBB2E4 /* SFUsnitLogic.swift */; };
 		33B28CAB1D1A6F8D00A39C34 /* language.json in Resources */ = {isa = PBXBuildFile; fileRef = 33B28CA81D1A6F8D00A39C34 /* language.json */; };
 		33B28CAC1D1A6F8D00A39C34 /* uilogic.json in Resources */ = {isa = PBXBuildFile; fileRef = 33B28CA91D1A6F8D00A39C34 /* uilogic.json */; };
@@ -41,9 +46,6 @@
 		33C8F9AA1CA76B5A00E1C6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33C8F9A91CA76B5A00E1C6DA /* Assets.xcassets */; };
 		33C8F9AD1CA76B5A00E1C6DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33C8F9AB1CA76B5A00E1C6DA /* LaunchScreen.storyboard */; };
 		33E002401CFA955D0058D15A /* AutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E0023F1CFA955D0058D15A /* AutoViewController.swift */; };
-		33ED64AB1D0E06A90064AE09 /* NumInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED64AA1D0E06A90064AE09 /* NumInputDelegate.swift */; };
-		33ED64B01D0E2F010064AE09 /* platform_excutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED64AF1D0E2F010064AE09 /* platform_excutor.swift */; };
-		33ED64B21D0E7F610064AE09 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ED64B11D0E7F610064AE09 /* StringUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,20 +138,25 @@
 		333649601CCC466F00034AE6 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		333E4BF91D06B45F0031783C /* ui.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ui.json; path = ../data/ui.json; sourceTree = "<group>"; };
 		333E4C0B1D07BCCF0031783C /* Breakpad.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Breakpad.xcodeproj; path = ../gearsbox/deps/breakpad/src/src/client/ios/Breakpad.xcodeproj; sourceTree = "<group>"; };
+		3359AAD21D20FFB100A4C216 /* GBViewFactoryImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GBViewFactoryImp.swift; path = ../../../usnit/gearsbox/src/swift/GBViewFactoryImp.swift; sourceTree = "<group>"; };
+		3359AAD31D20FFB100A4C216 /* GBViewImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GBViewImp.swift; path = ../../../usnit/gearsbox/src/swift/GBViewImp.swift; sourceTree = "<group>"; };
+		3359AAD41D20FFB100A4C216 /* NumInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumInputDelegate.swift; path = ../../../usnit/gearsbox/src/swift/NumInputDelegate.swift; sourceTree = "<group>"; };
+		3359AAD51D20FFB100A4C216 /* platform_excutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = platform_excutor.swift; path = ../../../usnit/gearsbox/src/swift/platform_excutor.swift; sourceTree = "<group>"; };
+		3359AAD61D20FFB100A4C216 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = ../../../usnit/gearsbox/src/swift/StringUtils.swift; sourceTree = "<group>"; };
+		3359AAD71D20FFB100A4C216 /* TypeConvertor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeConvertor.swift; path = ../../../usnit/gearsbox/src/swift/TypeConvertor.swift; sourceTree = "<group>"; };
 		3362ACD91CF17670004D31FD /* libusnit_objc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libusnit_objc.dylib; path = "../build/Debug-iphoneos/libusnit_objc.dylib"; sourceTree = "<group>"; };
 		3362AD641CF2CE7F004D31FD /* usnit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = usnit.xcodeproj; path = build_ios/usnit.xcodeproj; sourceTree = "<group>"; };
 		3362AD9C1CF3C8DA004D31FD /* cn.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = cn.html; sourceTree = "<group>"; };
 		3362AD9F1CF3C8DA004D31FD /* en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = en.html; sourceTree = "<group>"; };
 		3362ADA81CF3C8E8004D31FD /* conf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = conf.json; path = ../Data/conf.json; sourceTree = "<group>"; };
 		3362ADAA1CF40A65004D31FD /* justfor_cpplink.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = justfor_cpplink.cpp; sourceTree = "<group>"; };
-		3380C08E1D06004D00EB4B0C /* GBViewFactoryImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GBViewFactoryImp.swift; path = ../../gearsbox/swift/GBViewFactoryImp.swift; sourceTree = "<group>"; };
-		3380C0A41D0636A600EB4B0C /* TypeConvertor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeConvertor.swift; path = ../../gearsbox/swift/TypeConvertor.swift; sourceTree = "<group>"; };
+		33861B091D2868DB0077D377 /* EditDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditDelegate.swift; path = ../../../usnit/gearsbox/src/swift/EditDelegate.swift; sourceTree = "<group>"; };
+		33861B0B1D287D310077D377 /* EditMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditMaxLength.swift; path = ../../../usnit/gearsbox/src/swift/EditMaxLength.swift; sourceTree = "<group>"; };
 		33992EC41CF7D597005EDD78 /* gearsbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gearsbox.xcodeproj; path = build_ios/gearsbox/gearsbox.xcodeproj; sourceTree = "<group>"; };
 		33992ECA1CF7D59C005EDD78 /* libcurl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libcurl.xcodeproj; path = build_ios/gearsbox/deps/curl/libcurl.xcodeproj; sourceTree = "<group>"; };
 		33992ED01CF7D5A1005EDD78 /* support_lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = support_lib.xcodeproj; path = "build_ios/gearsbox/deps/djinni/support-lib/support_lib.xcodeproj"; sourceTree = "<group>"; };
 		33992ED61CF7D5A5005EDD78 /* uv.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uv.xcodeproj; path = build_ios/gearsbox/deps/libuv/uv.xcodeproj; sourceTree = "<group>"; };
 		33992EDC1CF7D5AC005EDD78 /* sqlite3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sqlite3.xcodeproj; path = build_ios/gearsbox/deps/sqlite3/sqlite3.xcodeproj; sourceTree = "<group>"; };
-		33992EEF1CF7FCC9005EDD78 /* GBViewImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GBViewImp.swift; path = ../../gearsbox/swift/GBViewImp.swift; sourceTree = "<group>"; };
 		33A457C21CB8C53B00CBB2E4 /* USNIT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USNIT-Bridging-Header.h"; sourceTree = "<group>"; };
 		33A457C61CBA046300CBB2E4 /* SFUsnitLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFUsnitLogic.swift; sourceTree = "<group>"; };
 		33B28CA81D1A6F8D00A39C34 /* language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = language.json; path = ../../usnit/data/language.json; sourceTree = "<group>"; };
@@ -166,9 +173,6 @@
 		33C8F9B31CA76B5A00E1C6DA /* usnit_app.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = usnit_app.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C8F9BE1CA76B5A00E1C6DA /* usnit_app.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = usnit_app.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33E0023F1CFA955D0058D15A /* AutoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoViewController.swift; sourceTree = "<group>"; };
-		33ED64AA1D0E06A90064AE09 /* NumInputDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NumInputDelegate.swift; path = ../../../usnit/gearsbox/swift/NumInputDelegate.swift; sourceTree = "<group>"; };
-		33ED64AF1D0E2F010064AE09 /* platform_excutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = platform_excutor.swift; path = ../../../usnit/gearsbox/swift/platform_excutor.swift; sourceTree = "<group>"; };
-		33ED64B11D0E7F610064AE09 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringUtils.swift; path = ../../../usnit/gearsbox/swift/StringUtils.swift; sourceTree = "<group>"; };
 		4A6D9D885583D53645052FD0 /* Pods-usnit_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-usnit_app.release.xcconfig"; path = "Pods/Target Support Files/Pods-usnit_app/Pods-usnit_app.release.xcconfig"; sourceTree = "<group>"; };
 		6357C9C4168FCFE317112F82 /* Pods-USNIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-USNIT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-USNIT/Pods-USNIT.debug.xcconfig"; sourceTree = "<group>"; };
 		98E622CA61015B46907052B1 /* libPods-usnit_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-usnit_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -333,12 +337,14 @@
 		33992EE71CF7D9AF005EDD78 /* gearsbox */ = {
 			isa = PBXGroup;
 			children = (
-				33ED64B11D0E7F610064AE09 /* StringUtils.swift */,
-				33ED64AA1D0E06A90064AE09 /* NumInputDelegate.swift */,
-				3380C08E1D06004D00EB4B0C /* GBViewFactoryImp.swift */,
-				33992EEF1CF7FCC9005EDD78 /* GBViewImp.swift */,
-				3380C0A41D0636A600EB4B0C /* TypeConvertor.swift */,
-				33ED64AF1D0E2F010064AE09 /* platform_excutor.swift */,
+				3359AAD21D20FFB100A4C216 /* GBViewFactoryImp.swift */,
+				3359AAD31D20FFB100A4C216 /* GBViewImp.swift */,
+				3359AAD41D20FFB100A4C216 /* NumInputDelegate.swift */,
+				3359AAD51D20FFB100A4C216 /* platform_excutor.swift */,
+				3359AAD61D20FFB100A4C216 /* StringUtils.swift */,
+				3359AAD71D20FFB100A4C216 /* TypeConvertor.swift */,
+				33861B091D2868DB0077D377 /* EditDelegate.swift */,
+				33861B0B1D287D310077D377 /* EditMaxLength.swift */,
 			);
 			name = gearsbox;
 			sourceTree = "<group>";
@@ -726,21 +732,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3359AADA1D20FFB100A4C216 /* NumInputDelegate.swift in Sources */,
 				33E002401CFA955D0058D15A /* AutoViewController.swift in Sources */,
-				3380C08F1D06004D00EB4B0C /* GBViewFactoryImp.swift in Sources */,
-				33992EF01CF7FCC9005EDD78 /* GBViewImp.swift in Sources */,
 				33343B201CDD78D7005AAAC6 /* UsnitTabBarCtl.swift in Sources */,
-				33ED64B21D0E7F610064AE09 /* StringUtils.swift in Sources */,
+				3359AAD91D20FFB100A4C216 /* GBViewImp.swift in Sources */,
 				33C8F9A51CA76B5A00E1C6DA /* SecondViewController.swift in Sources */,
 				3362ADAB1CF40A65004D31FD /* justfor_cpplink.cpp in Sources */,
+				3359AADC1D20FFB100A4C216 /* StringUtils.swift in Sources */,
 				333649611CCC466F00034AE6 /* DrawView.swift in Sources */,
+				3359AADB1D20FFB100A4C216 /* platform_excutor.swift in Sources */,
+				3359AADD1D20FFB100A4C216 /* TypeConvertor.swift in Sources */,
+				3359AAD81D20FFB100A4C216 /* GBViewFactoryImp.swift in Sources */,
+				33861B0C1D287D310077D377 /* EditMaxLength.swift in Sources */,
 				33076C331CE3DF2200FCB267 /* AdmobBanner.swift in Sources */,
-				3380C0A51D0636A600EB4B0C /* TypeConvertor.swift in Sources */,
 				33A457C71CBA046300CBB2E4 /* SFUsnitLogic.swift in Sources */,
 				33C8F9A11CA76B5A00E1C6DA /* AppDelegate.swift in Sources */,
-				33ED64AB1D0E06A90064AE09 /* NumInputDelegate.swift in Sources */,
+				33861B0A1D2868DB0077D377 /* EditDelegate.swift in Sources */,
 				33BEACDB1CD9CC8300D37F22 /* MainLoop.swift in Sources */,
-				33ED64B01D0E2F010064AE09 /* platform_excutor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,8 +895,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: li lin (32DR82A3MW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: li lin (32DR82A3MW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: li lin (FC2S5D6FQ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: li lin (FC2S5D6FQ2)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				HEADER_SEARCH_PATHS = "";
@@ -912,8 +920,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: li lin (32DR82A3MW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: li lin (32DR82A3MW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: li lin (FC2S5D6FQ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: li lin (FC2S5D6FQ2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = USNIT/Info.plist;

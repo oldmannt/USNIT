@@ -5,6 +5,7 @@
 
 #include <memory>
 #include <string>
+#include <vector>
 
 namespace usnit {
 
@@ -15,6 +16,10 @@ public:
     static std::shared_ptr<UilogicGen> instance();
 
     virtual bool initialize(const std::string & config) = 0;
+
+    virtual std::vector<std::string> getSubviews() = 0;
+
+    virtual bool buildUi() = 0;
 };
 
 }  // namespace usnit

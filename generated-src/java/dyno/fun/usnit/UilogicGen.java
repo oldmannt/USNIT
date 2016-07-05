@@ -3,10 +3,15 @@
 
 package dyno.fun.usnit;
 
+import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public abstract class UilogicGen {
     public abstract boolean initialize(String config);
+
+    public abstract ArrayList<String> getSubviews();
+
+    public abstract boolean buildUi();
 
     public static native UilogicGen instance();
 
@@ -40,5 +45,21 @@ public abstract class UilogicGen {
             return native_initialize(this.nativeRef, config);
         }
         private native boolean native_initialize(long _nativeRef, String config);
+
+        @Override
+        public ArrayList<String> getSubviews()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_getSubviews(this.nativeRef);
+        }
+        private native ArrayList<String> native_getSubviews(long _nativeRef);
+
+        @Override
+        public boolean buildUi()
+        {
+            assert !this.destroyed.get() : "trying to use a destroyed object";
+            return native_buildUi(this.nativeRef);
+        }
+        private native boolean native_buildUi(long _nativeRef);
     }
 }

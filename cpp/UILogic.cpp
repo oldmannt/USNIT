@@ -171,7 +171,8 @@ std::shared_ptr<UilogicGen> UilogicGen::instance(){
     static std::shared_ptr<UilogicGen> s_ptr = std::make_shared<UILogic>();
     return s_ptr;
 }
-UILogic::UILogic():m_value(0.0f),m_unit_font_size(10),m_exchange_font_size(10){
+UILogic::UILogic():m_value(0.0f),m_unit_font_size(10),m_exchange_font_size(10)
+                ,m_value_font_size(10){
     
 }
 
@@ -235,7 +236,7 @@ void UILogic::updateValueLabel(const std::string& select_name){
             if (y>0.9995f){
                 unit->value = unit->value+1.0f-y;
             }
-            char buf[16] = {0};
+            char buf[128] = {0};
             if (unit->value>1.0f)
                 sprintf(buf, "%.03f", unit->value);
             else
@@ -276,6 +277,36 @@ bool UILogic::handle(const gearsbox::ViewEventParam & param, const std::shared_p
     }
     
     return true;
+}
+
+std::vector<std::string> UILogic::getSubviews(){
+    std::vector<std::string> unit_names;
+    unit_names.push_back("time_label");
+    unit_names.push_back("input_text");
+    
+    for (MapUnit::iterator it(m_allUnits.begin()); m_allUnits.end()!=it; ++it) {
+        std::shared_ptr<Unit> unit = it->second;
+        if (nullptr == unit){
+            G_LOG_FC(LOG_ERROR, "null in m_allUnits:%s", it->first.c_str());
+        }
+        unit_names.push_back(it->first);
+        unit_names.push_back("label_"+it->first);
+    }
+    
+    unit_names.push_back("exchange_info");
+    unit_names.push_back("line1");
+    unit_names.push_back("line2");
+    unit_names.push_back("line3");
+    unit_names.push_back("line4");
+    unit_names.push_back("line5");
+    unit_names.push_back("line6");
+
+    return unit_names;
+}
+
+bool UILogic::buildUi(){
+    buildInputView("input_view");
+    buildUnitView("unit_view");
 }
 
 std::string formatRate(){
@@ -362,27 +393,14 @@ bool UILogic::initialize(const std::string& conf_path){
     m_http_request->start();
     
     try {
-        m_unit_font_size = config["unit_name_font_size"].asFloat();
-        m_exchange_font_size = config["exchange_font_size"].asFloat();
+        m_unit_font_size = config["unit_name_font_size"].asInt();
+        m_exchange_font_size = config["exchange_font_size"].asInt();
+        m_value_font_size = config["unit_value_font_size"].asInt();
     } catch (std::exception &ex) {
         G_LOG_FC(LOG_ERROR, "get ui font config err:%s", ex.what());
     }
     readAllUnits(config["typesets"]);
-    
-    buildUI("input_view");
-    buildUI("unit_view");
 }
-
-bool UILogic::buildUI(const std::string& view_id){
-    //UsnitGen::instance()->setEventHandler(std::make_shared<EventHander>());
-    if (view_id == "input_view")
-        buildInputView(view_id);
-    else if(view_id == "unit_view")
-        buildUnitView(view_id);
-    
-    return true;
-}
-
 
 bool UILogic::readAllUnits(Json::Value& conf){
     if (conf.type()!=Json::ValueType::arrayValue){
@@ -520,7 +538,7 @@ bool UILogic::buildUnitView(const std::string& view_id){
         return false;
     }
     m_uibuilding.parent = parent_view;
-    parent_view->setEventHandler(shared_from_this());
+    parent_view->setEventHandler(ViewEvent::TAP, shared_from_this());
     
     //G_LOG_C(LOG_INFO, "buildUnitView allUnits %d supertype", m_superTypes.size());
     MapSuperType::iterator itSuper(m_superTypes.begin());
@@ -536,9 +554,10 @@ bool UILogic::buildUnitView(const std::string& view_id){
             m_uibuilding.exchange_info = parent_view->addSubViewById("exchange_info", ViewType::LABEL);
             if (!m_uibuilding.exchange_info){
                 G_LOG_FC(LOG_ERROR,"add subview exchange_info null");
+            } else{
+                m_uibuilding.exchange_info->setText(formatRate());
+                m_uibuilding.exchange_info->setFontSize(m_exchange_font_size);
             }
-            m_uibuilding.exchange_info->setText(formatRate());
-            m_uibuilding.exchange_info->setFontSize(m_unit_font_size);
         }
         
         //G_LOG_C(LOG_INFO,"%d units in supertype:%d", supter_type_info->units.size(), itSuper->first);
@@ -557,9 +576,10 @@ bool UILogic::buildUnitView(const std::string& view_id){
             }
             
             m_valueLabels.push_back(unit->label_value);
-            unit->label_value->setEventHandler(shared_from_this());
-            unit->label_value->setBoardColor(ArgbColor::BLACKCOLOR);
-            unit->label_value->setBoardWidth(1.0f);
+            unit->label_value->setEventHandler(ViewEvent::TAP, shared_from_this());
+            unit->label_value->setBoard(1.0f,ArgbColor::BLACKCOLOR);
+            unit->label_value->setFontSize(m_value_font_size);
+            unit->label_value->setText("");
             unit->label_name->setText(LanguageStoreGen::instance()->getString(unit->name));
             unit->label_name->setFontSize(m_unit_font_size);
             
@@ -575,6 +595,7 @@ bool UILogic::buildUnitView(const std::string& view_id){
         std::shared_ptr<ViewGen> line = parent_view->addSubViewById(buf, ViewType::BASE);
         if (line==nullptr){
             G_LOG_FC(LOG_ERROR,"addsubview line %s failed", buf);
+            continue;
         }
         line->setBackgroundColor(1, 0, 0, 0);
         if (!m_uibuilding.first_line)
@@ -674,11 +695,11 @@ bool UILogic::buildInputView(const std::string& view_id){
     
     std::shared_ptr<gearsbox::ViewGen> input_view = UiManagerGen::instance()->getView("input_view");
     if (input_view){
-            input_view->setEventHandler(shared_from_this());
+        input_view->setEventHandler(ViewEvent::TAP, shared_from_this());
     }
 
     m_input = input_text;
-    input_text->setEventHandler(shared_from_this());
+    input_text->setEventHandler(ViewEvent::TEXTCHANGE, shared_from_this());
 
     G_LOG_C(LOG_INFO,"buildInputView done");
     return true;

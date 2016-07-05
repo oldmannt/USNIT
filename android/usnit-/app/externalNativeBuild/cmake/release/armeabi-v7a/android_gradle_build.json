@@ -1,0 +1,41 @@
+
+{
+	"buildFiles" : 
+	[
+		"/Users/dyno/Documents/develop/usnit/android/usnit/app/CMakeLists.txt"
+	],
+	"cleanCommands" : 
+	[
+		"/Users/dyno/Library/Android/sdk/cmake/bin/cmake --build /Users/dyno/Documents/develop/usnit/android/usnit/app/externalNativeBuild/cmake/release/armeabi-v7a --target clean"
+	],
+	"cppFileExtensions" : [ "cpp" ],
+	"libraries" : 
+	{
+		"native-lib-Release-armeabi-v7a" : 
+		{
+			"abi" : "armeabi-v7a",
+			"artifactName" : "native-lib",
+			"buildCommand" : "/Users/dyno/Library/Android/sdk/cmake/bin/cmake --build /Users/dyno/Documents/develop/usnit/android/usnit/app/externalNativeBuild/cmake/release/armeabi-v7a --target native-lib",
+			"buildType" : "release",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  -DANDROID -Dnative_lib_EXPORTS -isystem /Users/dyno/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-arm/usr/include -isystem /Users/dyno/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include -isystem /Users/dyno/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi-v7a/include -isystem /Users/dyno/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/backward  -fexceptions -frtti -Wno-psabi --sysroot=/Users/dyno/Library/Android/sdk/ndk-bundle/platforms/android-23/arch-arm -funwind-tables -finline-limit=64 -fsigned-char -no-canonical-prefixes -march=armv7-a -mfloat-abi=softfp -mfpu=vfpv3-d16 -fdata-sections -ffunction-sections -Wa,--noexecstack -frtti -fexceptions -mthumb -fomit-frame-pointer -fno-strict-aliasing -O3 -DNDEBUG -fPIC      ",
+					"src" : "/Users/dyno/Documents/develop/usnit/android/usnit/app/src/main/cpp/native-lib.cpp",
+					"workingDirectory" : "/Users/dyno/Documents/develop/usnit/android/usnit/app/externalNativeBuild/cmake/release/armeabi-v7a"
+				}
+			],
+			"output" : "/Users/dyno/Documents/develop/usnit/android/usnit/app/build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so",
+			"toolchain" : "6007076569179167982"
+		}
+	},
+	"toolchains" : 
+	{
+		"6007076569179167982" : 
+		{
+			"cCompilerExecutable" : "/Users/dyno/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-gcc",
+			"cppCompilerExecutable" : "/Users/dyno/Library/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/arm-linux-androideabi-g++"
+		}
+	}
+}

@@ -39,4 +39,24 @@ CJNIEXPORT jboolean JNICALL Java_dyno_fun_usnit_UilogicGen_00024CppProxy_native_
     } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
+CJNIEXPORT jobject JNICALL Java_dyno_fun_usnit_UilogicGen_00024CppProxy_native_1getSubviews(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::usnit::UilogicGen>(nativeRef);
+        auto r = ref->getSubviews();
+        return ::djinni::release(::djinni::List<::djinni::String>::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+}
+
+CJNIEXPORT jboolean JNICALL Java_dyno_fun_usnit_UilogicGen_00024CppProxy_native_1buildUi(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::usnit::UilogicGen>(nativeRef);
+        auto r = ref->buildUi();
+        return ::djinni::release(::djinni::Bool::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
+}
+
 }  // namespace djinni_generated

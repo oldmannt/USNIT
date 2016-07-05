@@ -16,7 +16,7 @@
 			{"from":"first_unit","to":"","type_from":"height","type_to":"height","multiplier":1,"offset":21},
 			{"from":"first_unit","to":"self","type_from":"top","type_to":"top","multiplier":1,"offset":20},
 			{"from":"first_unit","to":"line1","type_from":"leading","type_to":"leading","multiplier":1,"offset":0},
-			{"from":"first_unit","to":"self","type_from":"width","type_to":"width","multiplier":0.5,"offset":-55}
+			{"from":"first_unit","to":"self","type_from":"width","type_to":"width","multiplier":0.5,"offset":-58}
 		],
 		"first_us_unit":[
 			{"from":"first_us_unit","to":"first_unit","type_from":"width","type_to":"width","multiplier":1,"offset":0},
@@ -58,7 +58,7 @@
 	"views":[
 		{"id":"input_view","type":"base",
 			"views":[
-				{"id":"input_text","type":"input","frame":[0,0,0,30],"text_boarder":3,"keyboardtype":"DecimalPad","numericText":true},
+				{"id":"input_text","type":"input","frame":[0,0,0,30],"text_boarder":3,"keyboardtype":"DecimalPad","numericText":true,"maxlength":20},
 				{"id":"time_label","type":"label","frame":[0,0,150,12],"fontsize":11,"textalign":2}
 			],
 			"constraints":[

@@ -11,4 +11,8 @@
 
 - (BOOL)initialize:(nonnull NSString *)config;
 
+- (nonnull NSArray<NSString *> *)getSubviews;
+
+- (BOOL)buildUi;
+
 @end

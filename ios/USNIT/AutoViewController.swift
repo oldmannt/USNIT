@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import GoogleMobileAds
 
 class AutoViewController: UIViewController {
     
@@ -17,6 +18,8 @@ class AutoViewController: UIViewController {
     var genViewInput:GBViewImp?
     var genViewUnit:GBViewImp?
     var m_ad:AdmobBanner!
+    
+    @IBOutlet weak var viewBanner: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,13 +42,13 @@ class AutoViewController: UIViewController {
         SFUsnitLogic.sharedInstance
         
         //*
-        m_ad = AdmobBanner(root: self)
+        m_ad = AdmobBanner(bannerView: viewBanner,root: self)
         m_ad.didLoad("ca-app-pub-4953725946697554/8856468622")
         
         // set height of scview
-        let offsety = (self.tabBarController?.tabBar.frame.size.height)! + m_ad.bannerView.frame.size.height
-        view.addConstraint(NSLayoutConstraint(item: viewSC, attribute: .Bottom,
-            relatedBy: .Equal, toItem: view , attribute: .Bottom, multiplier: 1, constant: -offsety))
+        //let offsety = (self.tabBarController?.tabBar.frame.size.height)! + m_ad.m_bannerView.frame.size.height
+       // view.addConstraint(NSLayoutConstraint(item: viewSC, attribute: .Bottom,
+       //     relatedBy: .Equal, toItem: m_ad.bannerView , attribute: .Top, multiplier: 1, constant: 0))
         //*/
     }
     

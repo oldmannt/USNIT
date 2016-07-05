@@ -1,0 +1,41 @@
+{
+  "typesets":[
+    {"name":"length", "base_unit":"meter","units":[
+      {"name":"meter", "us":false, "func":"", "multiply":1.0},
+      {"name":"cmeter", "us":false, "multiply":100},
+      {"name":"kmeter", "us":false, "multiply":0.001},
+      {"name":"feet", "us":true, "multiply":3.2808399},
+      {"name":"inch", "us":true, "multiply":39.3700787},
+      {"name":"mile", "us":true, "multiply":0.0006214},
+      {"name":"yard", "us":true, "multiply":1.0936133}
+    ]},
+    {"name":"mass", "base_unit":"gram", "units":[
+      {"name":"gram", "us":false, "multiply":1.0},
+      {"name":"kgram", "us":false, "multiply":0.001},
+      {"name":"lb", "us":true, "multiply":0.0022046},
+      {"name":"oz", "us":true, "multiply":0.035274}
+    ]},
+    {"name":"volume", "base_unit":"liter", "units":[
+      {"name":"liter", "us":false, "func":"", "multiply":1.0},
+      {"name":"mliter", "us":false, "func":"", "multiply":1000},
+      {"name":"gal", "us":true,"func":"", "multiply":0.2641721}
+    ]},
+    {"name":"square", "base_unit":"sqmeter", "units":[
+      {"name":"sqmeter", "us":false, "func":"", "multiply":1.0},
+      {"name":"sqcmeter", "us":false, "func":"", "multiply":10000},
+      {"name":"sqinch", "us":true, "func":"", "multiply":1550.0031},
+      {"name":"sqfeet", "us":true, "func":"", "multiply":10.7639104}
+    ]},
+    {"name":"termperature", "base_unit":"celcius", "units":[
+      {"name":"celcius", "us":false,"func":"", "multiply":1.0},
+      {"name":"fahrenheit", "us":true, "func":"", "multiply":1.8, "offset":32}
+    ]},
+    {"name":"exchange", "base_unit":"rmb", "units":[
+      {"name":"rmb", "us":false,"func":"", "multiply":1.0},
+      {"name":"dollor", "us":true,"func":"", "multiply":6.5971}
+    ]}
+  ],
+  "exchange_font_size":14,
+  "unit_name_font_size":14,
+  "unit_value_font_size":14
+}

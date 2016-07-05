@@ -37,9 +37,9 @@
     },
     {
       "target_name": "usnit_jni",
-      "type": "static_library",
+      "type": "shared_library",
       "dependencies": [
-      "usnit",
+        "usnit",
         "./gearsbox/gearsbox.gyp:gearsbox_jni"
       ],
       "ldflags" : [ "-llog", "-Wl,--build-id,--gc-sections,--exclude-libs,ALL" ],

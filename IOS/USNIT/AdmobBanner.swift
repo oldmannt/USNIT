@@ -12,42 +12,66 @@ import GoogleMobileAds
 
 
 class AdmobBanner: NSObject, GADBannerViewDelegate{
-    var bannerView: GADBannerView!
-    var rootController: UIViewController!
+    var m_bannerView: GADBannerView!
+    var m_rootController: UIViewController!
     
     init(root: UIViewController) {
         
-        rootController = root
-        bannerView = GADBannerView()
-        bannerView.rootViewController = rootController
+        m_rootController = root
+        m_bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        m_bannerView.rootViewController = m_rootController
+        m_rootController.view.addSubview(m_bannerView)
+    }
+    
+    init(bannerView: GADBannerView,root: UIViewController) {
+        m_rootController = root
+        m_bannerView = bannerView
+        m_bannerView.rootViewController = m_rootController
     }
     
     func didLoad(adid: String){
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        bannerView.delegate = self
-        bannerView.adUnitID = adid
+        m_bannerView.translatesAutoresizingMaskIntoConstraints = false
+        m_bannerView.delegate = self
+        m_bannerView.adUnitID = adid
         
-        rootController.view.addSubview(bannerView)
-        
-        //let offsety:CGFloat = (rootController.tabBarController?.tabBar.frame.height)!
-        rootController.view.addConstraint(NSLayoutConstraint(item: bannerView, attribute: .Bottom,
-            relatedBy: .Equal, toItem: rootController.bottomLayoutGuide , attribute: .Top, multiplier: 1, constant: 0))
-        rootController.view.addConstraint(NSLayoutConstraint(item: bannerView, attribute: .CenterX,
-            relatedBy: .Equal, toItem: rootController.view, attribute: .CenterX, multiplier: 1, constant: 0))
-        
-        if UIDevice.currentDevice().orientation == .Portrait {
-            bannerView.adSize = kGADAdSizeSmartBannerPortrait
-        } else {
-            bannerView.adSize = kGADAdSizeSmartBannerLandscape
+        if nil != m_rootController{
+            bannerAboveTab(m_rootController!)
         }
         
-        bannerView.loadRequest(GADRequest())
+        if UIDevice.currentDevice().orientation == .Portrait {
+            m_bannerView.adSize = kGADAdSizeSmartBannerPortrait
+        } else {
+            m_bannerView.adSize = kGADAdSizeSmartBannerLandscape
+        }
+        
+        m_bannerView.loadRequest(GADRequest())
 
+    }
+    
+    func bannerUnderTab(root: UIViewController){
+        
+        // don't work
+        var content_frame = root.view.frame
+        let banner_fram = m_bannerView.sizeThatFits(content_frame.size)
+        
+        content_frame.size.height -= banner_fram.height;
+        m_bannerView.frame.origin.y = content_frame.size.height
+        
+        root.tabBarController?.tabBar.frame.origin.y -= banner_fram.height
+    }
+    
+    func bannerAboveTab(root: UIViewController){
+        //let offsety:CGFloat = (rootController.tabBarController?.tabBar.frame.height)!
+        root.view.addConstraint(NSLayoutConstraint(item: m_bannerView, attribute: .Bottom,
+            relatedBy: .Equal, toItem: root.bottomLayoutGuide , attribute: .Top, multiplier: 1, constant: 0))
+        root.view.addConstraint(NSLayoutConstraint(item: m_bannerView, attribute: .CenterX,
+            relatedBy: .Equal, toItem: root.view, attribute: .CenterX, multiplier: 1, constant: 0))
     }
     
     // Called when an ad request loaded an ad.
     func adViewDidReceiveAd(bannerView: GADBannerView!) {
         //print(#function)
+
     }
     
     // Called when an ad request failed.

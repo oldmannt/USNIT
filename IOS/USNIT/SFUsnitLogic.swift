@@ -41,6 +41,7 @@ public class SFUsnitLogic {
         
         let uilogic_path = NSBundle.mainBundle().pathForResource("uilogic", ofType: "json")
         USNUilogicGen.instance()?.initialize(uilogic_path!)
+        USNUilogicGen.instance()?.buildUi()
         //USNUsnitGen.instance()!.initialize(uilogic_path, lang: 0, callback: nil)
     }
     

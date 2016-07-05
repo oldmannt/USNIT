@@ -35,6 +35,7 @@
                    {"name":"dollor", "us":true,"func":"", "multiply":6.5971}
                ]}
             ],
-	"exchange_font_size":10,
-    "unit_name_font_size":10
+	"exchange_font_size":12,
+  "unit_name_font_size":14,
+  "unit_value_font_size":14
 }

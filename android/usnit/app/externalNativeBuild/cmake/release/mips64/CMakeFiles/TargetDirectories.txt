@@ -1,0 +1,1 @@
+/Users/dyno/Documents/develop/usnit/android/usnit/app/externalNativeBuild/cmake/release/mips64/CMakeFiles/usnit_jni.dir

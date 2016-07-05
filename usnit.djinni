@@ -43,5 +43,7 @@ usnit_event_gen = interface +c +j +o{
 uilogic_gen = interface +c {
     static instance():uilogic_gen;
     initialize(config:string):bool;
+    getSubviews():list<string>;
+    buildUi():bool;
 }
 
