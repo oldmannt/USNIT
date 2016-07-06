@@ -37,7 +37,7 @@
     },
     {
       "target_name": "usnit_jni",
-      "type": "shared_library",
+      "type": "static_library",
       "dependencies": [
         "usnit",
         "./gearsbox/gearsbox.gyp:gearsbox_jni"

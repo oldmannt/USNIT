@@ -1,1 +1,0 @@
-/Users/dyno/Documents/develop/usnit/android/usnit/app/externalNativeBuild/cmake/release/armeabi/CMakeFiles/native-lib.dir

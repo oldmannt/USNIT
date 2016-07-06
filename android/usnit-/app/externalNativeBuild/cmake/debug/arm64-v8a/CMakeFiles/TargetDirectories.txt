@@ -1,1 +1,0 @@
-/Users/dyno/Documents/develop/usnit/android/usnit/app/externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/native-lib.dir
