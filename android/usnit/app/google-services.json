@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "974794175794",
+    "firebase_url": "https://admob-app-id-5903002228.firebaseio.com",
+    "project_id": "admob-app-id-5903002228",
+    "storage_bucket": "admob-app-id-5903002228.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974794175794:android:aee1c7b90c167829",
+        "android_client_info": {
+          "package_name": "dyno.fun.usnit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974794175794-loji2rq7hmumt4jkvrqpoh4s0ihpmagv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDunStgAHvjZaoCwVt58X7gZnfOg7E6u2w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

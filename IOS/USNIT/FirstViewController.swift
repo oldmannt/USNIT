@@ -66,13 +66,22 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
     var m_dicNameLabel=[UILabel:USNUsnitType]()
     var m_bShowKeyboard=false
     var edt_delegate:NumInputDelegate?
+    var m_ad:AdmobBanner!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        m_ad = AdmobBanner(root: self)
+        m_ad.didLoad("ca-app-pub-4953725946697554/8856468622")
+        
+        // set height of scview
+        let offsety = (self.tabBarController?.tabBar.frame.size.height)! + m_ad.bannerView.frame.size.height
+        view.addConstraint(NSLayoutConstraint(item: scView, attribute: .Height,
+            relatedBy: .Equal, toItem: view , attribute: .Height, multiplier: 1, constant: -offsety))
         SFUsnitLogic.sharedInstance.addObserver(self);
+        
         initUnitName()
         registeTapLable()
         initializeTextFields()
@@ -83,10 +92,6 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
     }
     
     override func viewWillDisappear(animated: Bool){
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UIKeyboardDidShowNotification,
-                                                            object: nil)
-        
         NSNotificationCenter.defaultCenter().removeObserver(self,
                                                             name: UIKeyboardWillHideNotification,
                                                             object: nil)
@@ -214,7 +219,6 @@ class FirstViewController: UIViewController,UsnitLogicObserver {
 
     @IBAction func tapLabel(sender: UITapGestureRecognizer) {
         let lbl = sender.view as! UILabel;
-        
         //g_logouts(LOG_CONSOLE, 3, "tap label:" + String(lbl.accessibilityIdentifier!) + "type: " + String(type))
         UIApplication.sharedApplication().keyWindow?.endEditing(true)
         if let type = m_dicResultLabel[lbl] {

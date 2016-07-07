@@ -13,8 +13,8 @@
 			buildPhases = (
 			);
 			dependencies = (
+				2C127F9DCB52BE3FADF21A40 /* PBXTargetDependency */,
 				7273A3249075218FA95C885E /* PBXTargetDependency */,
-				7B12490EAFA39AA0146591C7 /* PBXTargetDependency */,
 			);
 			name = All;
 			productName = All;
@@ -22,14 +22,19 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		5C3EB210938ED45B15E9AC2F /* UsnitLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */; };
-		70B6164737698291B4661553 /* USNUsnitEventGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8493963346F50FA7E7C2A43 /* USNUsnitEventGen+Private.mm */; };
-		C45CB88D6FDC5E897F63D76B /* NativeUsnitGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09F507EAA967F05E8B1DA68C /* NativeUsnitGen.cpp */; };
-		DAD058E48078E31F9164C962 /* USNUsnitGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49A8BC59A6DF6EBBA0BD217F /* USNUsnitGen+Private.mm */; };
-		E09052471831AB5215E8AD41 /* NativeUsnitEventGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8264063E78B1ED4C8465D9C5 /* NativeUsnitEventGen.cpp */; };
+		27295796CFBD19FE5DB87E9A /* UILogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95E3839EE9FA556D28AB5AB5 /* UILogic.cpp */; };
+		53403C01018E893EB5953D21 /* USNUsnitEventGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8493963346F50FA7E7C2A43 /* USNUsnitEventGen+Private.mm */; };
+		D153D8A5C8AE474D674028BC /* USNUilogicGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D2C1EEDB0447D89113BE4A98 /* USNUilogicGen+Private.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4FE9BB5535CDF7EE2CA48B17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DB73A2E652D84A754A631F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 511CC6ECB188393E2A9A92A1;
+			remoteInfo = usnit;
+		};
 		86A51639445C027B8C344DF5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3DB73A2E652D84A754A631F1 /* Project object */;
@@ -37,42 +42,31 @@
 			remoteGlobalIDString = 27B56351ED6D299FB06A16F7;
 			remoteInfo = usnit_objc;
 		};
-		F4F96C4B2E8DBFCE39A492AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3DB73A2E652D84A754A631F1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 7F46CD0C1F4E7618C1212641;
-			remoteInfo = usnit_jni;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UsnitLogic.cpp; sourceTree = "<group>"; };
-		09F507EAA967F05E8B1DA68C /* NativeUsnitGen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NativeUsnitGen.cpp; sourceTree = "<group>"; };
+		273033965CC54B6D1E16AA7F /* libusnit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libusnit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		294C18D138F451F9A6B0755C /* usnit.gyp */ = {isa = PBXFileReference; explicitFileType = sourcecode; path = usnit.gyp; sourceTree = "<group>"; };
-		30DF8A96D4ED0EC6B1B04691 /* USNUsnitGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USNUsnitGen+Private.h"; sourceTree = "<group>"; };
+		377927020D4F0D76CC75EA03 /* USNUilogicGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USNUilogicGen+Private.h"; sourceTree = "<group>"; };
 		4610FEA4A901D379EDC60051 /* libusnit_objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libusnit_objc.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		49A8BC59A6DF6EBBA0BD217F /* USNUsnitGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "USNUsnitGen+Private.mm"; sourceTree = "<group>"; };
 		4D67B6D000828CD49F129558 /* usnit_type.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = usnit_type.hpp; sourceTree = "<group>"; };
-		677EF56F87F4B5AF1E4DFA44 /* libusnit_jni.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libusnit_jni.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B77AF412EDB49C820075CA9 /* USNUsnitEventType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUsnitEventType.h; sourceTree = "<group>"; };
-		7171C1DF80ECF3A921050E81 /* UsnitLogic.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = UsnitLogic.hpp; sourceTree = "<group>"; };
-		7BED148A3A5C9AD86F31C793 /* USNUsnitGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUsnitGen.h; sourceTree = "<group>"; };
-		8264063E78B1ED4C8465D9C5 /* NativeUsnitEventGen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NativeUsnitEventGen.cpp; sourceTree = "<group>"; };
+		70489013E4D2C52D197DDA9F /* USNUilogicGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUilogicGen.h; sourceTree = "<group>"; };
 		869BD0915B099BF813E556DA /* common.gypi */ = {isa = PBXFileReference; explicitFileType = sourcecode; name = common.gypi; path = gearsbox/deps/djinni/common.gypi; sourceTree = "<group>"; };
-		99B5BA40E37537A178C9FF1A /* USNLangType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNLangType.h; sourceTree = "<group>"; };
-		9B101F7C790C8C8AF278A633 /* usnit_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = usnit_gen.hpp; sourceTree = "<group>"; };
+		95E3839EE9FA556D28AB5AB5 /* UILogic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UILogic.cpp; sourceTree = "<group>"; };
 		9FCD2C739AF9AA54C0F44919 /* USNUsnitEventGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUsnitEventGen.h; sourceTree = "<group>"; };
 		B27CDFD850FE3E3FBD865FF3 /* usnit_event_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = usnit_event_gen.hpp; sourceTree = "<group>"; };
 		C815E1E4AABFE2D550F8426F /* usnit_event_type.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = usnit_event_type.hpp; sourceTree = "<group>"; };
-		CEE15363A04F8E9F9E84AA37 /* lang_type.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = lang_type.hpp; sourceTree = "<group>"; };
+		D2C1EEDB0447D89113BE4A98 /* USNUilogicGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "USNUilogicGen+Private.mm"; sourceTree = "<group>"; };
 		D8493963346F50FA7E7C2A43 /* USNUsnitEventGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "USNUsnitEventGen+Private.mm"; sourceTree = "<group>"; };
 		DAE651C54730AD1525EE3A2C /* USNUsnitEventGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USNUsnitEventGen+Private.h"; sourceTree = "<group>"; };
 		DF4F56E1CCD124EDA36FA232 /* USNUsnitType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUsnitType.h; sourceTree = "<group>"; };
+		DF56E25FC6D1E2FE1856873F /* UILogic.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = UILogic.hpp; sourceTree = "<group>"; };
+		FD45A0F384C5E7A0654CCCDB /* uilogic_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = uilogic_gen.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		21D8B3E92FBC0A9A3FB3B3EF /* Frameworks */ = {
+		6632258E7FDBCFD0FB319DBE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -89,22 +83,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18B334E2BA0D1AD48B2B9510 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				273033965CC54B6D1E16AA7F /* libusnit.a */,
+				4610FEA4A901D379EDC60051 /* libusnit_objc.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2E8933E7F0FD20EEF503F5C4 = {
 			isa = PBXGroup;
 			children = (
 				421E45E717080F13487BBC40 /* Source */,
-				3BBF367A07810933BA5E71F4 /* Products */,
+				18B334E2BA0D1AD48B2B9510 /* Products */,
 				3FC340FE50BF95AFB3386B13 /* Build */,
 			);
 			sourceTree = "<group>";
 		};
-		3BBF367A07810933BA5E71F4 /* Products */ = {
+		3A12DF14C51D1F2E826E9126 /* generated-src */ = {
 			isa = PBXGroup;
 			children = (
-				4610FEA4A901D379EDC60051 /* libusnit_objc.a */,
-				677EF56F87F4B5AF1E4DFA44 /* libusnit_jni.a */,
+				F06F42FD4049325FCD4B0D3D /* cpp */,
+				FA654AF7B0FB874208ACFD13 /* objc */,
 			);
-			name = Products;
+			path = "generated-src";
 			sourceTree = "<group>";
 		};
 		3FC340FE50BF95AFB3386B13 /* Build */ = {
@@ -119,66 +122,45 @@
 		421E45E717080F13487BBC40 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E96AB33DD592677D24C88D22 /* cpp */,
-				CE67D0C47DC4368ACD19DC56 /* generated-src */,
+				DC44256974F2A0E927CA3686 /* cpp */,
+				3A12DF14C51D1F2E826E9126 /* generated-src */,
 			);
 			name = Source;
 			sourceTree = "<group>";
 		};
-		539F621AC8BF329833CDA452 /* objc */ = {
+		DC44256974F2A0E927CA3686 /* cpp */ = {
 			isa = PBXGroup;
 			children = (
-				99B5BA40E37537A178C9FF1A /* USNLangType.h */,
-				DAE651C54730AD1525EE3A2C /* USNUsnitEventGen+Private.h */,
-				D8493963346F50FA7E7C2A43 /* USNUsnitEventGen+Private.mm */,
-				9FCD2C739AF9AA54C0F44919 /* USNUsnitEventGen.h */,
-				6B77AF412EDB49C820075CA9 /* USNUsnitEventType.h */,
-				30DF8A96D4ED0EC6B1B04691 /* USNUsnitGen+Private.h */,
-				49A8BC59A6DF6EBBA0BD217F /* USNUsnitGen+Private.mm */,
-				7BED148A3A5C9AD86F31C793 /* USNUsnitGen.h */,
-				DF4F56E1CCD124EDA36FA232 /* USNUsnitType.h */,
+				95E3839EE9FA556D28AB5AB5 /* UILogic.cpp */,
+				DF56E25FC6D1E2FE1856873F /* UILogic.hpp */,
 			);
-			path = objc;
+			path = cpp;
 			sourceTree = "<group>";
 		};
-		77298DFDA5B9DEA4512F2C71 /* jni */ = {
+		F06F42FD4049325FCD4B0D3D /* cpp */ = {
 			isa = PBXGroup;
 			children = (
-				8264063E78B1ED4C8465D9C5 /* NativeUsnitEventGen.cpp */,
-				09F507EAA967F05E8B1DA68C /* NativeUsnitGen.cpp */,
-			);
-			path = jni;
-			sourceTree = "<group>";
-		};
-		A31E12A9D145BDEE8486693F /* cpp */ = {
-			isa = PBXGroup;
-			children = (
-				CEE15363A04F8E9F9E84AA37 /* lang_type.hpp */,
+				FD45A0F384C5E7A0654CCCDB /* uilogic_gen.hpp */,
 				B27CDFD850FE3E3FBD865FF3 /* usnit_event_gen.hpp */,
 				C815E1E4AABFE2D550F8426F /* usnit_event_type.hpp */,
-				9B101F7C790C8C8AF278A633 /* usnit_gen.hpp */,
 				4D67B6D000828CD49F129558 /* usnit_type.hpp */,
 			);
 			path = cpp;
 			sourceTree = "<group>";
 		};
-		CE67D0C47DC4368ACD19DC56 /* generated-src */ = {
+		FA654AF7B0FB874208ACFD13 /* objc */ = {
 			isa = PBXGroup;
 			children = (
-				A31E12A9D145BDEE8486693F /* cpp */,
-				77298DFDA5B9DEA4512F2C71 /* jni */,
-				539F621AC8BF329833CDA452 /* objc */,
+				377927020D4F0D76CC75EA03 /* USNUilogicGen+Private.h */,
+				D2C1EEDB0447D89113BE4A98 /* USNUilogicGen+Private.mm */,
+				70489013E4D2C52D197DDA9F /* USNUilogicGen.h */,
+				DAE651C54730AD1525EE3A2C /* USNUsnitEventGen+Private.h */,
+				D8493963346F50FA7E7C2A43 /* USNUsnitEventGen+Private.mm */,
+				9FCD2C739AF9AA54C0F44919 /* USNUsnitEventGen.h */,
+				6B77AF412EDB49C820075CA9 /* USNUsnitEventType.h */,
+				DF4F56E1CCD124EDA36FA232 /* USNUsnitType.h */,
 			);
-			path = "generated-src";
-			sourceTree = "<group>";
-		};
-		E96AB33DD592677D24C88D22 /* cpp */ = {
-			isa = PBXGroup;
-			children = (
-				06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */,
-				7171C1DF80ECF3A921050E81 /* UsnitLogic.hpp */,
-			);
-			path = cpp;
+			path = objc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,20 +182,20 @@
 			productReference = 4610FEA4A901D379EDC60051 /* libusnit_objc.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		7F46CD0C1F4E7618C1212641 /* usnit_jni */ = {
+		511CC6ECB188393E2A9A92A1 /* usnit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 78C801F5205D0A2D16536806 /* Build configuration list for PBXNativeTarget "usnit_jni" */;
+			buildConfigurationList = 53C661DE700B0722875F7D7A /* Build configuration list for PBXNativeTarget "usnit" */;
 			buildPhases = (
-				F069B32B278BFE7D2E49817E /* Sources */,
-				21D8B3E92FBC0A9A3FB3B3EF /* Frameworks */,
+				AB5458E0671D7D71193D595B /* Sources */,
+				6632258E7FDBCFD0FB319DBE /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = usnit_jni;
-			productName = usnit_jni;
-			productReference = 677EF56F87F4B5AF1E4DFA44 /* libusnit_jni.a */;
+			name = usnit;
+			productName = usnit;
+			productReference = 273033965CC54B6D1E16AA7F /* libusnit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -223,22 +205,17 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0730;
 			};
 			buildConfigurationList = BFD05A1554232B6A6B5A60E1 /* Build configuration list for PBXProject "usnit" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 1;
-			knownRegions = (
-				en,
-			);
 			mainGroup = 2E8933E7F0FD20EEF503F5C4;
 			projectDirPath = ../..;
 			projectRoot = "";
 			targets = (
 				E58FDA98D6544A9863A90BF6 /* All */,
+				511CC6ECB188393E2A9A92A1 /* usnit */,
 				27B56351ED6D299FB06A16F7 /* usnit_objc */,
-				7F46CD0C1F4E7618C1212641 /* usnit_jni */,
 			);
 		};
 /* End PBXProject section */
@@ -248,33 +225,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70B6164737698291B4661553 /* USNUsnitEventGen+Private.mm in Sources */,
-				DAD058E48078E31F9164C962 /* USNUsnitGen+Private.mm in Sources */,
-				5C3EB210938ED45B15E9AC2F /* UsnitLogic.cpp in Sources */,
+				D153D8A5C8AE474D674028BC /* USNUilogicGen+Private.mm in Sources */,
+				53403C01018E893EB5953D21 /* USNUsnitEventGen+Private.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F069B32B278BFE7D2E49817E /* Sources */ = {
+		AB5458E0671D7D71193D595B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E09052471831AB5215E8AD41 /* NativeUsnitEventGen.cpp in Sources */,
-				C45CB88D6FDC5E897F63D76B /* NativeUsnitGen.cpp in Sources */,
+				27295796CFBD19FE5DB87E9A /* UILogic.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2C127F9DCB52BE3FADF21A40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 511CC6ECB188393E2A9A92A1 /* usnit */;
+			targetProxy = 4FE9BB5535CDF7EE2CA48B17 /* PBXContainerItemProxy */;
+		};
 		7273A3249075218FA95C885E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 27B56351ED6D299FB06A16F7 /* usnit_objc */;
 			targetProxy = 86A51639445C027B8C344DF5 /* PBXContainerItemProxy */;
-		};
-		7B12490EAFA39AA0146591C7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 7F46CD0C1F4E7618C1212641 /* usnit_jni */;
-			targetProxy = F4F96C4B2E8DBFCE39A492AD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -287,12 +262,38 @@
 			};
 			name = Release;
 		};
+		4BFD2E7E05C1C3A42767072E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEAD_CODE_STRIPPING = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"generated-src/cpp",
+					cpp,
+					gearsbox/src/cpp/ui,
+					"gearsbox/generated-src/cpp",
+					gearsbox/interface,
+					gearsbox/deps/sqlite3,
+					gearsbox/deps/curl,
+					gearsbox/deps/curl/curl,
+				);
+				OTHER_CFLAGS = "-Wall";
+				OTHER_CPLUSPLUSFLAGS = "-Wall";
+				PRODUCT_NAME = usnit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+			};
+			name = Release;
+		};
 		6BBB385956F28852B3E000AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ENABLE_TESTABILITY = YES;
 				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
-				ONLY_ACTIVE_ARCH = YES;
 				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";
 			};
 			name = Debug;
@@ -307,15 +308,17 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = (
-					"./generated-src/objc",
-					"./generated-src/cpp",
-					./cpp,
-					"./gearsbox/deps/djinni/support-lib/objc",
-					"gearsbox/generated-src/objc",
+					"generated-src/objc",
+					"generated-src/cpp",
+					cpp,
+					"gearsbox/deps/djinni/support-lib/objc",
+					gearsbox/src/cpp/ui,
+					"gearsbox/generated-src/cpp",
 					gearsbox/interface,
 					gearsbox/deps/sqlite3,
 					gearsbox/deps/curl,
 					gearsbox/deps/curl/curl,
+					"gearsbox/generated-src/objc",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wall";
@@ -334,35 +337,7 @@
 			};
 			name = Debug;
 		};
-		8A1C0274F2F5DF38657EA45C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				DEAD_CODE_STRIPPING = YES;
-				EXECUTABLE_PREFIX = lib;
-				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
-				HEADER_SEARCH_PATHS = (
-					"generated-src/jni",
-					"generated-src/cpp",
-					cpp,
-					"./gearsbox/deps/djinni/support-lib/jni",
-					gearsbox/interface,
-					gearsbox/deps/sqlite3,
-					gearsbox/deps/curl,
-					gearsbox/deps/curl/curl,
-				);
-				OTHER_CFLAGS = "-Wall";
-				OTHER_CPLUSPLUSFLAGS = "-Wall";
-				PRODUCT_NAME = usnit_jni;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
-			};
-			name = Release;
-		};
-		B3A82618291E33E45DF42AD4 /* Debug */ = {
+		A5CFD258DD71BC16E8B7DFEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
@@ -372,10 +347,10 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = (
-					"generated-src/jni",
 					"generated-src/cpp",
 					cpp,
-					"./gearsbox/deps/djinni/support-lib/jni",
+					gearsbox/src/cpp/ui,
+					"gearsbox/generated-src/cpp",
 					gearsbox/interface,
 					gearsbox/deps/sqlite3,
 					gearsbox/deps/curl,
@@ -384,7 +359,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wall";
 				OTHER_CPLUSPLUSFLAGS = "-Wall";
-				PRODUCT_NAME = usnit_jni;
+				PRODUCT_NAME = usnit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
@@ -408,15 +383,17 @@
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
 				HEADER_SEARCH_PATHS = (
-					"./generated-src/objc",
-					"./generated-src/cpp",
-					./cpp,
-					"./gearsbox/deps/djinni/support-lib/objc",
-					"gearsbox/generated-src/objc",
+					"generated-src/objc",
+					"generated-src/cpp",
+					cpp,
+					"gearsbox/deps/djinni/support-lib/objc",
+					gearsbox/src/cpp/ui,
+					"gearsbox/generated-src/cpp",
 					gearsbox/interface,
 					gearsbox/deps/sqlite3,
 					gearsbox/deps/curl,
 					gearsbox/deps/curl/curl,
+					"gearsbox/generated-src/objc",
 				);
 				OTHER_CFLAGS = "-Wall";
 				OTHER_CPLUSPLUSFLAGS = "-Wall";
@@ -439,11 +416,11 @@
 			defaultConfigurationIsVisible = 1;
 			defaultConfigurationName = Debug;
 		};
-		78C801F5205D0A2D16536806 /* Build configuration list for PBXNativeTarget "usnit_jni" */ = {
+		53C661DE700B0722875F7D7A /* Build configuration list for PBXNativeTarget "usnit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B3A82618291E33E45DF42AD4 /* Debug */,
-				8A1C0274F2F5DF38657EA45C /* Release */,
+				A5CFD258DD71BC16E8B7DFEE /* Debug */,
+				4BFD2E7E05C1C3A42767072E /* Release */,
 			);
 			defaultConfigurationIsVisible = 1;
 			defaultConfigurationName = Debug;

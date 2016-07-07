@@ -29,12 +29,6 @@ usnit_type = enum {
     TYPE_MAX   ;
 }
 
-lang_type = enum{
-    LANG_NONE;
-    LANG_CH;
-    LANG_ENG;
-}
-
 usnit_event_type = enum{
     CB_NONE;
     CB_DOLLAR_RT;
@@ -42,22 +36,14 @@ usnit_event_type = enum{
     CB_RATEINFO ;
 }
 
-usnit_event_gen = interface +j +o{
+usnit_event_gen = interface +c +j +o{
     callback(id:usnit_event_type, data:string): bool;
 }
 
-usnit_gen = interface +c {
-
-    static instance(): usnit_gen;
-    initialize(conf:string, lang:lang_type, callback:usnit_event_gen):bool;
-    save():bool;
-    setType(type:usnit_type);
-    setInput(value:f32);
-    getResult(type:usnit_type):string;
-    getUnitName(type:usnit_type):string;
-    getLongType():usnit_type;
-    getMassType():usnit_type;
-    getSquareType():usnit_type;
-    getVolumeType():usnit_type;
+uilogic_gen = interface +c {
+    static instance():uilogic_gen;
+    initialize(config:string):bool;
+    getSubviews():list<string>;
+    buildUi():bool;
 }
 

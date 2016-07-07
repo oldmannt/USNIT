@@ -7,7 +7,7 @@
 
 namespace djinni_generated {
 
-NativeUsnitEventGen::NativeUsnitEventGen() : ::djinni::JniInterface<::usnit::UsnitEventGen, NativeUsnitEventGen>() {}
+NativeUsnitEventGen::NativeUsnitEventGen() : ::djinni::JniInterface<::usnit::UsnitEventGen, NativeUsnitEventGen>("dyno/fun/usnit/UsnitEventGen$CppProxy") {}
 
 NativeUsnitEventGen::~NativeUsnitEventGen() = default;
 
@@ -24,6 +24,25 @@ bool NativeUsnitEventGen::JavaProxy::callback(::usnit::UsnitEventType c_id, cons
                                           ::djinni::get(::djinni::String::fromCpp(jniEnv, c_data)));
     ::djinni::jniExceptionCheck(jniEnv);
     return ::djinni::Bool::toCpp(jniEnv, jret);
+}
+
+CJNIEXPORT void JNICALL Java_dyno_fun_usnit_UsnitEventGen_00024CppProxy_nativeDestroy(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        delete reinterpret_cast<::djinni::CppProxyHandle<::usnit::UsnitEventGen>*>(nativeRef);
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, )
+}
+
+CJNIEXPORT jboolean JNICALL Java_dyno_fun_usnit_UsnitEventGen_00024CppProxy_native_1callback(JNIEnv* jniEnv, jobject /*this*/, jlong nativeRef, jobject j_id, jstring j_data)
+{
+    try {
+        DJINNI_FUNCTION_PROLOGUE1(jniEnv, nativeRef);
+        const auto& ref = ::djinni::objectFromHandleAddress<::usnit::UsnitEventGen>(nativeRef);
+        auto r = ref->callback(::djinni_generated::NativeUsnitEventType::toCpp(jniEnv, j_id),
+                               ::djinni::String::toCpp(jniEnv, j_data));
+        return ::djinni::release(::djinni::Bool::fromCpp(jniEnv, r));
+    } JNI_TRANSLATE_EXCEPTIONS_RETURN(jniEnv, 0 /* value doesn't matter */)
 }
 
 }  // namespace djinni_generated

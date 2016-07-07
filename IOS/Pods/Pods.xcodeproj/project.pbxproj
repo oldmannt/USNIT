@@ -7,40 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8E5BE875657FBDE11EB78754D7C54663 /* Pods-USNIT-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45701932A9B0A1CDCFDA115E683DD057 /* Pods-USNIT-dummy.m */; };
-		DD58BDF7559C4E57D4F88A5300060E76 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		13A32E01A7466A9E2EDF1D2970A249B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		379143ECAB0FB068F3836D838195FEBF /* Pods-usnit_app-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FC8433A8AB7277B944D4D319C4D3D7 /* Pods-usnit_app-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3C694FC3047158DA088730DB3EA3C302 /* Pods-USNIT-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-USNIT-resources.sh"; sourceTree = "<group>"; };
-		45701932A9B0A1CDCFDA115E683DD057 /* Pods-USNIT-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-USNIT-dummy.m"; sourceTree = "<group>"; };
-		82625F4E6EDB8207B63604405DE265F8 /* Pods-USNIT-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-USNIT-acknowledgements.plist"; sourceTree = "<group>"; };
+		43FA349386292F6E144C979DDD0B8A4C /* Pods-usnit_app-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-usnit_app-acknowledgements.plist"; sourceTree = "<group>"; };
+		758C9C45E7DD5BEFE5EF21B1DDE58A8B /* libPods-usnit_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-usnit_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A7DED1540D21E557FF94422D5358451C /* libPods-USNIT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-USNIT.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B26392C62F3C680039412FA560D367F0 /* Pods-USNIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-USNIT.debug.xcconfig"; sourceTree = "<group>"; };
-		B38A4AF0FBC2B85C0905CA98148B124C /* Pods-USNIT-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-USNIT-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9F647520CB78A7B9230DDD023BFFFADD /* Pods-usnit_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-usnit_app.debug.xcconfig"; sourceTree = "<group>"; };
+		A2F35E820070EAECA4296DBBC3C216C5 /* Pods-usnit_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-usnit_app.release.xcconfig"; sourceTree = "<group>"; };
+		A3C4D6B9FD7AACFE9CAC4CAB86805F8A /* Pods-usnit_app-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-usnit_app-resources.sh"; sourceTree = "<group>"; };
+		C1A73BFC19FAD382AA642AB04C43A20C /* Pods-usnit_app-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-usnit_app-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CE6B7ECAEB922AC1A4A60C3FD202192C /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D7A53CB8A90EF3A795D6650A761F31FC /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "GoogleMobileAdsSdkiOS-7.8.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
-		FD4807963F730D1A49F763774ECB86EA /* Pods-USNIT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-USNIT.release.xcconfig"; sourceTree = "<group>"; };
-		FEE575D81BE84401761E2410251CC5C3 /* Pods-USNIT-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-USNIT-frameworks.sh"; sourceTree = "<group>"; };
+		F3FC8433A8AB7277B944D4D319C4D3D7 /* Pods-usnit_app-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-usnit_app-dummy.m"; sourceTree = "<group>"; };
+		F786CFB65D312A9FC1E1F1D3E6C7499A /* Pods-usnit_app-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-usnit_app-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DE35D014DB31C1CA1EF08E067B389ED3 /* Frameworks */ = {
+		CCCA2792BE0370A63F09A05B92892202 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD58BDF7559C4E57D4F88A5300060E76 /* Foundation.framework in Frameworks */,
+				13A32E01A7466A9E2EDF1D2970A249B3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		12E1E4DC8E5DF7427963BBCC5E34712E /* Frameworks */ = {
+		3D831502A03070884DD15E64051F5F27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D7A53CB8A90EF3A795D6650A761F31FC /* GoogleMobileAds.framework */,
+				CE6B7ECAEB922AC1A4A60C3FD202192C /* GoogleMobileAds.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -53,19 +53,27 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5C1433A063C98BFFAE5A4B4F1F26CB6F /* Pods-USNIT */ = {
+		4A45CC8338702F2523DD8ED5339B7F40 /* Pods-usnit_app */ = {
 			isa = PBXGroup;
 			children = (
-				B38A4AF0FBC2B85C0905CA98148B124C /* Pods-USNIT-acknowledgements.markdown */,
-				82625F4E6EDB8207B63604405DE265F8 /* Pods-USNIT-acknowledgements.plist */,
-				45701932A9B0A1CDCFDA115E683DD057 /* Pods-USNIT-dummy.m */,
-				FEE575D81BE84401761E2410251CC5C3 /* Pods-USNIT-frameworks.sh */,
-				3C694FC3047158DA088730DB3EA3C302 /* Pods-USNIT-resources.sh */,
-				B26392C62F3C680039412FA560D367F0 /* Pods-USNIT.debug.xcconfig */,
-				FD4807963F730D1A49F763774ECB86EA /* Pods-USNIT.release.xcconfig */,
+				C1A73BFC19FAD382AA642AB04C43A20C /* Pods-usnit_app-acknowledgements.markdown */,
+				43FA349386292F6E144C979DDD0B8A4C /* Pods-usnit_app-acknowledgements.plist */,
+				F3FC8433A8AB7277B944D4D319C4D3D7 /* Pods-usnit_app-dummy.m */,
+				F786CFB65D312A9FC1E1F1D3E6C7499A /* Pods-usnit_app-frameworks.sh */,
+				A3C4D6B9FD7AACFE9CAC4CAB86805F8A /* Pods-usnit_app-resources.sh */,
+				9F647520CB78A7B9230DDD023BFFFADD /* Pods-usnit_app.debug.xcconfig */,
+				A2F35E820070EAECA4296DBBC3C216C5 /* Pods-usnit_app.release.xcconfig */,
 			);
-			name = "Pods-USNIT";
-			path = "Target Support Files/Pods-USNIT";
+			name = "Pods-usnit_app";
+			path = "Target Support Files/Pods-usnit_app";
+			sourceTree = "<group>";
+		};
+		582A8FDB1D7BB5D73032EB6593D0FA75 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A45CC8338702F2523DD8ED5339B7F40 /* Pods-usnit_app */,
+			);
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -74,17 +82,9 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				820FBBDA65C5B1A6A4C379A893C27235 /* Pods */,
-				7EA6880B4E3CB8E5AA9AA1A3545A3C7C /* Products */,
-				CAEEE9C4AAB0200F65D7DDE44EDF37DF /* Targets Support Files */,
+				8AC94CF99270A73E5634819362EAEC1C /* Products */,
+				582A8FDB1D7BB5D73032EB6593D0FA75 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		7EA6880B4E3CB8E5AA9AA1A3545A3C7C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A7DED1540D21E557FF94422D5358451C /* libPods-USNIT.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		820FBBDA65C5B1A6A4C379A893C27235 /* Pods */ = {
@@ -95,6 +95,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		8AC94CF99270A73E5634819362EAEC1C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				758C9C45E7DD5BEFE5EF21B1DDE58A8B /* libPods-usnit_app.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,18 +111,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CAEEE9C4AAB0200F65D7DDE44EDF37DF /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5C1433A063C98BFFAE5A4B4F1F26CB6F /* Pods-USNIT */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		E91D6015731707498AAA5817D350B87B /* Google-Mobile-Ads-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				12E1E4DC8E5DF7427963BBCC5E34712E /* Frameworks */,
+				3D831502A03070884DD15E64051F5F27 /* Frameworks */,
 			);
 			path = "Google-Mobile-Ads-SDK";
 			sourceTree = "<group>";
@@ -122,20 +122,20 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DF44D27EE66AD6861C0A54D8A17A2D54 /* Pods-USNIT */ = {
+		120AA15B74E1DF4E5DC995321F525681 /* Pods-usnit_app */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F301E07C8416D333D2777555D48955A0 /* Build configuration list for PBXNativeTarget "Pods-USNIT" */;
+			buildConfigurationList = A40D7B45C6C1BF0303DC3A17F1FE0E1C /* Build configuration list for PBXNativeTarget "Pods-usnit_app" */;
 			buildPhases = (
-				7B353039572073A7065E910F011ACC8A /* Sources */,
-				DE35D014DB31C1CA1EF08E067B389ED3 /* Frameworks */,
+				C82B2D97830C56AA0A4AE76483290301 /* Sources */,
+				CCCA2792BE0370A63F09A05B92892202 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-USNIT";
-			productName = "Pods-USNIT";
-			productReference = A7DED1540D21E557FF94422D5358451C /* libPods-USNIT.a */;
+			name = "Pods-usnit_app";
+			productName = "Pods-usnit_app";
+			productReference = 758C9C45E7DD5BEFE5EF21B1DDE58A8B /* libPods-usnit_app.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -155,48 +155,27 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7EA6880B4E3CB8E5AA9AA1A3545A3C7C /* Products */;
+			productRefGroup = 8AC94CF99270A73E5634819362EAEC1C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DF44D27EE66AD6861C0A54D8A17A2D54 /* Pods-USNIT */,
+				120AA15B74E1DF4E5DC995321F525681 /* Pods-usnit_app */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7B353039572073A7065E910F011ACC8A /* Sources */ = {
+		C82B2D97830C56AA0A4AE76483290301 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E5BE875657FBDE11EB78754D7C54663 /* Pods-USNIT-dummy.m in Sources */,
+				379143ECAB0FB068F3836D838195FEBF /* Pods-usnit_app-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		05395B51330694CC614EB0497A26C404 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD4807963F730D1A49F763774ECB86EA /* Pods-USNIT.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 		3FA2475660FFC880302AD18E29B2E5FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -239,9 +218,30 @@
 			};
 			name = Debug;
 		};
-		527E6CF48263CC36DCA1605C3DACBFB1 /* Debug */ = {
+		6E688404844F18BE83C989D8412D6471 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B26392C62F3C680039412FA560D367F0 /* Pods-USNIT.debug.xcconfig */;
+			baseConfigurationReference = A2F35E820070EAECA4296DBBC3C216C5 /* Pods-usnit_app.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		8407FB4869B1F8D1C5F0C93F783474D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F647520CB78A7B9230DDD023BFFFADD /* Pods-usnit_app.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -310,11 +310,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F301E07C8416D333D2777555D48955A0 /* Build configuration list for PBXNativeTarget "Pods-USNIT" */ = {
+		A40D7B45C6C1BF0303DC3A17F1FE0E1C /* Build configuration list for PBXNativeTarget "Pods-usnit_app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				527E6CF48263CC36DCA1605C3DACBFB1 /* Debug */,
-				05395B51330694CC614EB0497A26C404 /* Release */,
+				8407FB4869B1F8D1C5F0C93F783474D1 /* Debug */,
+				6E688404844F18BE83C989D8412D6471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

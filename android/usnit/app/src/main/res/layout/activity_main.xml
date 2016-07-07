@@ -1,0 +1,624 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="MergeRootFrame">
+
+
+
+    <RelativeLayout
+        android:id="@+id/input_views"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="0dp">
+
+        <TextView
+            android:text="@string/defaul_tittle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/time_label"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/input_text"
+            android:layout_below="@+id/time_label"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/unite_scview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_views"
+        android:layout_above="@+id/ad_view"
+        android:layout_marginTop="0dp"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:id="@+id/unite_views"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <Space
+                android:id="@+id/dummy_center"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/meter"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_marginLeft="@dimen/unit_margin_left"
+                android:layout_marginRight="@dimen/unit_margin_end"
+                android:layout_toLeftOf="@+id/label_meter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:id="@+id/cmeter"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_below="@+id/meter"
+                android:layout_alignLeft="@+id/meter"
+                android:layout_alignRight="@+id/meter"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/kmeter"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cmeter"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_meter"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/meter"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_cmeter"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/cmeter"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_kmeter"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/kmeter"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:id="@+id/feet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/label_meter"
+                android:layout_alignLeft="@+id/dummy_center"
+                android:layout_toLeftOf="@+id/label_feet"
+                android:layout_marginRight="@dimen/unit_margin_end"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:id="@+id/label_feet"
+                android:layout_alignTop="@+id/label_meter"
+                android:layout_alignBottom="@+id/label_meter"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/unit_margin_left"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/inch"
+                android:layout_below="@+id/feet"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_inch"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/inch"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/mile"
+                android:layout_below="@+id/inch"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_mile"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/mile"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/yard"
+                android:layout_below="@+id/mile"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_yard"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/yard"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <View
+                android:background="@android:color/black"
+                android:id="@+id/line1"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/yard"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_marginRight="@dimen/unit_margin_left"
+                android:layout_marginLeft="@dimen/unit_margin_left"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/gram"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line1"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_gram"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/gram"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/kgram"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gram"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_kgram"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/kgram"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lb"
+                android:layout_below="@+id/line1"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_lb"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/lb"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/oz"
+                android:layout_below="@+id/lb"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_oz"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/oz"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <View
+                android:background="@android:color/black"
+                android:id="@+id/line2"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/oz"
+                android:layout_alignLeft="@+id/line1"
+                android:layout_alignRight="@+id/line1"
+                android:layout_marginTop="@dimen/unit_margin_top"/>
+
+            <TextView
+                android:id="@+id/liter"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line2"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_liter"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/liter"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/mliter"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/liter"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_mliter"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/mliter"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/gal"
+                android:layout_below="@+id/line2"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_gal"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/gal"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <View
+                android:background="@android:color/black"
+                android:id="@+id/line3"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/mliter"
+                android:layout_alignLeft="@+id/line1"
+                android:layout_alignRight="@+id/line1"
+                android:layout_marginTop="@dimen/unit_margin_top"/>
+
+            <TextView
+                android:id="@+id/sqmeter"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line3"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_sqmeter"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/sqmeter"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/sqcmeter"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sqmeter"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_sqcmeter"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/sqcmeter"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sqinch"
+                android:layout_below="@+id/line3"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_sqinch"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/sqinch"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sqfeet"
+                android:layout_below="@+id/sqinch"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_sqfeet"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/sqfeet"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <View
+                android:background="@android:color/black"
+                android:id="@+id/line4"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/sqfeet"
+                android:layout_alignLeft="@+id/line1"
+                android:layout_alignRight="@+id/line1"
+                android:layout_marginTop="@dimen/unit_margin_top"/>
+
+            <TextView
+                android:id="@+id/celcius"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line4"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_celcius"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/celcius"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fahrenheit"
+                android:layout_below="@+id/line4"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_fahrenheit"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/fahrenheit"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <View
+                android:background="@android:color/black"
+                android:id="@+id/line5"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/fahrenheit"
+                android:layout_alignLeft="@+id/line1"
+                android:layout_alignRight="@+id/line1"
+                android:layout_marginTop="@dimen/unit_margin_top"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/exchange_info"
+                android:layout_below="@+id/line5"
+                android:layout_alignLeft="@+id/line1"
+                android:layout_alignRight="@+id/line1"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/rmb"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/exchange_info"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_rmb"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/rmb"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dollor"
+                android:layout_below="@+id/exchange_info"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_dollor"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/dollor"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <View
+                android:background="@android:color/black"
+                android:id="@+id/line6"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/label_dollor"
+                android:layout_alignLeft="@+id/line1"
+                android:layout_alignRight="@+id/line1"
+                android:layout_marginTop="30dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id" />
+</RelativeLayout>

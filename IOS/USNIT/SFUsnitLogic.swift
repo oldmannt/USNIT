@@ -8,6 +8,7 @@
 
 import Foundation
 
+/*
 public protocol UsnitLogicObserver:AnyObject {
     func HandleResult(type: USNUsnitEventType, _ result:String) -> Bool
 }
@@ -16,73 +17,80 @@ public class UsnitEventHander: USNUsnitEventGen{
     @objc public func callback(id: USNUsnitEventType, data: String) -> Bool{
         return SFUsnitLogic.sharedInstance.handleCallback(id, data)
     }
-}
+}*/
 
 public class SFUsnitLogic {
     static let sharedInstance = SFUsnitLogic()
-    var observers_result:Array<UsnitLogicObserver>
-    var event_hander:UsnitEventHander
+
     init() {
 
-        observers_result = Array<UsnitLogicObserver>()
-        event_hander = UsnitEventHander()
-        let conf = load_conf()
-        let strlangId = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode) as! String
+       
+        let language_path = NSBundle.mainBundle().pathForResource("language", ofType: "json")
+        GBLanguageStoreGen.instance()?.initialize(language_path!)
         
-        var lang_type = USNLangType.LANGCH
+        let conf = load_conf()
+        GBUserConfigGen.instance()?.initialize(conf)
+        
+        let strlangId = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode) as! String
         if strlangId.rangeOfString("zh")==nil {
-            lang_type = USNLangType.LANGENG
+            GBLanguageStoreGen.instance()?.setLanguage(GBLangType.LANGENG)
+        }
+        else{
+            GBLanguageStoreGen.instance()?.setLanguage(GBLangType.LANGCHS)
         }
         
-        USNUsnitGen.instance()!.initialize(conf.file_path, lang: lang_type, callback: event_hander)
+        let uilogic_path = NSBundle.mainBundle().pathForResource("uilogic", ofType: "json")
+        USNUilogicGen.instance()?.initialize(uilogic_path!)
+        USNUilogicGen.instance()?.buildUi()
+        //USNUsnitGen.instance()!.initialize(uilogic_path, lang: 0, callback: nil)
     }
     
-    private func load_conf()->(file_path:String, file_content:String){
+    private func load_conf()->String{
         var json_str:String = ""
-        let res_path = NSBundle.mainBundle().pathForResource("conf", ofType: "json")
+        let res_path = NSBundle.mainBundle().pathForResource("user", ofType: "json")
         
         var doc_path:String = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        doc_path.appendContentsOf("/conf.json")
-
+        if let version = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String {
+            doc_path.appendContentsOf("/user.\(version).json")
+        }
+        else{
+            doc_path.appendContentsOf("/1.5.json")
+        }
+        
         let fileManager = NSFileManager.defaultManager()
         if fileManager.fileExistsAtPath(doc_path) {
-            GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO, msg: "DOCUMENT CONF FILE AVAILABLE")
             do {
                 json_str = try NSString(contentsOfFile: doc_path, usedEncoding: nil) as String
             }catch let error as NSError{
                 // contents could not be loaded
-                GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO,
-                                         msg: "SFUsnitLogic.init write failed \(error.userInfo) ")
-                return (doc_path, json_str)
+                GBLogGen.instance()?.logerrf("SFUsnitLogic.init write failed \(error.userInfo) ")
+                return res_path!
             }
         } else {
-            GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO, msg: "document conf don't exist")
             do {
                 json_str = try NSString(contentsOfFile: res_path!, usedEncoding: nil) as String
                 
                 do {
-                    //try json_str.writeToURL(doc_conf_url, atomically: false, encoding: NSUTF8StringEncoding)
                     try json_str.writeToFile(doc_path, atomically: true, encoding: NSUTF8StringEncoding)
-                    GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGINFO, msg: "document conf been writed")
                     
                 } catch let error as NSError{
                     // contents could not be loaded
-                    GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGERROR,
-                                             msg: "SFUsnitLogic.init write failed \(error.userInfo) ")
-                    return (res_path!, json_str)
+                    GBLogGen.instance()?.logerrf("SFUsnitLogic.init write failed \(error.userInfo) ")
+                    return res_path!
                 }
             } catch let error as NSError{
                 // contents could not be loaded
-                GBLogGen.instance()?.log(GBLogGenLOGCONSOLE|GBLogGenLOGFILE, lev: GBLogGenLOGERROR,
-                                         msg: "SFUsnitLogic.init \(error.userInfo) load app/conf.json failed")
+                GBLogGen.instance()?.logerrf("SFUsnitLogic.init \(error.userInfo) load app/conf.json failed")
+                return res_path!
             }
             
             
         }
 
-        return (doc_path, json_str)
+        return doc_path
     }
     
+    /*
     public func setUsnitInput(value : Float){
         USNUsnitGen.instance()?.setInput(value)
     }
@@ -132,5 +140,5 @@ public class SFUsnitLogic {
         
         return true;
 
-    }
+    }*/
 }

@@ -23,10 +23,8 @@ LOCAL_GENERATED_SOURCES :=
 GYP_COPIED_SOURCE_ORIGIN_DIRS :=
 
 LOCAL_SRC_FILES := \
-	generated-src/jni/NativeUsnitEventGen.cpp \
-	generated-src/jni/NativeUsnitGen.cpp \
-	generated-src/cpp/usnit_gen.cpp \
-	cpp/UsnitLogic.cpp
+	generated-src/jni/NativeUilogicGen.cpp \
+	generated-src/jni/NativeUsnitEventGen.cpp
 
 
 # Flags passed to both C and C++ files.
@@ -49,7 +47,10 @@ LOCAL_C_INCLUDES_Debug := \
 	$(LOCAL_PATH)/generated-src/jni \
 	$(LOCAL_PATH)/generated-src/cpp \
 	$(LOCAL_PATH)/cpp \
+	$(LOCAL_PATH)/gearsbox/deps/djinni/support-lib/jni \
+	$(LOCAL_PATH)/gearsbox/generated-src/cpp \
 	$(LOCAL_PATH)/gearsbox/interface \
+	$(LOCAL_PATH)/gearsbox/src/cpp/ui \
 	$(LOCAL_PATH)/gearsbox/deps/sqlite3 \
 	$(LOCAL_PATH)/gearsbox/deps/curl \
 	$(LOCAL_PATH)/gearsbox/deps/curl/curl
@@ -85,7 +86,10 @@ LOCAL_C_INCLUDES_Release := \
 	$(LOCAL_PATH)/generated-src/jni \
 	$(LOCAL_PATH)/generated-src/cpp \
 	$(LOCAL_PATH)/cpp \
+	$(LOCAL_PATH)/gearsbox/deps/djinni/support-lib/jni \
+	$(LOCAL_PATH)/gearsbox/generated-src/cpp \
 	$(LOCAL_PATH)/gearsbox/interface \
+	$(LOCAL_PATH)/gearsbox/src/cpp/ui \
 	$(LOCAL_PATH)/gearsbox/deps/sqlite3 \
 	$(LOCAL_PATH)/gearsbox/deps/curl \
 	$(LOCAL_PATH)/gearsbox/deps/curl/curl

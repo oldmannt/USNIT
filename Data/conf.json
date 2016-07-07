@@ -1,21 +1,103 @@
 {
+    "typesets":[
+               {"name":"length", "base_unit":"meter","units":[
+                   {"name":"meter", "us":false, "func":"", "multiply":1.0},
+                   {"name":"cmeter", "us":false, "multiply":100},
+                   {"name":"kmeter", "us":false, "multiply":0.001},
+                   {"name":"feet", "us":true, "multiply":3.2808399},
+                   {"name":"inch", "us":true, "multiply":39.3700787},
+                   {"name":"mile", "us":true, "multiply":0.0006214},
+                   {"name":"yard", "us":true, "multiply":1.0936133}
+               ]},
+                {"name":"mass", "base_unit":"gram", "units":[
+                   {"name":"gram", "us":false, "multiply":1.0},
+                   {"name":"kgram", "us":false, "multiply":0.001},
+                   {"name":"lb", "us":true, "multiply":0.0022046},
+                   {"name":"oz", "us":true, "multiply":0.035274}
+               ]},
+                {"name":"volume", "base_unit":"liter", "units":[
+                   {"name":"liter", "us":false, "func":"", "multiply":1.0},
+                   {"name":"mliter", "us":false, "func":"", "multiply":1000},
+                   {"name":"gal", "us":true,"func":"", "multiply":0.2199692}
+               ]},
+                {"name":"square", "base_unit":"sqmeter", "units":[
+                   {"name":"sqmeter", "us":false, "func":"", "multiply":1.0},
+                   {"name":"sqcmeter", "us":false, "func":"", "multiply":10000},
+                   {"name":"sqinch", "us":true, "func":"", "multiply":1550.0031},
+                   {"name":"sqfeet", "us":true, "func":"", "multiply":10.7639104}
+               ]},
+                {"name":"termperature", "base_unit":"celcius", "units":[
+                   {"name":"celcius", "us":false,"func":"", "multiply":1.0},
+                   {"name":"fahrenheit", "us":true, "func":"", "multiply":1.8, "offset":32}
+               ]},
+                {"name":"exchange", "base_unit":"rmb", "units":[
+                   {"name":"rmb", "us":false,"func":"", "multiply":1.0},
+                   {"name":"dollor", "us":true,"func":"", "multiply":6.5971}
+               ]}
+            ],
+    "font":{
+        "exchange_info":10,
+        "unit_name":12
+    },
+    "user":{
+        "language":"ch",
+        "start_counter":1,
+        "exchange":{
+            "exchange_ask":6.500,
+            "exchange_bid":6.49,
+            "exchange_rate":6.49,
+            "exchange_date":"5/7/2016",
+            "exchange_url":"http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22USDCNY%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
+        },
+        "select":{
+            "length":"meter",
+            "mass":"gram",
+            "volume":"liter",
+            "square":"sqmeter",
+            "termperature":"celcius",
+            "exchange":"rmb"
+        }
+    },
+    "language":{
+        "time_zone_bj":{"ch":"北京时间:", "us":"Beijing"},
+        "time_zone_usw":{"ch":"美国西部时间:", "us":"west us:"},
+        "time_zone_usm":{"ch":"美国中部时间:", "us":"middle us:"},
+        "time_zone_use":{"ch":"美国东部时间:", "us":"east us:"},
+        "date:":{"ch":" %m月%d日 %R", "us":" %b %d %R"},
+        "exchange_info":{"ch":"%s的离岸汇率,汇卖价:%.04f,汇买价:%.04f",
+                         "us":"From Yahoo:%s Buying Rate:%.04f Selling Rate:%.04f"},
+        "meter":{"ch":"米", "us":"m"},
+        "cmeter":{"ch":"厘米", "us":"cm"},
+        "kmeter":{"ch":"公里", "us":"km"},
+        "feet":{"ch":"英尺", "us":"ft"},
+        "inch":{"ch":"英寸", "us":"inch"},
+        "mile":{"ch":"英里", "us":"mile"},
+        "yard":{"ch":"码", "us":"yard"},
+        "gram":{"ch":"克", "us":"gram"},
+        "kgram":{"ch":"千克", "us":"kg"},
+        "lb":{"ch":"磅", "us":"lb"},
+        "oz":{"ch":"盎司", "us":"oz"},
+        "liter":{"ch":"升", "us":"L"},
+        "mliter":{"ch":"毫升", "us":"ml"},
+        "gal":{"ch":"加仑", "us":"gal"},
+        "sqmeter":{"ch":"平方米", "us":"m²"},
+        "sqcmeter":{"ch":"平方厘米", "us":"cm²"},
+        "sqinch":{"ch":"平方英寸", "us":"inch²"},
+        "sqfeet":{"ch":"平方英尺", "us":"ft²"},
+        "celcius":{"ch":"摄氏度", "us":"°C"},
+        "fahrenheit":{"ch":"华氏度", "us":"°F"},
+        "rmb":{"ch":"元", "us":"¥"},
+        "dollor":{"ch":"美元", "us":"$"}
+    },
     "start_counter":0,
     "long_type":1,
-    "mass_type":10,
-    "square_type":14,
-    "volume_type":7,
-    "long_type_set":[0,1,2,3,4,5,6],
-    "mass_type_set":[10,11,12,13],
-    "square_type_set":[14,15,16,19],
-    "volume_type_set":[7,8,9],
-    "long_metric_type":1,
-    "long_us_type":3,
-    "mass_metric_type":10,
-    "mass_us_type":12,
-    "square_metric_type":14,
-    "square_us_type":16,
-    "volume_metric_type":7,
-    "volume_us_type":9,
+    "mass_type":11,
+    "square_type":15,
+    "volume_type":8,
+    "long_type_set":[1,2,3,4,5,6,7],
+    "mass_type_set":[11,12,13,14],
+    "square_type_set":[15,16,17,20],
+    "volume_type_set":[8,9,10],
     "exchange_ask":6.500,
     "exchange_bid":6.49,
     "exchange_rate":6.49,

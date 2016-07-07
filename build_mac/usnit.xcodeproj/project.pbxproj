@@ -1,0 +1,869 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		E58FDA98D6544A9863A90BF6 /* All */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E1109C28F2F7A02DB48258C3 /* Build configuration list for PBXAggregateTarget "All" */;
+			buildPhases = (
+			);
+			dependencies = (
+				2C127F9DCB52BE3FADF21A40 /* PBXTargetDependency */,
+				7273A3249075218FA95C885E /* PBXTargetDependency */,
+				45BE6A373498E84DF4D84D7E /* PBXTargetDependency */,
+			);
+			name = All;
+			productName = All;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		1031243CECF935C2E42EC84E /* UILogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 95E3839EE9FA556D28AB5AB5 /* UILogic.cpp */; };
+		1077E0C49336A403D723C1E3 /* USNUsnitEventGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = D8493963346F50FA7E7C2A43 /* USNUsnitEventGen+Private.mm */; };
+		11A003E66F0CAFBE2690F9D6 /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6843281D847349B2DF19682 /* libsqlite3.a */; };
+		23BA51103F044C6D0ADC940D /* USNUsnitGen+Private.mm in Sources */ = {isa = PBXBuildFile; fileRef = 49A8BC59A6DF6EBBA0BD217F /* USNUsnitGen+Private.mm */; };
+		428CAEEFB0B73896D273C20F /* UsnitLogic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */; };
+		5FC65FE5FB5FDB3AFB754C9C /* libusnit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 273033965CC54B6D1E16AA7F /* libusnit.a */; };
+		9327DD7447D6B3C8ABAE5035 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B91DDBFF3A849B277B9D3C6 /* libcurl.a */; };
+		CDC1A147D0CEB079296AE5BE /* -lm in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D51D965349E7C5EE04ED122 /* -lm */; };
+		E88BC99A41AAE4218A81FE63 /* libuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9A0BAE8B69F7662F360489 /* libuv.a */; };
+		EE18E36CBBDA58C7B6207067 /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2AA9C07693623233717B7D /* libgtest.a */; };
+		EE9FCAF7A2BA81B04CB92AFD /* libgearsbox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE0C63F0A14A1FA790F4DEA /* libgearsbox.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		09F1158D949A8101742FF36A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D42BA6C596E63991240A69F3 /* sqlite3.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7E48F2BBAC1B0A6856E26F26;
+			remoteInfo = sqlite3;
+		};
+		0C9895250ACBA770686959AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D00009C5C64A30145656CCF0 /* gearsbox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 19B370ED43C38131B635AD67;
+			remoteInfo = gearsbox;
+		};
+		10B4DE867D5B1D3ED996B124 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D00009C5C64A30145656CCF0 /* gearsbox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45DD4DE04106DB9D6B96E9D6;
+			remoteInfo = gearsbox_objc;
+		};
+		3FCA1FAE1687F69BE5C63EC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E37FF7A832075B8AF10A42B /* libcurl.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F3B339C557535B404B172AAE;
+			remoteInfo = libcurl;
+		};
+		4FE9BB5535CDF7EE2CA48B17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DB73A2E652D84A754A631F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 511CC6ECB188393E2A9A92A1;
+			remoteInfo = usnit;
+		};
+		57289016D7713B3B300718A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47AC68DEEB08E7C40D636D81 /* gtest.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 203C595AB0E93BB1CB960E12;
+			remoteInfo = gtest;
+		};
+		6BFC6EBCEEA170777BC80DCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5E37FF7A832075B8AF10A42B /* libcurl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 939A76A22F96172735F31158;
+			remoteInfo = libcurl;
+		};
+		7999F3CB3AC293D5CA2D4CBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47AC68DEEB08E7C40D636D81 /* gtest.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E0B3F1FB50FAAB76B5E11021;
+			remoteInfo = gtest;
+		};
+		86A51639445C027B8C344DF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DB73A2E652D84A754A631F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27B56351ED6D299FB06A16F7;
+			remoteInfo = usnit_objc;
+		};
+		8C1EE33964CA3F6AE5ACE915 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DB73A2E652D84A754A631F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9E4943B59FB93CE07550B4D;
+			remoteInfo = test;
+		};
+		8CD395FFAE52BFDBF5D29D33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D42BA6C596E63991240A69F3 /* sqlite3.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E8C0CF30B4F67B456B17551;
+			remoteInfo = sqlite3;
+		};
+		A8409FF3449EC5F959EFD240 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF11C47B1521DF4353350E51 /* uv.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 178071661CB321BB5A46AC92;
+			remoteInfo = libuv;
+		};
+		B16C064B716FBE72ED4AADCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF11C47B1521DF4353350E51 /* uv.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1366FBDA3B41EA03E9CC86CA;
+			remoteInfo = libuv;
+		};
+		B3884BDBDCA57D39FF11A336 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D00009C5C64A30145656CCF0 /* gearsbox.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 03D9CB78F2638B3F0B13B8BC;
+			remoteInfo = gearsbox;
+		};
+		CBC7DEE2AFAE23441FD74A58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DB73A2E652D84A754A631F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 511CC6ECB188393E2A9A92A1;
+			remoteInfo = usnit;
+		};
+		D27FBEE6443B81578A56AB2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D00009C5C64A30145656CCF0 /* gearsbox.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 88BB243D8DBF42C2DB2F7D35;
+			remoteInfo = test;
+		};
+		FC713137E9C176BEBB9A2DC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D00009C5C64A30145656CCF0 /* gearsbox.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 7F537FA3265475F5591EA5BD;
+			remoteInfo = test;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UsnitLogic.cpp; sourceTree = "<group>"; };
+		273033965CC54B6D1E16AA7F /* libusnit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libusnit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		294C18D138F451F9A6B0755C /* usnit.gyp */ = {isa = PBXFileReference; explicitFileType = sourcecode; path = usnit.gyp; sourceTree = "<group>"; };
+		30DF8A96D4ED0EC6B1B04691 /* USNUsnitGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USNUsnitGen+Private.h"; sourceTree = "<group>"; };
+		4610FEA4A901D379EDC60051 /* libusnit_objc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libusnit_objc.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		47AC68DEEB08E7C40D636D81 /* gtest.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gtest.xcodeproj; path = build_mac/gearsbox/deps/gtest.xcodeproj; sourceTree = SOURCE_ROOT; };
+		49A8BC59A6DF6EBBA0BD217F /* USNUsnitGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "USNUsnitGen+Private.mm"; sourceTree = "<group>"; };
+		4D51D965349E7C5EE04ED122 /* -lm */ = {isa = PBXFileReference; lastKnownFileType = text; path = "-lm"; sourceTree = "<group>"; };
+		4D67B6D000828CD49F129558 /* usnit_type.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = usnit_type.hpp; sourceTree = "<group>"; };
+		5E37FF7A832075B8AF10A42B /* libcurl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libcurl.xcodeproj; path = build_mac/gearsbox/deps/curl/libcurl.xcodeproj; sourceTree = SOURCE_ROOT; };
+		6B77AF412EDB49C820075CA9 /* USNUsnitEventType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUsnitEventType.h; sourceTree = "<group>"; };
+		7171C1DF80ECF3A921050E81 /* UsnitLogic.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = UsnitLogic.hpp; sourceTree = "<group>"; };
+		7BED148A3A5C9AD86F31C793 /* USNUsnitGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUsnitGen.h; sourceTree = "<group>"; };
+		869BD0915B099BF813E556DA /* common.gypi */ = {isa = PBXFileReference; explicitFileType = sourcecode; name = common.gypi; path = gearsbox/deps/djinni/common.gypi; sourceTree = "<group>"; };
+		95E3839EE9FA556D28AB5AB5 /* UILogic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UILogic.cpp; sourceTree = "<group>"; };
+		9B101F7C790C8C8AF278A633 /* usnit_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = usnit_gen.hpp; sourceTree = "<group>"; };
+		9FCD2C739AF9AA54C0F44919 /* USNUsnitEventGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUsnitEventGen.h; sourceTree = "<group>"; };
+		A78CFB061760239609DBDA8A /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; };
+		B27CDFD850FE3E3FBD865FF3 /* usnit_event_gen.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = usnit_event_gen.hpp; sourceTree = "<group>"; };
+		C815E1E4AABFE2D550F8426F /* usnit_event_type.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = usnit_event_type.hpp; sourceTree = "<group>"; };
+		CF11C47B1521DF4353350E51 /* uv.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = uv.xcodeproj; path = build_mac/gearsbox/deps/libuv/uv.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D00009C5C64A30145656CCF0 /* gearsbox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = gearsbox.xcodeproj; path = build_mac/gearsbox/gearsbox.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D42BA6C596E63991240A69F3 /* sqlite3.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sqlite3.xcodeproj; path = build_mac/gearsbox/deps/sqlite3/sqlite3.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D8493963346F50FA7E7C2A43 /* USNUsnitEventGen+Private.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "USNUsnitEventGen+Private.mm"; sourceTree = "<group>"; };
+		DAE651C54730AD1525EE3A2C /* USNUsnitEventGen+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "USNUsnitEventGen+Private.h"; sourceTree = "<group>"; };
+		DF4F56E1CCD124EDA36FA232 /* USNUsnitType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USNUsnitType.h; sourceTree = "<group>"; };
+		DF56E25FC6D1E2FE1856873F /* UILogic.hpp */ = {isa = PBXFileReference; lastKnownFileType = text; path = UILogic.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6632258E7FDBCFD0FB319DBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		871ADBBCD92FAB2AB66EC643 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEA68AF579A72118160A99CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FC65FE5FB5FDB3AFB754C9C /* libusnit.a in Frameworks */,
+				EE18E36CBBDA58C7B6207067 /* libgtest.a in Frameworks */,
+				EE9FCAF7A2BA81B04CB92AFD /* libgearsbox.a in Frameworks */,
+				11A003E66F0CAFBE2690F9D6 /* libsqlite3.a in Frameworks */,
+				9327DD7447D6B3C8ABAE5035 /* libcurl.a in Frameworks */,
+				E88BC99A41AAE4218A81FE63 /* libuv.a in Frameworks */,
+				CDC1A147D0CEB079296AE5BE /* -lm in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0729AA9C7AA9E988E08F3DD2 = {
+			isa = PBXGroup;
+			children = (
+				421E45E717080F13487BBC40 /* Source */,
+				A555D00525B21238BE1B48E9 /* Projects */,
+				53DB4FC4B5205EC342DA4ACE /* Frameworks */,
+				1893E8FAB6F63640B2F77038 /* Products */,
+				3FC340FE50BF95AFB3386B13 /* Build */,
+			);
+			sourceTree = "<group>";
+		};
+		1893E8FAB6F63640B2F77038 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				273033965CC54B6D1E16AA7F /* libusnit.a */,
+				4610FEA4A901D379EDC60051 /* libusnit_objc.a */,
+				A78CFB061760239609DBDA8A /* test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F21DCE4DA5975D3E4C42B46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCE0C63F0A14A1FA790F4DEA /* libgearsbox.a */,
+				4AC8E5CF13C170C9785AB419 /* libgearsbox_objc.a */,
+				CF4E59F8B6C72F241028C1C7 /* test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A12DF14C51D1F2E826E9126 /* generated-src */ = {
+			isa = PBXGroup;
+			children = (
+				B8FBD829B99DBEB9F57C98FD /* cpp */,
+				41D541C02BE62ED41DB6CCF3 /* objc */,
+			);
+			path = "generated-src";
+			sourceTree = "<group>";
+		};
+		3FC340FE50BF95AFB3386B13 /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				869BD0915B099BF813E556DA /* common.gypi */,
+				294C18D138F451F9A6B0755C /* usnit.gyp */,
+			);
+			name = Build;
+			sourceTree = "<group>";
+		};
+		41D541C02BE62ED41DB6CCF3 /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				DAE651C54730AD1525EE3A2C /* USNUsnitEventGen+Private.h */,
+				D8493963346F50FA7E7C2A43 /* USNUsnitEventGen+Private.mm */,
+				9FCD2C739AF9AA54C0F44919 /* USNUsnitEventGen.h */,
+				6B77AF412EDB49C820075CA9 /* USNUsnitEventType.h */,
+				30DF8A96D4ED0EC6B1B04691 /* USNUsnitGen+Private.h */,
+				49A8BC59A6DF6EBBA0BD217F /* USNUsnitGen+Private.mm */,
+				7BED148A3A5C9AD86F31C793 /* USNUsnitGen.h */,
+				DF4F56E1CCD124EDA36FA232 /* USNUsnitType.h */,
+			);
+			path = objc;
+			sourceTree = "<group>";
+		};
+		421E45E717080F13487BBC40 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				C91F99776AA3ED6579BD4512 /* cpp */,
+				3A12DF14C51D1F2E826E9126 /* generated-src */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		53DB4FC4B5205EC342DA4ACE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D51D965349E7C5EE04ED122 /* -lm */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C0F18C9942597CAFCD58169 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D2AA9C07693623233717B7D /* libgtest.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9314BF7EF8377626A42A0395 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA9A0BAE8B69F7662F360489 /* libuv.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A555D00525B21238BE1B48E9 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				D00009C5C64A30145656CCF0 /* gearsbox.xcodeproj */,
+				47AC68DEEB08E7C40D636D81 /* gtest.xcodeproj */,
+				5E37FF7A832075B8AF10A42B /* libcurl.xcodeproj */,
+				D42BA6C596E63991240A69F3 /* sqlite3.xcodeproj */,
+				CF11C47B1521DF4353350E51 /* uv.xcodeproj */,
+			);
+			name = Projects;
+			sourceTree = "<group>";
+		};
+		B2C6E8B801BA6BE42FBE01FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B91DDBFF3A849B277B9D3C6 /* libcurl.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B8FBD829B99DBEB9F57C98FD /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				B27CDFD850FE3E3FBD865FF3 /* usnit_event_gen.hpp */,
+				C815E1E4AABFE2D550F8426F /* usnit_event_type.hpp */,
+				9B101F7C790C8C8AF278A633 /* usnit_gen.hpp */,
+				4D67B6D000828CD49F129558 /* usnit_type.hpp */,
+			);
+			path = cpp;
+			sourceTree = "<group>";
+		};
+		BDF67D59B98A2DA0CACD30DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6843281D847349B2DF19682 /* libsqlite3.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C91F99776AA3ED6579BD4512 /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				95E3839EE9FA556D28AB5AB5 /* UILogic.cpp */,
+				DF56E25FC6D1E2FE1856873F /* UILogic.hpp */,
+				06BC903E305ABA0C8A6F99CE /* UsnitLogic.cpp */,
+				7171C1DF80ECF3A921050E81 /* UsnitLogic.hpp */,
+			);
+			path = cpp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27B56351ED6D299FB06A16F7 /* usnit_objc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C0B249979831B0055362DAC /* Build configuration list for PBXNativeTarget "usnit_objc" */;
+			buildPhases = (
+				3B5D55B4D136DF5605CC499E /* Sources */,
+				871ADBBCD92FAB2AB66EC643 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = usnit_objc;
+			productName = usnit_objc;
+			productReference = 4610FEA4A901D379EDC60051 /* libusnit_objc.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		511CC6ECB188393E2A9A92A1 /* usnit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53C661DE700B0722875F7D7A /* Build configuration list for PBXNativeTarget "usnit" */;
+			buildPhases = (
+				AB5458E0671D7D71193D595B /* Sources */,
+				6632258E7FDBCFD0FB319DBE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = usnit;
+			productName = usnit;
+			productReference = 273033965CC54B6D1E16AA7F /* libusnit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C9E4943B59FB93CE07550B4D /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA649D5132750A26E066BA7F /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				ED7913487536E68B5516D78B /* Sources */,
+				FEA68AF579A72118160A99CD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74032CE9695A9FBD1D2DF13E /* PBXTargetDependency */,
+				96CC967A7FB0E05B3679D5F2 /* PBXTargetDependency */,
+				6DA8D380CF7F8F2E6FDE2171 /* PBXTargetDependency */,
+				529D9FA8917B90C24DDC90FE /* PBXTargetDependency */,
+				BA7087FBD25A2191AEB94546 /* PBXTargetDependency */,
+				29FBEA04A2427EE8A85194D7 /* PBXTargetDependency */,
+				A9293FC84ECD002A6DA3B569 /* PBXTargetDependency */,
+			);
+			name = test;
+			productName = test;
+			productReference = A78CFB061760239609DBDA8A /* test */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DB73A2E652D84A754A631F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+			};
+			buildConfigurationList = BFD05A1554232B6A6B5A60E1 /* Build configuration list for PBXProject "usnit" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 1;
+			mainGroup = 0729AA9C7AA9E988E08F3DD2;
+			projectDirPath = ..;
+			projectReferences = (
+				{
+					ProductGroup = 2F21DCE4DA5975D3E4C42B46 /* Products */;
+					ProjectRef = D00009C5C64A30145656CCF0 /* gearsbox.xcodeproj */;
+				},
+				{
+					ProductGroup = 6C0F18C9942597CAFCD58169 /* Products */;
+					ProjectRef = 47AC68DEEB08E7C40D636D81 /* gtest.xcodeproj */;
+				},
+				{
+					ProductGroup = B2C6E8B801BA6BE42FBE01FE /* Products */;
+					ProjectRef = 5E37FF7A832075B8AF10A42B /* libcurl.xcodeproj */;
+				},
+				{
+					ProductGroup = BDF67D59B98A2DA0CACD30DB /* Products */;
+					ProjectRef = D42BA6C596E63991240A69F3 /* sqlite3.xcodeproj */;
+				},
+				{
+					ProductGroup = 9314BF7EF8377626A42A0395 /* Products */;
+					ProjectRef = CF11C47B1521DF4353350E51 /* uv.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				E58FDA98D6544A9863A90BF6 /* All */,
+				511CC6ECB188393E2A9A92A1 /* usnit */,
+				27B56351ED6D299FB06A16F7 /* usnit_objc */,
+				C9E4943B59FB93CE07550B4D /* test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		2D2AA9C07693623233717B7D /* libgtest.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgtest.a;
+			remoteRef = 7999F3CB3AC293D5CA2D4CBB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4AC8E5CF13C170C9785AB419 /* libgearsbox_objc.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgearsbox_objc.a;
+			remoteRef = 10B4DE867D5B1D3ED996B124 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6B91DDBFF3A849B277B9D3C6 /* libcurl.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libcurl.a;
+			remoteRef = 6BFC6EBCEEA170777BC80DCA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		BCE0C63F0A14A1FA790F4DEA /* libgearsbox.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libgearsbox.a;
+			remoteRef = 0C9895250ACBA770686959AB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C6843281D847349B2DF19682 /* libsqlite3.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libsqlite3.a;
+			remoteRef = 09F1158D949A8101742FF36A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CF4E59F8B6C72F241028C1C7 /* test */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = test;
+			remoteRef = FC713137E9C176BEBB9A2DC0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DA9A0BAE8B69F7662F360489 /* libuv.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libuv.a;
+			remoteRef = B16C064B716FBE72ED4AADCB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B5D55B4D136DF5605CC499E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1077E0C49336A403D723C1E3 /* USNUsnitEventGen+Private.mm in Sources */,
+				23BA51103F044C6D0ADC940D /* USNUsnitGen+Private.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB5458E0671D7D71193D595B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1031243CECF935C2E42EC84E /* UILogic.cpp in Sources */,
+				428CAEEFB0B73896D273C20F /* UsnitLogic.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED7913487536E68B5516D78B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		29FBEA04A2427EE8A85194D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libcurl;
+			targetProxy = 3FCA1FAE1687F69BE5C63EC5 /* PBXContainerItemProxy */;
+		};
+		2C127F9DCB52BE3FADF21A40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 511CC6ECB188393E2A9A92A1 /* usnit */;
+			targetProxy = 4FE9BB5535CDF7EE2CA48B17 /* PBXContainerItemProxy */;
+		};
+		45BE6A373498E84DF4D84D7E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9E4943B59FB93CE07550B4D /* test */;
+			targetProxy = 8C1EE33964CA3F6AE5ACE915 /* PBXContainerItemProxy */;
+		};
+		529D9FA8917B90C24DDC90FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = gearsbox;
+			targetProxy = B3884BDBDCA57D39FF11A336 /* PBXContainerItemProxy */;
+		};
+		6DA8D380CF7F8F2E6FDE2171 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = gtest;
+			targetProxy = 57289016D7713B3B300718A4 /* PBXContainerItemProxy */;
+		};
+		7273A3249075218FA95C885E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27B56351ED6D299FB06A16F7 /* usnit_objc */;
+			targetProxy = 86A51639445C027B8C344DF5 /* PBXContainerItemProxy */;
+		};
+		74032CE9695A9FBD1D2DF13E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 511CC6ECB188393E2A9A92A1 /* usnit */;
+			targetProxy = CBC7DEE2AFAE23441FD74A58 /* PBXContainerItemProxy */;
+		};
+		96CC967A7FB0E05B3679D5F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = test;
+			targetProxy = D27FBEE6443B81578A56AB2E /* PBXContainerItemProxy */;
+		};
+		A9293FC84ECD002A6DA3B569 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libuv;
+			targetProxy = A8409FF3449EC5F959EFD240 /* PBXContainerItemProxy */;
+		};
+		BA7087FBD25A2191AEB94546 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sqlite3;
+			targetProxy = 8CD395FFAE52BFDBF5D29D33 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		284BC4E8586C13B4B1BEEBAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
+				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";
+			};
+			name = Release;
+		};
+		4BFD2E7E05C1C3A42767072E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEAD_CODE_STRIPPING = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"generated-src/cpp",
+					cpp,
+					gearsbox/src/cpp/ui,
+					"gearsbox/generated-src/cpp",
+					gearsbox/interface,
+					gearsbox/src/ui,
+					gearsbox/deps/sqlite3,
+					gearsbox/deps/curl,
+					gearsbox/deps/curl/curl,
+				);
+				OTHER_CFLAGS = "-Wall";
+				OTHER_CPLUSPLUSFLAGS = "-Wall";
+				PRODUCT_NAME = usnit;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6BBB385956F28852B3E000AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INTERMEDIATE_DIR = "$(PROJECT_DERIVED_FILE_DIR)/$(CONFIGURATION)";
+				SHARED_INTERMEDIATE_DIR = "$(SYMROOT)/DerivedSources/$(CONFIGURATION)";
+			};
+			name = Debug;
+		};
+		73E4C45EB5458B468CE782FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEAD_CODE_STRIPPING = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"generated-src/objc",
+					"generated-src/cpp",
+					cpp,
+					"gearsbox/deps/djinni/support-lib/objc",
+					gearsbox/src/cpp/ui,
+					"gearsbox/generated-src/cpp",
+					gearsbox/interface,
+					gearsbox/src/ui,
+					gearsbox/deps/sqlite3,
+					gearsbox/deps/curl,
+					gearsbox/deps/curl/curl,
+					"gearsbox/generated-src/objc",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-Wall";
+				OTHER_CPLUSPLUSFLAGS = "-Wall";
+				PRODUCT_NAME = usnit_objc;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		85948BDB75187A2486718390 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = All;
+			};
+			name = Debug;
+		};
+		9844701BD98A5EC2E5A45019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEAD_CODE_STRIPPING = YES;
+				EXECUTABLE_PREFIX = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					TEST_STAND_ALONE,
+					GEARSBOX_TEST,
+					"NDEBUG=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					.,
+					test,
+					"gearsbox/generated-src/cpp",
+					gearsbox/interface,
+					gearsbox/src/ui,
+					gearsbox/deps/sqlite3,
+					gearsbox/deps/curl,
+					gearsbox/deps/curl/curl,
+					"gearsbox/deps/gtest-1.7.0/include",
+				);
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = "-Wall";
+				OTHER_CPLUSPLUSFLAGS = "-Wall";
+				PRODUCT_NAME = test;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		A5CFD258DD71BC16E8B7DFEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEAD_CODE_STRIPPING = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"generated-src/cpp",
+					cpp,
+					gearsbox/src/cpp/ui,
+					"gearsbox/generated-src/cpp",
+					gearsbox/interface,
+					gearsbox/src/ui,
+					gearsbox/deps/sqlite3,
+					gearsbox/deps/curl,
+					gearsbox/deps/curl/curl,
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-Wall";
+				OTHER_CPLUSPLUSFLAGS = "-Wall";
+				PRODUCT_NAME = usnit;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B658A19F56CA9F0A5C7F89F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = All;
+			};
+			name = Release;
+		};
+		B6BA2E9B3ECE3CE19BE78251 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEAD_CODE_STRIPPING = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_PREPROCESSOR_DEFINITIONS = "NDEBUG=1";
+				HEADER_SEARCH_PATHS = (
+					"generated-src/objc",
+					"generated-src/cpp",
+					cpp,
+					"gearsbox/deps/djinni/support-lib/objc",
+					gearsbox/src/cpp/ui,
+					"gearsbox/generated-src/cpp",
+					gearsbox/interface,
+					gearsbox/src/ui,
+					gearsbox/deps/sqlite3,
+					gearsbox/deps/curl,
+					gearsbox/deps/curl/curl,
+					"gearsbox/generated-src/objc",
+				);
+				OTHER_CFLAGS = "-Wall";
+				OTHER_CPLUSPLUSFLAGS = "-Wall";
+				PRODUCT_NAME = usnit_objc;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D0F21E26CD9B6176B25D80E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEAD_CODE_STRIPPING = YES;
+				EXECUTABLE_PREFIX = "";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					TEST_STAND_ALONE,
+					GEARSBOX_TEST,
+					"DEBUG=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					.,
+					test,
+					"gearsbox/generated-src/cpp",
+					gearsbox/interface,
+					gearsbox/src/ui,
+					gearsbox/deps/sqlite3,
+					gearsbox/deps/curl,
+					gearsbox/deps/curl/curl,
+					"gearsbox/deps/gtest-1.7.0/include",
+				);
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-Wall";
+				OTHER_CPLUSPLUSFLAGS = "-Wall";
+				PRODUCT_NAME = test;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C0B249979831B0055362DAC /* Build configuration list for PBXNativeTarget "usnit_objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73E4C45EB5458B468CE782FF /* Debug */,
+				B6BA2E9B3ECE3CE19BE78251 /* Release */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Debug;
+		};
+		53C661DE700B0722875F7D7A /* Build configuration list for PBXNativeTarget "usnit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5CFD258DD71BC16E8B7DFEE /* Debug */,
+				4BFD2E7E05C1C3A42767072E /* Release */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Debug;
+		};
+		BFD05A1554232B6A6B5A60E1 /* Build configuration list for PBXProject "usnit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BBB385956F28852B3E000AC /* Debug */,
+				284BC4E8586C13B4B1BEEBAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Debug;
+		};
+		DA649D5132750A26E066BA7F /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0F21E26CD9B6176B25D80E1 /* Debug */,
+				9844701BD98A5EC2E5A45019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Debug;
+		};
+		E1109C28F2F7A02DB48258C3 /* Build configuration list for PBXAggregateTarget "All" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85948BDB75187A2486718390 /* Debug */,
+				B658A19F56CA9F0A5C7F89F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 1;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DB73A2E652D84A754A631F1 /* Project object */;
+}

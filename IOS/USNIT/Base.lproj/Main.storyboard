@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -18,8 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MMQ-9E-3gs">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMQ-9E-3gs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6on-Cr-U5u" userLabel="lblFeet">
                                         <rect key="frame" x="302" y="90" width="236" height="21"/>
@@ -56,15 +57,6 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-xe-c16" userLabel="edtInput">
-                                        <rect key="frame" x="21" y="40" width="558" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <action selector="onInputChange:" destination="9pv-A4-QxB" eventType="editingChanged" id="1uH-Yx-0YO"/>
-                                        </connections>
-                                    </textField>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMz-RU-vEI" userLabel="lblPound">
                                         <rect key="frame" x="302" y="373" width="236" height="21"/>
                                         <color key="backgroundColor" red="0.21686937231789116" green="1" blue="0.10523459647960187" alpha="1" colorSpace="calibratedRGB"/>
@@ -390,6 +382,15 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-xe-c16" userLabel="edtInput">
+                                        <rect key="frame" x="86" y="40" width="558" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onInputChange:" destination="9pv-A4-QxB" eventType="editingChanged" id="1uH-Yx-0YO"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Wu7-ZV-AvK" firstAttribute="leading" secondItem="Kco-eP-0aq" secondAttribute="trailing" id="07a-kx-WY0"/>
@@ -419,7 +420,6 @@
                                     <constraint firstItem="gYa-w3-2ld" firstAttribute="width" secondItem="hlF-Jh-JVX" secondAttribute="width" id="Ak6-WE-mZd"/>
                                     <constraint firstItem="hBp-l5-1oh" firstAttribute="top" secondItem="klt-s6-Mhc" secondAttribute="bottom" constant="8" id="Am7-vs-Co7"/>
                                     <constraint firstItem="RUt-ih-PSR" firstAttribute="top" secondItem="gPc-xP-tr5" secondAttribute="top" id="Asx-zn-bx8"/>
-                                    <constraint firstAttribute="trailing" secondItem="GP6-xe-c16" secondAttribute="trailing" constant="21" id="BLv-Lo-0dz"/>
                                     <constraint firstItem="qNz-3p-Jtt" firstAttribute="top" secondItem="3Ky-ue-izZ" secondAttribute="bottom" constant="8" id="Bhs-h9-CeE"/>
                                     <constraint firstItem="lDe-I1-l4Z" firstAttribute="top" secondItem="NdE-X6-2BT" secondAttribute="bottom" constant="8" id="CGc-Vx-7mA"/>
                                     <constraint firstItem="GP6-xe-c16" firstAttribute="top" secondItem="MMQ-9E-3gs" secondAttribute="top" constant="40" id="CIb-4v-c2X"/>
@@ -541,7 +541,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="MMQ-9E-3gs" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="7Cp-bD-mwD"/>
                             <constraint firstItem="MMQ-9E-3gs" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="FWV-Lf-Bcc"/>
                             <constraint firstItem="MMQ-9E-3gs" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="R1S-Ea-NFJ"/>
                             <constraint firstItem="MMQ-9E-3gs" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="fzX-EC-rhb"/>
@@ -597,12 +596,82 @@
                         <outlet property="lblUsqm" destination="0hy-GJ-a9n" id="3UA-GX-jeF"/>
                         <outlet property="lblUyard" destination="kL9-AW-aHU" id="dzB-gW-57a"/>
                         <outlet property="lblYard" destination="lDe-I1-l4Z" id="Vii-O6-To0"/>
-                        <outlet property="scView" destination="MMQ-9E-3gs" id="KDh-lT-6SN"/>
+                        <outlet property="scView" destination="MMQ-9E-3gs" id="OsO-15-VgP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="789" y="-47"/>
+            <point key="canvasLocation" x="361" y="561"/>
+        </scene>
+        <!--AutoGenerate-->
+        <scene sceneID="6fW-ug-bZR">
+            <objects>
+                <viewController id="ThI-eE-JlN" userLabel="AutoGenerate" customClass="AutoViewController" customModule="usnit_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bg7-xQ-aNQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="1da-YU-ttH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TIe-r9-M19">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0r-gh-j17" userLabel="ad_banner" customClass="GADBannerView">
+                                <rect key="frame" x="140" y="501" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Qnb-lX-jKR"/>
+                                    <constraint firstAttribute="height" constant="50" id="Sz1-Lx-f4h"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khK-HE-Mhb" userLabel="view_input">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="71"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="4ts-Vt-8Uo"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpC-Nb-gUV" userLabel="sc_view">
+                                <rect key="frame" x="0.0" y="70" width="600" height="431"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Ge-5W-mdR" userLabel="view_unit">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3Ge-5W-mdR" firstAttribute="top" secondItem="lpC-Nb-gUV" secondAttribute="top" id="4DD-px-1Fu"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Ge-5W-mdR" secondAttribute="trailing" id="HHj-3s-f2d"/>
+                                    <constraint firstItem="3Ge-5W-mdR" firstAttribute="leading" secondItem="lpC-Nb-gUV" secondAttribute="leading" id="me3-Cb-7ZV"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lpC-Nb-gUV" firstAttribute="width" secondItem="TIe-r9-M19" secondAttribute="width" identifier="vsc=vroot" id="06J-UV-4gA"/>
+                            <constraint firstItem="khK-HE-Mhb" firstAttribute="top" secondItem="TIe-r9-M19" secondAttribute="topMargin" id="3CX-vM-0wS"/>
+                            <constraint firstItem="k0r-gh-j17" firstAttribute="centerX" secondItem="TIe-r9-M19" secondAttribute="centerX" id="7xH-3L-yLE"/>
+                            <constraint firstItem="khK-HE-Mhb" firstAttribute="centerX" secondItem="TIe-r9-M19" secondAttribute="centerX" id="I7K-pp-eeK"/>
+                            <constraint firstItem="khK-HE-Mhb" firstAttribute="width" secondItem="TIe-r9-M19" secondAttribute="width" identifier="vinput=vsc" id="dDy-2o-CkC"/>
+                            <constraint firstItem="k0r-gh-j17" firstAttribute="top" secondItem="lpC-Nb-gUV" secondAttribute="bottom" id="k4w-B3-zWJ"/>
+                            <constraint firstItem="1da-YU-ttH" firstAttribute="top" secondItem="k0r-gh-j17" secondAttribute="bottom" id="pOH-IK-9hz"/>
+                            <constraint firstItem="3Ge-5W-mdR" firstAttribute="width" secondItem="TIe-r9-M19" secondAttribute="width" id="qBV-oJ-IEw"/>
+                            <constraint firstItem="lpC-Nb-gUV" firstAttribute="top" secondItem="khK-HE-Mhb" secondAttribute="bottom" constant="-1" id="rES-IS-tl3"/>
+                            <constraint firstItem="lpC-Nb-gUV" firstAttribute="centerX" secondItem="TIe-r9-M19" secondAttribute="centerX" id="yVg-Ox-Xkq"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="↑↓" id="FLZ-qW-vuy">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-10"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="viewBanner" destination="k0r-gh-j17" id="oEI-Uw-vSM"/>
+                        <outlet property="viewInput" destination="khK-HE-Mhb" id="I2C-gp-qvd"/>
+                        <outlet property="viewSC" destination="lpC-Nb-gUV" id="mQ3-9g-JR6"/>
+                        <outlet property="viewUnit" destination="3Ge-5W-mdR" id="1bt-3h-f8V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KS3-Mv-Z02" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="415" y="-266"/>
         </scene>
         <!--Help-->
         <scene sceneID="aot-gm-0H8">
@@ -626,7 +695,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F8u-w6-LSP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="668" y="771"/>
+            <point key="canvasLocation" x="-374" y="505"/>
         </scene>
         <!--Usnit Tab Bar Ctl-->
         <scene sceneID="yl2-sM-qoP">
@@ -641,13 +710,13 @@
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="ThI-eE-JlN" kind="relationship" relationship="viewControllers" id="F3s-be-uXO"/>
                         <segue destination="2VT-ON-Jwa" kind="relationship" relationship="viewControllers" id="Q6b-JB-VGJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3" y="-9"/>
+            <point key="canvasLocation" x="-342" y="-307"/>
         </scene>
     </scenes>
 </document>

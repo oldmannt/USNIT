@@ -11,7 +11,9 @@ include $(LOCAL_PATH)/gearsbox/deps/curl/libcurl.target.mk
 include $(LOCAL_PATH)/gearsbox/deps/djinni/support-lib/djinni_jni.target.mk
 include $(LOCAL_PATH)/gearsbox/deps/libuv/libuv.target.mk
 include $(LOCAL_PATH)/gearsbox/deps/sqlite3/sqlite3.target.mk
+include $(LOCAL_PATH)/gearsbox/gearsbox.target.mk
 include $(LOCAL_PATH)/gearsbox/gearsbox_jni.target.mk
+include $(LOCAL_PATH)/usnit.target.mk
 include $(LOCAL_PATH)/usnit_jni.target.mk
 
 # "gyp_all_modules" is a concatenation of the "gyp_all_modules" targets from
