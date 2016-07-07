@@ -27,8 +27,8 @@ namespace usnit {
         TYPE_MASS,
         TYPE_VOLUME,
         TYPE_SQUARE,
-        TYPE_EXCHANGE,
         TYPE_TERMPERATURE,
+        TYPE_EXCHANGE,
         
         TYPE_MAX,
     };
