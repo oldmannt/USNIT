@@ -895,8 +895,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: li lin (32DR82A3MW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: li lin (32DR82A3MW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: li lin (FC2S5D6FQ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: li lin (FC2S5D6FQ2)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				HEADER_SEARCH_PATHS = "";
@@ -905,7 +905,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dyno.fun.USNIT;
 				PRODUCT_NAME = usnit_app;
-				PROVISIONING_PROFILE = "ac73709d-b014-41fb-b0d1-573d774a479c";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "USNIT/USNIT-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -920,8 +920,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: li lin (32DR82A3MW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: li lin (32DR82A3MW)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: li lin (FC2S5D6FQ2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: li lin (FC2S5D6FQ2)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = USNIT/Info.plist;
@@ -929,7 +929,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dyno.fun.USNIT;
 				PRODUCT_NAME = usnit_app;
-				PROVISIONING_PROFILE = "ac73709d-b014-41fb-b0d1-573d774a479c";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "USNIT/USNIT-Bridging-Header.h";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../generated-src/objc\" \"$(SRCROOT)/../gearsbox/generated-src/objc\" \"$(SRCROOT)/../gearsbox/deps/breakpad/src/src/\"";
