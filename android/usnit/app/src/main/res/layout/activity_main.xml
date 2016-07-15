@@ -41,7 +41,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/input_views"
-        android:layout_above="@+id/ad_view"
         android:layout_marginTop="0dp"
         android:layout_centerHorizontal="true">
 
@@ -621,4 +620,11 @@
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
         ads:adUnitId="@string/banner_ad_unit_id" />
+
+    <RelativeLayout android:id="@+id/domob"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true">
+
+    </RelativeLayout>
 </RelativeLayout>
