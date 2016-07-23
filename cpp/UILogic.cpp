@@ -181,10 +181,12 @@ UILogic::~UILogic(){
     m_valueLabels.clear();
 }
 
-void selectUnit(std::shared_ptr<SuperTypeInfo> supter_type_info, const std::string &select_name){
+bool selectUnit(std::shared_ptr<SuperTypeInfo> supter_type_info, const std::string &select_name){
     if (select_name.size()==0){
-        return;
+        return false;
     }
+    
+    bool rt = false;
     LstUnit::iterator itUnits(supter_type_info->units.begin());
     for (; itUnits!=supter_type_info->units.end(); ++itUnits) {
         std::shared_ptr<Unit> unit = *itUnits;
@@ -194,13 +196,16 @@ void selectUnit(std::shared_ptr<SuperTypeInfo> supter_type_info, const std::stri
         if (unit->name != select_name)
             continue;
         
+        rt = true;
         supter_type_info->selectUnit = unit;
         UserConfigGen::instance()->setString(superTypeString(supter_type_info->type), select_name);
     }
+    
+    return rt;
 
 }
 
-void UILogic::updateValueLabel(const std::string& select_name){
+void UILogic::updateValueLabel(const std::string& select_name, bool all){
     
     MapSuperType::iterator itSuper(m_superTypes.begin());
     for (; itSuper!=m_superTypes.end(); ++itSuper) {
@@ -210,7 +215,8 @@ void UILogic::updateValueLabel(const std::string& select_name){
             G_LOG_FC(LOG_ERROR,"supter_type_info null %d", itSuper->first);
             continue;
         }
-        ::selectUnit(supter_type_info, select_name);
+        if (!all && !::selectUnit(supter_type_info, select_name))
+            continue;
         
         if (!supter_type_info->selectUnit || !supter_type_info->selectUnit->label_value){
             G_LOG_FC(LOG_ERROR,"selectUnit or it's valuse label null %d", itSuper->first);
@@ -218,7 +224,11 @@ void UILogic::updateValueLabel(const std::string& select_name){
         }
         
         supter_type_info->selectUnit->value = m_value;
+        //G_LOG_FC(LOG_INFO, "value:%f select:%s m:%f base:%s m:%f", m_value,
+        //         supter_type_info->selectUnit->name.c_str(), supter_type_info->selectUnit->multiply,
+        //         supter_type_info->baseUnit->name.c_str(), supter_type_info->baseUnit->multiply);
         supter_type_info->baseUnit->value = supter_type_info->selectUnit->getBase();
+        //G_LOG_FC(LOG_INFO, "base value:%f",supter_type_info->baseUnit->value);
 
         LstUnit::iterator itUnits(supter_type_info->units.begin());
         for (; itUnits!=supter_type_info->units.end(); ++itUnits) {
@@ -238,7 +248,7 @@ void UILogic::updateValueLabel(const std::string& select_name){
             }
             char buf[128] = {0};
             if (unit->value>1.0f)
-                sprintf(buf, "%.03f", unit->value);
+                sprintf(buf, "%.04f", unit->value);
             else
                 sprintf(buf, "%f", unit->value);
             unit->label_value->setText(buf);
@@ -261,7 +271,7 @@ bool UILogic::handle(const gearsbox::ViewEventParam & param, const std::shared_p
     if (ViewType::LABEL == view->getType()){
         
         if (m_input->getText().size() != 0)
-            updateValueLabel(view->getId());
+            updateValueLabel(view->getId(), false);
         PlatformUtilityGen::instance()->getExcutor()->endEniting(true);
     }
     else if (ViewType::BASE == view->getType()){
@@ -272,7 +282,7 @@ bool UILogic::handle(const gearsbox::ViewEventParam & param, const std::shared_p
             view->getText();
             m_value = atof(param.text.c_str());
             //UsnitGen::instance()->setInput(value);
-            updateValueLabel("");
+            updateValueLabel("", true);
         }
     }
     
@@ -368,13 +378,13 @@ void UILogic::HttpRequestCallback(std::shared_ptr<gearsbox::IHttpRequest> reques
         label->setText(formatRate());
     }
     
-    MapUnit::iterator it(m_allUnits.find("dolor"));
+    MapUnit::iterator it(m_allUnits.find("rmb"));
     if (it != m_allUnits.end()){
         it->second->multiply = UserConfigGen::instance()->getFloat("exchange_rate");
     }
     
     if (std::abs(m_value-0)>0.000001f)
-        updateValueLabel("");
+        updateValueLabel("", true);
     //request = nullptr;
 }
 
@@ -447,7 +457,7 @@ bool UILogic::readAllUnits(Json::Value& conf){
                 if (type["offset"].type() != Json::ValueType::nullValue)
                     unit->offset = type["offset"].asFloat();
                 
-                if (unit->name == "dollor"){
+                if (unit->name == "rmb"){
                     unit->multiply = UserConfigGen::instance()->getFloat("exchange_rate");
                 }
                 

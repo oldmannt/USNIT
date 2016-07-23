@@ -30,9 +30,9 @@
       {"name":"celcius", "us":false,"func":"", "multiply":1.0},
       {"name":"fahrenheit", "us":true, "func":"", "multiply":1.8, "offset":32}
     ]},
-    {"name":"exchange", "base_unit":"rmb", "units":[
-      {"name":"rmb", "us":false,"func":"", "multiply":1.0},
-      {"name":"dollor", "us":true,"func":"", "multiply":6.5971}
+    {"name":"exchange", "base_unit":"dollor", "units":[
+      {"name":"rmb", "us":false,"func":"", "multiply":6.5971},
+      {"name":"dollor", "us":true,"func":"", "multiply":1.0}
     ]}
   ],
   "exchange_font_size":14,

@@ -50,7 +50,6 @@ import java.util.Locale;
 
 import dyno.fun.gearsbox.AdmodBanner;
 import dyno.fun.gearsbox.AsyncLoopGen;
-import dyno.fun.gearsbox.DomobBanner;
 import dyno.fun.gearsbox.KeyboardVisibilityEvent;
 import dyno.fun.gearsbox.KeyboardVisibilityEventListener;
 import dyno.fun.gearsbox.LangType;
@@ -108,10 +107,10 @@ public class MainActivity extends ActionBarActivity {
 
         m_admod = new AdmodBanner(this, findViewById(R.id.ad_view), "ca-app-pub-4953725946697554~9493861829");
         if (!m_admod.loadRequest()){
-            m_domob_banner = new DomobBanner(this, findViewById(R.id.domob), "56OJ2O0IuNyzr/fIYa", "16TLPmioApa3iNUU67WwA2_i");
-            if ((RelativeLayout.LayoutParams)unit_view.getLayoutParams()!=null){
-                ((RelativeLayout.LayoutParams)unit_view.getLayoutParams()).addRule(RelativeLayout.ABOVE, R.id.domob);
-            }
+            //m_domob_banner = new DomobBanner(this, findViewById(R.id.domob), "56OJ2O0IuNyzr/fIYa", "16TLPmioApa3iNUU67WwA2_i");
+            //if ((RelativeLayout.LayoutParams)unit_view.getLayoutParams()!=null){
+            //    ((RelativeLayout.LayoutParams)unit_view.getLayoutParams()).addRule(RelativeLayout.ABOVE, R.id.domob);
+            //}
         }else {
             if ((RelativeLayout.LayoutParams)unit_view.getLayoutParams()!=null){
                 ((RelativeLayout.LayoutParams)unit_view.getLayoutParams()).addRule(RelativeLayout.ABOVE, R.id.ad_view);
@@ -203,9 +202,9 @@ public class MainActivity extends ActionBarActivity {
             //Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
         }
 
-        if (null != m_domob_banner){
-            m_domob_banner.orientationChange();
-        }
+        //if (null != m_domob_banner){
+        //    m_domob_banner.orientationChange();
+        //}
 
         //test();
     }
@@ -384,7 +383,7 @@ public class MainActivity extends ActionBarActivity {
 
     private MainThreadLooper m_looper;
     private AdmodBanner m_admod;
-    private DomobBanner m_domob_banner;
+    //private DomobBanner m_domob_banner;
     /**
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.

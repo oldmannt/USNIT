@@ -932,6 +932,7 @@
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "USNIT/USNIT-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../generated-src/objc\" \"$(SRCROOT)/../gearsbox/generated-src/objc\" \"$(SRCROOT)/../gearsbox/deps/breakpad/src/src/\"";
 			};
 			name = Release;
