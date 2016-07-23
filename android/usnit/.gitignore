@@ -34,5 +34,6 @@ build/
 
 #NDK
 obj/
+externalNativeBuild/*
 
-app/externalNativeBuild
+app/externalNativeBuild/*

@@ -1,4 +1,4 @@
-djinni:gearsbox/gearsbox.djinni gearsbox/ui.djinni usnit.djinni
+djinni:gearsbox/djinni/gearsbox.djinni gearsbox/djinni/ui.djinni usnit.djinni
 	-rm -rf generated-src
 	cd gearsbox/ && make djinni
 	sh ./run_djinni.sh
@@ -17,9 +17,14 @@ android_proj: djinni usnit.gyp ./gearsbox/deps/djinni/support-lib/support_lib.gy
 	sh ./run_djinni.sh
 	ANDROID_BUILD_TOP=$(shell dirname `which ndk-build`) ./gearsbox/deps/gyp/gyp --depth=. -f android -DOS=android -Igearsbox/deps/djinni/common.gypi ./usnit.gyp --root-target=usnit_jni
 
-android: djinni
+.PHONY: android
+android: 
 	cd android/usnit/ && chmod +x gradlew &&./gradlew app:assembleRelease
-	cp android/usnit/app/build/outputs/apk/app-release.apk android/usnit-`date +%Y%m%d-%H%M`.apk
+	cp android/usnit/app/build/outputs/apk/app-armv7-release.apk 	android/usnit-`date +%Y%m%d-%H%M`-armv7.apk
+	cp android/usnit/app/build/outputs/apk/app-armv64-release.apk 	android/usnit-`date +%Y%m%d-%H%M`-arm64.apk
+	cp android/usnit/app/build/outputs/apk/app-fat-release.apk 		android/usnit-`date +%Y%m%d-%H%M`-fat.apk
+	cp android/usnit/app/build/outputs/apk/app-x64-release.apk	android/usnit-`date +%Y%m%d-%H%M`-x64.apk
+	cp android/usnit/app/build/outputs/apk/app-arm-release.apk	android/usnit-`date +%Y%m%d-%H%M`-arm.apk
 	@echo "Apks produced at:"
 	@python ./gearsbox/deps/djinni/example/glob.py ./ '*.apk'
 

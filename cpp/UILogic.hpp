@@ -71,7 +71,7 @@ namespace usnit {
     
     typedef std::map<UsnitSuperType, std::shared_ptr<SuperTypeInfo>> MapSuperType;
     typedef std::map<std::string,std::shared_ptr<Unit>> MapUnit;
-
+    
 class UILogic:public UilogicGen, public gearsbox::ViewEventHandler, public std::enable_shared_from_this<UILogic> {
 public:
     UILogic();
@@ -103,7 +103,7 @@ private:
     std::string getRelativeViewto(const char* name);
     void addConstrainsts(const char* constraint, const char* viewfrom);
     
-    void updateValueLabel(const std::string& select_name);
+    void updateValueLabel(const std::string& select_name, bool all);
     
     std::shared_ptr<gearsbox::TimerGen> m_timer;
     UiBuilding m_uibuilding;

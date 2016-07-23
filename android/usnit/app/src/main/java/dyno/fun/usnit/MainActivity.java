@@ -102,8 +102,20 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ViewGroup unit_view = (ViewGroup)findViewById(R.id.unite_scview);
+        RelativeLayout.LayoutParams rlp = (RelativeLayout.LayoutParams)unit_view.getLayoutParams();
+
         m_admod = new AdmodBanner(this, findViewById(R.id.ad_view), "ca-app-pub-4953725946697554~9493861829");
-        m_admod.loadRequest();
+        if (!m_admod.loadRequest()){
+            //m_domob_banner = new DomobBanner(this, findViewById(R.id.domob), "56OJ2O0IuNyzr/fIYa", "16TLPmioApa3iNUU67WwA2_i");
+            //if ((RelativeLayout.LayoutParams)unit_view.getLayoutParams()!=null){
+            //    ((RelativeLayout.LayoutParams)unit_view.getLayoutParams()).addRule(RelativeLayout.ABOVE, R.id.domob);
+            //}
+        }else {
+            if ((RelativeLayout.LayoutParams)unit_view.getLayoutParams()!=null){
+                ((RelativeLayout.LayoutParams)unit_view.getLayoutParams()).addRule(RelativeLayout.ABOVE, R.id.ad_view);
+            }
+        }
 
         utils.setCurActivity(this);
 
@@ -189,6 +201,10 @@ public class MainActivity extends ActionBarActivity {
         } else if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
             //Toast.makeText(this, "portrait", Toast.LENGTH_SHORT).show();
         }
+
+        //if (null != m_domob_banner){
+        //    m_domob_banner.orientationChange();
+        //}
 
         //test();
     }
@@ -367,6 +383,7 @@ public class MainActivity extends ActionBarActivity {
 
     private MainThreadLooper m_looper;
     private AdmodBanner m_admod;
+    //private DomobBanner m_domob_banner;
     /**
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.

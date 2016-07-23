@@ -1,14 +1,19 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.android.application'
 
 // Create a variable called keystorePropertiesFile, and initialize it to your
 def keystorePropertiesFile = rootProject.file("../../../android/keystore.properties")
-
 // Initialize a new Properties() object called keystoreProperties.
 def keystoreProperties = new Properties()
-
 // Load your keystore.properties file into the keystoreProperties object.
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+def VERSION_NAME = "1.4"
+def VERSION_CODE = 4
+def VERSION_CODE_ARM = VERSION_CODE*1000+1
+def VERSION_CODE_ARMV7 = VERSION_CODE*1000+2
+def VERSION_CODE_ARM64 = VERSION_CODE*1000+3
+def VERSION_CODE_X64 = VERSION_CODE*1000+4
+def VERSION_CODE_FAT = VERSION_CODE*1000
 
 android {
     signingConfigs {
@@ -19,22 +24,69 @@ android {
             storePassword keystoreProperties['storePassword']
         }
     }
-
     compileSdkVersion 23
     buildToolsVersion '24.0.0'
     defaultConfig {
         applicationId "dyno.fun.usnit"
         minSdkVersion 17
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionName VERSION_NAME
 
-        cmake {
-            //targets "target1"
-            //arguments "-DANDROID_TOOLCHAIN=clang"
-            cFlags "-std=c11", "-DZF_LOG_USE_ANDROID_LOG"
-            cppFlags "-std=c++11", "-fexceptions", "-frtti", "-D_GLIBCXX_HAS_GTHREADS"
-            abiFilters "armeabi-v7a", "x86_64"
+        externalNativeBuild {
+            cmake {
+                //targets "target1"
+                //arguments "-DANDROID_TOOLCHAIN=clang"
+                cFlags "-std=c11", "-DZF_LOG_USE_ANDROID_LOG"
+                cppFlags "-std=c++11", "-fexceptions", "-frtti", "-D_GLIBCXX_HAS_GTHREADS"
+                //abiFilters "armeabi-v7a", "x86_64"
+                //abiFilters "x86_64", "armeabi-v7a", "arm64-v8a"
+            }
+        }
+    }
+    productFlavors {
+        arm {
+            versionCode VERSION_CODE_ARM
+            externalNativeBuild {
+                cmake {
+                    abiFilters "armeabi"
+                }
+            }
+        }
+
+        armv7 {
+            versionCode VERSION_CODE_ARMV7
+            externalNativeBuild {
+                cmake {
+                    abiFilters "armeabi-v7a"
+                }
+            }
+        }
+
+        armv64 {
+            versionCode VERSION_CODE_ARM64
+            externalNativeBuild {
+                cmake {
+                    abiFilters "arm64-v8a"
+                }
+            }
+        }
+
+        x64 {
+            versionCode VERSION_CODE_X64
+            externalNativeBuild {
+                cmake {
+                    abiFilters "x86_64"
+                }
+            }
+        }
+
+        fat {
+            versionCode VERSION_CODE_FAT
+            externalNativeBuild {
+                cmake {
+                    abiFilters "x86_64", "armeabi-v7a", "arm64-v8a"
+                }
+            }
         }
     }
     buildTypes {
@@ -53,17 +105,17 @@ android {
                 "src/main/java"
         ]
     }
-
     externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
         }
     }
+
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:appcompat-v7:23.0.0'
     compile 'com.google.firebase:firebase-ads:9.2.0'
     compile 'com.google.android.gms:play-services-ads:9.2.0'
     compile 'com.google.android.gms:play-services-auth:9.2.0'

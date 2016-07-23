@@ -1,6 +1,9 @@
 {
     "time_zone_bj":{"chs":"北京时间:", "eng":"Beijing:"},
+    "time_zone_ushst":{"chs":"美国夏威宜时间:", "eng":"hst us:"},
+    "time_zone_usakst":{"chs":"美国阿拉斯加时间:", "eng":"akst us:"},
     "time_zone_usw":{"chs":"美国西部时间:", "eng":"west us:"},
+    "time_zone_usmt":{"chs":"美国山地时间:", "eng":"mountain us:"},
     "time_zone_usm":{"chs":"美国中部时间:", "eng":"middle us:"},
     "time_zone_use":{"chs":"美国东部时间:", "eng":"east us:"},
     "time_format":{"chs":" %m月%d日 %R", "eng":" %b %d %R"},

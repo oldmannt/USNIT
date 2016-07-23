@@ -16,24 +16,24 @@
 			{"from":"first_unit","to":"","type_from":"height","type_to":"height","multiplier":1,"offset":21},
 			{"from":"first_unit","to":"self","type_from":"top","type_to":"top","multiplier":1,"offset":20},
 			{"from":"first_unit","to":"line1","type_from":"leading","type_to":"leading","multiplier":1,"offset":0},
-			{"from":"first_unit","to":"self","type_from":"width","type_to":"width","multiplier":0.5,"offset":-58}
+			{"from":"first_unit","to":"line1","type_from":"width","type_to":"width","multiplier":0.5,"offset":-52}
 		],
 		"first_us_unit":[
 			{"from":"first_us_unit","to":"first_unit","type_from":"width","type_to":"width","multiplier":1,"offset":0},
 			{"from":"first_us_unit","to":"first_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0},
 			{"from":"first_us_unit","to":"first_unit","type_from":"top","type_to":"top","multiplier":1,"offset":0},
-			{"from":"first_us_unit","to":"line1","type_from":"leading","type_to":"centerx","multiplier":1,"offset":0}
+			{"from":"first_us_unit","to":"line1","type_from":"leading","type_to":"centerx","multiplier":1,"offset":1}
 		],
 		"line_unit_name":[
 			{"from":"line_unit_name","to":"last_unit","type_from":"top","type_to":"top","multiplier":1,"offset":0},
 			{"from":"line_unit_name","to":"first_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0},
-			{"from":"line_unit_name","to":"last_unit","type_from":"leading","type_to":"trailing","multiplier":1,"offset":0},
+			{"from":"line_unit_name","to":"","type_from":"width","type_to":"width","multiplier":1,"offset":51},
 			{"from":"line_unit_name","to":"line1","type_from":"trailing","type_to":"centerx","multiplier":1,"offset":-1}
 		],
 		"line_us_unit_name":[
 			{"from":"line_us_unit_name","to":"last_us_unit","type_from":"top","type_to":"top","multiplier":1,"offset":0},
-			{"from":"line_us_unit_name","to":"line1","type_from":"trailing","type_to":"trailing","multiplier":1,"offset":-1},
-			{"from":"line_us_unit_name","to":"last_us_unit","type_from":"leading","type_to":"trailing","multiplier":1,"offset":0},
+			{"from":"line_us_unit_name","to":"line1","type_from":"trailing","type_to":"trailing","multiplier":1,"offset":0},
+			{"from":"line_us_unit_name","to":"","type_from":"width","type_to":"width","multiplier":1,"offset":51},
 			{"from":"line_us_unit_name","to":"first_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0}
 		],
 		"line_unit":[
@@ -50,7 +50,6 @@
 		],
 		"exchange_info":[
 			{"from":"exchange_info","to":"last_unit","type_from":"top","type_to":"bottom","multiplier":1,"offset":10},
-			{"from":"exchange_info","to":"first_unit","type_from":"height","type_to":"height","multiplier":1,"offset":0},
 			{"from":"exchange_info","to":"first_unit","type_from":"leading","type_to":"leading","multiplier":1,"offset":0},
 			{"from":"exchange_info","to":"line1","type_from":"width","type_to":"width","multiplier":1,"offset":0}
 		]
