@@ -16,8 +16,11 @@
     "inch":{"chs":"英寸", "eng":"inch"},
     "mile":{"chs":"英里", "eng":"mile"},
     "yard":{"chs":"码", "eng":"yard"},
+    "nmi":{"chs":"海里", "eng":"nmi"},
     "gram":{"chs":"克", "eng":"gram"},
     "kgram":{"chs":"千克", "eng":"kg"},
+    "jin":{"chs":"斤", "eng":"jin"},
+    "liang":{"chs":"两", "eng":"liang"},
     "lb":{"chs":"磅", "eng":"lb"},
     "oz":{"chs":"盎司", "eng":"oz"},
     "liter":{"chs":"升", "eng":"L"},
@@ -30,7 +33,11 @@
     "celcius":{"chs":"摄氏度", "eng":"°C"},
     "fahrenheit":{"chs":"华氏度", "eng":"°F"},
     "rmb":{"chs":"元", "eng":"¥"},
-    "dollor":{"chs":"美元", "eng":"$"}
+    "dollor":{"chs":"美元", "eng":"$"},
+    "pa":{"chs":"帕", "eng":"Pa"},
+    "kpa":{"chs":"千帕", "eng":"kPa"},
+    "psi":{"chs":"磅英寸", "eng":"psi"},
+    "psf":{"chs":"磅英尺", "eng":"psf"}
 }
 
 

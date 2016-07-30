@@ -208,7 +208,11 @@
 			};
 			buildConfigurationList = BFD05A1554232B6A6B5A60E1 /* Build configuration list for PBXProject "usnit" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 2E8933E7F0FD20EEF503F5C4;
 			projectDirPath = ../..;
 			projectRoot = "";
@@ -345,6 +349,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DEAD_CODE_STRIPPING = YES;
 				EXECUTABLE_PREFIX = lib;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				HEADER_SEARCH_PATHS = (
 					"generated-src/cpp",

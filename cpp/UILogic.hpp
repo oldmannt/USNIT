@@ -57,7 +57,6 @@ namespace usnit {
     typedef std::list<std::shared_ptr<Unit>> LstUnit;
     
     struct SuperTypeInfo{
-        UsnitSuperType type;
         std::string name;
         std::shared_ptr<Unit> selectUnit;
         std::shared_ptr<Unit> baseUnit;
@@ -69,7 +68,7 @@ namespace usnit {
         }
     };
     
-    typedef std::map<UsnitSuperType, std::shared_ptr<SuperTypeInfo>> MapSuperType;
+    typedef std::map<int, std::shared_ptr<SuperTypeInfo>> MapSuperType;
     typedef std::map<std::string,std::shared_ptr<Unit>> MapUnit;
     
 class UILogic:public UilogicGen, public gearsbox::ViewEventHandler, public std::enable_shared_from_this<UILogic> {

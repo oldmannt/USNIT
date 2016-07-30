@@ -14,7 +14,7 @@ class AutoViewController: UIViewController {
     
     @IBOutlet weak var viewSC: UIScrollView!
     @IBOutlet weak var viewInput: UIView!
-    @IBOutlet weak var viewUnit: UIView!
+    //@IBOutlet weak var viewUnit: UIView!
     var genViewInput:GBViewImp?
     var genViewUnit:GBViewImp?
     var m_ad:AdmobBanner!
@@ -34,7 +34,7 @@ class AutoViewController: UIViewController {
 
         GBUiManagerGen.instance()?.initialize(res_path!, factory: GBViewFactoryImp.instance)
         genViewInput = GBViewImp(id:"input_view", view: viewInput, constroller: self)
-        genViewUnit = GBViewImp(id:"unit_view", view: viewUnit, constroller: self)
+        genViewUnit = GBViewImp(id:"unit_view", view: viewSC, constroller: self)
 
         GBUiManagerGen.instance()?.inject(genViewInput)
         GBUiManagerGen.instance()?.inject(genViewUnit)
@@ -51,7 +51,6 @@ class AutoViewController: UIViewController {
        //     relatedBy: .Equal, toItem: m_ad.bannerView , attribute: .Top, multiplier: 1, constant: 0))
         //*/
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,11 +60,11 @@ class AutoViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         var maxHeight : CGFloat = viewSC.contentSize.height
-        if maxHeight < viewUnit.frame.height{
-            maxHeight = viewUnit.frame.height
+        if maxHeight < viewSC.frame.height{
+            maxHeight = viewSC.frame.height
         }
         
-        for subview in viewUnit.subviews {
+        for subview in viewSC.subviews {
             let newHeight = subview.frame.origin.y + subview.frame.height
             if newHeight > maxHeight {
                 maxHeight = newHeight
@@ -74,8 +73,6 @@ class AutoViewController: UIViewController {
         //GBLogGen.instance()?.logerrf("old content height: \(viewSC.contentSize.height) frame height: \(viewUnit.frame.height)");
         // set content size
         viewSC.contentSize = CGSize(width: viewSC.contentSize.width, height: maxHeight)
-        viewUnit.frame = CGRectMake(viewUnit.frame.origin.x,viewUnit.frame.origin.y,
-                                    viewUnit.frame.width, maxHeight)
         //GBLogGen.instance()?.logerrf("content height: \(maxHeight)");
         //GBLogGen.instance()?.logerrf("view rame:\(viewUnit.frame.origin.x) \(viewUnit.frame.origin.y) \(viewUnit.frame.width) \(maxHeight)");
     }

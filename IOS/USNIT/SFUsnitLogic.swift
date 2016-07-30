@@ -25,10 +25,10 @@ public class SFUsnitLogic {
     init() {
 
        
-        let language_path = NSBundle.mainBundle().pathForResource("language", ofType: "json")
-        GBLanguageStoreGen.instance()?.initialize(language_path!)
+        let language_path = load_conf("language", ext:"json")
+        GBLanguageStoreGen.instance()?.initialize(language_path)
         
-        let conf = load_conf()
+        let conf = load_conf("user", ext: "json")
         GBUserConfigGen.instance()?.initialize(conf)
         
         let strlangId = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode) as! String
@@ -39,55 +39,80 @@ public class SFUsnitLogic {
             GBLanguageStoreGen.instance()?.setLanguage(GBLangType.LANGCHS)
         }
         
-        let uilogic_path = NSBundle.mainBundle().pathForResource("uilogic", ofType: "json")
-        USNUilogicGen.instance()?.initialize(uilogic_path!)
+        let uilogic_path = load_conf("uilogic", ext: "json")
+        USNUilogicGen.instance()?.initialize(uilogic_path)
         USNUilogicGen.instance()?.buildUi()
         //USNUsnitGen.instance()!.initialize(uilogic_path, lang: 0, callback: nil)
     }
     
-    private func load_conf()->String{
+    private func load_conf(file_name:String, ext:String)->String{
         var json_str:String = ""
-        let res_path = NSBundle.mainBundle().pathForResource("user", ofType: "json")
+        let res_path = NSBundle.mainBundle().pathForResource(file_name, ofType: ext)
         
-        var doc_path:String = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let doc_path:String = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        
+        var conf_file = doc_path
         if let version = NSBundle.mainBundle().infoDictionary?["CFBundleVersion"] as? String {
-            doc_path.appendContentsOf("/user.\(version).json")
+            conf_file.appendContentsOf("/\(file_name).\(version).\(ext)")
         }
         else{
-            doc_path.appendContentsOf("/1.5.json")
+            conf_file.appendContentsOf("/\(file_name).1.11.\(ext)")
         }
         
         let fileManager = NSFileManager.defaultManager()
-        if fileManager.fileExistsAtPath(doc_path) {
+        if fileManager.fileExistsAtPath(conf_file) {
             do {
-                json_str = try NSString(contentsOfFile: doc_path, usedEncoding: nil) as String
+                json_str = try NSString(contentsOfFile: conf_file, usedEncoding: nil) as String
+                return conf_file
             }catch let error as NSError{
                 // contents could not be loaded
-                GBLogGen.instance()?.logerrf("SFUsnitLogic.init write failed \(error.userInfo) ")
+                GBLogGen.instance()?.logerrf("SFUsnitLogic.load_conf read \(conf_file) failed \(error.userInfo) ")
                 return res_path!
             }
         } else {
+            deleteFilesInPath(doc_path, range: file_name)
             do {
                 json_str = try NSString(contentsOfFile: res_path!, usedEncoding: nil) as String
                 
                 do {
-                    try json_str.writeToFile(doc_path, atomically: true, encoding: NSUTF8StringEncoding)
+                    try json_str.writeToFile(conf_file, atomically: true, encoding: NSUTF8StringEncoding)
                     
                 } catch let error as NSError{
                     // contents could not be loaded
-                    GBLogGen.instance()?.logerrf("SFUsnitLogic.init write failed \(error.userInfo) ")
-                    return res_path!
+                    GBLogGen.instance()?.logerrf("SFUsnitLogic.load_conf write \(conf_file) failed \(error.userInfo) ")
+                    return conf_file
                 }
             } catch let error as NSError{
                 // contents could not be loaded
-                GBLogGen.instance()?.logerrf("SFUsnitLogic.init \(error.userInfo) load app/conf.json failed")
+                GBLogGen.instance()?.logerrf("SFUsnitLogic.load_conf read \(res_path) \(error.userInfo) load app/conf.json failed")
                 return res_path!
             }
             
             
         }
 
-        return doc_path
+        return res_path!
+    }
+    
+    private func deleteFilesInPath(path:String, range:String) {
+        let filemanager:NSFileManager = NSFileManager()
+        var is_dir:ObjCBool = false
+        let files:NSDirectoryEnumerator? = filemanager.enumeratorAtPath(path)
+        while let file = files?.nextObject() as? String {
+            
+            let file_path = path+"/\(file)"
+            
+            filemanager.fileExistsAtPath(file_path, isDirectory: &is_dir)
+            //print(is_dir ? "is directory" : "is a file")
+            if file.rangeOfString(range) != nil{
+                do {
+                    try filemanager.removeItemAtPath(file_path);
+                }catch let error as NSError{
+                    print("SFUsnitLogic.init write failed \(error.userInfo) ")
+                }
+            }
+        }
+        
     }
     
     /*

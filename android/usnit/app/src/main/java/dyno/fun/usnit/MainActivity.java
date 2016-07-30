@@ -47,7 +47,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Locale;
 
-
 import dyno.fun.gearsbox.AdmodBanner;
 import dyno.fun.gearsbox.AsyncLoopGen;
 import dyno.fun.gearsbox.KeyboardVisibilityEvent;
@@ -95,6 +94,20 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return file.getAbsolutePath();
+    }
+
+    protected String getAssetsFileBuffer(String file_name){
+        try {
+            InputStream is = getAssets().open(file_name);
+
+            String rt = is.toString();
+            is.close();
+            return  rt;
+        } catch (IOException e) {
+            LogGen.instance().logerrf(String.format("getAssetsFileBuffer file:%s exception:%s", file_name, e.toString()));
+            e.printStackTrace();
+            return "";
+        }
     }
 
     @Override
