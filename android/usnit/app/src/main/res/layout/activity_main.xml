@@ -96,6 +96,18 @@
                 android:textSize="@dimen/value_font_size" />
 
             <TextView
+                android:id="@+id/nmi"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/kmeter"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
                 android:text="@string/defaul_tittle"
                 android:id="@+id/label_meter"
                 android:layout_width="@dimen/unit_name_w"
@@ -121,6 +133,16 @@
                 android:layout_width="@dimen/unit_name_w"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/kmeter"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_nmi"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/nmi"
                 android:layout_toLeftOf="@+id/dummy_center"
                 android:layout_marginRight="0dp"
                 android:textSize="@dimen/value_font_size"/>
@@ -269,11 +291,55 @@
                 android:textSize="@dimen/value_font_size"/>
 
             <TextView
+                android:id="@+id/jin"
                 android:background="@drawable/value_border"
                 android:text="@string/defaul_tittle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/kgram"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_jin"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/jin"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/liang"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/jin"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_liang"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/liang"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
                 android:id="@+id/lb"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/line1"
                 android:layout_alignLeft="@+id/feet"
                 android:layout_alignRight="@+id/feet"
@@ -281,8 +347,8 @@
                 android:textSize="@dimen/value_font_size"/>
 
             <TextView
-                android:text="@string/defaul_tittle"
                 android:id="@+id/label_lb"
+                android:text="@string/defaul_tittle"
                 android:layout_width="@dimen/unit_name_w"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/lb"
@@ -290,11 +356,11 @@
                 android:textSize="@dimen/value_font_size"/>
 
             <TextView
+                android:id="@+id/oz"
                 android:background="@drawable/value_border"
                 android:text="@string/defaul_tittle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/oz"
                 android:layout_below="@+id/lb"
                 android:layout_alignLeft="@+id/feet"
                 android:layout_alignRight="@+id/feet"
@@ -302,8 +368,8 @@
                 android:textSize="@dimen/value_font_size"/>
 
             <TextView
-                android:text="@string/defaul_tittle"
                 android:id="@+id/label_oz"
+                android:text="@string/defaul_tittle"
                 android:layout_width="@dimen/unit_name_w"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/oz"
@@ -315,7 +381,7 @@
                 android:id="@+id/line2"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:layout_below="@+id/oz"
+                android:layout_below="@+id/liang"
                 android:layout_alignLeft="@+id/line1"
                 android:layout_alignRight="@+id/line1"
                 android:layout_marginTop="@dimen/unit_margin_top"/>
@@ -604,6 +670,102 @@
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:layout_below="@+id/label_dollor"
+                android:layout_alignLeft="@+id/line1"
+                android:layout_alignRight="@+id/line1"
+                android:layout_marginTop="30dp"/>
+
+            <TextView
+                android:id="@+id/pa"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line6"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:text="@string/defaul_tittle"
+                android:id="@+id/label_pa"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/pa"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/kpa"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pa"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:layout_alignLeft="@+id/cmeter"
+                android:layout_alignRight="@+id/cmeter"
+                android:textSize="@dimen/value_font_size" />
+
+            <TextView
+                android:id="@+id/label_kpa"
+                android:text="@string/defaul_tittle"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/kpa"
+                android:layout_toLeftOf="@+id/dummy_center"
+                android:layout_marginRight="0dp"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/psi"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line6"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/label_psi"
+                android:text="@string/defaul_tittle"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/psi"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/psf"
+                android:background="@drawable/value_border"
+                android:text="@string/defaul_tittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/psi"
+                android:layout_alignLeft="@+id/feet"
+                android:layout_alignRight="@+id/feet"
+                android:layout_marginTop="@dimen/unit_margin_top"
+                android:textSize="@dimen/value_font_size"/>
+
+            <TextView
+                android:id="@+id/label_psf"
+                android:text="@string/defaul_tittle"
+                android:layout_width="@dimen/unit_name_w"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/psf"
+                android:layout_alignLeft="@+id/label_feet"
+                android:textSize="@dimen/value_font_size"/>
+
+            <View
+                android:id="@+id/line7"
+                android:background="@android:color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_below="@+id/label_psi"
                 android:layout_alignLeft="@+id/line1"
                 android:layout_alignRight="@+id/line1"
                 android:layout_marginTop="30dp"/>
