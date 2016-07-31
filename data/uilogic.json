@@ -7,11 +7,14 @@
                    {"name":"feet", "us":true, "multiply":3.2808399},
                    {"name":"inch", "us":true, "multiply":39.3700787},
                    {"name":"mile", "us":true, "multiply":0.0006214},
-                   {"name":"yard", "us":true, "multiply":1.0936133}
+                   {"name":"yard", "us":true, "multiply":1.0936133},
+                   {"name":"nmi", "us":false, "multiply":0.00053995680346}
                ]},
                 {"name":"mass", "base_unit":"gram", "units":[
                    {"name":"gram", "us":false, "multiply":1.0},
                    {"name":"kgram", "us":false, "multiply":0.001},
+                 {"name":"jin", "us":false, "multiply":0.002},
+                 {"name":"liang", "us":false, "multiply":0.02},
                    {"name":"lb", "us":true, "multiply":0.0022046},
                    {"name":"oz", "us":true, "multiply":0.035274}
                ]},
@@ -33,9 +36,15 @@
                 {"name":"exchange", "base_unit":"dollor", "units":[
                    {"name":"rmb", "us":false,"func":"", "multiply":6.5971},
                    {"name":"dollor", "us":true,"func":"", "multiply":1}
-               ]}
-            ],
-	"exchange_font_size":12,
+               ]},
+                {"name":"press", "base_unit":"pa", "units":[
+                   {"name":"pa", "us":false,"func":"", "multiply":1},
+                   {"name":"kpa", "us":false,"func":"", "multiply":0.001},
+                   {"name":"psi", "us":true,"func":"", "multiply":0.000145},
+                   {"name":"psf", "us":true,"func":"", "multiply":0.0208854}
+                ]}
+                ],
+  "exchange_font_size":12,
   "unit_name_font_size":14,
   "unit_value_font_size":14
 }

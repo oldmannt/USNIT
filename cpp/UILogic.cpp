@@ -49,25 +49,26 @@ UsnitSuperType parseSuperType(const std::string& conf){
     }
 }
 
-std::string superTypeString(UsnitSuperType type){
+const std::string SUPPER_TYPE_EXCHANGE = "exchange";
+std::string superTypeString(int type){
     switch (type) {
-        case UsnitSuperType::TYPE_LENGTH:
+        case (int)UsnitSuperType::TYPE_LENGTH:
             return "length";
-        case UsnitSuperType::TYPE_MASS:
+        case (int)UsnitSuperType::TYPE_MASS:
             return "mass";
-        case UsnitSuperType::TYPE_VOLUME:
+        case (int)UsnitSuperType::TYPE_VOLUME:
             return "volume";
-        case UsnitSuperType::TYPE_SQUARE:
+        case (int)UsnitSuperType::TYPE_SQUARE:
             return "square";
-        case UsnitSuperType::TYPE_TERMPERATURE:
+        case (int)UsnitSuperType::TYPE_TERMPERATURE:
             return "termperature";
-        case UsnitSuperType::TYPE_EXCHANGE:
+        case (int)UsnitSuperType::TYPE_EXCHANGE:
             return "exchange";
-        case UsnitSuperType::TYPE_NONE:
+        case (int)UsnitSuperType::TYPE_NONE:
         default:
             break;
     }
-    return "";
+    return std::to_string(type);
 }
 
 class TimerClock:public gearsbox::TimerHandlerGen{
@@ -198,7 +199,7 @@ bool selectUnit(std::shared_ptr<SuperTypeInfo> supter_type_info, const std::stri
         
         rt = true;
         supter_type_info->selectUnit = unit;
-        UserConfigGen::instance()->setString(superTypeString(supter_type_info->type), select_name);
+        UserConfigGen::instance()->setString(supter_type_info->name, select_name);
     }
     
     return rt;
@@ -212,14 +213,14 @@ void UILogic::updateValueLabel(const std::string& select_name, bool all){
         
         std::shared_ptr<SuperTypeInfo> supter_type_info = itSuper->second;
         if (supter_type_info==nullptr){
-            G_LOG_FC(LOG_ERROR,"supter_type_info null %d", itSuper->first);
+            G_LOG_FC(LOG_ERROR,"supter_type_info null %s", superTypeString(itSuper->first).c_str());
             continue;
         }
         if (!all && !::selectUnit(supter_type_info, select_name))
             continue;
         
         if (!supter_type_info->selectUnit || !supter_type_info->selectUnit->label_value){
-            G_LOG_FC(LOG_ERROR,"selectUnit or it's valuse label null %d", itSuper->first);
+            G_LOG_FC(LOG_ERROR,"selectUnit or it's valuse label null %s", supter_type_info->name.c_str());
             continue;
         }
         
@@ -423,20 +424,18 @@ bool UILogic::readAllUnits(Json::Value& conf){
         //G_LOG_C(LOG_INFO, "to read %d supertype", conf.size());
         for (Json::ArrayIndex i = 0; i< conf.size(); ++i){
             Json::Value& item = conf[i];
-            UsnitSuperType super_type = parseSuperType(item["name"].asString());
-            if (UsnitSuperType::TYPE_NONE == super_type){
-                G_LOG_FC(LOG_ERROR,"super_type none name:%s", item["name"].asString().c_str());
-                continue;
-            }
+            
             std::shared_ptr<SuperTypeInfo> super_type_info = std::make_shared<SuperTypeInfo>();
             super_type_info->name = item["name"].asString().c_str();
-            super_type_info->type = super_type;
+            //super_type_info->type = super_type;
             std::string base_name = item["base_unit"].asString();
-            std::string select_name = UserConfigGen::instance()->getString(superTypeString(super_type));
+            std::string select_name = UserConfigGen::instance()->getString(super_type_info->name);
+            if (select_name.empty())
+                select_name = base_name;
             
             Json::Value& types = item["units"];
             strMsg += super_type_info->name + "to read units \n";
-            //G_LOG_C(LOG_INFO, "to read %d units in supertype:%d", types.size(), super_type);
+            //G_LOG_C(LOG_INFO, "to read %d units in supertype:%s", types.size(), super_type_info->name.c_str());
             for (Json::ArrayIndex ii=0; ii<types.size(); ++ii) {
                 Json::Value& type = types[ii];
                 
@@ -467,8 +466,8 @@ bool UILogic::readAllUnits(Json::Value& conf){
                 //G_LOG_C(LOG_INFO, "readed unit %s done", unit->name.c_str());
             }
             
-            //G_LOG_C(LOG_INFO, "readed %d units in supertype:%d", units.size(), super_type);
-            m_superTypes[super_type] = super_type_info;
+            //G_LOG_C(LOG_INFO, "readed %d units in supertype:%s", units.size(), super_type_info->name.c_str());
+            m_superTypes[i] = super_type_info;
             strMsg += item["name"].asString() + " supertype reak ok \n";
         }
         
@@ -486,25 +485,33 @@ std::string UILogic::getRelativeViewto(const char* name){
         return "";
     }
     std::shared_ptr<gearsbox::ViewGen> view = UiManagerGen::instance()->getView(name);
+    std::shared_ptr<gearsbox::ViewGen> find_unit = nullptr;
     if (view!=nullptr)
         return name;
     else if (strcmp(name, "first_unit")==0){
-        return m_uibuilding.first_unit->getId();
+        find_unit = m_uibuilding.first_unit;
     }
     else if(strcmp(name, "last_unit")==0) {
-        return m_uibuilding.last_unit->getId();
+        find_unit = m_uibuilding.last_unit;
     }
     else if(strcmp(name, "first_us_unit")==0){
-        return m_uibuilding.first_us_unit->getId();
+        find_unit = m_uibuilding.first_us_unit;
     }
     else if(strcmp(name, "last_us_unit")==0){
-        return m_uibuilding.last_us_unit->getId();
+        find_unit = m_uibuilding.last_us_unit;
     }
     else if(strcmp(name, "first_line")==0){
-        return m_uibuilding.first_line->getId();
+        find_unit = m_uibuilding.first_line;
     }
     else if(strcmp(name, "lower_view")==0){
-        return m_uibuilding.lower_view->getId();
+        find_unit = m_uibuilding.lower_view;
+    }
+    
+    if (find_unit!=nullptr){
+        return find_unit->getId();
+    }else{
+        G_LOG_FC(LOG_INFO,"can't find_unit %s", name?"null":name);
+        return "";
     }
     
     G_LOG_FC(LOG_INFO,"can't find viewto %s", name?"null":name);
@@ -550,17 +557,18 @@ bool UILogic::buildUnitView(const std::string& view_id){
     m_uibuilding.parent = parent_view;
     parent_view->setEventHandler(ViewEvent::TAP, shared_from_this());
     
-    //G_LOG_C(LOG_INFO, "buildUnitView allUnits %d supertype", m_superTypes.size());
+    G_LOG_C(LOG_INFO, "buildUnitView allUnits %d supertype", m_superTypes.size());
+    int line = 0;
     MapSuperType::iterator itSuper(m_superTypes.begin());
     for (; itSuper!=m_superTypes.end(); ++itSuper) {
         
         std::shared_ptr<SuperTypeInfo> supter_type_info = itSuper->second;
         if (supter_type_info==nullptr){
-            G_LOG_FC(LOG_ERROR,"supter_type_info null %d", itSuper->first);
+            G_LOG_FC(LOG_ERROR,"supter_type_info null %s", superTypeString(itSuper->first).c_str());
             continue;
         }
         
-        if (itSuper->first == UsnitSuperType::TYPE_EXCHANGE){
+        if (supter_type_info->name == SUPPER_TYPE_EXCHANGE){
             m_uibuilding.exchange_info = parent_view->addSubViewById("exchange_info", ViewType::LABEL);
             if (!m_uibuilding.exchange_info){
                 G_LOG_FC(LOG_ERROR,"add subview exchange_info null");
@@ -570,7 +578,7 @@ bool UILogic::buildUnitView(const std::string& view_id){
             }
         }
         
-        //G_LOG_C(LOG_INFO,"%d units in supertype:%d", supter_type_info->units.size(), itSuper->first);
+        //G_LOG_C(LOG_INFO,"%d units in supertype:%s", supter_type_info->units.size(), supter_type_info->name.c_str());
         LstUnit::iterator itUnits(supter_type_info->units.begin());
         for (; itUnits!=supter_type_info->units.end(); ++itUnits) {
             std::shared_ptr<Unit> unit = *itUnits;
@@ -601,7 +609,7 @@ bool UILogic::buildUnitView(const std::string& view_id){
         }
         
         char buf[16] = {0};
-        sprintf(buf, "line%d", (int)itSuper->first);
+        sprintf(buf, "line%d", ++line);
         std::shared_ptr<ViewGen> line = parent_view->addSubViewById(buf, ViewType::BASE);
         if (line==nullptr){
             G_LOG_FC(LOG_ERROR,"addsubview line %s failed", buf);
@@ -612,17 +620,17 @@ bool UILogic::buildUnitView(const std::string& view_id){
             m_uibuilding.first_line = line;
     }
     
-    //G_LOG_C(LOG_INFO,"create subview done");
-    
+    G_LOG_C(LOG_INFO,"create subview done");
+    line = 0;
     for (itSuper = m_superTypes.begin(); itSuper!=m_superTypes.end(); ++itSuper) {
         
         std::shared_ptr<SuperTypeInfo> supter_type_info = itSuper->second;
         if (supter_type_info==nullptr){
-            G_LOG_FC(LOG_ERROR,"supter_type_info null %d", itSuper->first);
+            G_LOG_FC(LOG_ERROR,"supter_type_info null %s", superTypeString(itSuper->first).c_str());
             continue;
         }
 
-        if (itSuper->first == UsnitSuperType::TYPE_EXCHANGE && m_uibuilding.exchange_info){
+        if (supter_type_info->name == SUPPER_TYPE_EXCHANGE && m_uibuilding.exchange_info){
             addConstrainsts("exchange_info", m_uibuilding.exchange_info->getId().c_str());
             m_uibuilding.last_unit = m_uibuilding.exchange_info;
             m_uibuilding.last_us_unit = m_uibuilding.exchange_info;
@@ -670,7 +678,7 @@ bool UILogic::buildUnitView(const std::string& view_id){
         }
         
         char buf[16] = {0};
-        sprintf(buf, "line%d", itSuper->first);
+        sprintf(buf, "line%d", ++line);
         std::shared_ptr<ViewGen> line = parent_view->getSubView(buf);
         if (line == nullptr){
             G_LOG_FC(LOG_ERROR,"get %s null", buf);
@@ -710,7 +718,7 @@ bool UILogic::buildInputView(const std::string& view_id){
 
     m_input = input_text;
     input_text->setEventHandler(ViewEvent::TEXTCHANGE, shared_from_this());
-
+    m_input->becomeFirstResponder();
     G_LOG_C(LOG_INFO,"buildInputView done");
     return true;
 }

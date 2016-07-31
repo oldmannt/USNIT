@@ -7,8 +7,8 @@ def keystoreProperties = new Properties()
 // Load your keystore.properties file into the keystoreProperties object.
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
-def VERSION_NAME = "1.4"
-def VERSION_CODE = 4
+def VERSION_NAME = "1.5"
+def VERSION_CODE = 5
 def VERSION_CODE_ARM = VERSION_CODE*1000+1
 def VERSION_CODE_ARMV7 = VERSION_CODE*1000+2
 def VERSION_CODE_ARM64 = VERSION_CODE*1000+3

@@ -47,7 +47,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Locale;
 
-
 import dyno.fun.gearsbox.AdmodBanner;
 import dyno.fun.gearsbox.AsyncLoopGen;
 import dyno.fun.gearsbox.KeyboardVisibilityEvent;
@@ -95,6 +94,33 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return file.getAbsolutePath();
+    }
+
+    protected String getAssetsFileBuffer(String file_name){
+        try {
+            InputStream is = getAssets().open(file_name);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            String rt = new String(buffer, "UTF-8");
+            return  rt;
+        } catch (IOException e) {
+            LogGen.instance().logerrf(String.format("getAssetsFileBuffer file:%s exception:%s", file_name, e.toString()));
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    protected String readFile(String file_name){
+        String rt = getFilePath(file_name);
+        if (rt != null){
+            return rt;
+        }
+
+        Log.e("usnit", String.format("writer file error, read buffer. file name:%s", file_name));
+        return getAssetsFileBuffer(file_name);
     }
 
     @Override
@@ -296,7 +322,7 @@ public class MainActivity extends ActionBarActivity {
         });
         m_looper.start();
         PlatformUtilityGen.instance().setPlatofrmExcutor(new PlatformExcutorImp());
-        String language_file = getFilePath("language.json");
+        String language_file = readFile("language.json");
         if (language_file==null){
             LogGen.instance().logerrf("get language.json failed");
             return;
@@ -315,7 +341,7 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-        String ui_conf = getFilePath("ui.json");
+        String ui_conf = readFile("ui.json");
         if (ui_conf==null){
             LogGen.instance().logerrf("get ui.json failed");
             return;
@@ -328,14 +354,14 @@ public class MainActivity extends ActionBarActivity {
         //input_view.setBackgroundColor(1,1,0,0);
         //unit_view.setBackgroundColor(1,0,1,0);
 
-        String user_json = getFilePath("user.json");
+        String user_json = readFile("user.json");
         if (user_json==null){
             LogGen.instance().logerrf("get user.json failed");
             return;
         }
         UserConfigGen.instance().initialize(user_json);
 
-        String uilgic_json = getFilePath("uilogic.json");
+        String uilgic_json = readFile("uilogic.json");
         if (uilgic_json==null){
             LogGen.instance().logerrf("get uilogic.json failed");
             return;
