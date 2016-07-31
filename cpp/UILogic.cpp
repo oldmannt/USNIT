@@ -718,7 +718,7 @@ bool UILogic::buildInputView(const std::string& view_id){
 
     m_input = input_text;
     input_text->setEventHandler(ViewEvent::TEXTCHANGE, shared_from_this());
-
+    m_input->becomeFirstResponder();
     G_LOG_C(LOG_INFO,"buildInputView done");
     return true;
 }
