@@ -16,23 +16,28 @@ add some `setting ui` wll suppert user costum ui, but I have no time to do it, m
 
 In ios, support user adds any new unit by modifying JSON files in document directory. Make sure you understand before modifying JSON  
 uilogic.json  
+
+	```json
 	A unit  
-     {"name":"jin", "us":false, "multiply":0.002},  
+	{"name":"jin", "us":false, "multiply":0.002},  
 	A supper type  
-	    {"name":"press", "base_unit":"pa", "units":[  
-       {"name":"pa", "us":false,"func":"", "multiply":1},  
-       {"name":"kpa", "us":false,"func":"", "multiply":0.001},  
-       {"name":"psi", "us":true,"func":"", "multiply":0.000145},  
-       {"name":"psf", "us":true,"func":"", "multiply":0.0208854}  
-    ]}  
+	{"name":"press", "base_unit":"pa", "units":[  
+	{"name":"pa", "us":false,"func":"", "multiply":1},  
+	{"name":"kpa", "us":false,"func":"", "multiply":0.001},  
+	{"name":"psi", "us":true,"func":"", "multiply":0.000145},  
+	{"name":"psf", "us":true,"func":"", "multiply":0.0208854}  
+	]}  
+	```
   
 Language.json  
-	  "pa":{"chs":"帕", "eng":"Pa"},  
-    "kpa":{"chs":"千帕", "eng":"kPa"},  
-    "psi":{"chs":"磅英寸", "eng":"psi"},  
-    "psf":{"chs":"磅英尺", "eng":"psf"},  
-    "jin":{"chs":"斤", "eng":"jin"},  
-    "liang":{"chs":"两", "eng":"liang"},  
-      
+
+	```json
+	"pa":{"chs":"帕", "eng":"Pa"},  
+	"kpa":{"chs":"千帕", "eng":"kPa"},  
+	"psi":{"chs":"磅英寸", "eng":"psi"},  
+	"psf":{"chs":"磅英尺", "eng":"psf"},  
+	"jin":{"chs":"斤", "eng":"jin"},  
+	"liang":{"chs":"两", "eng":"liang"},  
+	```
 In android, need to modify mainactivity.xml, and need to republish  
   
